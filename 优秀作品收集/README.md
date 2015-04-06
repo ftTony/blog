@@ -54,3 +54,5 @@
 54. [基于 vue 和 websocket 的多人在线聊天室](https://github.com/secreter/websocket_chat)
 55. [基于 vue 的可视化编辑器](https://www.cnblogs.com/plBlog/p/12409011.html)
 56. [think-vuele](https://github.com/chfree/think-vuele)
+57. [写给初中级前端的高级进阶指南（万字长文，更新性能优化路线）。](https://juejin.im/post/5e7c08bde51d455c4c66ddad)
+58. [「颜值即正义」那些管 UI 小姐姐要来的网站](https://juejin.im/post/5e7cdee26fb9a03c6e640cc7)
