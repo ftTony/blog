@@ -50,3 +50,4 @@
 50. [vue-chat](https://github.com/aermin/vue-chat)
 51. [Vue 数据可视化组件库](https://github.com/DataV-Team/DataV)
 52. [基于 vue 和 websocket 的多人在线聊天室](https://github.com/secreter/websocket_chat)
+53. [基于 vue 的可视化编辑器](https://www.cnblogs.com/plBlog/p/12409011.html)
