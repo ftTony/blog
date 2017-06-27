@@ -37,3 +37,4 @@
 37. [Vue2.x 全家桶+Vant 搭建大型单页面电商项目](https://github.com/Geek-James/ddBuy)
 38. [一个基于 electron 的音乐软件](https://github.com/lyswhut/lx-music-desktop)
 39. [基于 vue2 + vue-router + vuex 构建的新闻类单页面应用](https://github.com/uncleLian/vue2-news)
+40. [vue 组件库](https://github.com/huxiaocheng/vue-gn-components)
