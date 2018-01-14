@@ -35,3 +35,4 @@
 35. [Vue + Koa 从零打造一个 H5 页面可视化编辑器——Quark-h5](https://juejin.im/post/5dc81428e51d4523632ee793)
 36. [Vue2.x 全家桶+Vant 搭建大型单页面电商项目](https://github.com/Geek-James/ddBuy)
 37. [一个基于 electron 的音乐软件](https://github.com/lyswhut/lx-music-desktop)
+38. [基于 vue2 + vue-router + vuex 构建的新闻类单页面应用](https://github.com/uncleLian/vue2-news)
