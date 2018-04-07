@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="Promise 为异步编程提供统一的解决方案，比传统的回调和事件更加合理有效。多重嵌套的回调函数，代码是横向发展，不是纵向发展，容易乱成一团，不便管理，称之为”callback hell”，回调地狱或回调恶梦。Promise就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载。 内容 状态 初始化 then / catch resolve()">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T13:50:18.000Z">
+<meta property="og:updated_time" content="2018-04-07T14:34:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise学习">
 <meta name="twitter:description" content="Promise 为异步编程提供统一的解决方案，比传统的回调和事件更加合理有效。多重嵌套的回调函数，代码是横向发展，不是纵向发展，容易乱成一团，不便管理，称之为”callback hell”，回调地狱或回调恶梦。Promise就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载。 内容 状态 初始化 then / catch resolve()">
@@ -406,9 +406,10 @@
 <h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>一旦新建它就会立即执行，无法中途取消</li>
 <li>如果不设置回调函数，Promise内部抛出的错误，不会反应到外部</li>
-<li>当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）</li>
+<li>当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）<a id="more"></a>
+<h2 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h2></li>
 </ul>
-<h2 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var promise = new Promise(function(resolve, reject) &#123;</span><br><span class="line">  // ... some code</span><br><span class="line">  if (/* 异步操作成功 */)&#123;</span><br><span class="line">    resolve(value);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var promise = new Promise(function(resolve, reject) &#123;</span><br><span class="line">  // ... some code</span><br><span class="line">  if (/* 异步操作成功 */)&#123;</span><br><span class="line">    resolve(value);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Promise接收一个函数作为参数，函数的两个参数resolve, reject是两个函数，用于对promise对象的状态改变</li>
 <li>resove 将未完成变成已完成 pending =&gt; resolved</li>
@@ -538,8 +539,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/15/深入理解 Promise (中)/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/22/深入理解 Promise (上)/" rel="prev" title="深入理解 Promise (上)">
+                深入理解 Promise (上) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -617,7 +618,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -126,7 +126,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/19/1610d76608edbb9b?imageslim">
 <meta property="og:image" content="https://segmentfault.com/img/bV1TKz?w=879&h=723">
-<meta property="og:updated_time" content="2018-04-07T13:49:56.000Z">
+<meta property="og:updated_time" content="2018-04-07T14:35:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript引擎的执行机制">
 <meta name="twitter:description" content="内容 js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？ js中的event loop(1) js中的event loop(2) 说说setTimeout  一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？1.1、JS为什么是单线程的？ 1234567JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。场景描述:那么现在有2个进程,proc">
@@ -400,8 +400,7 @@
 </ol>
 <h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
-<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。</p>
-<p>1.2、JS为什么需要异步？</p>
+<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。<br><a id="more"></a><br>1.2、JS为什么需要异步？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">如果JS中不存在异步,只能自上而下执行,如果上一行解析时间很长,那么下面的代码就会被阻塞。</span><br><span class="line">对于用户而言,阻塞就意味着&quot;卡死&quot;,这样就导致了很差的用户体验</span><br></pre></td></tr></table></figure>
 <p>所以,JS中存在异步执行。</p>
 <p>1.3、JS单线程又是如何实现异步的呢?</p>
@@ -586,7 +585,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -4,6 +4,314 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-04-07T14:39:06.777Z</lastmod>
+    <data>
+        <display>
+        <title>几种常见的设计模式</title>
+        <pubTime>2018-04-07T14:39:06.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2018-04-07T14:38:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>js创建对象</title>
+        <pubTime>2018-04-07T14:38:14.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/10/%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2018-04-07T14:37:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>继承</title>
+        <pubTime>2013-04-10T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/07/09/this%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <lastmod>2018-04-07T14:36:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>this理解（一）</title>
+        <pubTime>2013-07-09T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/07/08/this%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <lastmod>2018-04-07T14:36:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>this理解（一）</title>
+        <pubTime>2013-07-08T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/07/javascript%E5%BC%95%E6%93%8E%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2018-04-07T14:35:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript引擎的执行机制</title>
+        <pubTime>2016-04-07T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/JavaScript%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
+    <lastmod>2018-04-07T14:35:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript原型与原型链</title>
+        <pubTime>2016-04-08T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/10/Promise%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-07T14:34:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>Promise学习</title>
+        <pubTime>2016-04-10T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/12/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
+    <lastmod>2018-04-07T14:33:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解 Promise (中)</title>
+        <pubTime>2016-12-23T04:39:04.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/12/22/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%8A)/</loc>
+    <lastmod>2018-04-07T14:33:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解 Promise (上)</title>
+        <pubTime>2016-12-22T04:39:04.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-04-07T14:26:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>排序算法</title>
+        <pubTime>2018-04-07T13:04:08.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/12/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2018-04-07T14:12:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>值类型与引用类型</title>
+        <pubTime>2013-04-12T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/11/%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    <lastmod>2018-04-07T14:11:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>加法运算符</title>
+        <pubTime>2013-04-11T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/09/%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/</loc>
+    <lastmod>2018-04-07T14:09:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>类型判断</title>
+        <pubTime>2013-04-09T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/08/%E9%97%AD%E5%8C%85/</loc>
+    <lastmod>2018-04-07T14:06:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>闭包</title>
+        <pubTime>2013-04-08T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/07/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E7%9B%B8%E7%AD%89&%E4%B8%A5%E6%A0%BC%E7%9B%B8%E7%AD%89/</loc>
+    <lastmod>2018-04-07T14:04:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>数据类型、数据类型转换、相等&严格相等</title>
+        <pubTime>2013-04-07T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-04-07T14:03:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端常见算法</title>
+        <pubTime>2018-04-07T13:11:35.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2018/04/07/apply%E3%80%81call%E5%92%8Cbind%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2018-04-07T13:59:32.000Z</lastmod>
     <data>
@@ -148,136 +456,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2013/07/09/this%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
-    <lastmod>2018-04-07T13:54:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>this理解（一）</title>
-        <pubTime>2013-07-09T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/07/08/this%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2018-04-07T13:53:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>this理解（一）</title>
-        <pubTime>2013-07-08T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/JavaScript%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
-    <lastmod>2018-04-07T13:52:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript原型与原型链</title>
-        <pubTime>2016-04-08T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/10/Promise%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-07T13:50:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>Promise学习</title>
-        <pubTime>2016-04-10T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/07/javascript%E5%BC%95%E6%93%8E%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-04-07T13:49:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>javascript引擎的执行机制</title>
-        <pubTime>2016-04-07T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2018/04/07/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-04-07T13:32:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端常见算法</title>
-        <pubTime>2018-04-07T13:11:35.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2018/04/07/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-04-07T13:27:04.000Z</lastmod>
-    <data>
-        <display>
-        <title>排序算法</title>
-        <pubTime>2018-04-07T13:04:08.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/07/07/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/</loc>
     <lastmod>2018-04-07T13:08:18.000Z</lastmod>
     <data>
@@ -296,131 +474,6 @@
 
     
     
-  <url>
-    <loc>http://blog.xiaowuzi.info/2014/12/22/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%8A)/</loc>
-    <lastmod>2018-04-07T12:38:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解 Promise (上)</title>
-        <pubTime>2014-12-22T04:39:04.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
-    
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2017/11/23/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</loc>
-    <lastmod>2017-12-11T13:17:31.426Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-11-23T11:45:19.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2017/12/11/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E7%9B%B8%E7%AD%89&%E4%B8%A5%E6%A0%BC%E7%9B%B8%E7%AD%89/</loc>
-    <lastmod>2017-12-11T13:15:08.402Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-12-11T12:47:27.243Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2017/12/11/%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
-    <lastmod>2017-12-11T12:05:45.890Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-12-11T10:05:16.200Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2017/11/27/%E9%97%AD%E5%8C%85/</loc>
-    <lastmod>2017-12-03T13:24:07.296Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-11-27T02:24:46.982Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2017/11/23/%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/</loc>
-    <lastmod>2017-11-24T02:29:31.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-11-23T11:49:33.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2017/11/23/%E7%BB%A7%E6%89%BF/</loc>
-    <lastmod>2017-11-23T12:23:42.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-11-23T12:23:02.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2017/11/15/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
-    <lastmod>2017-11-15T12:27:21.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-11-15T12:22:43.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
 </urlset>

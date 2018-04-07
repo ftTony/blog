@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="默认绑定 隐式绑定 显式绑定 new绑定  默认绑定首先要介绍的是最常用的函数调用类型:独立函数调用。可以把这条规则看作是无法应用其他规则时的默认规则。来自《你不知道的javascript(上卷)》 例如： 1234function foo() &amp;#123;	 console.log( this.a );&amp;#125;var a=2; foo(); // 2 那么我们怎么知道这里应用了默认绑定呢?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T13:54:12.000Z">
+<meta property="og:updated_time" content="2018-04-07T14:36:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this理解（一）">
 <meta name="twitter:description" content="默认绑定 隐式绑定 显式绑定 new绑定  默认绑定首先要介绍的是最常用的函数调用类型:独立函数调用。可以把这条规则看作是无法应用其他规则时的默认规则。来自《你不知道的javascript(上卷)》 例如： 1234function foo() &amp;#123;	 console.log( this.a );&amp;#125;var a=2; foo(); // 2 那么我们怎么知道这里应用了默认绑定呢?">
@@ -403,6 +403,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; &quot;use strict&quot;;</span><br><span class="line">         console.log( this.a );</span><br><span class="line">     &#125;</span><br><span class="line">var a=2;</span><br><span class="line">foo(); // TypeError: this is undefined</span><br></pre></td></tr></table></figure>
 <p>这里有一个微妙但是非常重要的细节，虽然 this 的绑定规则完全取决于调用位置，但是只 有foo()运行在非strict mode下时，默认绑定才能绑定到全局对象;严格模式下与foo() 的调用位置无关:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">vara=2;</span><br><span class="line">(function()&#123; &quot;use strict&quot;;</span><br><span class="line">         foo(); // 2</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h2><p>隐式绑定需要考虑的是调用位置是否有上下文对象，或者说是否被某个对象拥有或者包含。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; </span><br><span class="line">	console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">var obj=&#123; </span><br><span class="line">	a: 2,</span><br><span class="line">	foo: foo </span><br><span class="line">&#125;;</span><br><span class="line">obj.foo(); // 2</span><br></pre></td></tr></table></figure>
 <p>对象属性引用链中只有最顶层或者说最后一层会影响调用位置。举例来说：</p>
@@ -498,8 +499,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/12/22/深入理解 Promise (上)/" rel="prev" title="深入理解 Promise (上)">
-                深入理解 Promise (上) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/07/http详解/" rel="prev" title="http详解">
+                http详解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -577,7 +578,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
