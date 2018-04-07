@@ -119,16 +119,16 @@
 
 <meta name="description" content="内容 js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？ js中的event loop(1) js中的event loop(2) 说说setTimeout  一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？1.1、JS为什么是单线程的？ 1234567JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。场景描述:那么现在有2个进程,proc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小武子博客">
-<meta property="og:url" content="http://blog.xiaowuzi.info/2018/04/02/javascript引擎的执行机制/index.html">
+<meta property="og:title" content="javascript引擎的执行机制">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/index.html">
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="内容 js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？ js中的event loop(1) js中的event loop(2) 说说setTimeout  一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？1.1、JS为什么是单线程的？ 1234567JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。场景描述:那么现在有2个进程,proc">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/19/1610d76608edbb9b?imageslim">
 <meta property="og:image" content="https://segmentfault.com/img/bV1TKz?w=879&h=723">
-<meta property="og:updated_time" content="2018-04-02T13:37:00.211Z">
+<meta property="og:updated_time" content="2018-04-07T13:49:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小武子博客">
+<meta name="twitter:title" content="javascript引擎的执行机制">
 <meta name="twitter:description" content="内容 js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？ js中的event loop(1) js中的event loop(2) 说说setTimeout  一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？1.1、JS为什么是单线程的？ 1234567JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。场景描述:那么现在有2个进程,proc">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/1/19/1610d76608edbb9b?imageslim">
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xiaowuzi.info/2018/04/02/javascript引擎的执行机制/">
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
 
 
 
 
 
-  <title> | 小武子博客</title>
+  <title>javascript引擎的执行机制 | 小武子博客</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/02/javascript引擎的执行机制/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">javascript引擎的执行机制</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T20:10:16+08:00">
-                2018-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
+                2016-04-07
               </time>
             
 
@@ -342,6 +342,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -475,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/11/数据类型、数据类型转换、相等&严格相等/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/04/07/amd、cmd、common和umd区别/" rel="next" title="amd、cmd、common和umd区别">
+                <i class="fa fa-chevron-left"></i> amd、cmd、common和umd区别
               </a>
             
           </div>
@@ -485,8 +507,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/07/http详解/" rel="prev" title="http详解">
-                http详解 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/07/web安全——CRSF/" rel="prev" title="web安全——CRSF">
+                web安全——CRSF <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,7 +597,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

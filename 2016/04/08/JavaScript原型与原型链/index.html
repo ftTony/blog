@@ -117,22 +117,22 @@
 
 
 
-<meta name="description" content="深入理解 JavaScript 原型前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得">
+<meta name="description" content="前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。 我">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小武子博客">
-<meta property="og:url" content="http://blog.xiaowuzi.info/2016/05/15/JavaScript原型与原型链/index.html">
+<meta property="og:title" content="JavaScript原型与原型链">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/08/JavaScript原型与原型链/index.html">
 <meta property="og:site_name" content="小武子博客">
-<meta property="og:description" content="深入理解 JavaScript 原型前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得">
+<meta property="og:description" content="前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。 我">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414fdfc08?w=1378&h=514&f=png&s=69237">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414f54951?w=1370&h=938&f=png&s=121320">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e416e2c295?w=826&h=1198&f=png&s=206402">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414d534ef?w=1362&h=1536&f=png&s=222883">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e41507798b?w=2054&h=1454&f=png&s=316686">
-<meta property="og:updated_time" content="2017-12-06T08:17:33.643Z">
+<meta property="og:updated_time" content="2018-04-07T13:52:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小武子博客">
-<meta name="twitter:description" content="深入理解 JavaScript 原型前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得">
+<meta name="twitter:title" content="JavaScript原型与原型链">
+<meta name="twitter:description" content="前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。 我">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414fdfc08?w=1378&h=514&f=png&s=69237">
 
 
@@ -163,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/05/15/JavaScript原型与原型链/">
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/04/08/JavaScript原型与原型链/">
 
 
 
 
 
-  <title> | 小武子博客</title>
+  <title>JavaScript原型与原型链 | 小武子博客</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/05/15/JavaScript原型与原型链/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/08/JavaScript原型与原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript原型与原型链</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T13:34:05+08:00">
-                2016-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-08T20:51:07+08:00">
+                2016-04-08
               </time>
             
 
@@ -345,6 +345,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -373,7 +395,7 @@
       
 
       
-        <h1 id="深入理解-JavaScript-原型"><a href="#深入理解-JavaScript-原型" class="headerlink" title="深入理解 JavaScript 原型"></a>深入理解 JavaScript 原型</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识）</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识）</p>
 <p>源代码：<a href="https://github.com/chhpt/JavaScript-Exploration/tree/master/prototype_and_prototype_chain" target="_blank" rel="noopener">GitHub</a></p>
 <h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="1-原型是什么？"><a href="#1-原型是什么？" class="headerlink" title="1. 原型是什么？"></a>1. 原型是什么？</h3><p>在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。</p>
 <p>我们都知道，JavaScript 是一门基于对象的脚本语言，但是它却没有类的概念，所以 JavaScript 中的对象和基于类的语言（如 Java）中的对象有所不同。JavaScript 中的对象是无序属性的集合，其属性可以包含基本值，对象或者函数，听起来更像是键值对的集合，事实上也比较类似。有了对象，按理说得有继承，不然对象之间没有任何联系，也就真沦为键值对的集合了。那没有类的 JavaScript 是怎么实现继承的呢？</p>
@@ -508,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/15/this理解（一）/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/04/08/https详解/" rel="next" title="https详解">
+                <i class="fa fa-chevron-left"></i> https详解
               </a>
             
           </div>
@@ -518,8 +540,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/15/Promise学习/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/09/JavaScript之深浅拷贝/" rel="prev" title="JavaScript之深浅拷贝">
+                JavaScript之深浅拷贝 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -608,7 +630,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -652,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解-JavaScript-原型"><span class="nav-number">1.</span> <span class="nav-text">深入理解 JavaScript 原型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">1.2.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型是什么？"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 原型是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-constructor-与-Prototype"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. constructor 与 [[Prototype]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-对象实例与原型"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 对象实例与原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-判断对象实例和原型之间的关系"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">1. 判断对象实例和原型之间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对象实例属性和方法的获取"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2. 对象实例属性和方法的获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-in-操作符"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">3. in 操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-原型的动态性"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">4. 原型的动态性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">1.3.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型的原型"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 原型的原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-原型链"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.3.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">2.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型是什么？"><span class="nav-number">2.1.</span> <span class="nav-text">1. 原型是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-constructor-与-Prototype"><span class="nav-number">2.2.</span> <span class="nav-text">2. constructor 与 [[Prototype]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-对象实例与原型"><span class="nav-number">2.3.</span> <span class="nav-text">3. 对象实例与原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-判断对象实例和原型之间的关系"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 判断对象实例和原型之间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对象实例属性和方法的获取"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 对象实例属性和方法的获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-in-操作符"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. in 操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-原型的动态性"><span class="nav-number">2.3.4.</span> <span class="nav-text">4. 原型的动态性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">3.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型的原型"><span class="nav-number">3.1.</span> <span class="nav-text">1. 原型的原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-原型链"><span class="nav-number">3.2.</span> <span class="nav-text">2. 原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法"><span class="nav-number">3.3.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">3.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
 
           </div>

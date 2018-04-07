@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="apply、call和bind理解在JavaScript中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。 call、apply、bind方法的共同点和区别： apply、call、bind三都是用来改变函数的this对象的指向的； apply、call、bind三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T12:55:23.000Z">
+<meta property="og:updated_time" content="2018-04-07T13:59:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply、call和bind理解">
 <meta name="twitter:description" content="apply、call和bind理解在JavaScript中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。 call、apply、bind方法的共同点和区别： apply、call、bind三都是用来改变函数的this对象的指向的； apply、call、bind三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数">
@@ -394,8 +394,7 @@
 <p>apply、call、bind三都是用来改变函数的this对象的指向的；</p>
 <p>apply、call、bind三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本次调用的上下文(context)——这就是this关键字的值。）；</p>
 <p>apply 、 call 、bind 三者都可以利用后续参数传参；</p>
-<p>bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 。</p>
-<p>一、call</p>
+<p>bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 。<br><a id="more"></a><br>一、call</p>
 <p><strong>call()</strong></p>
 <p>语法：call([thisObj[,arg1[, arg2[, [,.argN]]]]]) 定义：调用一个对象的一个方法，以另一个对象替换当前对象。</p>
 <p>说明： call 方法可以用来代替另一个对象调用一个方法。</p>
@@ -407,109 +406,31 @@
 <li>传递字符串、数值或布尔类型等基础类型，函数中的this指向其对应的包装对象，如 String、Number、Boolean</li>
 <li>传递一个对象，函数中的this指向这个对象</li>
 </ol>
-<p><code>function a(){   
-  console.log(this);   //输出函数a中的this对象
-}      
-function b(){}       
-var c={name:&quot;call&quot;};    //定义对象c  
-a.call();   //window
-a.call(null);   //window
-a.call(undefined);   //window
-a.call(1);   //Number
-a.call(&#39;&#39;);   //String
-a.call(true);   //Boolean
-a.call(b);   //function b(){}
-a.call(c);   //Object</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;   </span><br><span class="line">  console.log(this);   //输出函数a中的this对象</span><br><span class="line">&#125;      </span><br><span class="line">function b()&#123;&#125;       </span><br><span class="line">var c=&#123;name:&quot;call&quot;&#125;;    //定义对象c  </span><br><span class="line">a.call();   //window</span><br><span class="line">a.call(null);   //window</span><br><span class="line">a.call(undefined);   //window</span><br><span class="line">a.call(1);   //Number</span><br><span class="line">a.call(&apos;&apos;);   //String</span><br><span class="line">a.call(true);   //Boolean</span><br><span class="line">a.call(b);   //function b()&#123;&#125;</span><br><span class="line">a.call(c);   //Object</span><br></pre></td></tr></table></figure>
 <p>如果你不理解上面的，没关系，我们再来看一个例子：</p>
-<p><code>function class1(){   
-  this.name=function(){   
-    console.log(&quot;我是class1内的方法&quot;);   
-  }   
-}   
-function class2(){ 
-  class1.call(this); //此行代码执行后，当前的this指向了class1（也可以说class2继承了class1）   
-}   
-var f=new class2();   
-f.name();   //调用的是class1内的方法，将class1的name方法交给class2使用</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function class1()&#123;   </span><br><span class="line">  this.name=function()&#123;   </span><br><span class="line">    console.log(&quot;我是class1内的方法&quot;);   </span><br><span class="line">  &#125;   </span><br><span class="line">&#125;   </span><br><span class="line">function class2()&#123; </span><br><span class="line">  class1.call(this); //此行代码执行后，当前的this指向了class1（也可以说class2继承了class1）   </span><br><span class="line">&#125;   </span><br><span class="line">var f=new class2();   </span><br><span class="line">f.name();   //调用的是class1内的方法，将class1的name方法交给class2使用</span><br></pre></td></tr></table></figure>
 <p>常用例子：</p>
-<p><code>function eat(x,y){   
-  console.log(x+y);   
-}   
-function drink(x,y){   
-  console.log(x-y);   
-}   
-eat.call(drink,3,2);
-输出：5</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function eat(x,y)&#123;   </span><br><span class="line">  console.log(x+y);   </span><br><span class="line">&#125;   </span><br><span class="line">function drink(x,y)&#123;   </span><br><span class="line">  console.log(x-y);   </span><br><span class="line">&#125;   </span><br><span class="line">eat.call(drink,3,2);</span><br><span class="line">输出：5</span><br></pre></td></tr></table></figure>
 <p>这个例子中的意思就是用 eat 来替换 drink，eat.call(drink,3,2) == eat(3,2) ，所以运行结果为：console.log(5);</p>
 <p>注意：js 中的函数其实是对象，函数名是对 Function 对象的引用。</p>
 <p>（2）</p>
-<p><code>function Animal(){   
-  this.name=&quot;animal&quot;;   
-  this.showName=function(){   
-    console.log(this.name);   
-  }   
-}   
-function Dog(){   
-  this.name=&quot;dog&quot;;   
-}   
-var animal=new Animal();   
-var dog=new Dog();       
-animal.showName.call(dog);
-输出：dog</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Animal()&#123;   </span><br><span class="line">  this.name=&quot;animal&quot;;   </span><br><span class="line">  this.showName=function()&#123;   </span><br><span class="line">    console.log(this.name);   </span><br><span class="line">  &#125;   </span><br><span class="line">&#125;   </span><br><span class="line">function Dog()&#123;   </span><br><span class="line">  this.name=&quot;dog&quot;;   </span><br><span class="line">&#125;   </span><br><span class="line">var animal=new Animal();   </span><br><span class="line">var dog=new Dog();       </span><br><span class="line">animal.showName.call(dog);</span><br><span class="line">输出：dog</span><br></pre></td></tr></table></figure>
 <p>在上面的代码中，我们可以看到Dog里并没有showName方法，那为什么（this.name）的值是dog呢？</p>
 <p>关键就在于最后一段代码（animal.showName.call(dog)），意思是把animal的方法放到dog上执行，也可以说，把animal 的showName()方法放到 dog上来执行，所以this.name 应该是 dog。</p>
 <p>（3）继承</p>
-<p><code>function Animal(name){   
-  this.name=name;   
-  this.showName=function(){   
-    console.log(this.name);   
-  }   
-}   
-function Dog(name){   
-  Animal.call(this,name);   
-}   
-var dog=new Dog(&quot;Crazy dog&quot;);   
-dog.showName();
-输出：Crazy dog</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Animal(name)&#123;   </span><br><span class="line">  this.name=name;   </span><br><span class="line">  this.showName=function()&#123;   </span><br><span class="line">    console.log(this.name);   </span><br><span class="line">  &#125;   </span><br><span class="line">&#125;   </span><br><span class="line">function Dog(name)&#123;   </span><br><span class="line">  Animal.call(this,name);   </span><br><span class="line">&#125;   </span><br><span class="line">var dog=new Dog(&quot;Crazy dog&quot;);   </span><br><span class="line">dog.showName();</span><br><span class="line">输出：Crazy dog</span><br></pre></td></tr></table></figure>
 <p>Animal.call(this) 的意思就是使用 Animal对象代替this对象，那么Dog就能直接调用Animal的所有属性和方法。</p>
 <h2 id="二、apply"><a href="#二、apply" class="headerlink" title="二、apply()"></a>二、apply()</h2><p>语法：apply([thisObj[,argArray]])</p>
 <p>定义：应用某一对象的一个方法，用另一个对象替换当前对象。</p>
 <p>说明：<br>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。<br>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</p>
-<p>call 和 apply的区别<br>对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。<br><code>function class1(args1,args2){       
-  this.name=function(){      
-   console.log(args,args);      
-  }     
-}     
-function class2(){    
-  var args1=&quot;1&quot;;
-  var args2=&quot;2&quot;;
-  class1.call(this,args1,args2);  
-  /*或*/
-  class1.apply(this,[args1,args2]);
-}
-var c=new class2();   
-c.name();
-输出：1 2</code></p>
+<p>call 和 apply的区别<br>对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function class1(args1,args2)&#123;       </span><br><span class="line">  this.name=function()&#123;      </span><br><span class="line">   console.log(args,args);      </span><br><span class="line">  &#125;     </span><br><span class="line">&#125;     </span><br><span class="line">function class2()&#123;    </span><br><span class="line">  var args1=&quot;1&quot;;</span><br><span class="line">  var args2=&quot;2&quot;;</span><br><span class="line">  class1.call(this,args1,args2);  </span><br><span class="line">  /*或*/</span><br><span class="line">  class1.apply(this,[args1,args2]);</span><br><span class="line">&#125;</span><br><span class="line">var c=new class2();   </span><br><span class="line">c.name();</span><br><span class="line">输出：1 2</span><br></pre></td></tr></table></figure></p>
 <p>call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。</p>
 <p>既然两者功能一样，那该用哪个呢？</p>
 <p>在JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时用 call ；而不确定的时候用 apply，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来遍历所有的参数。</p>
 <h2 id="三、bind"><a href="#三、bind" class="headerlink" title="三、bind"></a>三、bind</h2><p>bind是在EcmaScript5中扩展的方法（IE6,7,8不支持）<br>bind() 方法与 apply 和 call 很相似，也是可以改变函数体内 this 的指向。</p>
 <p>　　MDN的解释是：bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
 <p>注意：bind方法的返回值是函数</p>
-<p><code>var bar=function(){   
-  console.log(this.x);   
-}
-var foo={ 
-     x:3   
-}   
-bar();  
-bar.bind(foo)();
- /*或*/
-var func=bar.bind(foo);   
-func();
-输出：
-undefined
-3</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var bar=function()&#123;   </span><br><span class="line">  console.log(this.x);   </span><br><span class="line">&#125;</span><br><span class="line">var foo=&#123; </span><br><span class="line">     x:3   </span><br><span class="line">&#125;   </span><br><span class="line">bar();  </span><br><span class="line">bar.bind(foo)();</span><br><span class="line"> /*或*/</span><br><span class="line">var func=bar.bind(foo);   </span><br><span class="line">func();</span><br><span class="line">输出：</span><br><span class="line">undefined</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
 <p>参考资料：</p>
 <p>1.<a href="http://ghmagical.com/article/page/id/UPLfoGI9vJ91" target="_blank" rel="noopener">JS中的call、apply、bind方法</a></p>
 <p>2.<a href="https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more" target="_blank" rel="noopener">js中call、apply、bind那些事
@@ -567,8 +488,8 @@ undefined
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/http详解/" rel="next" title="http详解">
-                <i class="fa fa-chevron-left"></i> http详解
+              <a href="/2017/12/11/数据类型、数据类型转换、相等&严格相等/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -667,7 +588,7 @@ undefined
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

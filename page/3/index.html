@@ -296,349 +296,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/25/http缓存/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/25/http缓存/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-25T20:56:02+08:00">
-                2016-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="什么是web缓存"><a href="#什么是web缓存" class="headerlink" title="什么是web缓存"></a><strong>什么是web缓存</strong></h3><p>Web缓存是指一个Web资源（如html页面，图片，js，数据等）存在于Web服务器和客户端（浏览器）之间的副本。缓存会根据进来的请求保存输出内容的副本；当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载网页，而是直接使用本地缓存的网页。只有当网站明确标识资源已经更新，浏览器才会再次下载网页。</p>
-<h3 id="web缓存的作用"><a href="#web缓存的作用" class="headerlink" title="web缓存的作用"></a><strong>web缓存的作用</strong></h3><p>1.减少网络带宽消耗</p>
-<p>2.降低服务器压力</p>
-<p>3.减少服务器压力</p>
-<p>4.减少网络延迟，加快页面打开速度</p>
-<h3 id="web缓存的类型"><a href="#web缓存的类型" class="headerlink" title="web缓存的类型"></a><strong>web缓存的类型</strong></h3><p>1.数据库缓存</p>
-<p>   Web应用，特别是SNS类型的应用，往往关系比较复杂，数据库表繁多，如果频繁进行数据库查询，很容易导致数据库不堪重荷。为了提供查询的性能，会将查询后的数据放到内存中进行缓存，下次查询时，直接从内存缓存直接返回，提供响应效率。比如常用的缓存方案有memcached redist等。 </p>
-<p>2.CDN缓存</p>
-<p>  CDN缓存，也叫网关缓存、反向代理缓存。CDN缓存一般是由网站管理员自己部署，为了让他们的网站更容易扩展并获得更好的性能。浏览器先向CDN网关发起web请求，网关服务器后面对应着一台或多台负载均衡源服务器，会根据它们的负载请求，动态将请求转发到合适的源服务器上。虽然这种架构负载均衡源服务器之间的缓存没法共享，但却拥有更好的处扩展性。</p>
-<p>3.代理服务器缓存</p>
-<p>  代理服务器缓存是浏览器和源服务器之间的中间服务器，浏览器先向这个中间服务器发起web请求，经过处理后（比如权限验证，缓存匹配等）,再将请求转发到源服务器。代理服务器缓存的运作原理跟浏览器的运作原理差不多，只是规模更大。</p>
-<p>4.浏览器缓存</p>
-<p>  每个浏览器都实现了HTTP缓存，我们通过浏览器使用HTTP协议与服务器交互的时候，浏览器就会根据一套与服务器约定的规则进行缓存工作</p>
-<p>5.应用层缓存</p>
-<p>  应用层缓存是指我们在代码层面上做的缓存。通过代码逻辑，把曾经请求过的数据或资源等，缓存起来，再次需要数据时通过逻辑上的处理选择可用的缓存的数据。</p>
-<p>浏览器中的缓存机制，其实相当于HTTP协议定义的缓存机制，因为浏览器为我们实现了它。</p>
-<p>web服务器通过2种方式来判断浏览器缓存是否是最新的。</p>
-<p>第一种，浏览器把缓存文件的最后修改时间通过header“if-Modified-Since”来告诉web服务器</p>
-<p>第二种，浏览器把缓存文件的ETag，通过header “if-None-Match”，来告诉web服务器</p>
-<p>一般情况下我们会看到http响应头的Expires、Cache-Control、Last-Modified、if-Modified-Since、Etag</p>
-<p>与缓存有关的Header</p>
-<h4 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h4><p>Cache-Control: max-age=0以秒为单位</p>
-<p>If-Modified-Since: Mon, 19 Nov 2012 08:38:01 GMT缓存文件的最后个性时间</p>
-<p>If-None-Match: “0693f67a67cc1:0”缓存文件的Etag值</p>
-<p>Cache-Control: no-cache不使用缓存</p>
-<p>Pragma: no-cache不使用缓存(http1.0使用)</p>
-<h4 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h4><p>Cache-Control: public    响应被缓存，并且在多用户间共享</p>
-<p>Cache-Control: private    响应只能作为私有缓存，不能在用户之间共享</p>
-<p>Cache-Control:no-cache    提醒浏览器要从服务器提取文档进行验证</p>
-<p>Cache-Control:no-store    绝对禁止缓存（用于机密，敏感文件）</p>
-<p>Cache-Control: max-age=60    60秒之后缓存过期（相对时间）</p>
-<p>Date: Mon, 19 Nov 2012 08:39:00 GMT    当前response发送的时间</p>
-<p>Expires: Mon, 19 Nov 2012 08:40:01 GMT    缓存过期的时间（绝对时间）</p>
-<p>Last-Modified: Mon, 19 Nov 2012 08:38:01 GMT    服务器端文件的最后修改时间</p>
-<p>ETag: “20b1add7ec1cd1:0”    服务器端文件的Etag值</p>
-<p>Cache-Control与Expires的作用一致，Last-Modified与ETag的作用也相近。</p>
-<p><img src="http://images0.cnblogs.com/blog2015/546321/201505/181713440417853.png" alt=""></p>
-<p>现在默认浏览器均默认使用HTTP 1.1，所以Expires和Last-Modified的作用基本可以忽略，具备Cache-Control和Etag即可。</p>
-<h4 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h4><p>为什么使用ETag呢？ 主要是为了解决Last-Modified 无法解决的一些问题。</p>
-<p>1.某些服务器不能精确得到文件的最后修改时间，这样无法通过最后个性时间来判断文件是否更新了</p>
-<p>2.某些文件的修改非常频繁，在秒以下的时间内进行修改Last-Modified只能精确到秒。</p>
-<p>3.一些文件的最后修改时间改变了，但是内容并未改变。 我们不希望客户端认为这个文件修改了。</p>
-<p>ETag根据实体内容生成的一段hash字符串（类似于MD5或者SHA1之后的结果），可以标识资源的状态。 当资源发送改变时，ETag也随之发生变化。</p>
-<p>当然用户的行为也会影响浏览器的缓存</p>
-<p><img src="http://images0.cnblogs.com/blog2015/546321/201505/181722532916918.png" alt=""></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>浏览器第一次请求</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/skynet/201211/201211281402437389.png" alt=""></p>
-<p>浏览器再次请求时</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/skynet/201211/201211281402442505.png" alt=""></p>
-<p>参考资料：</p>
-<p><a href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html" target="_blank" rel="noopener">http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html</a></p>
-<p><a href="http://www.cnblogs.com/skylar/p/browser-http-caching.html" target="_blank" rel="noopener">http://www.cnblogs.com/skylar/p/browser-http-caching.html</a></p>
-<p><a href="http://www.cnblogs.com/yjf512/p/3244882.html" target="_blank" rel="noopener">http://www.cnblogs.com/yjf512/p/3244882.html</a></p>
-<p><a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">http://www.cnblogs.com/vajoy/p/5341664.html</a></p>
-<p><a href="http://www.cnblogs.com/lovesong/p/5352973.html" target="_blank" rel="noopener">http://www.cnblogs.com/lovesong/p/5352973.html</a></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/amd、cmd、common和umd区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/07/amd、cmd、common和umd区别/" itemprop="url">amd、cmd、common和umd区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
-                2016-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/模块化/" itemprop="url" rel="index">
-                    <span itemprop="name">模块化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>CommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。</p>
-<p>根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。</p>
-<p>例如：<br><code>// foobar.js
-//私有变量
-var test = 123; 
-//公有方法
-function foobar () {
-    this.foo = function () {
-        // do someing ...
-    }
-    this.bar = function () {
-        //do someing ...
-    }
-}
-//exports对象上的方法和变量是公有的
-var foobar = new foobar();
-exports.foobar = foobar;</code></p>
-<p><code>//require方法默认读取js文件，所以可以省略js后缀
-var test = require(&#39;./boobar&#39;).foobar;
-test.bar();</code></p>
-<p>CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD CMD 解决方案。</p>
-<h2 id="AMD和RequireJS"><a href="#AMD和RequireJS" class="headerlink" title="AMD和RequireJS"></a>AMD和RequireJS</h2><p>AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”.</p>
-<p>AMD设计出一个简洁的写模块API：<br>define(id?, dependencies?, factory);<br>第一个参数 id 为字符串类型，表示了模块标识，为可选参数。若不存在则模块标识应该默认定义为在加载器中被请求脚本的标识。如果存在，那么模块标识必须为顶层的或者一个绝对的标识。<br>第二个参数，dependencies ，是一个当前模块依赖的，已被模块定义的模块标识的数组字面量。<br>第三个参数，factory，是一个需要进行实例化的函数或者一个对象。</p>
-<p>通过参数的排列组合，这个简单的API可以从容应对各种各样的应用场景，如下所述。</p>
-<p>定义无依赖的模块<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/04/07/amd、cmd、common和umd区别/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/12/22/深入理解 Promise (上)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -760,6 +417,383 @@ test.bar();</code></p>
         
       
     </li></ul></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2013/07/09/this理解（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2013/07/09/this理解（二）/" itemprop="url">this理解（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-09T20:51:07+08:00">
+                2013-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>默认绑定</li>
+<li>隐式绑定</li>
+<li>显式绑定</li>
+<li>new绑定</li>
+</ol>
+<h2 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h2><p>首先要介绍的是最常用的函数调用类型:独立函数调用。可以把这条规则看作是无法应用其他规则时的默认规则。来自《你不知道的javascript(上卷)》</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	 console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">var a=2; foo(); // 2</span><br></pre></td></tr></table></figure>
+<p>那么我们怎么知道这里应用了默认绑定呢?可以通过分析调用位置来看看 foo() 是如何调用的。</p>
+<p>如果使用严格模式(strict mode)，那么全局对象将无法使用默认绑定，因此this会绑定 到 undefined:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; &quot;use strict&quot;;</span><br><span class="line">         console.log( this.a );</span><br><span class="line">     &#125;</span><br><span class="line">var a=2;</span><br><span class="line">foo(); // TypeError: this is undefined</span><br></pre></td></tr></table></figure>
+<p>这里有一个微妙但是非常重要的细节，虽然 this 的绑定规则完全取决于调用位置，但是只 有foo()运行在非strict mode下时，默认绑定才能绑定到全局对象;严格模式下与foo() 的调用位置无关:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">vara=2;</span><br><span class="line">(function()&#123; &quot;use strict&quot;;</span><br><span class="line">         foo(); // 2</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h2 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h2><p>隐式绑定需要考虑的是调用位置是否有上下文对象，或者说是否被某个对象拥有或者包含。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; </span><br><span class="line">	console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">var obj=&#123; </span><br><span class="line">	a: 2,</span><br><span class="line">	foo: foo </span><br><span class="line">&#125;;</span><br><span class="line">obj.foo(); // 2</span><br></pre></td></tr></table></figure>
+<p>对象属性引用链中只有最顶层或者说最后一层会影响调用位置。举例来说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; </span><br><span class="line">	console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">var obj2=&#123; </span><br><span class="line">	a: 42,</span><br><span class="line">	foo: foo</span><br><span class="line">	&#125;;</span><br><span class="line">var obj1=&#123; </span><br><span class="line">	a: 2,</span><br><span class="line">	obj2: obj2 </span><br><span class="line">&#125;;</span><br><span class="line">obj1.obj2.foo(); // 42</span><br></pre></td></tr></table></figure>
+<h3 id="隐式丢失"><a href="#隐式丢失" class="headerlink" title="隐式丢失"></a>隐式丢失</h3><p> this 绑定问题就是被隐式绑定的函数会丢失绑定对象，也就是说它会应用默认绑定，从而把 this 绑定到全局对象或者 undefined 上，取决于是否是严格模式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> function foo() &#123; console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">varobj=&#123; a: 2,</span><br><span class="line">foo: foo &#125;;</span><br><span class="line">var bar = obj.foo; // 函数别名!</span><br><span class="line">var a = &quot;oops, global&quot;; // a 是全局对象的属性 bar(); // &quot;oops, global&quot;</span><br></pre></td></tr></table></figure>
+<p>另一种形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function box(fn)&#123;</span><br><span class="line">	var a=&apos;2&apos;;</span><br><span class="line">	fn();</span><br><span class="line">&#125;</span><br><span class="line">var a=1;</span><br><span class="line">function b()&#123;</span><br><span class="line">	console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">box(b);</span><br><span class="line">\\ 1</span><br></pre></td></tr></table></figure>
+<h2 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h2><p>可以直接指定this的绑定对象，我们称之为显式绑定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; </span><br><span class="line">	console.log( this.a );</span><br><span class="line"> &#125;</span><br><span class="line"> var obj=&#123; </span><br><span class="line">	a:2</span><br><span class="line"> &#125;;</span><br><span class="line"> foo.call( obj ); // 2</span><br></pre></td></tr></table></figure>
+<p>通过 foo.call(..)，我们可以在调用 foo 时强制把它的 this 绑定到 obj 上。</p>
+<h2 id="new绑定"><a href="#new绑定" class="headerlink" title="new绑定"></a>new绑定</h2><p>使用 new 来调用函数，或者说发生构造函数调用时，会自动执行下面的操作。</p>
+<ol>
+<li>创建(或者说构造)一个全新的对象。</li>
+<li>这个新对象会被执行[[原型]]连接。</li>
+<li>这个新对象会绑定到函数调用的this。</li>
+<li>如果函数没有返回其他对象，那么new表达式中的函数调用会自动返回这个新对象。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function foo(a) &#123; this.a = a;</span><br><span class="line">&#125;</span><br><span class="line">var bar = new foo(2); console.log( bar.a ); // 2</span><br></pre></td></tr></table></figure>
+<p>使用 new 来调用 foo(..) 时，我们会构造一个新对象并把它绑定到 foo(..) 调用中的 this 上。</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="判断this"><a href="#判断this" class="headerlink" title="判断this"></a>判断this</h3><p>可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的顺序来进行判断:</p>
+<ol>
+<li>函数是否在new中调用(new绑定)?如果是的话this绑定的是新创建的对象。 var bar=new foo();</li>
+<li>函数是否通过call、apply（显示绑定）或硬绑定调用？如果是的话，this绑定的是指定的对象。var bar=foo.call(obj2);</li>
+<li>函数是否在某个上下文对象中调用(隐式绑定)？如果是的话，this绑定的是那个上下文对象。</li>
+<li>如果都不是的话。使用默认绑定。如果在严格模式下，就绑定到undefined，否则绑定到全局对象。var bar=foo();</li>
+</ol>
+<p>参考资料</p>
+<p>《你不知道的javascript(上)》</p>
+<p><a href="http://www.jianshu.com/p/fcbc21a2c507" target="_blank" rel="noopener">this与对象原型 第二章：this豁然开朗</a></p>
+<p><a href="http://www.jianshu.com/p/11d84af237c0" target="_blank" rel="noopener">this与对象原型 第一章：this是什么？</a></p>
+<p><a href="http://www.cnblogs.com/TomXu/archive/2012/01/17/2310479.html" target="_blank" rel="noopener">深入理解JavaScript系列（13）：This? Yes,this!</a></p>
+<p><a href="https://juejin.im/entry/5a29df626fb9a045211e9c2a?utm_source=gold_browser_extension" target="_blank" rel="noopener">全面理解 JavaScript 中的 this</a></p>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2013/07/08/this理解（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2013/07/08/this理解（一）/" itemprop="url">this理解（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-08T20:51:07+08:00">
+                2013-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>函数的几种调用方式：</p>
+<ol>
+<li>全局&amp;调用普通函数</li>
+<li>作为对象方法来调用</li>
+<li>作为构造函数来调用</li>
+<li>使用apply/call/bind方法来调用</li>
+<li>构造函数 prototype 属性</li>
+<li>DOM event this</li>
+<li>es6箭头函数</li>
+</ol>
+<h2 id="全局-amp-调用普通函数"><a href="#全局-amp-调用普通函数" class="headerlink" title="全局&amp;调用普通函数"></a>全局&amp;调用普通函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function person()&#123;</span><br><span class="line">        this.name=&quot;xl&quot;;</span><br><span class="line">        console.log(this);</span><br><span class="line">        console.log(this.name);</span><br><span class="line"> &#125;</span><br><span class="line"> person();  //输出  window  xl</span><br></pre></td></tr></table></figure>
+<p>在这段代码中person函数作为普通函数调用，实际上person是作为全局对象window的一个方法来进行调用的,即window.person();</p>
+<p>所以这个地方是window对象调用了person方法,那么person函数当中的this即指window,同时window还拥有了另外一个属性name,值为xl.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;xl&quot;;</span><br><span class="line"> function person()&#123;</span><br><span class="line">     console.log(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">person(); //输出 xl</span><br></pre></td></tr></table></figure>
+<p>同样这个地方person作为window的方法来调用，在代码的一开始定义了一个全局变量name，值为xl,它相当于window的一个属性,即window.name=”xl”,又因为在调用person的时候this是指向window的，因此这里会输出xl.</p>
+<h2 id="作为对象方法来调用"><a href="#作为对象方法来调用" class="headerlink" title="作为对象方法来调用"></a>作为对象方法来调用</h2><p>如果函数作为对象的方法时，方法中的 this 指向该对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        console.log(this);        //Object</span><br><span class="line">        console.log(this.x);      //10</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
+<p>注意：若是在对象方法中定义函数，那么情况就不同了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        function f()&#123;</span><br><span class="line">            console.log(this);      //Window</span><br><span class="line">            console.log(this.x);    //undefined</span><br><span class="line">        &#125;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
+<p>可以这么理解：函数 f 虽然是在 obj.foo 内部定义的，但它仍然属于一个普通函数，this 仍指向 window。</p>
+<p>在这里，如果想要调用上层作用域中的变量 obj.x，可以使用 self 缓存外部 this 变量。</p>
+<p>在这里，如果想要调用上层作用域中的变量 obj.x，可以使用 self 缓存外部 this 变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        var self = this;</span><br><span class="line">        function f()&#123;</span><br><span class="line">            console.log(self);      //&#123;x: 10&#125;</span><br><span class="line">            console.log(self.x);    //10</span><br><span class="line">        &#125;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
+<p>如果 foo 函数不作为对象方法被调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        console.log(this);       //Window</span><br><span class="line">        console.log(this.x);     //undefined</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var fn = obj.foo;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+<p>obj.foo 被赋值给一个全局变量，并没有作为 obj 的一个属性被调用，那么此时 this 的值是 window。</p>
+<p>另一种形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var personA=&#123;</span><br><span class="line">    name:&quot;xl&quot;,</span><br><span class="line">    showName:function()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var personB=&#123;</span><br><span class="line">    name:&quot;XL&quot;,</span><br><span class="line">    sayName:personA.showName</span><br><span class="line">&#125;</span><br><span class="line">personB.sayName();  //输出 XL</span><br><span class="line">//虽然showName方法是在personA这个对象中定义，但是调用的时候却是在personB这个对象中调用，因此this对象指向</span><br></pre></td></tr></table></figure>
+<h2 id="作为构造函数来调用"><a href="#作为构造函数来调用" class="headerlink" title="作为构造函数来调用"></a>作为构造函数来调用</h2><p>所谓的构造函数就是由一个函数 new 出来的对象，一般构造函数的函数名首字母大写，例如像 Object，Function，Array 这些都属于构造函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Foo()&#123;</span><br><span class="line">    this.x = 10;</span><br><span class="line">    console.log(this);    //Foo &#123;x:10&#125;</span><br><span class="line">&#125;</span><br><span class="line">var foo = new Foo();</span><br><span class="line">console.log(foo.x);      //10</span><br></pre></td></tr></table></figure>
+<p>上述代码，如果函数作为构造函数使用，那么其中的 this 就代表它即将 new 出来的对象。</p>
+<p>但是如果直接调用 Foo 函数，而不是 new Foo()，那就变成情况1，这时候 Foo() 就变成普通函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Foo()&#123;</span><br><span class="line">    this.x = 10;</span><br><span class="line">    console.log(this);    //Window</span><br><span class="line">&#125;</span><br><span class="line">var foo = Foo();</span><br><span class="line">console.log(foo.x);      //undefined</span><br></pre></td></tr></table></figure>
+<h2 id="使用apply-call-bind方法来调用"><a href="#使用apply-call-bind方法来调用" class="headerlink" title="使用apply/call/bind方法来调用"></a>使用apply/call/bind方法来调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10</span><br><span class="line">&#125;</span><br><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this);     //&#123;x: 10&#125;</span><br><span class="line">    console.log(this.x);   //10</span><br><span class="line">&#125;</span><br><span class="line">foo.call(obj);</span><br><span class="line">foo.apply(obj);</span><br><span class="line">foo.bind(obj)();</span><br></pre></td></tr></table></figure>
+<p>当一个函数被 call、apply 或者 bind 调用时，this 的值就取传入的对象的值。</p>
+<h2 id="构造函数-prototype-属性"><a href="#构造函数-prototype-属性" class="headerlink" title="构造函数 prototype 属性"></a>构造函数 prototype 属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Foo()&#123;</span><br><span class="line">    this.x = 10;</span><br><span class="line">&#125;</span><br><span class="line">Foo.prototype.getX = function () &#123;</span><br><span class="line">    console.log(this);        //Foo &#123;x: 10, getX: function&#125;</span><br><span class="line">    console.log(this.x);      //10</span><br><span class="line">&#125;</span><br><span class="line">var foo = new Foo();</span><br><span class="line">foo.getX();</span><br></pre></td></tr></table></figure>
+<p>在 Foo.prototype.getX 函数中，this 指向的 foo 对象。不仅仅如此，即便是在整个原型链中，this 代表的也是当前对象的值。</p>
+<h2 id="DOM-event-this"><a href="#DOM-event-this" class="headerlink" title="DOM event this"></a>DOM event this</h2><p>在一个 HTML DOM 事件处理程序里，this 始终指向这个处理程序所绑定的 HTML DOM 节点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Listener()&#123;   </span><br><span class="line">    document.getElementById(&apos;foo&apos;).addEventListener(&apos;click&apos;, this.handleClick);     //这里的 this 指向 Listener 这个对象。不是强调的是这里的 this</span><br><span class="line">&#125;</span><br><span class="line">Listener.prototype.handleClick = function (event) &#123;</span><br><span class="line">    console.log(this);    //&lt;div id=&quot;foo&quot;&gt;&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line">var listener = new Listener();</span><br><span class="line">document.getElementById(&apos;foo&apos;).click();</span><br></pre></td></tr></table></figure>
+<p>这个很好理解，就相当于是给函数传参，使 handleClick 运行时上下文改变了，相当于下面这样的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    fn: function() &#123;</span><br><span class="line">        console.log(this);         //Window</span><br><span class="line">        console.log(this.x);       //undefined</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">function foo(fn) &#123;</span><br><span class="line">    fn();</span><br><span class="line">&#125; </span><br><span class="line">foo(obj.fn);</span><br></pre></td></tr></table></figure>
+<p>你也可以用通过 bind 切换上下文:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function  Listener()&#123;</span><br><span class="line">    document.getElementById(&apos;foo&apos;).addEventListener(&apos;click&apos;,this.handleClick.bind(this));      </span><br><span class="line">&#125;</span><br><span class="line">Listener.prototype.handleClick = function (event) &#123;</span><br><span class="line">    console.log(this);    //Listener &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">var listener = new Listener();</span><br><span class="line">document.getElementById(&apos;foo&apos;).click();</span><br></pre></td></tr></table></figure>
+<p>总结一句话为： this 指向调用该方法的对象。</p>
+<h2 id="es6箭头函数"><a href="#es6箭头函数" class="headerlink" title="es6箭头函数"></a>es6箭头函数</h2><p>es6里面this指向固定化，始终指向外部对象，因为箭头函数没有this,因此它自身不能进行new实例化,同时也不能使用call, apply, bind等方法来改变this的指向</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Timer() &#123;</span><br><span class="line">        this.seconds = 0;</span><br><span class="line">        setInterval( () =&gt; this.seconds ++, 1000);</span><br><span class="line">    &#125; </span><br><span class="line">    var timer = new Timer();</span><br><span class="line">    setTimeout( () =&gt; console.log(timer.seconds), 3100);</span><br><span class="line">    // 3</span><br><span class="line">    在构造函数内部的setInterval()内的回调函数，this始终指向实例化的对象，并获取实例化对象的seconds的属性,每1s这个属性的值都会增加1。否则最后在3s后执行setTimeOut()函数执行后输出的是0</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/25294187" target="_blank" rel="noopener">全面解析 Javascript - this</a></p>
+<p><a href="https://segmentfault.com/a/1190000003046071?_ea=1200802" target="_blank" rel="noopener">JS 中 this 关键字详解</a></p>
+<p><a href="https://segmentfault.com/a/1190000000660679" target="_blank" rel="noopener">详解js和jquery里的this关键字</a></p>
+          
+        
+      
+    </div>
     
     
     
@@ -1000,7 +1034,7 @@ test.bar();</code></p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

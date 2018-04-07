@@ -117,17 +117,17 @@
 
 
 
-<meta name="description" content="CommonJSCommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。 根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。 例如：// foobar.js //私有变量 var test = 123;  //公有方法 function foobar () {     this.f">
+<meta name="description" content="CommonJSCommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。 根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。 例如： 123456789101112131415// foobar.js//私有变量var test = 123; //公有方法function foob">
 <meta property="og:type" content="article">
 <meta property="og:title" content="amd、cmd、common和umd区别">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/07/amd、cmd、common和umd区别/index.html">
 <meta property="og:site_name" content="小武子博客">
-<meta property="og:description" content="CommonJSCommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。 根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。 例如：// foobar.js //私有变量 var test = 123;  //公有方法 function foobar () {     this.f">
+<meta property="og:description" content="CommonJSCommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。 根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。 例如： 123456789101112131415// foobar.js//私有变量var test = 123; //公有方法function foob">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T13:07:14.000Z">
+<meta property="og:updated_time" content="2018-04-07T13:58:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="amd、cmd、common和umd区别">
-<meta name="twitter:description" content="CommonJSCommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。 根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。 例如：// foobar.js //私有变量 var test = 123;  //公有方法 function foobar () {     this.f">
+<meta name="twitter:description" content="CommonJSCommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。 根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。 例如： 123456789101112131415// foobar.js//私有变量var test = 123; //公有方法function foob">
 
 
 
@@ -391,24 +391,9 @@
       
         <h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>CommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。</p>
 <p>根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。</p>
-<p>例如：<br><code>// foobar.js
-//私有变量
-var test = 123; 
-//公有方法
-function foobar () {
-    this.foo = function () {
-        // do someing ...
-    }
-    this.bar = function () {
-        //do someing ...
-    }
-}
-//exports对象上的方法和变量是公有的
-var foobar = new foobar();
-exports.foobar = foobar;</code></p>
-<p><code>//require方法默认读取js文件，所以可以省略js后缀
-var test = require(&#39;./boobar&#39;).foobar;
-test.bar();</code></p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// foobar.js</span><br><span class="line">//私有变量</span><br><span class="line">var test = 123; </span><br><span class="line">//公有方法</span><br><span class="line">function foobar () &#123;</span><br><span class="line">    this.foo = function () &#123;</span><br><span class="line">        // do someing ...</span><br><span class="line">    &#125;</span><br><span class="line">    this.bar = function () &#123;</span><br><span class="line">        //do someing ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//exports对象上的方法和变量是公有的</span><br><span class="line">var foobar = new foobar();</span><br><span class="line">exports.foobar = foobar;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//require方法默认读取js文件，所以可以省略js后缀</span><br><span class="line">var test = require(&apos;./boobar&apos;).foobar;</span><br><span class="line">test.bar();</span><br></pre></td></tr></table></figure>
 <p>CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD CMD 解决方案。</p>
 <h2 id="AMD和RequireJS"><a href="#AMD和RequireJS" class="headerlink" title="AMD和RequireJS"></a>AMD和RequireJS</h2><p>AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”.</p>
 <p>AMD设计出一个简洁的写模块API：<br>define(id?, dependencies?, factory);<br>第一个参数 id 为字符串类型，表示了模块标识，为可选参数。若不存在则模块标识应该默认定义为在加载器中被请求脚本的标识。如果存在，那么模块标识必须为顶层的或者一个绝对的标识。<br>第二个参数，dependencies ，是一个当前模块依赖的，已被模块定义的模块标识的数组字面量。<br>第三个参数，factory，是一个需要进行实例化的函数或者一个对象。</p>
@@ -521,8 +506,8 @@ test.bar();</code></p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/12/22/深入理解 Promise (上)/" rel="next" title="深入理解 Promise (上)">
-                <i class="fa fa-chevron-left"></i> 深入理解 Promise (上)
+              <a href="/2016/04/07/http详解/" rel="next" title="http详解">
+                <i class="fa fa-chevron-left"></i> http详解
               </a>
             
           </div>
@@ -531,8 +516,8 @@ test.bar();</code></p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/25/http缓存/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/07/javascript引擎的执行机制/" rel="prev" title="javascript引擎的执行机制">
+                javascript引擎的执行机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -621,7 +606,7 @@ test.bar();</code></p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

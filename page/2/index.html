@@ -296,700 +296,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/11/24/this理解（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/24/this理解（二）/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-24T19:41:47+08:00">
-                2017-11-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="this理解二"><a href="#this理解二" class="headerlink" title="this理解二"></a>this理解二</h1><ol>
-<li>默认绑定</li>
-<li>隐式绑定</li>
-<li>显式绑定</li>
-<li>new绑定</li>
-</ol>
-<h2 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h2><p>首先要介绍的是最常用的函数调用类型:独立函数调用。可以把这条规则看作是无法应用其他规则时的默认规则。来自《你不知道的javascript(上卷)》</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	 console.log( this.a );&#125;</span><br><span class="line">var a=2; foo(); // 2</span><br></pre></td></tr></table></figure>
-<p>那么我们怎么知道这里应用了默认绑定呢?可以通过分析调用位置来看看 foo() 是如何调用的。</p>
-<p>如果使用严格模式(strict mode)，那么全局对象将无法使用默认绑定，因此this会绑定 到 undefined:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; &quot;use strict&quot;;         console.log( this.a );     &#125;var a=2;foo(); // TypeError: this is undefined</span><br></pre></td></tr></table></figure>
-<p>这里有一个微妙但是非常重要的细节，虽然 this 的绑定规则完全取决于调用位置，但是只 有foo()运行在非strict mode下时，默认绑定才能绑定到全局对象;严格模式下与foo() 的调用位置无关:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; console.log( this.a );&#125;vara=2;(function()&#123; &quot;use strict&quot;;         foo(); // 2&#125;)();</span><br></pre></td></tr></table></figure>
-<h2 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h2><p>隐式绑定需要考虑的是调用位置是否有上下文对象，或者说是否被某个对象拥有或者包含。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; </span><br><span class="line">	console.log( this.a );&#125;var obj=&#123; </span><br><span class="line">	a: 2,	foo: foo </span><br><span class="line">&#125;;obj.foo(); // 2</span><br></pre></td></tr></table></figure>
-<p>对象属性引用链中只有最顶层或者说最后一层会影响调用位置。举例来说：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; </span><br><span class="line">	console.log( this.a );&#125;var obj2=&#123; </span><br><span class="line">	a: 42,	foo: foo</span><br><span class="line">	&#125;;var obj1=&#123; </span><br><span class="line">	a: 2,	obj2: obj2 </span><br><span class="line">&#125;;obj1.obj2.foo(); // 42</span><br></pre></td></tr></table></figure>
-<h3 id="隐式丢失"><a href="#隐式丢失" class="headerlink" title="隐式丢失"></a>隐式丢失</h3><p> this 绑定问题就是被隐式绑定的函数会丢失绑定对象，也就是说它会应用默认绑定，从而把 this 绑定到全局对象或者 undefined 上，取决于是否是严格模式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> function foo() &#123; console.log( this.a );&#125;varobj=&#123; a: 2,foo: foo &#125;;var bar = obj.foo; // 函数别名!var a = &quot;oops, global&quot;; // a 是全局对象的属性 bar(); // &quot;oops, global&quot;</span><br></pre></td></tr></table></figure>
-<p>另一种形式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function box(fn)&#123;</span><br><span class="line">	var a=&apos;2&apos;;</span><br><span class="line">	fn();</span><br><span class="line">&#125;</span><br><span class="line">var a=1;</span><br><span class="line">function b()&#123;</span><br><span class="line">	console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">box(b);</span><br><span class="line">\\ 1</span><br></pre></td></tr></table></figure>
-<h2 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h2><p>可以直接指定this的绑定对象，我们称之为显式绑定。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; </span><br><span class="line">	console.log( this.a ); &#125; var obj=&#123; </span><br><span class="line">	a:2 &#125;; foo.call( obj ); // 2</span><br></pre></td></tr></table></figure>
-<p>通过 foo.call(..)，我们可以在调用 foo 时强制把它的 this 绑定到 obj 上。</p>
-<h2 id="new绑定"><a href="#new绑定" class="headerlink" title="new绑定"></a>new绑定</h2><p>使用 new 来调用函数，或者说发生构造函数调用时，会自动执行下面的操作。</p>
-<ol>
-<li>创建(或者说构造)一个全新的对象。</li>
-<li>这个新对象会被执行[[原型]]连接。</li>
-<li>这个新对象会绑定到函数调用的this。</li>
-<li>如果函数没有返回其他对象，那么new表达式中的函数调用会自动返回这个新对象。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function foo(a) &#123; this.a = a;&#125;var bar = new foo(2); console.log( bar.a ); // 2</span><br></pre></td></tr></table></figure>
-<p>使用 new 来调用 foo(..) 时，我们会构造一个新对象并把它绑定到 foo(..) 调用中的 this 上。</p>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="判断this"><a href="#判断this" class="headerlink" title="判断this"></a>判断this</h3><p>可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的顺序来进行判断:</p>
-<ol>
-<li>函数是否在new中调用(new绑定)?如果是的话this绑定的是新创建的对象。 var bar=new foo();</li>
-<li>函数是否通过call、apply（显示绑定）或硬绑定调用？如果是的话，this绑定的是指定的对象。var bar=foo.call(obj2);</li>
-<li>函数是否在某个上下文对象中调用(隐式绑定)？如果是的话，this绑定的是那个上下文对象。</li>
-<li>如果都不是的话。使用默认绑定。如果在严格模式下，就绑定到undefined，否则绑定到全局对象。var bar=foo();</li>
-</ol>
-<p>参考资料</p>
-<p>《你不知道的javascript(上)》</p>
-<p><a href="http://www.jianshu.com/p/fcbc21a2c507" target="_blank" rel="noopener">this与对象原型 第二章：this豁然开朗</a></p>
-<p><a href="http://www.jianshu.com/p/11d84af237c0" target="_blank" rel="noopener">this与对象原型 第一章：this是什么？</a></p>
-<p><a href="http://www.cnblogs.com/TomXu/archive/2012/01/17/2310479.html" target="_blank" rel="noopener">深入理解JavaScript系列（13）：This? Yes,this!</a></p>
-<p><a href="https://juejin.im/entry/5a29df626fb9a045211e9c2a?utm_source=gold_browser_extension" target="_blank" rel="noopener">全面理解 JavaScript 中的 this</a></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/11/23/继承/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/23/继承/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T20:23:02+08:00">
-                2017-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>参考资料</p>
-<p><a href="https://segmentfault.com/a/1190000011917606" target="_blank" rel="noopener">继承</a></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/11/23/类型判断/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/23/类型判断/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T19:49:33+08:00">
-                2017-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a>类型判断</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>类型判断在 web 开发中有非常广泛的应用，简单的有判断数字还是字符串，进阶一点的有判断数组还是对象，再进阶一点的有判断日期、正则、错误类型，再再进阶一点还有比如判断 plainObject、空对象、Window 对象等等。</p>
-<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>我们最最常用的莫过于 typeof，注意，尽管我们会看到诸如：</p>
-<p><code>console.log(typeof(&#39;yayu&#39;)) // string</code></p>
-<p>的写法，但是 typeof 可是一个正宗的运算符，就跟加减乘除一样！这就能解释为什么下面这种写法也是可行的：</p>
-<p><code>console.log(typeof &#39;yayu&#39;) // string</code></p>
-<p>引用《JavaScript权威指南》中对 typeof 的介绍：</p>
-<p><code>typeof 是一元操作符，放在其单个操作数的前面，操作数可以是任意类型。返回值为表示操作数类型的一个字符串。</code></p>
-<p>那我们都知道，在 ES6 前，JavaScript 共六种数据类型，分别是：</p>
-<p>Undefined、Null、Boolean、Number、String、Object</p>
-<p>然而当我们使用 typeof 对这些数据类型的值进行操作的时候，返回的结果却不是一一对应，分别是：</p>
-<p>undefined、object、boolean、number、string、object</p>
-<p>注意以上都是小写的字符串。Null 和 Object 类型都返回了 object 字符串。</p>
-<p>尽管不能一一对应，但是 typeof 却能检测出函数类型：</p>
-<p><code>function a() {}
-console.log(typeof a); // function</code></p>
-<p>所以 typeof 能检测出六种类型的值，但是，除此之外 Object 下还有很多细分的类型呐，如 Array、Function、Date、RegExp、Error 等。</p>
-<p>如果用 typeof 去检测这些类型，举个例子：</p>
-<p><code>var date = new Date();
-var error = new Error();
-console.log(typeof date); // object
-console.log(typeof error); // object</code></p>
-<p>返回的都是 object 呐，这可怎么区分~ 所以有没有更好的方法呢？</p>
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>语法： result = variable instanceof constructor<br>如果变量是给定引用类型(根据它的原型链来识别)的实例，那么 instanceof 操作符就会返回 true</p>
-<p><code>alert(person instanceof Object);
-alert(colors instanceof Array);
-alert(pattern instanceof RegExp);</code></p>
-<p>注意：</p>
-<ol>
-<li>在检测一个引用类型值和 Object 构造函数时，instanceof 操作符始终会返回 true，因为所有引用类型的值都是 Object 的实例</li>
-<li>如果使用 instanceof 操作符检测基本类型的值，则该操作符始终会返回 false，因为基本类型不是对象</li>
-</ol>
-<p>instanceof 能够确定引用类型的实例对象是否在某条原型链上，但是无法精准的判断变量到底是什么类型，而且在面对基本类型时都会返回false…</p>
-<h2 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h2><p>是的，当然有！这就是 Object.prototype.toString！</p>
-<p>那 Object.protototype.toString 究竟是一个什么样的方法呢？</p>
-<p>为了更加细致的讲解这个函数，让我先献上 ES5 规范地址：<a href="https://es5.github.io/#x15.2.4.2" target="_blank" rel="noopener">https://es5.github.io/#x15.2.4.2</a>。</p>
-<p>在第 15.2.4.2 节讲的就是 Object.prototype.toString()，为了不误导大家，我先奉上英文版：</p>
-<p>When the toString method is called, the following steps are taken:</p>
-<ol>
-<li>If the this value is undefined, return “[object Undefined]”.</li>
-<li>If the this value is null, return “[object Null]”.</li>
-<li>Let O be the result of calling ToObject passing the this value as the argument.</li>
-<li>Let class be the value of the [[Class]] internal property of O.</li>
-<li>Return the String value that is the result of concatenating the three Strings “[object “, class, and “]”.</li>
-</ol>
-<p>如果没有看懂，就不妨看看我理解的：</p>
-<p>当 toString 方法被调用的时候，下面的步骤会被执行：</p>
-<ol>
-<li>如果 this 值是 undefined，就返回 [object Undefined]</li>
-<li>如果 this 的值是 null，就返回 [object Null]</li>
-<li>让 O 成为 ToObject(this) 的结果</li>
-<li>让 class 成为 O 的内部属性 [[Class]] 的值</li>
-<li>最后返回由 “[object “ 和 class 和 “]” 三个部分组成的字符串</li>
-<li>通过规范，我们至少知道了调用 Object.prototype.toString 会返回一个由 “[object “ 和 class 和 “]” 组成的字符串，而 class 是要判断的对象的内部属性。</li>
-</ol>
-<p>让我们写个 demo:</p>
-<p>`console.log(Object.prototype.toString.call(undefined)) // [object Undefined]<br>console.log(Object.prototype.toString.call(null)) // [object Null]</p>
-<p>var date = new Date();<br>console.log(Object.prototype.toString.call(date)) // [object Date]`</p>
-<p>由此我们可以看到这个 class 值就是识别对象类型的关键！</p>
-<p>正是因为这种特性，我们可以用 Object.prototype.toString 方法识别出更多类型！</p>
-<p>那到底能识别多少种类型呢？</p>
-<p>至少 12 种！</p>
-<p>你咋知道的？</p>
-<p>我数的！</p>
-<p>……</p>
-<p>让我们看个 demo:</p>
-<p><code>// 以下是11种：
-var number = 1;          // [object Number]
-var string = &#39;123&#39;;      // [object String]
-var boolean = true;      // [object Boolean]
-var und = undefined;     // [object Undefined]
-var nul = null;          // [object Null]
-var obj = {a: 1}         // [object Object]
-var array = [1, 2, 3];   // [object Array]
-var date = new Date();   // [object Date]
-var error = new Error(); // [object Error]
-var reg = /a/g;          // [object RegExp]
-var func = function a(){}; // [object Function]
-function checkType() {
-    for (var i = 0; i &lt; arguments.length; i++) {
-        console.log(Object.prototype.toString.call(arguments[i]))
-    }
-}
-checkType(number, string, boolean, und, nul, obj, array, date, error, reg, func)</code></p>
-<p>除了以上 11 种之外，还有：</p>
-<p><code>console.log(Object.prototype.toString.call(Math)); // [object Math]
-console.log(Object.prototype.toString.call(JSON)); // [object JSON]</code></p>
-<p>除了以上 13 种之外，还有：</p>
-<p><code>function a() {
-console.log(Object.prototype.toString.call(arguments)); // [object Arguments]
-}
-a();</code></p>
-<p>所以我们可以识别至少 14 种类型，当然我们也可以算出来，[[class]] 属性至少有 12 个。</p>
-<h2 id="type-API"><a href="#type-API" class="headerlink" title="type API"></a>type API</h2><p>既然有了 Object.prototype.toString 这个神器！那就让我们写个 type 函数帮助我们以后识别各种类型的值吧！</p>
-<p>我的设想：</p>
-<p>写一个 type 函数能检测各种类型的值，如果是基本类型，就使用 typeof，引用类型就使用 toString。此外鉴于 typeof 的结果是小写，我也希望所有的结果都是小写。</p>
-<p>考虑到实际情况下并不会检测 Math 和 JSON，所以去掉这两个类型的检测。</p>
-<p>我们来写一版代码：</p>
-<p><code>// 第一版
-var class2type = {};
-// 生成class2type映射
-&quot;Boolean Number String Function Array Date RegExp Object Error Null Undefined&quot;.split(&quot; &quot;).map(function(item, index) {
-    class2type[&quot;[object &quot; + item + &quot;]&quot;] = item.toLowerCase();
-})
-function type(obj) {
-    return typeof obj === &quot;object&quot; || typeof obj === &quot;function&quot; ?
-        class2type[Object.prototype.toString.call(obj)] || &quot;object&quot; :
-        typeof obj;
-}</code></p>
-<p>嗯，看起来很完美的样子~~ 但是注意，在 IE6 中，null 和 undefined 会被 Object.prototype.toString 识别成 [object Object]！</p>
-<p>我去，竟然还有这个兼容性！有什么简单的方法可以解决吗？那我们再改写一版，绝对让你惊艳！</p>
-<p><code>// 第二版
-var class2type = {};
-// 生成class2type映射
-&quot;Boolean Number String Function Array Date RegExp Object Error&quot;.split(&quot; &quot;).map(function(item, index) {
-    class2type[&quot;[object &quot; + item + &quot;]&quot;] = item.toLowerCase();
-})
-function type(obj) {
-    // 一箭双雕
-    if (obj == null) {
-        return obj + &quot;&quot;;
-    }
-    return typeof obj === &quot;object&quot; || typeof obj === &quot;function&quot; ?
-        class2type[Object.prototype.toString.call(obj)] || &quot;object&quot; :
-        typeof obj;
-}</code></p>
-<h2 id="isFunction"><a href="#isFunction" class="headerlink" title="isFunction"></a>isFunction</h2><p>有了 type 函数后，我们可以对常用的判断直接封装，比如 isFunction:</p>
-<p>function isFunction(obj) {<br>    return type(obj) === “function”;<br>}</p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>jQuery 判断数组类型，旧版本是通过判断 Array.isArray 方法是否存在，如果存在就使用该方法，不存在就使用 type 函数。</p>
-<p><code>var isArray = Array.isArray || function( obj ) {
-    return type(obj) === &quot;array&quot;;
-}</code></p>
-<p>但是在 jQuery v3.0 中已经完全采用了 Array.isArray。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>到此，类型判断的上篇就结束了，我们已经可以判断日期、正则、错误类型啦，但是还有更复杂的判断比如 plainObject、空对象、Window对象、类数组对象等，路漫漫其修远兮，吾将上下而求索。</p>
-<p>哦， 对了，这个 type 函数抄的 jQuery，<a href="https://github.com/jquery/jquery/blob/ac9e3016645078e1e42120822cfb2076151c8cbe/src/core.js#L269" target="_blank" rel="noopener">点击查看 type 源码</a>。</p>
-<p>参考资料</p>
-<p><a href="https://github.com/mqyqingfeng/Blog/issues/28" target="_blank" rel="noopener">JavaScript专题之类型判断(上)
-</a></p>
-<p><a href="https://segmentfault.com/a/1190000010539458" target="_blank" rel="noopener">变量及变量检测</a></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/11/23/值类型与引用类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/23/值类型与引用类型/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T19:45:19+08:00">
-                2017-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="值类型与引用类型"><a href="#值类型与引用类型" class="headerlink" title="值类型与引用类型"></a>值类型与引用类型</h1><ul>
-<li>基本数据类型是按值访问的，因为可以操作保存在变量中的实际的值；</li>
-<li>引用类型的值是保存在内存中的对象，在操作对象时，实际上是在操作对象的引用而不是实际的对象；</li>
-</ul>
-<h2 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h2><p>如果一个变量存储的是值的本身那么就是一个值类型number / string / Boolean / Null / Undefined —值类型的变量本身就是含有赋予给它的数值的，它的变量本身及保存的数据都存储在栈的内存块当中，当声明一个值类型时，必须对它初始化（给变量赋值）才能使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 123,</span><br><span class="line">    num2 = num1;</span><br><span class="line">num1 = 456;</span><br><span class="line">console.log(num2);// 123</span><br></pre></td></tr></table></figure>
-<p>将值类型复制给另外一个值时(num2=num1)，也就是num2重新再栈上开辟了一块空间，然后将num1中的内容复制一份放在num2中，当改变其中一个变量的值时，不会影响另外一个变量的值</p>
-<p><img src="https://segmentfault.com/img/bVYwRA?w=1382&amp;h=492" alt=""></p>
-<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>如果一个变量存储的是引用（地址），那么就是一个引用类型object—引用类型的值的存储与值类型不同，它分别存储在内存的堆和栈中，<strong>栈中存放的是指向堆中内容的地址，堆中存放的引用类型的地址(键值对)</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;name: &quot;xyc&quot;&#125;;</span><br><span class="line">var obj2 = obj1;</span><br><span class="line">obj1.name = &quot;lxy&quot;;</span><br><span class="line">console.log(obj2.name); // &quot;lxy&quot;</span><br></pre></td></tr></table></figure>
-<p>obj2=obj1表示的是将栈上的地址复制一份给另一个对象，他们同时指向堆中的内容，当修改内容时，两个对象中的值都会发生改变</p>
-<p><img src="https://segmentfault.com/img/bVYwRG?w=1048&amp;h=488" alt=""></p>
-<h3 id="一个面试题"><a href="#一个面试题" class="headerlink" title="一个面试题"></a>一个面试题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var o = new Object();</span><br><span class="line">function foo(obj) &#123;</span><br><span class="line">  obj.name = &quot;xyc&quot;;</span><br><span class="line">  obj = new Object();</span><br><span class="line">    obj.name = &quot;lxy&quot;;</span><br><span class="line">&#125;</span><br><span class="line">foo(o);</span><br><span class="line">console.log(o.name); // ???</span><br></pre></td></tr></table></figure>
-<p>图解：</p>
-<p>（1）新建对象var o = new Object();</p>
-<p><img src="https://segmentfault.com/img/bVYwRK?w=1064&amp;h=494" alt=""></p>
-<p>（2）在foo的环境下执行obj.name = “xyc”<br>由于是参数传递，在局部作用域内相当于执行了obj = o</p>
-<p><img src="https://segmentfault.com/img/bVYwRS?w=1024&amp;h=468" alt=""></p>
-<p>（3）在局部作用域内新建对象，并赋值相同的属性值</p>
-<p><code>obj = new Object();
-obj.name = &quot;lxy&quot;;</code></p>
-<p><img src="https://segmentfault.com/img/bVYwR1?w=1026&amp;h=476" alt=""></p>
-<p>（4）foo()执行完毕，局部作用域出栈，obj声明周期结束<br>此时，新建的对象依然存在，等待下一次内存自动回收机制将堆中的无引用对象销毁</p>
-<p><img src="https://segmentfault.com/img/bVYwR9?w=1038&amp;h=470" alt=""></p>
-<h3 id="堆-amp-栈"><a href="#堆-amp-栈" class="headerlink" title="堆&amp;栈"></a>堆&amp;栈</h3><ul>
-<li>两者都是存放临时数据的地方。</li>
-<li>栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。</li>
-<li>堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。</li>
-<li>栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。 </li>
-<li>堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。 </li>
-<li>堆（数据结构）：堆可以被看成是一棵树，如：堆排序； </li>
-<li>栈（数据结构）：一种先进后出的数据结构。</li>
-</ul>
-<p>参考资料：</p>
-<p><a href="https://segmentfault.com/a/1190000010641791" target="_blank" rel="noopener">值类型与引用类型</a></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/11/15/深入理解 Promise (中)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1145,7 +451,7 @@ obj.name = &quot;lxy&quot;;</code></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/11/15/Promise学习/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/10/Promise学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1164,7 +470,7 @@ obj.name = &quot;lxy&quot;;</code></p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/15/Promise学习/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2016/04/10/Promise学习/" itemprop="url">Promise学习</a></h1>
         
 
         <div class="post-meta">
@@ -1176,8 +482,8 @@ obj.name = &quot;lxy&quot;;</code></p>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T17:02:52+08:00">
-                2017-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-10T20:51:07+08:00">
+                2016-04-10
               </time>
             
 
@@ -1186,6 +492,28 @@ obj.name = &quot;lxy&quot;;</code></p>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1216,7 +544,7 @@ obj.name = &quot;lxy&quot;;</code></p>
       
         
           
-            <h1 id="Promise模式学习"><a href="#Promise模式学习" class="headerlink" title="Promise模式学习"></a>Promise模式学习</h1><p>Promise 为异步编程提供统一的解决方案，比传统的回调和事件更加合理有效。<br>多重嵌套的回调函数，代码是横向发展，不是纵向发展，容易乱成一团，不便管理，称之为”callback hell”，回调地狱或回调恶梦。<br>Promise就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载。</p>
+            <p>Promise 为异步编程提供统一的解决方案，比传统的回调和事件更加合理有效。<br>多重嵌套的回调函数，代码是横向发展，不是纵向发展，容易乱成一团，不便管理，称之为”callback hell”，回调地狱或回调恶梦。<br>Promise就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载。</p>
 <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
 <li>状态</li>
 <li>初始化</li>
@@ -1350,7 +678,7 @@ obj.name = &quot;lxy&quot;;</code></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/05/15/JavaScript原型与原型链/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1369,7 +697,7 @@ obj.name = &quot;lxy&quot;;</code></p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/05/15/JavaScript原型与原型链/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2016/04/09/JavaScript之深浅拷贝/" itemprop="url">JavaScript之深浅拷贝</a></h1>
         
 
         <div class="post-meta">
@@ -1381,8 +709,8 @@ obj.name = &quot;lxy&quot;;</code></p>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T13:34:05+08:00">
-                2016-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T20:51:07+08:00">
+                2016-04-09
               </time>
             
 
@@ -1391,6 +719,187 @@ obj.name = &quot;lxy&quot;;</code></p>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文要解决的问题：</p>
+<ul>
+<li>为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在</li>
+<li>理解 JavaScript 中深拷贝和浅拷贝的区别</li>
+<li>JavaScript 拷贝对象的注意事项</li>
+<li>JavaScript 拷贝对象和数组的实现方法</li>
+</ul>
+<p>部分代码可在这里找到：<a href="https://github.com/chhpt/JavaScript-Exploration/tree/master/shallow-and-deep-copy" target="_blank" rel="noopener">Github</a>。如果发现错误，欢迎指出。</p>
+<h2 id="一，-理解问题原因所在"><a href="#一，-理解问题原因所在" class="headerlink" title="一， 理解问题原因所在"></a>一， 理解问题原因所在</h2><p>JavaScript 中的数据类型可以分为两种：基本类型值（Number, Boolean, String, NULL, Undefined）和引用类型值（Array, Object, Date, RegExp, Function)。 基本类型值指的是简单的数据段，而引用类型值指那些可能由多个值构成的对象。</p>
+<p><strong>基本数据类型是按值访问的</strong>，因为可以直接操作保存在变量中的实际的值。引用类型的值是保存在内存中的对象，与其他语言不同，JavaScript 不允许直接访问内存中的位置，也就是说不能直接操作对象的内存空间。在操作对象时，实际上是在<strong>操作对象的引用</strong>而不是实际的对象。 为此，引用类型的值是按引用访问的。</p>
+<p>除了保存的方式不同之外，在从一个变量向另一个变量复制基本类型值和引用类型值时，也存在不同：</p>
+<ul>
+<li>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</li>
+<li>当从一个变量向另一个变量复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另一个变量。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/09/JavaScript之深浅拷贝/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/08/JavaScript原型与原型链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/08/JavaScript原型与原型链/" itemprop="url">JavaScript原型与原型链</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-08T20:51:07+08:00">
+                2016-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1421,7 +930,7 @@ obj.name = &quot;lxy&quot;;</code></p>
       
         
           
-            <h1 id="深入理解-JavaScript-原型"><a href="#深入理解-JavaScript-原型" class="headerlink" title="深入理解 JavaScript 原型"></a>深入理解 JavaScript 原型</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识）</p>
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识）</p>
 <p>源代码：<a href="https://github.com/chhpt/JavaScript-Exploration/tree/master/prototype_and_prototype_chain" target="_blank" rel="noopener">GitHub</a></p>
 <h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="1-原型是什么？"><a href="#1-原型是什么？" class="headerlink" title="1. 原型是什么？"></a>1. 原型是什么？</h3><p>在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。</p>
 <p>我们都知道，JavaScript 是一门基于对象的脚本语言，但是它却没有类的概念，所以 JavaScript 中的对象和基于类的语言（如 Java）中的对象有所不同。JavaScript 中的对象是无序属性的集合，其属性可以包含基本值，对象或者函数，听起来更像是键值对的集合，事实上也比较类似。有了对象，按理说得有继承，不然对象之间没有任何联系，也就真沦为键值对的集合了。那没有类的 JavaScript 是怎么实现继承的呢？</p>
@@ -1551,7 +1060,7 @@ obj.name = &quot;lxy&quot;;</code></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/05/15/this理解（一）/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/08/https详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1570,7 +1079,7 @@ obj.name = &quot;lxy&quot;;</code></p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/05/15/this理解（一）/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2016/04/08/https详解/" itemprop="url">https详解</a></h1>
         
 
         <div class="post-meta">
@@ -1582,8 +1091,8 @@ obj.name = &quot;lxy&quot;;</code></p>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T13:33:46+08:00">
-                2016-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-08T16:45:48+08:00">
+                2016-04-08
               </time>
             
 
@@ -1592,6 +1101,28 @@ obj.name = &quot;lxy&quot;;</code></p>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1621,390 +1152,7 @@ obj.name = &quot;lxy&quot;;</code></p>
 
       
         
-          
-            <h1 id="this深入理解"><a href="#this深入理解" class="headerlink" title="this深入理解"></a>this深入理解</h1><p>函数的几种调用方式：</p>
-<ol>
-<li>全局&amp;调用普通函数</li>
-<li>作为对象方法来调用</li>
-<li>作为构造函数来调用</li>
-<li>使用apply/call/bind方法来调用</li>
-<li>构造函数 prototype 属性</li>
-<li>DOM event this</li>
-<li>es6箭头函数</li>
-</ol>
-<h2 id="全局-amp-调用普通函数"><a href="#全局-amp-调用普通函数" class="headerlink" title="全局&amp;调用普通函数"></a>全局&amp;调用普通函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function person()&#123;</span><br><span class="line">        this.name=&quot;xl&quot;;</span><br><span class="line">        console.log(this);</span><br><span class="line">        console.log(this.name);</span><br><span class="line"> &#125;</span><br><span class="line"> person();  //输出  window  xl</span><br></pre></td></tr></table></figure>
-<p>在这段代码中person函数作为普通函数调用，实际上person是作为全局对象window的一个方法来进行调用的,即window.person();</p>
-<p>所以这个地方是window对象调用了person方法,那么person函数当中的this即指window,同时window还拥有了另外一个属性name,值为xl.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;xl&quot;;</span><br><span class="line"> function person()&#123;</span><br><span class="line">     console.log(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">person(); //输出 xl</span><br></pre></td></tr></table></figure>
-<p>同样这个地方person作为window的方法来调用，在代码的一开始定义了一个全局变量name，值为xl,它相当于window的一个属性,即window.name=”xl”,又因为在调用person的时候this是指向window的，因此这里会输出xl.</p>
-<h2 id="作为对象方法来调用"><a href="#作为对象方法来调用" class="headerlink" title="作为对象方法来调用"></a>作为对象方法来调用</h2><p>如果函数作为对象的方法时，方法中的 this 指向该对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        console.log(this);        //Object</span><br><span class="line">        console.log(this.x);      //10</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>注意：若是在对象方法中定义函数，那么情况就不同了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        function f()&#123;</span><br><span class="line">            console.log(this);      //Window</span><br><span class="line">            console.log(this.x);    //undefined</span><br><span class="line">        &#125;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>可以这么理解：函数 f 虽然是在 obj.foo 内部定义的，但它仍然属于一个普通函数，this 仍指向 window。</p>
-<p>在这里，如果想要调用上层作用域中的变量 obj.x，可以使用 self 缓存外部 this 变量。</p>
-<p>在这里，如果想要调用上层作用域中的变量 obj.x，可以使用 self 缓存外部 this 变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        var self = this;</span><br><span class="line">        function f()&#123;</span><br><span class="line">            console.log(self);      //&#123;x: 10&#125;</span><br><span class="line">            console.log(self.x);    //10</span><br><span class="line">        &#125;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
-<p>如果 foo 函数不作为对象方法被调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    foo: function () &#123;</span><br><span class="line">        console.log(this);       //Window</span><br><span class="line">        console.log(this.x);     //undefined</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var fn = obj.foo;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
-<p>obj.foo 被赋值给一个全局变量，并没有作为 obj 的一个属性被调用，那么此时 this 的值是 window。</p>
-<p>另一种形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var personA=&#123;</span><br><span class="line">    name:&quot;xl&quot;,</span><br><span class="line">    showName:function()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var personB=&#123;</span><br><span class="line">    name:&quot;XL&quot;,</span><br><span class="line">    sayName:personA.showName</span><br><span class="line">&#125;</span><br><span class="line">personB.sayName();  //输出 XL</span><br><span class="line">//虽然showName方法是在personA这个对象中定义，但是调用的时候却是在personB这个对象中调用，因此this对象指向</span><br></pre></td></tr></table></figure>
-<h2 id="作为构造函数来调用"><a href="#作为构造函数来调用" class="headerlink" title="作为构造函数来调用"></a>作为构造函数来调用</h2><p>所谓的构造函数就是由一个函数 new 出来的对象，一般构造函数的函数名首字母大写，例如像 Object，Function，Array 这些都属于构造函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Foo()&#123;</span><br><span class="line">    this.x = 10;</span><br><span class="line">    console.log(this);    //Foo &#123;x:10&#125;</span><br><span class="line">&#125;</span><br><span class="line">var foo = new Foo();</span><br><span class="line">console.log(foo.x);      //10</span><br></pre></td></tr></table></figure>
-<p>上述代码，如果函数作为构造函数使用，那么其中的 this 就代表它即将 new 出来的对象。</p>
-<p>但是如果直接调用 Foo 函数，而不是 new Foo()，那就变成情况1，这时候 Foo() 就变成普通函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Foo()&#123;</span><br><span class="line">    this.x = 10;</span><br><span class="line">    console.log(this);    //Window</span><br><span class="line">&#125;</span><br><span class="line">var foo = Foo();</span><br><span class="line">console.log(foo.x);      //undefined</span><br></pre></td></tr></table></figure>
-<h2 id="使用apply-call-bind方法来调用"><a href="#使用apply-call-bind方法来调用" class="headerlink" title="使用apply/call/bind方法来调用"></a>使用apply/call/bind方法来调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10</span><br><span class="line">&#125;</span><br><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this);     //&#123;x: 10&#125;</span><br><span class="line">    console.log(this.x);   //10</span><br><span class="line">&#125;</span><br><span class="line">foo.call(obj);</span><br><span class="line">foo.apply(obj);</span><br><span class="line">foo.bind(obj)();</span><br></pre></td></tr></table></figure>
-<p>当一个函数被 call、apply 或者 bind 调用时，this 的值就取传入的对象的值。</p>
-<h2 id="构造函数-prototype-属性"><a href="#构造函数-prototype-属性" class="headerlink" title="构造函数 prototype 属性"></a>构造函数 prototype 属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Foo()&#123;</span><br><span class="line">    this.x = 10;</span><br><span class="line">&#125;</span><br><span class="line">Foo.prototype.getX = function () &#123;</span><br><span class="line">    console.log(this);        //Foo &#123;x: 10, getX: function&#125;</span><br><span class="line">    console.log(this.x);      //10</span><br><span class="line">&#125;</span><br><span class="line">var foo = new Foo();</span><br><span class="line">foo.getX();</span><br></pre></td></tr></table></figure>
-<p>在 Foo.prototype.getX 函数中，this 指向的 foo 对象。不仅仅如此，即便是在整个原型链中，this 代表的也是当前对象的值。</p>
-<h2 id="DOM-event-this"><a href="#DOM-event-this" class="headerlink" title="DOM event this"></a>DOM event this</h2><p>在一个 HTML DOM 事件处理程序里，this 始终指向这个处理程序所绑定的 HTML DOM 节点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Listener()&#123;   </span><br><span class="line">    document.getElementById(&apos;foo&apos;).addEventListener(&apos;click&apos;, this.handleClick);     //这里的 this 指向 Listener 这个对象。不是强调的是这里的 this</span><br><span class="line">&#125;</span><br><span class="line">Listener.prototype.handleClick = function (event) &#123;</span><br><span class="line">    console.log(this);    //&lt;div id=&quot;foo&quot;&gt;&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line">var listener = new Listener();</span><br><span class="line">document.getElementById(&apos;foo&apos;).click();</span><br></pre></td></tr></table></figure>
-<p>这个很好理解，就相当于是给函数传参，使 handleClick 运行时上下文改变了，相当于下面这样的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    x: 10,</span><br><span class="line">    fn: function() &#123;</span><br><span class="line">        console.log(this);         //Window</span><br><span class="line">        console.log(this.x);       //undefined</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">function foo(fn) &#123;</span><br><span class="line">    fn();</span><br><span class="line">&#125; </span><br><span class="line">foo(obj.fn);</span><br></pre></td></tr></table></figure>
-<p>你也可以用通过 bind 切换上下文:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function  Listener()&#123;</span><br><span class="line">    document.getElementById(&apos;foo&apos;).addEventListener(&apos;click&apos;,this.handleClick.bind(this));      </span><br><span class="line">&#125;</span><br><span class="line">Listener.prototype.handleClick = function (event) &#123;</span><br><span class="line">    console.log(this);    //Listener &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">var listener = new Listener();</span><br><span class="line">document.getElementById(&apos;foo&apos;).click();</span><br></pre></td></tr></table></figure>
-<p>总结一句话为： this 指向调用该方法的对象。</p>
-<h2 id="es6箭头函数"><a href="#es6箭头函数" class="headerlink" title="es6箭头函数"></a>es6箭头函数</h2><p>es6里面this指向固定化，始终指向外部对象，因为箭头函数没有this,因此它自身不能进行new实例化,同时也不能使用call, apply, bind等方法来改变this的指向</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Timer() &#123;</span><br><span class="line">        this.seconds = 0;</span><br><span class="line">        setInterval( () =&gt; this.seconds ++, 1000);</span><br><span class="line">    &#125; </span><br><span class="line">    var timer = new Timer();</span><br><span class="line">    setTimeout( () =&gt; console.log(timer.seconds), 3100);</span><br><span class="line">    // 3</span><br><span class="line">    在构造函数内部的setInterval()内的回调函数，this始终指向实例化的对象，并获取实例化对象的seconds的属性,每1s这个属性的值都会增加1。否则最后在3s后执行setTimeOut()函数执行后输出的是0</span><br></pre></td></tr></table></figure>
-<p>参考资料：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/25294187" target="_blank" rel="noopener">全面解析 Javascript - this</a></p>
-<p><a href="https://segmentfault.com/a/1190000003046071?_ea=1200802" target="_blank" rel="noopener">JS 中 this 关键字详解</a></p>
-<p><a href="https://segmentfault.com/a/1190000000660679" target="_blank" rel="noopener">详解js和jquery里的this关键字</a></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/05/15/JavaScript之深浅拷贝/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/05/15/JavaScript之深浅拷贝/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T13:33:46+08:00">
-                2016-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="深入理解-JavaScript-对象和数组拷贝"><a href="#深入理解-JavaScript-对象和数组拷贝" class="headerlink" title="深入理解 JavaScript 对象和数组拷贝"></a>深入理解 JavaScript 对象和数组拷贝</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文要解决的问题：</p>
-<ul>
-<li>为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在</li>
-<li>理解 JavaScript 中深拷贝和浅拷贝的区别</li>
-<li>JavaScript 拷贝对象的注意事项</li>
-<li>JavaScript 拷贝对象和数组的实现方法</li>
-</ul>
-<p>部分代码可在这里找到：<a href="https://github.com/chhpt/JavaScript-Exploration/tree/master/shallow-and-deep-copy" target="_blank" rel="noopener">Github</a>。如果发现错误，欢迎指出。</p>
-<h2 id="一，-理解问题原因所在"><a href="#一，-理解问题原因所在" class="headerlink" title="一， 理解问题原因所在"></a>一， 理解问题原因所在</h2><p>JavaScript 中的数据类型可以分为两种：基本类型值（Number, Boolean, String, NULL, Undefined）和引用类型值（Array, Object, Date, RegExp, Function)。 基本类型值指的是简单的数据段，而引用类型值指那些可能由多个值构成的对象。</p>
-<p><strong>基本数据类型是按值访问的</strong>，因为可以直接操作保存在变量中的实际的值。引用类型的值是保存在内存中的对象，与其他语言不同，JavaScript 不允许直接访问内存中的位置，也就是说不能直接操作对象的内存空间。在操作对象时，实际上是在<strong>操作对象的引用</strong>而不是实际的对象。 为此，引用类型的值是按引用访问的。</p>
-<p>除了保存的方式不同之外，在从一个变量向另一个变量复制基本类型值和引用类型值时，也存在不同：</p>
-<ul>
-<li>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</li>
-<li>当从一个变量向另一个变量复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另一个变量。</li>
-</ul>
-<p>看下面的代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本类型值复制</span></span><br><span class="line"><span class="keyword">var</span> string1 = <span class="string">'base type'</span>;</span><br><span class="line"><span class="keyword">var</span> string2 = string1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用类型值复制</span></span><br><span class="line"><span class="keyword">var</span> object1 = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> object2 = object1;</span><br></pre></td></tr></table></figure>
-<p>下图可以表示两种类型的变量的复制结果：</p>
-<p><img src="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-31%20%E4%B8%8B%E5%8D%8817.21.50%20%E4%B8%8B%E5%8D%88.png" alt=""></p>
-<p>至此，我们应该理解：在 JavaScript 中直接复制对象实际上是对引用的复制，会导致两个变量引用同一个对象，对任一变量的修改都会反映到另一个变量上，这是一切问题的原因所在。</p>
-<h2 id="二，-深拷贝和浅拷贝的区别"><a href="#二，-深拷贝和浅拷贝的区别" class="headerlink" title="二， 深拷贝和浅拷贝的区别"></a>二， 深拷贝和浅拷贝的区别</h2><p>理解了 JavaScript 中拷贝对象的问题后，我们就可以讲讲深拷贝和浅拷贝的区别了。考虑这种情况，你需要复制一个对象，这个对象的某个属性还是一个对象，比如这样：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  obj: &#123;</span><br><span class="line">    b: <span class="string">'string'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p><code>浅拷贝</code>存在两种情况：</p>
-<ul>
-<li>直接拷贝对象，也就是拷贝引用，两个变量<code>object1</code> 和 <code>object2</code> 之间还是会相互影响。</li>
-<li>只是简单的拷贝对象的第一层属性，基本类型值不再相互影响，但是对其内部的引用类型值，拷贝的任然是是其引用，内部的引用类型值还是会相互影响。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最简单的浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> object2 = object1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 拷贝第一层属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallowClone</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!source || <span class="keyword">typeof</span> source !== <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> targetObj = source.constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> keys <span class="keyword">in</span> source) &#123;</span><br><span class="line">        <span class="keyword">if</span> (source.hasOwnProperty(keys)) &#123;</span><br><span class="line">            <span class="comment">// 简单的拷贝属性</span></span><br><span class="line">            targetObj[keys] = source[keys];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> targetObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> object3 = shallowClone(object1);</span><br><span class="line"><span class="comment">// 改变原对象的属性</span></span><br><span class="line">object1.a = <span class="number">2</span>;</span><br><span class="line">object1.obj.b = <span class="string">'newString'</span>;</span><br><span class="line"><span class="comment">// 比较</span></span><br><span class="line"><span class="built_in">console</span>.log(object2.a); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(object2.obj.b); <span class="comment">// 'newString'</span></span><br><span class="line"><span class="built_in">console</span>.log(object3.a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(object3.obj.b); <span class="comment">// 'newString'</span></span><br></pre></td></tr></table></figure>
-<p>浅拷贝存在许多问题，需要我们注意：</p>
-<ul>
-<li>只能拷贝可枚举的属性。</li>
-<li>所生成的<code>拷贝对象</code>的原型与<code>原对象</code>的原型不同，拷贝对象只是 Object 的一个实例。</li>
-<li>原对象从它的原型继承的属性也会被拷贝到新对象中，就像是原对象的属性一样，无法区分。</li>
-<li>属性的描述符（descriptor）无法被复制，一个只读的属性在拷贝对象中可能会是可写的。</li>
-<li>如果属性是对象的话，原对象的属性会与拷贝对象的属性会指向一个对象，会彼此影响。</li>
-</ul>
-<p>不能理解这些概念？可以看看下面的代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent'</span>;</span><br><span class="line">  <span class="keyword">this</span>.a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'child'</span>;</span><br><span class="line">  <span class="keyword">this</span>.b = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent();</span><br><span class="line"><span class="keyword">var</span> child1 = <span class="keyword">new</span> Child();</span><br><span class="line"><span class="comment">// 更改 child1 的 name 属性的描述符</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(child1, <span class="string">'name'</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span>,</span><br><span class="line">  value: <span class="string">'Mike'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 拷贝对象</span></span><br><span class="line"><span class="keyword">var</span> child2 = shallowClone(child1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object &#123;value: "Nicholas", writable: false, enumerable: true, configurable: true&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(child1, <span class="string">'name'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里新对象的 name 属性的描述符已经发生了变化</span></span><br><span class="line"><span class="comment">// Object &#123;value: "Nicholas", writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(child2, <span class="string">'name'</span>));</span><br><span class="line"></span><br><span class="line">child1.name = <span class="string">'newName'</span>; <span class="comment">// 严格模式下报错</span></span><br><span class="line">child2.name = <span class="string">'newName'</span>; <span class="comment">// 可以赋值</span></span><br><span class="line"><span class="built_in">console</span>.log(child1.name); <span class="comment">//  Mike</span></span><br><span class="line"><span class="built_in">console</span>.log(child2.name); <span class="comment">// newName</span></span><br></pre></td></tr></table></figure>
-<p>上面的代码通过构造函数 <code>Child</code> 构造一个对象 <code>child1</code>，这个对象的原型是 <code>Parent</code>。并且修改了 <code>child1</code> 的 <code>name</code> 属性的描述符，设置 <code>writable</code> 为 <code>false</code>，也就是这个属性不能再被修改。如果要直接给 <code>child1.name</code> 赋值，在严格模式下会报错，在非严格模式则会赋值失败（但不会报错）。</p>
-<p>我们调用前面提到的浅拷贝函数 <code>shallowClone</code> 来拷贝 <code>child1</code> 对象，生成了新的对象 <code>child2</code>，输出 <code>child2</code> 的 <code>name</code> 属性的描述符，我们可以发现 <code>child2</code> 的 <code>name</code> 属性的描述符与 <code>child1</code> 已经不一样了（变成了可写的）。通过开启调试模式，查看 <code>child1</code> 和 <code>child2</code> 的原型，我们也会发现它们的原型也是不同的：</p>
-<p><img src="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-02%20%E4%B8%8B%E5%8D%8813.20.45%20%E4%B8%8B%E5%8D%88.png" alt=""></p>
-<p><code>child1</code> 的原型是 <code>Parent</code>，而 <code>child2</code> 的原型则是 <code>Object</code>。</p>
-<p>通过上面的例子和简短的说明，我们可以大致理解浅拷贝存在的一些问题，在实际使用过程中也能有自己的判断。</p>
-<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p><code>深拷贝</code>就是将对象的属性递归的拷贝到一个新的对象上，两个对象有不同的地址，不同的引用，也包括对象里的对象属性（如 object1 中的 obj 属性），两个变量之间完全独立。</p>
-<h3 id="没有银弹-根据实际需求"><a href="#没有银弹-根据实际需求" class="headerlink" title="没有银弹 - 根据实际需求"></a>没有银弹 - 根据实际需求</h3><p>既然浅拷贝有那么多问题，我们为什么还要说浅拷贝？一来是深拷贝的完美实现不那么容易（甚至不存在），而且可能存在性能问题，二来是有些时候的确不需要深拷贝，那么我们也就没必要纠结于与深拷贝和浅拷贝了，没有必要跟自己过不去不是？</p>
-<p>一句话：根据自己的实际需选择不同的方法。</p>
-<h2 id="三，-实现对象和数组浅拷贝"><a href="#三，-实现对象和数组浅拷贝" class="headerlink" title="三， 实现对象和数组浅拷贝"></a>三， 实现对象和数组浅拷贝</h2><h3 id="对象浅拷贝"><a href="#对象浅拷贝" class="headerlink" title="对象浅拷贝"></a>对象浅拷贝</h3><p>前面已经介绍了对象的两种浅拷贝方式，这里就不做说明了。下面介绍其他的几种方式</p>
-<h4 id="1-使用-Object-assign-方法"><a href="#1-使用-Object-assign-方法" class="headerlink" title="1. 使用 Object.assign 方法"></a>1. 使用 Object.assign 方法</h4><p><code>Object.assign()</code> 用于将一个或多个源对象中的所有<code>可枚举的属性</code>值复制到目标对象。<code>Object.assign()</code> 只是浅拷贝，类似上文提到的 <code>shallowClone</code> 方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  obj: &#123;</span><br><span class="line">    b: <span class="string">'string'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> copy = <span class="built_in">Object</span>.assign(&#123;&#125;, object1);</span><br><span class="line"><span class="comment">// 改变原对象属性</span></span><br><span class="line">object1.a = <span class="number">2</span>;</span><br><span class="line">object1.obj.b = <span class="string">'newString'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(copy.a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(copy.obj.b); <span class="comment">// `newString`</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-使用-Object-getOwnPropertyNames-拷贝不可枚举的属性"><a href="#2-使用-Object-getOwnPropertyNames-拷贝不可枚举的属性" class="headerlink" title="2. 使用 Object.getOwnPropertyNames 拷贝不可枚举的属性"></a>2. 使用 Object.getOwnPropertyNames 拷贝不可枚举的属性</h4><p><code>Object.getOwnPropertyNames()</code> 返回由对象属性组成的一个数组，包括不可枚举的属性（除了使用 Symbol 的属性）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallowCopyOwnProperties</span>(<span class="params"> source </span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> target = &#123;&#125; ;</span><br><span class="line">    <span class="keyword">var</span> keys = <span class="built_in">Object</span>.getOwnPropertyNames( original ) ;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; keys.length ; i ++ ) &#123;</span><br><span class="line">        target[ keys[ i ] ] = source[ keys[ i ] ] ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-使用-Object-getPrototypeOf-和-Object-getOwnPropertyDescriptor-拷贝原型与描述符"><a href="#3-使用-Object-getPrototypeOf-和-Object-getOwnPropertyDescriptor-拷贝原型与描述符" class="headerlink" title="3. 使用 Object.getPrototypeOf 和 Object.getOwnPropertyDescriptor 拷贝原型与描述符"></a>3. 使用 Object.getPrototypeOf 和 Object.getOwnPropertyDescriptor 拷贝原型与描述符</h4><p>如果我们需要拷贝原对象的原型和描述符，我们可以使用 <code>Object.getPrototypeOf</code> 和 <code>Object.getOwnPropertyDescriptor</code> 方法分别获取原对象的原型和描述符，然后使用 <code>Object.create</code> 和 <code>Object.defineProperty</code> 方法，根据原型和属性的描述符创建新的对象和对象的属性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallowCopy</span>(<span class="params"> source </span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 用 source 的原型创建一个对象</span></span><br><span class="line">    <span class="keyword">var</span> target = <span class="built_in">Object</span>.create( <span class="built_in">Object</span>.getPrototypeOf( source )) ;</span><br><span class="line">    <span class="comment">// 获取对象的所有属性</span></span><br><span class="line">    <span class="keyword">var</span> keys = <span class="built_in">Object</span>.getOwnPropertyNames( source ) ;</span><br><span class="line">    <span class="comment">// 循环拷贝对象的所有属性</span></span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; keys.length ; i ++ ) &#123;</span><br><span class="line">        <span class="comment">// 用原属性的描述符创建新的属性</span></span><br><span class="line">        <span class="built_in">Object</span>.defineProperty( target , keys[ i ] , <span class="built_in">Object</span>.getOwnPropertyDescriptor( source , keys[ i ])) ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="数组浅拷贝"><a href="#数组浅拷贝" class="headerlink" title="数组浅拷贝"></a>数组浅拷贝</h3><p>同上，数组也可以直接复制或者遍历数组的元素直接复制达到浅拷贝的目的：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="string">'string'</span>, &#123;<span class="attr">a</span>: <span class="number">1</span>,<span class="attr">b</span>: <span class="number">2</span>, <span class="attr">obj</span>: &#123;<span class="attr">c</span>: <span class="number">3</span>&#125;&#125;];</span><br><span class="line"><span class="comment">// 直接复制</span></span><br><span class="line"><span class="keyword">var</span> array1 = array;</span><br><span class="line"><span class="comment">// 遍历直接复制</span></span><br><span class="line"><span class="keyword">var</span> array2 = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> array) &#123;</span><br><span class="line">  array2[key] = array[key];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 改变原数组元素</span></span><br><span class="line">array[<span class="number">1</span>] = <span class="string">'newString'</span>;</span><br><span class="line">array[<span class="number">2</span>].c = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1[<span class="number">1</span>]); <span class="comment">// newString</span></span><br><span class="line"><span class="built_in">console</span>.log(array1[<span class="number">2</span>].c); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(array2[<span class="number">1</span>]); <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(array2[<span class="number">2</span>].c); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
-<p>这没有什么需要特别说明的，我们说些其他方法</p>
-<h4 id="使用-slice-和-concat-方法"><a href="#使用-slice-和-concat-方法" class="headerlink" title="使用 slice 和 concat 方法"></a>使用 slice 和 concat 方法</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener"><code>slice()</code></a> 方法将一个数组被选择的部分（默认情况下是全部元素）浅拷贝到一个新数组对象，并返回这个数组对象，原始数组不会被修改。 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=a" target="_blank" rel="noopener"><code>concat()</code></a> 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</p>
-<p>这两个方法都可以达到拷贝数组的目的，并且是浅拷贝，数组中的对象只是复制了引用：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="string">'string'</span>, &#123;<span class="attr">a</span>: <span class="number">1</span>,<span class="attr">b</span>: <span class="number">2</span>, <span class="attr">obj</span>: &#123;<span class="attr">c</span>: <span class="number">3</span>&#125;&#125;];</span><br><span class="line"><span class="comment">// slice()</span></span><br><span class="line"><span class="keyword">var</span> array1 = array.slice();</span><br><span class="line"><span class="comment">// concat()</span></span><br><span class="line"><span class="keyword">var</span> array2 = array.concat();</span><br><span class="line"><span class="comment">// 改变原数组元素</span></span><br><span class="line">array[<span class="number">1</span>] = <span class="string">'newString'</span>;</span><br><span class="line">array[<span class="number">2</span>].c = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1[<span class="number">1</span>]); <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(array1[<span class="number">2</span>].c); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(array2[<span class="number">1</span>]); <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(array2[<span class="number">2</span>].c); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
-<h2 id="四，-实现对象和数组深拷贝"><a href="#四，-实现对象和数组深拷贝" class="headerlink" title="四， 实现对象和数组深拷贝"></a>四， 实现对象和数组深拷贝</h2><p>实现深拷贝的方法大致有两种：</p>
-<ul>
-<li>利用 <code>JSON.stringify</code> 和 <code>JSON.parse</code> 方法</li>
-<li>遍历对象的属性（或数组的元素），分别拷贝</li>
-</ul>
-<p>下面就两种方法详细说说</p>
-<h4 id="1-使用-JSON-stringify-和-JSON-parse-方法"><a href="#1-使用-JSON-stringify-和-JSON-parse-方法" class="headerlink" title="1. 使用 JSON.stringify 和 JSON.parse 方法"></a>1. 使用 JSON.stringify 和 JSON.parse 方法</h4><p><code>JSON.stringify</code>和<code>JSON.parse</code> 是 JavaScript 内置对象 JSON 的两个方法，主要是用来将 JavaScript 对象序列化为 JSON 字符串和把 JSON 字符串解析为原生 JavaScript 值。这里被用来实现对象的拷贝也算是一种黑魔法吧：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125;&#125;;</span><br><span class="line"><span class="comment">// 深拷贝</span></span><br><span class="line"><span class="keyword">var</span> newObj = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line"><span class="comment">// 改变原对象的属性</span></span><br><span class="line">obj.b.c = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123; a: 1, b: &#123; c: 20 &#125; &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(newObj); <span class="comment">// &#123; a: 1, b: &#123; c: 2 &#125; &#125;</span></span><br></pre></td></tr></table></figure>
-<p>但是这种方式有一定的局限性，就是对象必须遵从JSON的格式，当遇到层级较深，且序列化对象不完全符合JSON格式时，使用JSON的方式进行深拷贝就会出现问题。</p>
-<p>在序列化 JavaScript 对象时，所有<code>函数及原型成员</code>都会被有意忽略，不体现在结果中，也就是说这种方法不能拷贝对象中的函数。此外，值为 undefined 的任何属性也都会被跳过。结果中最终都是值为有效 JSON 数据类型的实例属性。</p>
-<h4 id="2-使用递归"><a href="#2-使用递归" class="headerlink" title="2. 使用递归"></a>2. 使用递归</h4><p>递归是一种常见的解决这种问题的方法：我么可以定义一个函数，遍历对象的属性，当对象的属性是基本类型值得时候，直接拷贝；当属性是引用类型值的时候，再次调用这个函数进行递归拷贝。这是基本的思想，下面看具体的实现（不考虑原型，描述符，不可枚举属性等，便于理解）：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 递归终止条件</span></span><br><span class="line">  <span class="keyword">if</span> (!source || <span class="keyword">typeof</span> source !== <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> source;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> targetObj = source.constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.hasOwnProperty.call(source, key) &#123;</span><br><span class="line">      <span class="keyword">if</span> (source[key] &amp;&amp; <span class="keyword">typeof</span> source[key] === <span class="string">'object'</span>) &#123;</span><br><span class="line">        targetObj[key] = deepClone(source[key]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        targetObj[key] = source[key];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> targetObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> object1 = &#123;<span class="attr">arr</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="attr">obj</span>: &#123;<span class="attr">key</span>: <span class="string">'value'</span> &#125;, <span class="attr">func</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">1</span>;&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 深拷贝</span></span><br><span class="line"><span class="keyword">var</span> newObj= deepClone(object1);</span><br><span class="line"><span class="comment">// 改变原对象属性</span></span><br><span class="line">object1.arr.push(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(object1.arr); <span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"><span class="built_in">console</span>.log(newObj.arr); <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
-<p>对于 Function 类型，这里是直接复制的，任然是共享一个内存地址。因为函数更多的是完成某些功能，对函数的更改可能就是直接重新赋值，一般情况下不考虑深拷贝。</p>
-<p>上面的深拷贝只是比较简单的实现，没有考虑很复杂的情况，比如：</p>
-<ul>
-<li>其他引用类型：Function，Date，RegExp 的拷贝</li>
-<li>对象中存在循环引用(Circular references)会导致调用栈溢出</li>
-<li>通过闭包作用域来实现私有成员的这类对象不能真正的被拷贝</li>
-</ul>
-<p><strong>什么是闭包作用域</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myConstructor</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> myPrivateVar = <span class="string">'secret'</span> ;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        myPublicVar: <span class="string">'public!'</span> ,</span><br><span class="line">        getMyPrivateVar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> myPrivateVar ;</span><br><span class="line">        &#125; ,</span><br><span class="line">        setMyPrivateVar( value ) &#123;</span><br><span class="line">            myPrivateVar = value.toString() ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = myContructor() ;</span><br></pre></td></tr></table></figure>
-<p>上面的代码中，对象 o 有三个属性，一个是字符串，另外两个是方法。方法中用到一个变量 <code>myPrivateVar</code>，存在于 <code>myConstructor()</code> 的函数作用域中，当 <code>myConstructor</code> 构造函数调用时，就创建了这个变量 <code>myPrivateVar</code>，然而这个变量并不是通过构造函数创建的对象 <code>o</code> 的属性，但是它任然可以被这两个方法使用。</p>
-<p>因此，如果尝试深拷贝对象 <code>o</code>，那么拷贝对象 <code>clone</code> 和被拷贝对象 <code>original</code> 中的方法都是引用相同的 <code>myPrivateVar</code> 变量。</p>
-<p>但是，由于并没有方式改变闭包的作用域，所以这种模式创建的对象不能正常深拷贝是可以接受的。</p>
-<h4 id="3-使用队列"><a href="#3-使用队列" class="headerlink" title="3. 使用队列"></a>3. 使用队列</h4><p>递归的做法虽然简单，容易理解，但是存在一定的性能问题，对拷贝比较大的对象来说不是很好的选择。</p>
-<p>理论上来说，递归是可以转化成循环的，我们可以尝试着将深拷贝中的递归转化成循环。我们需要遍历对象的属性，如果属性是基本类型，直接复制，如果属性是引用类型（对象或数组），需要再遍历这个对象，对他的属性进行相同的操作。那么我们需要一个容器来存放需要进行遍历的对象，每次从容器中拿出一个对象进行拷贝处理，如果处理过程中遇到新的对象，那么再把它放到这个容器中准备进行下一轮的处理，当把容器中所有的对象都处理完成后，也就完成了对象的拷贝。</p>
-<p>思想大致是这样的，下面看具体的实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 利用队列的思想优化递归</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!source || <span class="keyword">typeof</span> source !== <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> source;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> current;</span><br><span class="line">  <span class="keyword">var</span> target = source.constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="comment">// 用数组作为容器</span></span><br><span class="line">  <span class="comment">// 记录被拷贝的原对象和目标</span></span><br><span class="line">  <span class="keyword">var</span> cloneQueue = [&#123;</span><br><span class="line">    source,</span><br><span class="line">    target</span><br><span class="line">  &#125;];</span><br><span class="line">  <span class="comment">// 先进先出，更接近于递归</span></span><br><span class="line">  <span class="keyword">while</span> (current = cloneQueue.shift()) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> current.source) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.hasOwnProperty.call(current.source, key)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (current.source[key] &amp;&amp; <span class="keyword">typeof</span> current.source[key] === <span class="string">'object'</span>) &#123;</span><br><span class="line">          current.target[key] = current.source[key].constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">          cloneQueue.push(&#123;</span><br><span class="line">            source: current.source[key],</span><br><span class="line">            target: current.target[key]</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          current.target[key] = current.source[key];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> object1 = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123;<span class="attr">c</span>: <span class="number">2</span>, <span class="attr">d</span>: <span class="number">3</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">var</span> object2 = deepClone(object1);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(object2); <span class="comment">// &#123;a: 1, b: &#123;c: 2, d: 3&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-<p>（完）</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
-<li>《JavaScript 高级程序设计》</li>
-<li><a href="https://segmentfault.com/a/1190000008637489" target="_blank" rel="noopener">JavaScript中的浅拷贝和深拷贝</a></li>
-<li><a href="https://objcer.com/2017/02/27/Dive-into-shallow-and-deep-clone-in-JavaScript/" target="_blank" rel="noopener">探究 JS 中的浅拷贝和深拷贝</a></li>
-<li><a href="https://github.com/mqyqingfeng/Blog/issues/32" target="_blank" rel="noopener">JavaScript专题之深浅拷贝</a></li>
-<li><a href="https://juejin.im/post/5a00226b5188255695390a74" target="_blank" rel="noopener">深入理解 JavaScript 对象和数组拷贝</a></li>
-</ol>
-<p>6.<a href="http://jerryzou.com/posts/dive-into-deep-clone-in-javascript/" target="_blank" rel="noopener">深入剖析 JavaScript 的深复制</a></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/25/https/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/25/https/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-25T20:56:02+08:00">
-                2016-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="什么是HTTPS"><a href="#什么是HTTPS" class="headerlink" title="什么是HTTPS"></a><strong>什么是HTTPS</strong></h3><p>   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。</p>
+          <h3 id="什么是HTTPS"><a href="#什么是HTTPS" class="headerlink" title="什么是HTTPS"></a><strong>什么是HTTPS</strong></h3><p>   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。</p>
 <p>   简单理解就是https=http+加密+认证+完整性保护</p>
 <h3 id="为什么需要https"><a href="#为什么需要https" class="headerlink" title="为什么需要https"></a><strong>为什么需要https</strong></h3><p>HTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。</p>
 <p>举个最常见的例子，用户登陆。用户输入账号，密码，采用HTTP的话，只要在代理服务器上做点手脚就可以拿到你的密码了。</p>
@@ -2012,27 +1160,807 @@ obj.name = &quot;lxy&quot;;</code></p>
 <h3 id="HTTPS过程"><a href="#HTTPS过程" class="headerlink" title="HTTPS过程"></a><strong>HTTPS过程</strong></h3><p><img src="http://images2015.cnblogs.com/blog/517641/201510/517641-20151004202254433-181254043.png" alt=""></p>
 <p>1.客户端发送HTTPS请求给服务器端；</p>
 <p>2.服务器端发送CA证书和公钥PublicKey给客户端，注意这个公钥用的是非对称加密钥，只有服务器端才有PublicKey对应的PrivateKey;</p>
-<p>3.客户端生成一个会话的密钥SessionKey,注意这个SessionKey是对称密钥，加密解密都是同一个秘钥；</p>
-<p>4.客户端用公钥PublicKey来对会话秘钥SessionKey进行加密生成EncryptKey传递给服务器；</p>
-<p>4.1服务器端收到这个加密后的EncryptKey后用PrivateKey解密就可以得到这个SessionKey了；</p>
-<p>4.2服务器端收到这个加密后的EncryptKey需要回复一个确认消息给客户端</p>
-<p>5.客户端用这个SessionKey来对后续需要发送的Message来进行加密，就是EncryptMessage，然后发送给服务器端；</p>
-<p>5.1服务器端收到这个EnctyptMessage后就需要拿刚才解密的SessionKey来进解密；就可以得到Message了；</p>
-<p>5.2服务器端根据客户端的请求来进行返回一系列的Response响应；</p>
-<h3 id="HTTPS如何加密数据的"><a href="#HTTPS如何加密数据的" class="headerlink" title="HTTPS如何加密数据的"></a><strong>HTTPS如何加密数据的</strong></h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><p>对称加密的意思就是，加密数据用的密钥，跟解密数据用的密钥是一样的。</p>
-<p>对称加密的优点在于加密、解密效率通常比较高。缺点在于，数据发送方、数据接收方需要协商、共享同一把密钥，并确保密钥不泄露给其他人。此外，对于多个有数据交换需求的个体，两两之间需要分配并维护一把密钥，这个带来的成本基本是不可接受的。</p>
-<h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><p>非对称加密的意思就是，加密数据用的密钥（公钥），跟解密数据用的密钥（私钥）是不一样的。</p>
-<p>什么叫做公钥呢？其实就是字面上的意思——公开的密钥，谁都可以查到。因此非对称加密也叫做公开密钥加密。</p>
-<p>相对应的，私钥就是非公开的密钥，一般是由网站的管理员持有。</p>
-<p>公钥、私钥两个有什么联系呢？</p>
-<p>简单的说就是，通过公钥加密的数据，只能通过私钥解开。通过私钥加密的数据，只能通过公钥解开。</p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.cnblogs.com/Jote/articles/4854958.html" target="_blank" rel="noopener">http://www.cnblogs.com/Jote/articles/4854958.html</a></p>
-<p><a href="http://www.cnblogs.com/chyingp/p/https-introduction.html" target="_blank" rel="noopener">http://www.cnblogs.com/chyingp/p/https-introduction.html</a></p>
-<p>《图解HTTP》</p>
+<p>3.客户端生成一个会话的密钥SessionKey,注意这个SessionKey是对称密钥，加密解密都是同一个秘钥；<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/08/https详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/08/http缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/08/http缓存/" itemprop="url">http缓存</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-08T10:45:48+08:00">
+                2016-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="什么是web缓存"><a href="#什么是web缓存" class="headerlink" title="什么是web缓存"></a><strong>什么是web缓存</strong></h3><p>Web缓存是指一个Web资源（如html页面，图片，js，数据等）存在于Web服务器和客户端（浏览器）之间的副本。缓存会根据进来的请求保存输出内容的副本；当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载网页，而是直接使用本地缓存的网页。只有当网站明确标识资源已经更新，浏览器才会再次下载网页。</p>
+<h3 id="web缓存的作用"><a href="#web缓存的作用" class="headerlink" title="web缓存的作用"></a><strong>web缓存的作用</strong></h3><p>1.减少网络带宽消耗</p>
+<p>2.降低服务器压力</p>
+<p>3.减少服务器压力</p>
+<p>4.减少网络延迟，加快页面打开速度</p>
+<h3 id="web缓存的类型"><a href="#web缓存的类型" class="headerlink" title="web缓存的类型"></a><strong>web缓存的类型</strong></h3><p>1.数据库缓存</p>
+<p>   Web应用，特别是SNS类型的应用，往往关系比较复杂，数据库表繁多，如果频繁进行数据库查询，很容易导致数据库不堪重荷。为了提供查询的性能，会将查询后的数据放到内存中进行缓存，下次查询时，直接从内存缓存直接返回，提供响应效率。比如常用的缓存方案有memcached redist等。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/08/http缓存/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/web安全——CRSF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/07/web安全——CRSF/" itemprop="url">web安全——CRSF</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T21:03:08+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
           
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/07/javascript引擎的执行机制/" itemprop="url">javascript引擎的执行机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</li>
+<li>js中的event loop(1)</li>
+<li>js中的event loop(2)</li>
+<li>说说setTimeout</li>
+</ol>
+<h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
+<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。</p>
+<p>1.2、JS为什么需要异步？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">如果JS中不存在异步,只能自上而下执行,如果上一行解析时间很长,那么下面的代码就会被阻塞。</span><br><span class="line">对于用户而言,阻塞就意味着&quot;卡死&quot;,这样就导致了很差的用户体验</span><br></pre></td></tr></table></figure>
+<p>所以,JS中存在异步执行。</p>
+<p>1.3、JS单线程又是如何实现异步的呢?</p>
+<p>既然JS是单线程的,只能在一条线程上执行,又是如何实现的异步呢?</p>
+<p>是通过的事件循环(event loop),理解了event loop机制,就理解了JS的执行机制</p>
+<h3 id="二、js中的event-loop-1"><a href="#二、js中的event-loop-1" class="headerlink" title="二、js中的event loop(1)"></a>二、js中的event loop(1)</h3><p>例1，观察它的执行顺序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(1)</span><br><span class="line"></span><br><span class="line">setTimeout(function()&#123;</span><br><span class="line">    console.log(2)</span><br><span class="line">&#125;,0)</span><br><span class="line"></span><br><span class="line">console.log(3)</span><br></pre></td></tr></table></figure>
+<p>运行结果是: 1 3 2</p>
+<p>也就是说,setTimeout里的函数并没有立即执行,而是延迟了一段时间,满足一定条件后,才去执行的,这类代码,我们叫异步代码。</p>
+<p>所以,这里我们首先知道了JS里的一种分类方式,就是将任务分为: 同步任务和异步任务</p>
+<p>图片描述：<br><img src="https://user-gold-cdn.xitu.io/2018/1/19/1610d76608edbb9b?imageslim" alt="image"></p>
+<h4 id="按照这种分类方式-JS的执行机制是"><a href="#按照这种分类方式-JS的执行机制是" class="headerlink" title="按照这种分类方式:JS的执行机制是"></a>按照这种分类方式:JS的执行机制是</h4><ul>
+<li>首先判断JS是同步还是异步,同步就进入主进程,异步就进入event table</li>
+<li>异步任务在event table中注册函数,当满足触发条件后,被推入event queue</li>
+<li>同步任务进入主线程后一直执行,直到主线程空闲时,才会去event queue中查看是否有可执行的异步任务,如果有就推入主进程中</li>
+</ul>
+<p>以上三步循环执行,这就是event loop</p>
+<p>所以上面的例子,你是否可以描述它的执行顺序了呢?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(1) 是同步任务,放入主线程里</span><br><span class="line">setTimeout() 是异步任务,被放入event table, 0秒之后被推入event queue里</span><br><span class="line">console.log(3 是同步任务,放到主线程里</span><br><span class="line"></span><br><span class="line">当 1、 3在控制条被打印后,主线程去event queue(事件队列)里查看是否有可执行的函数,执行setTimeout里的函数</span><br></pre></td></tr></table></figure>
+<h3 id="三、JS中的event-loop-2"><a href="#三、JS中的event-loop-2" class="headerlink" title="三、JS中的event loop(2)"></a>三、JS中的event loop(2)</h3><p>所以,上面关于event loop就是我对JS执行机制的理解,直到我遇到了下面这段代码</p>
+<p>例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(function()&#123;</span><br><span class="line">    console.log(&apos;定时器开始啦&apos;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">new Promise(function(resolve)&#123;</span><br><span class="line">    console.log(&apos;马上执行for循环啦&apos;);</span><br><span class="line">    for(var i = 0; i &lt; 10000; i++)&#123;</span><br><span class="line">        i == 99 &amp;&amp; resolve();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(function()&#123;</span><br><span class="line">    console.log(&apos;执行then函数啦&apos;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(&apos;代码执行结束&apos;);</span><br></pre></td></tr></table></figure>
+<p>尝试按照,上文我们刚学到的JS执行机制去分析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setTimeout 是异步任务,被放到event table</span><br><span class="line"></span><br><span class="line">new Promise 是同步任务,被放到主进程里,直接执行打印 console.log(&apos;马上执行for循环啦&apos;)</span><br><span class="line"></span><br><span class="line">.then里的函数是 异步任务,被放到event table</span><br><span class="line"> console.log(&apos;代码执行结束&apos;)是同步代码,被放到主进程里,直接执行</span><br></pre></td></tr></table></figure>
+<p>所以,结果是 【马上执行for循环啦 — 代码执行结束 — 定时器开始啦 — 执行then函数啦】吗?</p>
+<p>亲自执行后,结果居然不是这样,而是【马上执行for循环啦 — 代码执行结束 — 执行then函数啦 — 定时器开始啦】</p>
+<p>那么,难道是异步任务的执行顺序,不是前后顺序,而是另有规定? 事实上,按照异步和同步的划分方式,并不准确。</p>
+<p>而准确的划分方式是:</p>
+<ul>
+<li>macro-task(宏任务)：包括整体代码script，setTimeout，setInterval</li>
+<li>micro-task(微任务)：Promise，process.nextTick</li>
+</ul>
+<p><img src="https://segmentfault.com/img/bV1TKz?w=879&amp;h=723" alt=""></p>
+<p>按照这种分类方式:JS的执行机制是</p>
+<ul>
+<li>执行一个宏任务,过程中如果遇到微任务,就将其放到微任务的【事件队列】里</li>
+<li>当前宏任务执行完成后,会查看微任务的【事件队列】,并将里面全部的微任务依次执行完</li>
+</ul>
+<p>重复以上2步骤,结合event loop(1) event loop(2) ,就是更为准确的JS执行机制了。</p>
+<p>尝试按照刚学的执行机制,去分析例2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">首先执行script下的宏任务,遇到setTimeout,将其放到宏任务的【队列】里</span><br><span class="line"></span><br><span class="line">遇到 new Promise直接执行,打印&quot;马上执行for循环啦&quot;</span><br><span class="line"></span><br><span class="line">遇到then方法,是微任务,将其放到微任务的【队列里】</span><br><span class="line"></span><br><span class="line">打印 &quot;代码执行结束&quot;</span><br><span class="line"></span><br><span class="line">本轮宏任务执行完毕,查看本轮的微任务,发现有一个then方法里的函数, 打印&quot;执行then函数啦&quot;</span><br><span class="line"></span><br><span class="line">到此,本轮的event loop 全部完成。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">下一轮的循环里,先执行一个宏任务,发现宏任务的【队列】里有一个 setTimeout里的函数,执行打印&quot;定时器开始啦&quot;</span><br></pre></td></tr></table></figure>
+<p>所以最后的执行顺序是【马上执行for循环啦 — 代码执行结束 — 执行then函数啦 — 定时器开始啦】</p>
+<p>nodejs执行机制</p>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/amd、cmd、common和umd区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/07/amd、cmd、common和umd区别/" itemprop="url">amd、cmd、common和umd区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/模块化/" itemprop="url" rel="index">
+                    <span itemprop="name">模块化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>CommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。</p>
+<p>根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// foobar.js</span><br><span class="line">//私有变量</span><br><span class="line">var test = 123; </span><br><span class="line">//公有方法</span><br><span class="line">function foobar () &#123;</span><br><span class="line">    this.foo = function () &#123;</span><br><span class="line">        // do someing ...</span><br><span class="line">    &#125;</span><br><span class="line">    this.bar = function () &#123;</span><br><span class="line">        //do someing ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//exports对象上的方法和变量是公有的</span><br><span class="line">var foobar = new foobar();</span><br><span class="line">exports.foobar = foobar;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//require方法默认读取js文件，所以可以省略js后缀</span><br><span class="line">var test = require(&apos;./boobar&apos;).foobar;</span><br><span class="line">test.bar();</span><br></pre></td></tr></table></figure>
+<p>CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD CMD 解决方案。</p>
+<h2 id="AMD和RequireJS"><a href="#AMD和RequireJS" class="headerlink" title="AMD和RequireJS"></a>AMD和RequireJS</h2><p>AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”.</p>
+<p>AMD设计出一个简洁的写模块API：<br>define(id?, dependencies?, factory);<br>第一个参数 id 为字符串类型，表示了模块标识，为可选参数。若不存在则模块标识应该默认定义为在加载器中被请求脚本的标识。如果存在，那么模块标识必须为顶层的或者一个绝对的标识。<br>第二个参数，dependencies ，是一个当前模块依赖的，已被模块定义的模块标识的数组字面量。<br>第三个参数，factory，是一个需要进行实例化的函数或者一个对象。</p>
+<p>通过参数的排列组合，这个简单的API可以从容应对各种各样的应用场景，如下所述。</p>
+<p>定义无依赖的模块<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/07/amd、cmd、common和umd区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/http详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/07/http详解/" itemprop="url">http详解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:45:48+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="http的定义和历史"><a href="#http的定义和历史" class="headerlink" title="http的定义和历史"></a><strong>http的定义和历史</strong></h3><p>  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。</p>
+<h3 id="http三次握手"><a href="#http三次握手" class="headerlink" title="http三次握手"></a><strong>http三次握手</strong></h3><p>   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以理解为进程到进程之间的通信.</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/CareySon/201204/201204271057008113.png" alt=""></p>
+<h3 id="http的主要特点"><a href="#http的主要特点" class="headerlink" title="http的主要特点"></a><strong>http的主要特点</strong></h3><p>1.支持客户/服务器模式<br>2.简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。<br>3.灵活：http允许传轮任意类型的数据对象。正在传输的类型由Content-Type加以标记。<br>4.无连接：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/07/http详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
     
     
     
@@ -2124,7 +2052,7 @@ obj.name = &quot;lxy&quot;;</code></p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

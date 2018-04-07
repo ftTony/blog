@@ -117,19 +117,19 @@
 
 
 
-<meta name="description" content="深入理解 JavaScript 对象和数组拷贝前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScr">
+<meta name="description" content="前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScript 中的数据类型可以分为两种：基本类型值（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小武子博客">
-<meta property="og:url" content="http://blog.xiaowuzi.info/2016/05/15/JavaScript之深浅拷贝/index.html">
+<meta property="og:title" content="JavaScript之深浅拷贝">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/index.html">
 <meta property="og:site_name" content="小武子博客">
-<meta property="og:description" content="深入理解 JavaScript 对象和数组拷贝前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScr">
+<meta property="og:description" content="前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScript 中的数据类型可以分为两种：基本类型值（">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-31%20%E4%B8%8B%E5%8D%8817.21.50%20%E4%B8%8B%E5%8D%88.png">
 <meta property="og:image" content="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-02%20%E4%B8%8B%E5%8D%8813.20.45%20%E4%B8%8B%E5%8D%88.png">
-<meta property="og:updated_time" content="2017-11-23T11:41:33.000Z">
+<meta property="og:updated_time" content="2018-04-07T13:57:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小武子博客">
-<meta name="twitter:description" content="深入理解 JavaScript 对象和数组拷贝前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScr">
+<meta name="twitter:title" content="JavaScript之深浅拷贝">
+<meta name="twitter:description" content="前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScript 中的数据类型可以分为两种：基本类型值（">
 <meta name="twitter:image" content="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-31%20%E4%B8%8B%E5%8D%8817.21.50%20%E4%B8%8B%E5%8D%88.png">
 
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/05/15/JavaScript之深浅拷贝/">
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/">
 
 
 
 
 
-  <title> | 小武子博客</title>
+  <title>JavaScript之深浅拷贝 | 小武子博客</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/05/15/JavaScript之深浅拷贝/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript之深浅拷贝</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T13:33:46+08:00">
-                2016-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T20:51:07+08:00">
+                2016-04-09
               </time>
             
 
@@ -342,6 +342,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -370,7 +392,7 @@
       
 
       
-        <h1 id="深入理解-JavaScript-对象和数组拷贝"><a href="#深入理解-JavaScript-对象和数组拷贝" class="headerlink" title="深入理解 JavaScript 对象和数组拷贝"></a>深入理解 JavaScript 对象和数组拷贝</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文要解决的问题：</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文要解决的问题：</p>
 <ul>
 <li>为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在</li>
 <li>理解 JavaScript 中深拷贝和浅拷贝的区别</li>
@@ -383,9 +405,9 @@
 <p>除了保存的方式不同之外，在从一个变量向另一个变量复制基本类型值和引用类型值时，也存在不同：</p>
 <ul>
 <li>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</li>
-<li>当从一个变量向另一个变量复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另一个变量。</li>
+<li>当从一个变量向另一个变量复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另一个变量。<a id="more"></a>
+看下面的代码：</li>
 </ul>
-<p>看下面的代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本类型值复制</span></span><br><span class="line"><span class="keyword">var</span> string1 = <span class="string">'base type'</span>;</span><br><span class="line"><span class="keyword">var</span> string2 = string1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用类型值复制</span></span><br><span class="line"><span class="keyword">var</span> object1 = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> object2 = object1;</span><br></pre></td></tr></table></figure>
 <p>下图可以表示两种类型的变量的复制结果：</p>
 <p><img src="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-31%20%E4%B8%8B%E5%8D%8817.21.50%20%E4%B8%8B%E5%8D%88.png" alt=""></p>
@@ -518,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/25/https/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/04/08/JavaScript原型与原型链/" rel="next" title="JavaScript原型与原型链">
+                <i class="fa fa-chevron-left"></i> JavaScript原型与原型链
               </a>
             
           </div>
@@ -528,8 +550,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/15/this理解（一）/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/10/Promise学习/" rel="prev" title="Promise学习">
+                Promise学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -618,7 +640,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -662,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解-JavaScript-对象和数组拷贝"><span class="nav-number">1.</span> <span class="nav-text">深入理解 JavaScript 对象和数组拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一，-理解问题原因所在"><span class="nav-number">1.2.</span> <span class="nav-text">一， 理解问题原因所在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，-深拷贝和浅拷贝的区别"><span class="nav-number">1.3.</span> <span class="nav-text">二， 深拷贝和浅拷贝的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝"><span class="nav-number">1.3.1.</span> <span class="nav-text">浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝"><span class="nav-number">1.3.2.</span> <span class="nav-text">深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#没有银弹-根据实际需求"><span class="nav-number">1.3.3.</span> <span class="nav-text">没有银弹 - 根据实际需求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，-实现对象和数组浅拷贝"><span class="nav-number">1.4.</span> <span class="nav-text">三， 实现对象和数组浅拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象浅拷贝"><span class="nav-number">1.4.1.</span> <span class="nav-text">对象浅拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用-Object-assign-方法"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">1. 使用 Object.assign 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用-Object-getOwnPropertyNames-拷贝不可枚举的属性"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">2. 使用 Object.getOwnPropertyNames 拷贝不可枚举的属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用-Object-getPrototypeOf-和-Object-getOwnPropertyDescriptor-拷贝原型与描述符"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">3. 使用 Object.getPrototypeOf 和 Object.getOwnPropertyDescriptor 拷贝原型与描述符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组浅拷贝"><span class="nav-number">1.4.2.</span> <span class="nav-text">数组浅拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-slice-和-concat-方法"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">使用 slice 和 concat 方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四，-实现对象和数组深拷贝"><span class="nav-number">1.5.</span> <span class="nav-text">四， 实现对象和数组深拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用-JSON-stringify-和-JSON-parse-方法"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">1. 使用 JSON.stringify 和 JSON.parse 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用递归"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">2. 使用递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用队列"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">3. 使用队列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.5.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一，-理解问题原因所在"><span class="nav-number">2.</span> <span class="nav-text">一， 理解问题原因所在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，-深拷贝和浅拷贝的区别"><span class="nav-number">3.</span> <span class="nav-text">二， 深拷贝和浅拷贝的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝"><span class="nav-number">3.1.</span> <span class="nav-text">浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝"><span class="nav-number">3.2.</span> <span class="nav-text">深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#没有银弹-根据实际需求"><span class="nav-number">3.3.</span> <span class="nav-text">没有银弹 - 根据实际需求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，-实现对象和数组浅拷贝"><span class="nav-number">4.</span> <span class="nav-text">三， 实现对象和数组浅拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象浅拷贝"><span class="nav-number">4.1.</span> <span class="nav-text">对象浅拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用-Object-assign-方法"><span class="nav-number">4.1.1.</span> <span class="nav-text">1. 使用 Object.assign 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用-Object-getOwnPropertyNames-拷贝不可枚举的属性"><span class="nav-number">4.1.2.</span> <span class="nav-text">2. 使用 Object.getOwnPropertyNames 拷贝不可枚举的属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用-Object-getPrototypeOf-和-Object-getOwnPropertyDescriptor-拷贝原型与描述符"><span class="nav-number">4.1.3.</span> <span class="nav-text">3. 使用 Object.getPrototypeOf 和 Object.getOwnPropertyDescriptor 拷贝原型与描述符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组浅拷贝"><span class="nav-number">4.2.</span> <span class="nav-text">数组浅拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-slice-和-concat-方法"><span class="nav-number">4.2.1.</span> <span class="nav-text">使用 slice 和 concat 方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四，-实现对象和数组深拷贝"><span class="nav-number">5.</span> <span class="nav-text">四， 实现对象和数组深拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用-JSON-stringify-和-JSON-parse-方法"><span class="nav-number">5.0.1.</span> <span class="nav-text">1. 使用 JSON.stringify 和 JSON.parse 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用递归"><span class="nav-number">5.0.2.</span> <span class="nav-text">2. 使用递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用队列"><span class="nav-number">5.0.3.</span> <span class="nav-text">3. 使用队列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.1.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
