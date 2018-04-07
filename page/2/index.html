@@ -296,6 +296,492 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/12/22/深入理解 Promise (上)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/22/深入理解 Promise (上)/" itemprop="url">深入理解 Promise (上)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-22T12:39:04+08:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Promise 呢？是否有误用或错误使用 Promise 呢？是否知道 Promise 的实现原理和 Promise 的花样玩法呢？下面让我们一起来探讨一下吧。</p>
+<p>在回顾知识的时候，总是能发现更多相关知识，从原理到源码再到实践，是一个深入浅出的过程，一边总结，一边实践，发现有太多太多的东西需要说明，本以为三言两语就能说清楚的东西，一下子就变成了长篇大论，为了便于阅读理解，我分成上中下三篇，文中不免有错漏之处，烦请各位大神们指出。</p>
+<h2 id="上-理论知识"><a href="#上-理论知识" class="headerlink" title="上 - 理论知识"></a>上 - 理论知识</h2><ul>
+<li>Promise 规范</li>
+<li>ES6 Promise API</li>
+<li>Polyfill和扩展类库</li>
+<li><p>Promise 在应用中的错误用法和误区</p>
+<ol>
+<li>当作回调使用</li>
+<li>没有返回值</li>
+<li>没有catch</li>
+<li>catch()与then(null, onRejected)</li>
+<li>断链</li>
+<li>穿透</li>
+<li>长度未知的串行与并行</li>
+<li>Promise.resolve的使用</li>
+</ol>
+</li>
+<li><p>最佳实践</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/深入理解 Promise (上)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/10/Promise学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/10/Promise学习/" itemprop="url">Promise学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-10T20:51:07+08:00">
+                2016-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Promise 为异步编程提供统一的解决方案，比传统的回调和事件更加合理有效。<br>多重嵌套的回调函数，代码是横向发展，不是纵向发展，容易乱成一团，不便管理，称之为”callback hell”，回调地狱或回调恶梦。<br>Promise就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载。</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>状态</li>
+<li>初始化</li>
+<li>then / catch</li>
+<li>resolve() / reject()</li>
+<li>all() / race()</li>
+<li>done / finally</li>
+</ul>
+<h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>Promise的三个状态：Pending 进行中 / Resolved 已成功 / Rejected 已失败</p>
+<p>状态改变方式:</p>
+<p>Pending =&gt; Resolved</p>
+<p>Pending =&gt; Rejected</p>
+<p>将异步操作以同步的操作编程表达出来，避免了层层嵌套的回调函数。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>一旦新建它就会立即执行，无法中途取消</li>
+<li>如果不设置回调函数，Promise内部抛出的错误，不会反应到外部</li>
+<li>当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/10/Promise学习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/09/JavaScript之深浅拷贝/" itemprop="url">JavaScript之深浅拷贝</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T20:51:07+08:00">
+                2016-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文要解决的问题：</p>
+<ul>
+<li>为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在</li>
+<li>理解 JavaScript 中深拷贝和浅拷贝的区别</li>
+<li>JavaScript 拷贝对象的注意事项</li>
+<li>JavaScript 拷贝对象和数组的实现方法</li>
+</ul>
+<p>部分代码可在这里找到：<a href="https://github.com/chhpt/JavaScript-Exploration/tree/master/shallow-and-deep-copy" target="_blank" rel="noopener">Github</a>。如果发现错误，欢迎指出。</p>
+<h2 id="一，-理解问题原因所在"><a href="#一，-理解问题原因所在" class="headerlink" title="一， 理解问题原因所在"></a>一， 理解问题原因所在</h2><p>JavaScript 中的数据类型可以分为两种：基本类型值（Number, Boolean, String, NULL, Undefined）和引用类型值（Array, Object, Date, RegExp, Function)。 基本类型值指的是简单的数据段，而引用类型值指那些可能由多个值构成的对象。</p>
+<p><strong>基本数据类型是按值访问的</strong>，因为可以直接操作保存在变量中的实际的值。引用类型的值是保存在内存中的对象，与其他语言不同，JavaScript 不允许直接访问内存中的位置，也就是说不能直接操作对象的内存空间。在操作对象时，实际上是在<strong>操作对象的引用</strong>而不是实际的对象。 为此，引用类型的值是按引用访问的。</p>
+<p>除了保存的方式不同之外，在从一个变量向另一个变量复制基本类型值和引用类型值时，也存在不同：</p>
+<ul>
+<li>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</li>
+<li>当从一个变量向另一个变量复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另一个变量。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/09/JavaScript之深浅拷贝/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/08/JavaScript原型与原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -846,7 +1332,33 @@
       
         
           
-            
+            <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
+<li>什么是CRSF</li>
+<li>CRSF原理是什么</li>
+<li>CSRF攻击的本质原因</li>
+<li>CRSF防御手段</li>
+</ol>
+<h3 id="什么是CRSF"><a href="#什么是CRSF" class="headerlink" title="什么是CRSF"></a>什么是CRSF</h3><p>CSRF（Cross Site Request Forgery），中文是跨站点请求伪造。CSRF攻击者在用户已经登录目标网站之后，诱使用户访问一个攻击页面，利用目标网站对用户的信任，以用户身份在攻击页面对目标网站发起伪造用户操作的请求，达到攻击目的。</p>
+<h3 id="CRSF原理是什么"><a href="#CRSF原理是什么" class="headerlink" title="CRSF原理是什么"></a>CRSF原理是什么</h3><p><img src="https://pic002.cnblogs.com/img/hyddd/200904/2009040916453171.jpg" alt="image"></p>
+<p>从上图可以看出，要完成一次CSRF攻击，受害者必须依次完成两个步骤：</p>
+<ol>
+<li>登录受信任网站A，并在本地生成Cookie。</li>
+<li>在不登出A的情况下，访问危险网站B。</li>
+</ol>
+<p>示例一</p>
+<p>示例二</p>
+<h3 id="CRSF防御手段"><a href="#CRSF防御手段" class="headerlink" title="CRSF防御手段"></a>CRSF防御手段</h3><p>目前防御CSRF攻击主要有三种策略：验证HTTP Referer字段；在请求地址中添加token并验证；在HTTP头中自定义属性并验证。</p>
+<h4 id="验证http-referer字段"><a href="#验证http-referer字段" class="headerlink" title="验证http referer字段"></a>验证http referer字段</h4><p>根据HTTP协议，在HTTP头中有一个字段叫Referer，它记录了该HTTP请求的来源地址。在通常情况下，访问一个安全受限页面的请求来自于同一个网站，比如需要访问<a href="http://bank.example/withdraw?account=bob&amp;amount=1000000&amp;for=Mallory，用户必须先登陆" target="_blank" rel="noopener">http://bank.example/withdraw?account=bob&amp;amount=1000000&amp;for=Mallory，用户必须先登陆</a> bank.example，然后通过点页面上的按钮来触发转帐事件。这时，该转帐请求的Referer值就是转账按钮所在页面的URL，通常是以bank.example 域名开头的地址。而如果黑客要对银行网站实话CSRF攻击，他只能在他自己的网站构造请求，当用户通过黑客的网站发送请求到银行时，该请求的Referer是指向黑客自己的网站。因此，要防御CSRF攻击，银行网站只需要对于每一个转账请求验证期Referer值，如果是以 bank.example 域名开头，则说明该请求是来自银行网站自己的请求，是合法的。如果Referer是其他网站的话，则有可能是黑客的CSRF攻击，拒绝该请求。</p>
+<p>这种方法的显而见的好处就是简单易行，网站的普通人员不需要操心CSRF的漏洞，只需要在最后给所有安全敏感的请求统一个拦截器来检查Referer的值就可以。特别是对于当前现有的系统，不需要改变当前系统任何已有代码和逻辑，没有风险，非常便捷。</p>
+<p>然而，这种方法并非万无一失。Referer的值是由浏览器提供的，虽然HTTP协议上有明确的要求，但是每个浏览器对于Referer的具体实现可能有差别，并不能保证浏览器自身没有安全漏洞。使用验证Referer值的方法，就是把安全性都依赖于第三方（即浏览器）来保障，从理论上来讲，这样并不安全。事实上，对于某些浏览器，比如IE6或FF2，目前一些方法可以篡改Referer值。如果bank.example网站支持IE6浏览器，黑客完全可以把用户浏览器的Referer值设为以bank.example域名开头的地址，这样就可以通过验证，从而进行CSRF攻击。</p>
+<p>   即使是使用最新浏览器，黑客无法篡改Referer值，这种方法仍然有问题。因为Referer值会记录下用户的访问来源，有些用户认为这样会侵犯到他们自己的隐私权，特别是有些组织担心Referer值会把组织内网中某信息泄露到外网中。因此，用户自己可以设置浏览器使其在发送请求时不再提供Referer。当他们正常访问银行网站时，网站会因为请求没有Referer值而认为是CSRF攻击，拒绝合法用户的访问。</p>
+<h4 id="在请求地址中添加token并验证"><a href="#在请求地址中添加token并验证" class="headerlink" title="在请求地址中添加token并验证"></a>在请求地址中添加token并验证</h4><p>   CSRF攻击之所能够成功，是为黑客可以完全伪造用户的请求，该请求中用户验证信息都是存在于cookie中，因此黑客可以不知道这此验证的情况下直接利用用户自己的cookie来通过安全验证。要抵御CSRF，关键在于在请求中放入黑客所不能伪造的信息，并且该信息不存在于cookie之中。可以在HTTP请求中以参数的形式加入一个随机产生的token，并在服务器端建立一个拦截器来验证这个token，如果请求中没有token或者内容不正确，则认为可能是csrf攻击而拒绝该请求。</p>
+<p>   这种方法要比检查referer要安全一些，token可以在用户登陆报到产生并放于session之中，然后在每次请求时把token从session中拿出，与请求中的token进行比对，但这种方法的难点在于如何把token以参数的形式加入请求。对于GET请求，token将附在请求地址之后，这样URL就变成 <a href="http://url?csrftoken=tokenvalue。而对于POST请求来说，要在form的最后加上" target="_blank" rel="noopener">http://url?csrftoken=tokenvalue。而对于POST请求来说，要在form的最后加上</a><input type="”hidden”" name="”csrftoken”" value="”tokenvalue”/">，这样就把token以参数的形式加入请求了。但是，在一个网站中，可以接受请求的地方非常多，要对于每一个请求都加上token是很麻烦的，并且很容易漏掉，通常使用的方法就是在每次页面加载时，使用javasript遍历整个dom树，对于dom中所有的a和form标签后加入token。这样可以解决大部分的请求，但是对于在页面加载之后动态的htmtl代码，这种方法就没有作用，还需要程序员手动添加token。</p>
+<p>   该方法还有一个缺点是难以保证 token 本身的安全。特别是在一些论坛之类支持用户自己发表内容的网站，黑客可以在上面发布自己个人网站的地址。由于系统也会在这个地址后面加上 token，黑客可以在自己的网站上得到这个 token，并马上就可以发动 CSRF 攻击。为了避免这一点，系统可以在添加 token 的时候增加一个判断，如果这个链接是链到自己本站的，就在后面添加 token，如果是通向外网则不加。不过，即使这个 csrftoken 不以参数的形式附加在请求之中，黑客的网站也同样可以通过 Referer 来得到这个 token 值以发动 CSRF 攻击。这也是一些用户喜欢手动关闭浏览器 Referer 功能的原因。</p>
+<h4 id="在HTTP头中自定义属性并验证"><a href="#在HTTP头中自定义属性并验证" class="headerlink" title="在HTTP头中自定义属性并验证"></a>在HTTP头中自定义属性并验证</h4><p>   这种方法也是使用 token 并进行验证，和上一种方法不同的是，这里并不是把 token 以参数的形式置于 HTTP 请求之中，而是把它放到 HTTP 头中自定义的属性里。通过 XMLHttpRequest 这个类，可以一次性给所有该类请求加上 csrftoken 这个 HTTP 头属性，并把 token 值放入其中。这样解决了上种方法在请求中加入 token 的不便，同时，通过 XMLHttpRequest 请求的地址不会被记录到浏览器的地址栏，也不用担心 token 会透过 Referer 泄露到其他网站中去。        然而这种方法的局限性非常大。XMLHttpRequest 请求通常用于 Ajax 方法中对于页面局部的异步刷新，并非所有的请求都适合用这个类来发起，而且通过该类请求得到的页面不能被浏览器所记录下，从而进行前进，后退，刷新，收藏等操作，给用户带来不便。另外，对于没有进行 CSRF 防护的遗留系统来说，要采用这种方法来进行防护，要把所有请求都改为 XMLHttpRequest 请求，这样几乎是要重写整个网站，这代价无疑是不能接受的。</p>
+<p>参考资料：</p>
+<p><a href="https://www.ibm.com/developerworks/cn/web/1102_niugang_csrf/" target="_blank" rel="noopener">CSRF 攻击的应对之道</a></p>
+<p><a href="http://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html" target="_blank" rel="noopener">浅谈CSRF攻击方式</a></p>
           
         
       
@@ -1339,472 +1851,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2013/07/09/this理解（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/07/09/this理解（二）/" itemprop="url">this理解（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-09T20:51:07+08:00">
-                2013-07-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li>默认绑定</li>
-<li>隐式绑定</li>
-<li>显式绑定</li>
-<li>new绑定</li>
-</ol>
-<h2 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h2><p>首先要介绍的是最常用的函数调用类型:独立函数调用。可以把这条规则看作是无法应用其他规则时的默认规则。来自《你不知道的javascript(上卷)》</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	 console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">var a=2; foo(); // 2</span><br></pre></td></tr></table></figure>
-<p>那么我们怎么知道这里应用了默认绑定呢?可以通过分析调用位置来看看 foo() 是如何调用的。</p>
-<p>如果使用严格模式(strict mode)，那么全局对象将无法使用默认绑定，因此this会绑定 到 undefined:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; &quot;use strict&quot;;</span><br><span class="line">         console.log( this.a );</span><br><span class="line">     &#125;</span><br><span class="line">var a=2;</span><br><span class="line">foo(); // TypeError: this is undefined</span><br></pre></td></tr></table></figure>
-<p>这里有一个微妙但是非常重要的细节，虽然 this 的绑定规则完全取决于调用位置，但是只 有foo()运行在非strict mode下时，默认绑定才能绑定到全局对象;严格模式下与foo() 的调用位置无关:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123; console.log( this.a );</span><br><span class="line">&#125;</span><br><span class="line">vara=2;</span><br><span class="line">(function()&#123; &quot;use strict&quot;;</span><br><span class="line">         foo(); // 2</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/07/09/this理解（二）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2013/07/08/this理解（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/07/08/this理解（一）/" itemprop="url">this理解（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-08T20:51:07+08:00">
-                2013-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>函数的几种调用方式：</p>
-<ol>
-<li>全局&amp;调用普通函数</li>
-<li>作为对象方法来调用</li>
-<li>作为构造函数来调用</li>
-<li>使用apply/call/bind方法来调用</li>
-<li>构造函数 prototype 属性</li>
-<li>DOM event this</li>
-<li>es6箭头函数</li>
-</ol>
-<h2 id="全局-amp-调用普通函数"><a href="#全局-amp-调用普通函数" class="headerlink" title="全局&amp;调用普通函数"></a>全局&amp;调用普通函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function person()&#123;</span><br><span class="line">        this.name=&quot;xl&quot;;</span><br><span class="line">        console.log(this);</span><br><span class="line">        console.log(this.name);</span><br><span class="line"> &#125;</span><br><span class="line"> person();  //输出  window  xl</span><br></pre></td></tr></table></figure>
-<p>在这段代码中person函数作为普通函数调用，实际上person是作为全局对象window的一个方法来进行调用的,即window.person();</p>
-<p>所以这个地方是window对象调用了person方法,那么person函数当中的this即指window,同时window还拥有了另外一个属性name,值为xl.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/07/08/this理解（一）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2013/07/07/TCP三次握手/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/07/07/TCP三次握手/" itemprop="url">TCP三次握手</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-07T20:51:07+08:00">
-                2013-07-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>TCP/IP七层模型分别是：应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</p>
-<h5 id="在TCP-IP协议中，TCP协议提供可靠的连接服务，采用三次握手建立一个连接。"><a href="#在TCP-IP协议中，TCP协议提供可靠的连接服务，采用三次握手建立一个连接。" class="headerlink" title="在TCP/IP协议中，TCP协议提供可靠的连接服务，采用三次握手建立一个连接。"></a>在TCP/IP协议中，TCP协议提供可靠的连接服务，采用三次握手建立一个连接。</h5><p>第一次握手：建立连接时，客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认； </p>
-<p>第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p>
-<p>第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。 完成三次握手，客户端与服务器开始传送数据.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/07/07/TCP三次握手/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1855,7 +1901,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
