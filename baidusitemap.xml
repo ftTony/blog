@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-04-07T12:48:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>http详解</title>
+        <pubTime>2018-04-07T12:45:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/12/22/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%8A)/</loc>
+    <lastmod>2018-04-07T12:38:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解 Promise (上)</title>
+        <pubTime>2014-12-22T04:39:04.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>
