@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数据类型、数据类型转换、相等&amp;amp;严格相等数据类型分类基本数据类型：String,boolean,Number,Symbol（ES6新增）,Undefined, Null 引用数据类型：Object 基本数据类型中有两个为特殊数据类型： null, undefined js的常见内置对象：Date,Array,Math,Number,Boolean,String,Array,RegExp,Fu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小武子博客">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2017/12/11/数据类型、数据类型转换、相等&严格相等/index.html">
+<meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="数据类型、数据类型转换、相等&amp;amp;严格相等数据类型分类基本数据类型：String,boolean,Number,Symbol（ES6新增）,Undefined, Null 引用数据类型：Object 基本数据类型中有两个为特殊数据类型： null, undefined js的常见内置对象：Date,Array,Math,Number,Boolean,String,Array,RegExp,Fu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-11T13:15:08.402Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小武子博客">
+<meta name="twitter:description" content="数据类型、数据类型转换、相等&amp;amp;严格相等数据类型分类基本数据类型：String,boolean,Number,Symbol（ES6新增）,Undefined, Null 引用数据类型：Object 基本数据类型中有两个为特殊数据类型： null, undefined js的常见内置对象：Date,Array,Math,Number,Boolean,String,Array,RegExp,Fu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2017/12/11/数据类型、数据类型转换、相等&严格相等/">
+
+
+
+
+
+  <title> | 小武子博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小武子博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/12/11/数据类型、数据类型转换、相等&严格相等/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T20:47:27+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="数据类型、数据类型转换、相等-amp-严格相等"><a href="#数据类型、数据类型转换、相等-amp-严格相等" class="headerlink" title="数据类型、数据类型转换、相等&amp;严格相等"></a>数据类型、数据类型转换、相等&amp;严格相等</h1><h2 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h2><p>基本数据类型：String,boolean,Number,Symbol（ES6新增）,Undefined, Null</p>
+<p>引用数据类型：Object</p>
+<p>基本数据类型中有两个为特殊数据类型： null, undefined</p>
+<p>js的常见内置对象：Date,Array,Math,Number,Boolean,String,Array,RegExp,Function…</p>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">undefined == null;  // true   </span><br><span class="line">1 == true;  // true  </span><br><span class="line">2 == true;  // false  </span><br><span class="line">0 == false;  // true</span><br><span class="line">0 == &apos;&apos;;  // true   </span><br><span class="line">NaN == NaN;  // false  NaN不等于任何值</span><br><span class="line">[] == false;  // true  </span><br><span class="line">[] == ![];  // true</span><br><span class="line">&apos;6&apos; - &apos;3&apos;  // 3</span><br><span class="line">1234 + &apos;abcd&apos; // &quot;1234abcd&quot;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>undefined与null相等，但不恒等（===）</li>
+<li>一个是number一个是string时，会尝试将string转换为number</li>
+<li>隐式转换将boolean转换为number，0或1</li>
+<li>隐式转换将Object转换成number或string，取决于另外一个对比量的类型</li>
+<li>对于0、空字符串的判断，建议使用 “===” 。</li>
+<li>“==”会对不同类型值进行类型转换再判断，“===”则不会。它会先判断两边的值类型，类型不匹配时直接为false。</li>
+</ol>
+<h3 id="显示转换"><a href="#显示转换" class="headerlink" title="显示转换"></a>显示转换</h3><p>显示转换一般指使用Number、String和Boolean三个构造函数，手动将各种类型的值，转换成数字、字符串或者布尔值。</p>
+<h4 id="Number："><a href="#Number：" class="headerlink" title="Number："></a>Number：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;1234&apos;) // 1234</span><br><span class="line">Number(&apos;1234abcd&apos;) // NaN</span><br><span class="line">Number(&apos;&apos;) // 0</span><br><span class="line">Number(true) // 1</span><br><span class="line">Number(null) // 0</span><br><span class="line">Number(undefined) // NaN</span><br></pre></td></tr></table></figure>
+<h4 id="String："><a href="#String：" class="headerlink" title="String："></a>String：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String(1234)  // &quot;1234&quot;</span><br><span class="line">String(&apos;abcd&apos;)  // &quot;abcd&quot;</span><br><span class="line">String(true)  // &quot;true&quot;</span><br><span class="line">String(undefined) // &quot;undefined&quot;</span><br><span class="line">String(null)  // &quot;null&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean:"></a>Boolean:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Boolean(0)  // false</span><br><span class="line">Boolean(undefined)  // false</span><br><span class="line">Boolean(null)  // false</span><br><span class="line">Boolean(NaN)  // false</span><br><span class="line">Boolean(&apos;&apos;)  // false</span><br></pre></td></tr></table></figure>
+<p>Number、String、Boolean转换对象时主要使用了对象内部的valueOf和toString方法进行转换。</p>
+<h4 id="Number转换对象："><a href="#Number转换对象：" class="headerlink" title="Number转换对象："></a>Number转换对象：</h4><ol>
+<li>先调用对象自身的valueOf方法。如果返回原始类型的值，则直接对该值使用Number函数，返回结果。</li>
+<li>如果valueOf返回的还是对象，继续调用对象自身的toString方法。如果toString返回原始类型的值，则对该值使用Number函数，返回结果。</li>
+<li>如果toString返回的还是对象，报错。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number([1]); //1</span><br><span class="line">转换演变：</span><br><span class="line">[1].valueOf(); // [1];</span><br><span class="line">[1].toString(); // &apos;1&apos;;</span><br><span class="line">Number(&apos;1&apos;); //1</span><br></pre></td></tr></table></figure>
+<h4 id="String转换对象"><a href="#String转换对象" class="headerlink" title="String转换对象"></a>String转换对象</h4><ol>
+<li>先调用对象自身的toString方法。如果返回原始类型的值，则对该值使用String函数，返回结果。</li>
+<li>如果toString返回的是对象，继续调用valueOf方法。如果valueOf返回原始类型的值，则对该值使用String函数，返回结果。</li>
+<li>如果valueOf返回的还是对象，报错。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String([1,2]) //&quot;1,2&quot;</span><br><span class="line">转化演变：</span><br><span class="line">[1,2].toString();  //&quot;1,2&quot;</span><br><span class="line">String(&quot;1,2&quot;);  //&quot;1,2&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="Boolean转换对象"><a href="#Boolean转换对象" class="headerlink" title="Boolean转换对象"></a>Boolean转换对象</h4><p>Boolean转换对象很特别，除了以下六个值转换为false，其他都为true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">undefined  null  false  0(包括+0和-0)  NaN  空字符串(&apos;&apos;)</span><br><span class="line">Boolean(undefined)   //false</span><br><span class="line">Boolean(null)        //false</span><br><span class="line">Boolean(false)       //false</span><br><span class="line">Boolean(0)           //false</span><br><span class="line">Boolean(NaN)         //false</span><br><span class="line">Boolean(&apos;&apos;)          //false</span><br><span class="line"></span><br><span class="line">Boolean([])          //true</span><br><span class="line">Boolean(&#123;&#125;)          //true</span><br><span class="line">Boolean(new Date())  //true</span><br></pre></td></tr></table></figure>
+<h3 id="严格相等运算符和相等运算符的区别："><a href="#严格相等运算符和相等运算符的区别：" class="headerlink" title="严格相等运算符和相等运算符的区别："></a>严格相等运算符和相等运算符的区别：</h3><p>==相等运算符比较两个值的时候会判断两个值的类型，如果不是同一类型，会强制转换为同一类型进行比较。</p>
+<p>而===比较两个值的时候先判断两个值的类型，如果不是同一类型，直接返回false，值类型相同再进行值的比较。</p>
+<p>所以，从性能上来说，==会比===多走一条类型转换的路，稍逊一点。从结果上来说，有时候类型转换会给你带来你不想要的比较结果。 这也就是为什么都推崇使用===的原因。当然，==在合适的业务场景下使用也是必要的。</p>
+<h3 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符=="></a>相等运算符==</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">规则： </span><br><span class="line"></span><br><span class="line">if 相等运算符比较相同类型的数据时，同严格相等运算符</span><br><span class="line">else if 相等运算符比较不同类型的数据时：</span><br><span class="line">原始类型的数据会转换成数值类型，把字符串和布尔值都转为数值，再进行比较</span><br><span class="line">null == undefined  返回true</span><br><span class="line">一个是对象，另一个是数字或者字符串，把对象转成基本类型值再比较</span><br><span class="line">else false</span><br><span class="line"></span><br><span class="line">123 == 123; //true</span><br><span class="line">&apos;123&apos; == 123; //true，&apos;123&apos;会转成成数值123</span><br><span class="line">false == 0; //true，false 转成数值就是0</span><br><span class="line">&apos;a&apos; == &apos;A&apos;; //false，转换后的编码不一样</span><br><span class="line">123 == &#123;&#125;; //false，执行toString()或valueOf()会改变</span><br><span class="line">123 == NaN; //false，只要有NaN，都是false</span><br><span class="line">&#123;&#125; == &#123;&#125;; //false，比较的是他们的地址，每个新创建对象的引用地址都不同</span><br><span class="line"></span><br><span class="line">null == undefined //true</span><br><span class="line">&apos;NaN&apos; == NaN //false</span><br><span class="line">123 == NaN //false</span><br><span class="line">NaN == NaN //false</span><br><span class="line">false == 0 //true</span><br><span class="line">true == 1 //true</span><br><span class="line">true == 2 //false</span><br><span class="line">undefined == 0 //false</span><br><span class="line">null == 0 //false</span><br><span class="line">&apos;123&apos; == 123 //true</span><br><span class="line">&apos;123&apos; === 123 //false</span><br></pre></td></tr></table></figure>
+<h3 id="判断"><a href="#判断" class="headerlink" title="!!判断"></a>!!判断</h3><p>!!相当于Boolean，写代码时用!!转化为Boolean类型做判断非常好用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">!!&apos;xzavier&apos;;   // true</span><br><span class="line">!!&apos;&apos;;          // false</span><br><span class="line">!!&apos;0&apos;;         // true</span><br><span class="line">!!&apos;1&apos;;         // true</span><br><span class="line">!!&apos;-1&apos;         // true</span><br><span class="line">!!0            // false</span><br><span class="line">!!undefined    // false</span><br><span class="line">!!null         // false</span><br><span class="line">!!NaN          // false</span><br><span class="line">!!&#123;&#125;;          // true</span><br><span class="line">!!&#123;name:&apos;xz&apos;&#125;  // true</span><br><span class="line">!![];          // true</span><br><span class="line">!![1,2,3];     // true</span><br><span class="line">!!true;        // true</span><br></pre></td></tr></table></figure>
+<h3 id="判断-1"><a href="#判断-1" class="headerlink" title="!判断"></a>!判断</h3><p>取反运算符 ! 用于将布尔值变为相反值，即true变成false，false变成true。对于非布尔值的数据，取反运算符会自动将其转为布尔值。规则是，以下六个值取反后为true，其他值取反后都为false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">undefined  null  false  0(包括+0和-0)  NaN  空字符串(&apos;&apos;)</span><br><span class="line"></span><br><span class="line">!undefined    // true</span><br><span class="line">!null         // true</span><br><span class="line">!false        // true</span><br><span class="line">!0            // true</span><br><span class="line">!NaN          // true</span><br><span class="line">!&quot;&quot;           // true    </span><br><span class="line">!54           // false</span><br><span class="line">!&apos;hello&apos;      // false</span><br><span class="line">![]           // false</span><br><span class="line">![1,2,3]      // false</span><br><span class="line">!&#123;&#125;           // false</span><br><span class="line">!&#123;name:&apos;xz&apos;&#125;  // false</span><br></pre></td></tr></table></figure>
+<h3 id="和-判断"><a href="#和-判断" class="headerlink" title="[]和{}判断"></a>[]和{}判断</h3><p>对于[]和{}，我们在业务代码中肯定会对其做判断，如上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!!&#123;&#125;;          // true</span><br><span class="line">!!&#123;name:&apos;xz&apos;&#125;  // true</span><br><span class="line">!![];          // true</span><br><span class="line">!![1,2,3];     // true</span><br></pre></td></tr></table></figure>
+<p>不能用!!和!做判断，对于数组，我们用它的length属性做判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[].length       // 0 false</span><br><span class="line">[1,2,3].length  // 3 true</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://segmentfault.com/a/1190000006672446" target="_blank" rel="noopener">相等==&amp;严格相等===&amp;代码里的那些判断</a></p>
+<p><a href="https://segmentfault.com/a/1190000005863067" target="_blank" rel="noopener">基本数据类型和引用数据类型判断&amp;存储访问&amp;类型转换</a></p>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Tony 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Tony 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/11/加法运算符/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/02/javascript引擎的执行机制/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tony</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型、数据类型转换、相等-amp-严格相等"><span class="nav-number">1.</span> <span class="nav-text">数据类型、数据类型转换、相等&amp;严格相等</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型分类"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型转换"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式转换"><span class="nav-number">1.2.1.</span> <span class="nav-text">隐式转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示转换"><span class="nav-number">1.2.2.</span> <span class="nav-text">显示转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Number："><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Number：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String："><span class="nav-number">1.2.2.2.</span> <span class="nav-text">String：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">Boolean:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Number转换对象："><span class="nav-number">1.2.2.4.</span> <span class="nav-text">Number转换对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String转换对象"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">String转换对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean转换对象"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">Boolean转换对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#严格相等运算符和相等运算符的区别："><span class="nav-number">1.2.3.</span> <span class="nav-text">严格相等运算符和相等运算符的区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相等运算符"><span class="nav-number">1.2.4.</span> <span class="nav-text">相等运算符==</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断"><span class="nav-number">1.2.5.</span> <span class="nav-text">!!判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断-1"><span class="nav-number">1.2.6.</span> <span class="nav-text">!判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和-判断"><span class="nav-number">1.2.7.</span> <span class="nav-text">[]和{}判断</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

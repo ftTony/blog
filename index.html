@@ -296,6 +296,815 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/07/前端常见算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/前端常见算法/" itemprop="url">前端常见算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T21:11:35+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>数组去复</li>
+<li>计算数组中每个元素出现的次数</li>
+<li>JS找出数组 arr 中重复出现过的元素</li>
+<li>统计一个字符串中出现最多的字母</li>
+<li>字符串回文判断(回文是指把相同的词汇或句子，在下文中调换位置或颠倒过来，产生首尾回环的情趣，叫做回文，也叫回环。)</li>
+<li>不利用第三方变量的情况下交换两个变量的值</li>
+</ul>
+<h3 id="数组去重复"><a href="#数组去重复" class="headerlink" title="数组去重复"></a>数组去重复</h3><p>方法一 正常思维<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var array=[1,1,&apos;1&apos;];</span><br><span class="line"></span><br><span class="line">function unique(array)&#123;</span><br><span class="line">    var res=[];</span><br><span class="line">    for(var i=0,len=array.length;i&lt;len;i++)&#123;</span><br><span class="line">        var current=array[i];</span><br><span class="line">        if(res.indexOf(current)===-1) res.push(current);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(unique(array));</span><br></pre></td></tr></table></figure></p>
+<p>方法二、利用filter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var array=[1,2,1,1,&apos;1&apos;];</span><br><span class="line"></span><br><span class="line">function unique(array)&#123;</span><br><span class="line">    var res=array.filter(function(item,index,array)&#123;</span><br><span class="line">        return array.indexOf(item)===index;</span><br><span class="line">    &#125;);</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(array));</span><br></pre></td></tr></table></figure>
+<p>方法三、使用reduce</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,1,2,3,5,4,5,3,4,4,4,4];</span><br><span class="line">function unique()&#123;</span><br><span class="line">    var result=arr.sort().reduce((init,current)=&gt;&#123;</span><br><span class="line">        if(init.length===0 || init[init,length-1])&#123;</span><br><span class="line">            init.push(current);</span><br><span class="line">        &#125;</span><br><span class="line">        return init;</span><br><span class="line">    &#125;,[]);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure>
+<h3 id="计算数组中每个元素出现的次数"><a href="#计算数组中每个元素出现的次数" class="headerlink" title="计算数组中每个元素出现的次数"></a>计算数组中每个元素出现的次数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var names=[&apos;Alice&apos;,&apos;Bob&apos;,&apos;Iiff&apos;,&apos;Bruce&apos;,&apos;Alice&apos;];</span><br><span class="line"></span><br><span class="line">var countedNames=names.reduce(function(allNames,name)&#123;</span><br><span class="line">    if(name in allNames)&#123;</span><br><span class="line">        allNames[name]++;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        allNames[name]=1;</span><br><span class="line">    &#125;</span><br><span class="line">    return allNames;</span><br><span class="line">&#125;,&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="JS找出数组-arr-中重复出现过的元素"><a href="#JS找出数组-arr-中重复出现过的元素" class="headerlink" title="JS找出数组 arr 中重复出现过的元素"></a>JS找出数组 arr 中重复出现过的元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;jhadfgskjfajhdewqe&quot;;</span><br><span class="line">var arr1=str1.split(&apos;&apos;);</span><br><span class="line">var result=arr1.reduce(function(arr2,current)&#123;</span><br><span class="line">	if(arr1.indexOf(current)&gt;-1 &amp;&amp; ((arr2.length===0) || (arr2.length !==0 &amp;&amp; arr2.indexOf(current)===-1))) arr2.push(current);</span><br><span class="line">	return arr2;</span><br><span class="line">&#125;,[]);</span><br><span class="line">console.log(str1);</span><br></pre></td></tr></table></figure>
+<h3 id="统计一个字符串中出现最多的字母"><a href="#统计一个字符串中出现最多的字母" class="headerlink" title="统计一个字符串中出现最多的字母"></a>统计一个字符串中出现最多的字母</h3><p>方法一</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;jhadfgskjfajhdewqe&quot;;  </span><br><span class="line">    var arr1 = str1.split(&apos;&apos;);  </span><br><span class="line">    console.log(arr1);  </span><br><span class="line">    function MostUnit()&#123;  </span><br><span class="line">        var arrA = [];  </span><br><span class="line">        var arrB = [];  </span><br><span class="line">        for(var i = 0 ;i &lt;arr1.length; i ++)&#123;  </span><br><span class="line">            if(arrA.indexOf(arr1[i])==-1)&#123;  </span><br><span class="line">                arrA.push(arr1[i]);  </span><br><span class="line">                arrB.push(1);  </span><br><span class="line">            &#125;else &#123;  </span><br><span class="line">                arrB[arrA.indexOf(arr1[i])] ++;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        console.log(arrB)  </span><br><span class="line">        console.log(arrA[arrB.indexOf(Math.max.apply(Math,arrB))]);  </span><br><span class="line">    &#125;  </span><br><span class="line">    MostUnit();//j</span><br></pre></td></tr></table></figure>
+<p>方法二</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;jhadfgskjfajhdewqe&quot;;</span><br><span class="line">var result=str1.split(&apos;&apos;).reduce(function(obj,current)&#123;</span><br><span class="line">	if(current in obj)&#123;</span><br><span class="line">		obj[current]++;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		obj[current]=1;</span><br><span class="line">	&#125;</span><br><span class="line">	obj.max=obj.max&gt;obj[current]?obj.max:obj[current];</span><br><span class="line">	obj.key=obj.max&gt;obj[current]?obj.key:current;</span><br><span class="line">	return obj;</span><br><span class="line">&#125;,&#123;&#125;);</span><br><span class="line">console.log(result.key,result.max);</span><br></pre></td></tr></table></figure>
+<h3 id="字符串回文判断-回文是指把相同的词汇或句子，在下文中调换位置或颠倒过来，产生首尾回环的情趣，叫做回文，也叫回环。"><a href="#字符串回文判断-回文是指把相同的词汇或句子，在下文中调换位置或颠倒过来，产生首尾回环的情趣，叫做回文，也叫回环。" class="headerlink" title="字符串回文判断(回文是指把相同的词汇或句子，在下文中调换位置或颠倒过来，产生首尾回环的情趣，叫做回文，也叫回环。)"></a>字符串回文判断(回文是指把相同的词汇或句子，在下文中调换位置或颠倒过来，产生首尾回环的情趣，叫做回文，也叫回环。)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str1=&apos;abcdefgh&apos;;</span><br><span class="line">var str1=&apos;abcdcba&apos;;</span><br><span class="line">function plalindrome(str)&#123;</span><br><span class="line">    return str===str.split(&apos;&apos;).reverse().join(&apos;&apos;);</span><br><span class="line">&#125;</span><br><span class="line">console.log(plalindrome(str1)); //false;</span><br><span class="line">console.log(plalindrome(str2)); //true;</span><br></pre></td></tr></table></figure>
+<h3 id="不利用第三方变量的情况下交换两个变量的值"><a href="#不利用第三方变量的情况下交换两个变量的值" class="headerlink" title="不利用第三方变量的情况下交换两个变量的值"></a>不利用第三方变量的情况下交换两个变量的值</h3><p>方法一</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = 10;  </span><br><span class="line">var b = 12;  </span><br><span class="line">function swap (a,b) &#123;  </span><br><span class="line">    b = b - a;  </span><br><span class="line">    a = a + b;  </span><br><span class="line">    b = a - b;  </span><br><span class="line">    return [a,b]  </span><br><span class="line">&#125;  </span><br><span class="line">console.log(swap(a,b));</span><br></pre></td></tr></table></figure>
+<p>方法二</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;a:b,b:a&#125;;</span><br><span class="line">b = a.b;</span><br><span class="line">a = a.a;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/07/排序算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/排序算法/" itemprop="url">排序算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T21:04:08+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h3 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h3><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/07/web安全——CRSF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/web安全——CRSF/" itemprop="url">web安全——CRSF</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T21:03:08+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/07/web安全——XSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/web安全——XSS/" itemprop="url">web安全——XSS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T21:02:58+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/07/apply、call和bind理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/apply、call和bind理解/" itemprop="url">apply、call和bind理解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T20:51:07+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="apply、call和bind理解"><a href="#apply、call和bind理解" class="headerlink" title="apply、call和bind理解"></a>apply、call和bind理解</h1><p>在JavaScript中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。</p>
+<p><strong>call、apply、bind方法的共同点和区别：</strong></p>
+<p>apply、call、bind三都是用来改变函数的this对象的指向的；</p>
+<p>apply、call、bind三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本次调用的上下文(context)——这就是this关键字的值。）；</p>
+<p>apply 、 call 、bind 三者都可以利用后续参数传参；</p>
+<p>bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 。</p>
+<p>一、call</p>
+<p><strong>call()</strong></p>
+<p>语法：call([thisObj[,arg1[, arg2[, [,.argN]]]]]) 定义：调用一个对象的一个方法，以另一个对象替换当前对象。</p>
+<p>说明： call 方法可以用来代替另一个对象调用一个方法。</p>
+<p>call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。</p>
+<p>thisObj的取值有以下4种情况：</p>
+<ol>
+<li>不传，或者传null,undefined， 函数中的this指向window对象</li>
+<li>传递另一个函数的函数名，函数中的this指向这个函数的引用</li>
+<li>传递字符串、数值或布尔类型等基础类型，函数中的this指向其对应的包装对象，如 String、Number、Boolean</li>
+<li>传递一个对象，函数中的this指向这个对象</li>
+</ol>
+<p><code>function a(){   
+  console.log(this);   //输出函数a中的this对象
+}      
+function b(){}       
+var c={name:&quot;call&quot;};    //定义对象c  
+a.call();   //window
+a.call(null);   //window
+a.call(undefined);   //window
+a.call(1);   //Number
+a.call(&#39;&#39;);   //String
+a.call(true);   //Boolean
+a.call(b);   //function b(){}
+a.call(c);   //Object</code></p>
+<p>如果你不理解上面的，没关系，我们再来看一个例子：</p>
+<p><code>function class1(){   
+  this.name=function(){   
+    console.log(&quot;我是class1内的方法&quot;);   
+  }   
+}   
+function class2(){ 
+  class1.call(this); //此行代码执行后，当前的this指向了class1（也可以说class2继承了class1）   
+}   
+var f=new class2();   
+f.name();   //调用的是class1内的方法，将class1的name方法交给class2使用</code></p>
+<p>常用例子：</p>
+<p><code>function eat(x,y){   
+  console.log(x+y);   
+}   
+function drink(x,y){   
+  console.log(x-y);   
+}   
+eat.call(drink,3,2);
+输出：5</code></p>
+<p>这个例子中的意思就是用 eat 来替换 drink，eat.call(drink,3,2) == eat(3,2) ，所以运行结果为：console.log(5);</p>
+<p>注意：js 中的函数其实是对象，函数名是对 Function 对象的引用。</p>
+<p>（2）</p>
+<p><code>function Animal(){   
+  this.name=&quot;animal&quot;;   
+  this.showName=function(){   
+    console.log(this.name);   
+  }   
+}   
+function Dog(){   
+  this.name=&quot;dog&quot;;   
+}   
+var animal=new Animal();   
+var dog=new Dog();       
+animal.showName.call(dog);
+输出：dog</code></p>
+<p>在上面的代码中，我们可以看到Dog里并没有showName方法，那为什么（this.name）的值是dog呢？</p>
+<p>关键就在于最后一段代码（animal.showName.call(dog)），意思是把animal的方法放到dog上执行，也可以说，把animal 的showName()方法放到 dog上来执行，所以this.name 应该是 dog。</p>
+<p>（3）继承</p>
+<p><code>function Animal(name){   
+  this.name=name;   
+  this.showName=function(){   
+    console.log(this.name);   
+  }   
+}   
+function Dog(name){   
+  Animal.call(this,name);   
+}   
+var dog=new Dog(&quot;Crazy dog&quot;);   
+dog.showName();
+输出：Crazy dog</code></p>
+<p>Animal.call(this) 的意思就是使用 Animal对象代替this对象，那么Dog就能直接调用Animal的所有属性和方法。</p>
+<h2 id="二、apply"><a href="#二、apply" class="headerlink" title="二、apply()"></a>二、apply()</h2><p>语法：apply([thisObj[,argArray]])</p>
+<p>定义：应用某一对象的一个方法，用另一个对象替换当前对象。</p>
+<p>说明：<br>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。<br>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</p>
+<p>call 和 apply的区别<br>对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。<br><code>function class1(args1,args2){       
+  this.name=function(){      
+   console.log(args,args);      
+  }     
+}     
+function class2(){    
+  var args1=&quot;1&quot;;
+  var args2=&quot;2&quot;;
+  class1.call(this,args1,args2);  
+  /*或*/
+  class1.apply(this,[args1,args2]);
+}
+var c=new class2();   
+c.name();
+输出：1 2</code></p>
+<p>call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。</p>
+<p>既然两者功能一样，那该用哪个呢？</p>
+<p>在JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时用 call ；而不确定的时候用 apply，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来遍历所有的参数。</p>
+<h2 id="三、bind"><a href="#三、bind" class="headerlink" title="三、bind"></a>三、bind</h2><p>bind是在EcmaScript5中扩展的方法（IE6,7,8不支持）<br>bind() 方法与 apply 和 call 很相似，也是可以改变函数体内 this 的指向。</p>
+<p>　　MDN的解释是：bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
+<p>注意：bind方法的返回值是函数</p>
+<p><code>var bar=function(){   
+  console.log(this.x);   
+}
+var foo={ 
+     x:3   
+}   
+bar();  
+bar.bind(foo)();
+ /*或*/
+var func=bar.bind(foo);   
+func();
+输出：
+undefined
+3</code></p>
+<p>参考资料：</p>
+<p>1.<a href="http://ghmagical.com/article/page/id/UPLfoGI9vJ91" target="_blank" rel="noopener">JS中的call、apply、bind方法</a></p>
+<p>2.<a href="https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more" target="_blank" rel="noopener">js中call、apply、bind那些事
+</a></p>
+<p>3.<a href="https://juejin.im/post/59019f9fa22b9d0065c51ef8" target="_blank" rel="noopener">巧妙理解 call 和 apply</a></p>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/07/http详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -504,7 +1313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/12/22/深入理解 Promise (上)/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/04/02/javascript引擎的执行机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -523,7 +1332,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/12/22/深入理解 Promise (上)/" itemprop="url">深入理解 Promise (上)</a></h1>
+                <a class="post-title-link" href="/2018/04/02/javascript引擎的执行机制/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -535,8 +1344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-12-22T12:39:04+08:00">
-                2014-12-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T20:10:16+08:00">
+                2018-04-02
               </time>
             
 
@@ -545,28 +1354,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript基础/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -596,35 +1383,584 @@
 
       
         
-          <p>自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Promise 呢？是否有误用或错误使用 Promise 呢？是否知道 Promise 的实现原理和 Promise 的花样玩法呢？下面让我们一起来探讨一下吧。</p>
-<p>在回顾知识的时候，总是能发现更多相关知识，从原理到源码再到实践，是一个深入浅出的过程，一边总结，一边实践，发现有太多太多的东西需要说明，本以为三言两语就能说清楚的东西，一下子就变成了长篇大论，为了便于阅读理解，我分成上中下三篇，文中不免有错漏之处，烦请各位大神们指出。</p>
-<h2 id="上-理论知识"><a href="#上-理论知识" class="headerlink" title="上 - 理论知识"></a>上 - 理论知识</h2><ul>
-<li>Promise 规范</li>
-<li>ES6 Promise API</li>
-<li>Polyfill和扩展类库</li>
-<li><p>Promise 在应用中的错误用法和误区</p>
-<ol>
-<li>当作回调使用</li>
-<li>没有返回值</li>
-<li>没有catch</li>
-<li>catch()与then(null, onRejected)</li>
-<li>断链</li>
-<li>穿透</li>
-<li>长度未知的串行与并行</li>
-<li>Promise.resolve的使用</li>
+          
+            <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</li>
+<li>js中的event loop(1)</li>
+<li>js中的event loop(2)</li>
+<li>说说setTimeout</li>
 </ol>
-</li>
-<li><p>最佳实践</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/12/22/深入理解 Promise (上)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
+<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。</p>
+<p>1.2、JS为什么需要异步？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">如果JS中不存在异步,只能自上而下执行,如果上一行解析时间很长,那么下面的代码就会被阻塞。</span><br><span class="line">对于用户而言,阻塞就意味着&quot;卡死&quot;,这样就导致了很差的用户体验</span><br></pre></td></tr></table></figure>
+<p>所以,JS中存在异步执行。</p>
+<p>1.3、JS单线程又是如何实现异步的呢?</p>
+<p>既然JS是单线程的,只能在一条线程上执行,又是如何实现的异步呢?</p>
+<p>是通过的事件循环(event loop),理解了event loop机制,就理解了JS的执行机制</p>
+<h3 id="二、js中的event-loop-1"><a href="#二、js中的event-loop-1" class="headerlink" title="二、js中的event loop(1)"></a>二、js中的event loop(1)</h3><p>例1，观察它的执行顺序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(1)</span><br><span class="line"></span><br><span class="line">setTimeout(function()&#123;</span><br><span class="line">    console.log(2)</span><br><span class="line">&#125;,0)</span><br><span class="line"></span><br><span class="line">console.log(3)</span><br></pre></td></tr></table></figure>
+<p>运行结果是: 1 3 2</p>
+<p>也就是说,setTimeout里的函数并没有立即执行,而是延迟了一段时间,满足一定条件后,才去执行的,这类代码,我们叫异步代码。</p>
+<p>所以,这里我们首先知道了JS里的一种分类方式,就是将任务分为: 同步任务和异步任务</p>
+<p>图片描述：<br><img src="https://user-gold-cdn.xitu.io/2018/1/19/1610d76608edbb9b?imageslim" alt="image"></p>
+<h4 id="按照这种分类方式-JS的执行机制是"><a href="#按照这种分类方式-JS的执行机制是" class="headerlink" title="按照这种分类方式:JS的执行机制是"></a>按照这种分类方式:JS的执行机制是</h4><ul>
+<li>首先判断JS是同步还是异步,同步就进入主进程,异步就进入event table</li>
+<li>异步任务在event table中注册函数,当满足触发条件后,被推入event queue</li>
+<li>同步任务进入主线程后一直执行,直到主线程空闲时,才会去event queue中查看是否有可执行的异步任务,如果有就推入主进程中</li>
+</ul>
+<p>以上三步循环执行,这就是event loop</p>
+<p>所以上面的例子,你是否可以描述它的执行顺序了呢?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(1) 是同步任务,放入主线程里</span><br><span class="line">setTimeout() 是异步任务,被放入event table, 0秒之后被推入event queue里</span><br><span class="line">console.log(3 是同步任务,放到主线程里</span><br><span class="line"></span><br><span class="line">当 1、 3在控制条被打印后,主线程去event queue(事件队列)里查看是否有可执行的函数,执行setTimeout里的函数</span><br></pre></td></tr></table></figure>
+<h3 id="三、JS中的event-loop-2"><a href="#三、JS中的event-loop-2" class="headerlink" title="三、JS中的event loop(2)"></a>三、JS中的event loop(2)</h3><p>所以,上面关于event loop就是我对JS执行机制的理解,直到我遇到了下面这段代码</p>
+<p>例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(function()&#123;</span><br><span class="line">    console.log(&apos;定时器开始啦&apos;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">new Promise(function(resolve)&#123;</span><br><span class="line">    console.log(&apos;马上执行for循环啦&apos;);</span><br><span class="line">    for(var i = 0; i &lt; 10000; i++)&#123;</span><br><span class="line">        i == 99 &amp;&amp; resolve();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(function()&#123;</span><br><span class="line">    console.log(&apos;执行then函数啦&apos;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(&apos;代码执行结束&apos;);</span><br></pre></td></tr></table></figure>
+<p>尝试按照,上文我们刚学到的JS执行机制去分析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setTimeout 是异步任务,被放到event table</span><br><span class="line"></span><br><span class="line">new Promise 是同步任务,被放到主进程里,直接执行打印 console.log(&apos;马上执行for循环啦&apos;)</span><br><span class="line"></span><br><span class="line">.then里的函数是 异步任务,被放到event table</span><br><span class="line"> console.log(&apos;代码执行结束&apos;)是同步代码,被放到主进程里,直接执行</span><br></pre></td></tr></table></figure>
+<p>所以,结果是 【马上执行for循环啦 — 代码执行结束 — 定时器开始啦 — 执行then函数啦】吗?</p>
+<p>亲自执行后,结果居然不是这样,而是【马上执行for循环啦 — 代码执行结束 — 执行then函数啦 — 定时器开始啦】</p>
+<p>那么,难道是异步任务的执行顺序,不是前后顺序,而是另有规定? 事实上,按照异步和同步的划分方式,并不准确。</p>
+<p>而准确的划分方式是:</p>
+<ul>
+<li>macro-task(宏任务)：包括整体代码script，setTimeout，setInterval</li>
+<li>micro-task(微任务)：Promise，process.nextTick</li>
+</ul>
+<p><img src="https://segmentfault.com/img/bV1TKz?w=879&amp;h=723" alt=""></p>
+<p>按照这种分类方式:JS的执行机制是</p>
+<ul>
+<li>执行一个宏任务,过程中如果遇到微任务,就将其放到微任务的【事件队列】里</li>
+<li>当前宏任务执行完成后,会查看微任务的【事件队列】,并将里面全部的微任务依次执行完</li>
+</ul>
+<p>重复以上2步骤,结合event loop(1) event loop(2) ,就是更为准确的JS执行机制了。</p>
+<p>尝试按照刚学的执行机制,去分析例2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">首先执行script下的宏任务,遇到setTimeout,将其放到宏任务的【队列】里</span><br><span class="line"></span><br><span class="line">遇到 new Promise直接执行,打印&quot;马上执行for循环啦&quot;</span><br><span class="line"></span><br><span class="line">遇到then方法,是微任务,将其放到微任务的【队列里】</span><br><span class="line"></span><br><span class="line">打印 &quot;代码执行结束&quot;</span><br><span class="line"></span><br><span class="line">本轮宏任务执行完毕,查看本轮的微任务,发现有一个then方法里的函数, 打印&quot;执行then函数啦&quot;</span><br><span class="line"></span><br><span class="line">到此,本轮的event loop 全部完成。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">下一轮的循环里,先执行一个宏任务,发现宏任务的【队列】里有一个 setTimeout里的函数,执行打印&quot;定时器开始啦&quot;</span><br></pre></td></tr></table></figure>
+<p>所以最后的执行顺序是【马上执行for循环啦 — 代码执行结束 — 执行then函数啦 — 定时器开始啦】</p>
+<p>nodejs执行机制</p>
+          
         
       
-    </li></ul></div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/12/11/数据类型、数据类型转换、相等&严格相等/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/11/数据类型、数据类型转换、相等&严格相等/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T20:47:27+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数据类型、数据类型转换、相等-amp-严格相等"><a href="#数据类型、数据类型转换、相等-amp-严格相等" class="headerlink" title="数据类型、数据类型转换、相等&amp;严格相等"></a>数据类型、数据类型转换、相等&amp;严格相等</h1><h2 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h2><p>基本数据类型：String,boolean,Number,Symbol（ES6新增）,Undefined, Null</p>
+<p>引用数据类型：Object</p>
+<p>基本数据类型中有两个为特殊数据类型： null, undefined</p>
+<p>js的常见内置对象：Date,Array,Math,Number,Boolean,String,Array,RegExp,Function…</p>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">undefined == null;  // true   </span><br><span class="line">1 == true;  // true  </span><br><span class="line">2 == true;  // false  </span><br><span class="line">0 == false;  // true</span><br><span class="line">0 == &apos;&apos;;  // true   </span><br><span class="line">NaN == NaN;  // false  NaN不等于任何值</span><br><span class="line">[] == false;  // true  </span><br><span class="line">[] == ![];  // true</span><br><span class="line">&apos;6&apos; - &apos;3&apos;  // 3</span><br><span class="line">1234 + &apos;abcd&apos; // &quot;1234abcd&quot;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>undefined与null相等，但不恒等（===）</li>
+<li>一个是number一个是string时，会尝试将string转换为number</li>
+<li>隐式转换将boolean转换为number，0或1</li>
+<li>隐式转换将Object转换成number或string，取决于另外一个对比量的类型</li>
+<li>对于0、空字符串的判断，建议使用 “===” 。</li>
+<li>“==”会对不同类型值进行类型转换再判断，“===”则不会。它会先判断两边的值类型，类型不匹配时直接为false。</li>
+</ol>
+<h3 id="显示转换"><a href="#显示转换" class="headerlink" title="显示转换"></a>显示转换</h3><p>显示转换一般指使用Number、String和Boolean三个构造函数，手动将各种类型的值，转换成数字、字符串或者布尔值。</p>
+<h4 id="Number："><a href="#Number：" class="headerlink" title="Number："></a>Number：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;1234&apos;) // 1234</span><br><span class="line">Number(&apos;1234abcd&apos;) // NaN</span><br><span class="line">Number(&apos;&apos;) // 0</span><br><span class="line">Number(true) // 1</span><br><span class="line">Number(null) // 0</span><br><span class="line">Number(undefined) // NaN</span><br></pre></td></tr></table></figure>
+<h4 id="String："><a href="#String：" class="headerlink" title="String："></a>String：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String(1234)  // &quot;1234&quot;</span><br><span class="line">String(&apos;abcd&apos;)  // &quot;abcd&quot;</span><br><span class="line">String(true)  // &quot;true&quot;</span><br><span class="line">String(undefined) // &quot;undefined&quot;</span><br><span class="line">String(null)  // &quot;null&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean:"></a>Boolean:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Boolean(0)  // false</span><br><span class="line">Boolean(undefined)  // false</span><br><span class="line">Boolean(null)  // false</span><br><span class="line">Boolean(NaN)  // false</span><br><span class="line">Boolean(&apos;&apos;)  // false</span><br></pre></td></tr></table></figure>
+<p>Number、String、Boolean转换对象时主要使用了对象内部的valueOf和toString方法进行转换。</p>
+<h4 id="Number转换对象："><a href="#Number转换对象：" class="headerlink" title="Number转换对象："></a>Number转换对象：</h4><ol>
+<li>先调用对象自身的valueOf方法。如果返回原始类型的值，则直接对该值使用Number函数，返回结果。</li>
+<li>如果valueOf返回的还是对象，继续调用对象自身的toString方法。如果toString返回原始类型的值，则对该值使用Number函数，返回结果。</li>
+<li>如果toString返回的还是对象，报错。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number([1]); //1</span><br><span class="line">转换演变：</span><br><span class="line">[1].valueOf(); // [1];</span><br><span class="line">[1].toString(); // &apos;1&apos;;</span><br><span class="line">Number(&apos;1&apos;); //1</span><br></pre></td></tr></table></figure>
+<h4 id="String转换对象"><a href="#String转换对象" class="headerlink" title="String转换对象"></a>String转换对象</h4><ol>
+<li>先调用对象自身的toString方法。如果返回原始类型的值，则对该值使用String函数，返回结果。</li>
+<li>如果toString返回的是对象，继续调用valueOf方法。如果valueOf返回原始类型的值，则对该值使用String函数，返回结果。</li>
+<li>如果valueOf返回的还是对象，报错。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String([1,2]) //&quot;1,2&quot;</span><br><span class="line">转化演变：</span><br><span class="line">[1,2].toString();  //&quot;1,2&quot;</span><br><span class="line">String(&quot;1,2&quot;);  //&quot;1,2&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="Boolean转换对象"><a href="#Boolean转换对象" class="headerlink" title="Boolean转换对象"></a>Boolean转换对象</h4><p>Boolean转换对象很特别，除了以下六个值转换为false，其他都为true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">undefined  null  false  0(包括+0和-0)  NaN  空字符串(&apos;&apos;)</span><br><span class="line">Boolean(undefined)   //false</span><br><span class="line">Boolean(null)        //false</span><br><span class="line">Boolean(false)       //false</span><br><span class="line">Boolean(0)           //false</span><br><span class="line">Boolean(NaN)         //false</span><br><span class="line">Boolean(&apos;&apos;)          //false</span><br><span class="line"></span><br><span class="line">Boolean([])          //true</span><br><span class="line">Boolean(&#123;&#125;)          //true</span><br><span class="line">Boolean(new Date())  //true</span><br></pre></td></tr></table></figure>
+<h3 id="严格相等运算符和相等运算符的区别："><a href="#严格相等运算符和相等运算符的区别：" class="headerlink" title="严格相等运算符和相等运算符的区别："></a>严格相等运算符和相等运算符的区别：</h3><p>==相等运算符比较两个值的时候会判断两个值的类型，如果不是同一类型，会强制转换为同一类型进行比较。</p>
+<p>而===比较两个值的时候先判断两个值的类型，如果不是同一类型，直接返回false，值类型相同再进行值的比较。</p>
+<p>所以，从性能上来说，==会比===多走一条类型转换的路，稍逊一点。从结果上来说，有时候类型转换会给你带来你不想要的比较结果。 这也就是为什么都推崇使用===的原因。当然，==在合适的业务场景下使用也是必要的。</p>
+<h3 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符=="></a>相等运算符==</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">规则： </span><br><span class="line"></span><br><span class="line">if 相等运算符比较相同类型的数据时，同严格相等运算符</span><br><span class="line">else if 相等运算符比较不同类型的数据时：</span><br><span class="line">原始类型的数据会转换成数值类型，把字符串和布尔值都转为数值，再进行比较</span><br><span class="line">null == undefined  返回true</span><br><span class="line">一个是对象，另一个是数字或者字符串，把对象转成基本类型值再比较</span><br><span class="line">else false</span><br><span class="line"></span><br><span class="line">123 == 123; //true</span><br><span class="line">&apos;123&apos; == 123; //true，&apos;123&apos;会转成成数值123</span><br><span class="line">false == 0; //true，false 转成数值就是0</span><br><span class="line">&apos;a&apos; == &apos;A&apos;; //false，转换后的编码不一样</span><br><span class="line">123 == &#123;&#125;; //false，执行toString()或valueOf()会改变</span><br><span class="line">123 == NaN; //false，只要有NaN，都是false</span><br><span class="line">&#123;&#125; == &#123;&#125;; //false，比较的是他们的地址，每个新创建对象的引用地址都不同</span><br><span class="line"></span><br><span class="line">null == undefined //true</span><br><span class="line">&apos;NaN&apos; == NaN //false</span><br><span class="line">123 == NaN //false</span><br><span class="line">NaN == NaN //false</span><br><span class="line">false == 0 //true</span><br><span class="line">true == 1 //true</span><br><span class="line">true == 2 //false</span><br><span class="line">undefined == 0 //false</span><br><span class="line">null == 0 //false</span><br><span class="line">&apos;123&apos; == 123 //true</span><br><span class="line">&apos;123&apos; === 123 //false</span><br></pre></td></tr></table></figure>
+<h3 id="判断"><a href="#判断" class="headerlink" title="!!判断"></a>!!判断</h3><p>!!相当于Boolean，写代码时用!!转化为Boolean类型做判断非常好用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">!!&apos;xzavier&apos;;   // true</span><br><span class="line">!!&apos;&apos;;          // false</span><br><span class="line">!!&apos;0&apos;;         // true</span><br><span class="line">!!&apos;1&apos;;         // true</span><br><span class="line">!!&apos;-1&apos;         // true</span><br><span class="line">!!0            // false</span><br><span class="line">!!undefined    // false</span><br><span class="line">!!null         // false</span><br><span class="line">!!NaN          // false</span><br><span class="line">!!&#123;&#125;;          // true</span><br><span class="line">!!&#123;name:&apos;xz&apos;&#125;  // true</span><br><span class="line">!![];          // true</span><br><span class="line">!![1,2,3];     // true</span><br><span class="line">!!true;        // true</span><br></pre></td></tr></table></figure>
+<h3 id="判断-1"><a href="#判断-1" class="headerlink" title="!判断"></a>!判断</h3><p>取反运算符 ! 用于将布尔值变为相反值，即true变成false，false变成true。对于非布尔值的数据，取反运算符会自动将其转为布尔值。规则是，以下六个值取反后为true，其他值取反后都为false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">undefined  null  false  0(包括+0和-0)  NaN  空字符串(&apos;&apos;)</span><br><span class="line"></span><br><span class="line">!undefined    // true</span><br><span class="line">!null         // true</span><br><span class="line">!false        // true</span><br><span class="line">!0            // true</span><br><span class="line">!NaN          // true</span><br><span class="line">!&quot;&quot;           // true    </span><br><span class="line">!54           // false</span><br><span class="line">!&apos;hello&apos;      // false</span><br><span class="line">![]           // false</span><br><span class="line">![1,2,3]      // false</span><br><span class="line">!&#123;&#125;           // false</span><br><span class="line">!&#123;name:&apos;xz&apos;&#125;  // false</span><br></pre></td></tr></table></figure>
+<h3 id="和-判断"><a href="#和-判断" class="headerlink" title="[]和{}判断"></a>[]和{}判断</h3><p>对于[]和{}，我们在业务代码中肯定会对其做判断，如上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!!&#123;&#125;;          // true</span><br><span class="line">!!&#123;name:&apos;xz&apos;&#125;  // true</span><br><span class="line">!![];          // true</span><br><span class="line">!![1,2,3];     // true</span><br></pre></td></tr></table></figure>
+<p>不能用!!和!做判断，对于数组，我们用它的length属性做判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[].length       // 0 false</span><br><span class="line">[1,2,3].length  // 3 true</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://segmentfault.com/a/1190000006672446" target="_blank" rel="noopener">相等==&amp;严格相等===&amp;代码里的那些判断</a></p>
+<p><a href="https://segmentfault.com/a/1190000005863067" target="_blank" rel="noopener">基本数据类型和引用数据类型判断&amp;存储访问&amp;类型转换</a></p>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/12/11/加法运算符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/11/加法运算符/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T18:05:16+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="加法运算符"><a href="#加法运算符" class="headerlink" title="加法运算符"></a>加法运算符</h1><h2 id="本职工作：加法运算符"><a href="#本职工作：加法运算符" class="headerlink" title="本职工作：加法运算符"></a>本职工作：加法运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var result = 10 + 5;  </span><br><span class="line">// number + number = number (addition)</span><br><span class="line">// 15</span><br></pre></td></tr></table></figure>
+<h2 id="胜任工作：连接字符串"><a href="#胜任工作：连接字符串" class="headerlink" title="胜任工作：连接字符串"></a>胜任工作：连接字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var result = &quot;Hello, &quot; + &quot;World!&quot;;  </span><br><span class="line">// string + string = string (concatenation)</span><br><span class="line">// &quot;Hello, World!&quot;</span><br></pre></td></tr></table></figure>
+<p>JavaScript允许我们在object、array、null or undefined上使用操作符。那我们来看看使用的规则和细节。</p>
+<h2 id="转换规则"><a href="#转换规则" class="headerlink" title="转换规则"></a>转换规则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">operand + operand = result</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果操作数中有一个是对象，它会被转换为原始值(string、number or boolean)</li>
+<li>如果操作数中有一个是字符串，第二个操作数将转换成字符串，并且连接在一起转换为字符串</li>
+<li>在其它情况之下，两个操作数转换为数字并执行加法运算</li>
+</ul>
+<p>如果两个运算数是原始类型，则检查如果至少一个操作数是字符串的话，就把它们当字符串连接。在其他情况下，它会把他们都当数字，然后转化为数字相加的总和。</p>
+<h2 id="对象转换规则"><a href="#对象转换规则" class="headerlink" title="对象转换规则"></a>对象转换规则</h2><ul>
+<li>如果对象类型是一个Date，使用toString()方法</li>
+<li>在其它情况下使用valueOf()方法，返回一个原始值</li>
+<li>如果valueOf()方法不能返回一个原始值，使用toString()方法。大多情况都会发生这种情况</li>
+</ul>
+<p>当一个数组被转换为原始值，JavaScript会使用join(‘,’)方法，例如[1,5,6]的原始值是”1,5,6”。一个普通的JavaScript对象{}的原始值是”[object Object]”</p>
+<h2 id="Example-1-数字和字符串"><a href="#Example-1-数字和字符串" class="headerlink" title="Example 1: 数字和字符串"></a>Example 1: 数字和字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = 1 + &quot;5&quot;; // &quot;15&quot;</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>1 + “5” （第二个操作数是一个字符串，那么数字1将会变成字符串”1”）</li>
+<li>“1” + “5” （连接字符串）</li>
+<li>“15”</li>
+</ul>
+<p>第二个操作数是一个字符串,第一个操作数把number转换成string类型，然后将它们连接在一起。</p>
+<h2 id="Example-2-数字和数组"><a href="#Example-2-数字和数组" class="headerlink" title="Example 2:数字和数组"></a>Example 2:数字和数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = [1, 3, 5] + 1; //&quot;1,3,51&quot;</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>[1,3,5] + 1 （数组[1,3,5]转换为原始值为”1,3,5”）</li>
+<li>“1,3,5” + 1 （数字1转换成字符串”1”）</li>
+<li>“1,3,5” + “1” （连接字符串）</li>
+<li>“1,3,51”</li>
+</ul>
+<p>第一个操作数是数组，转换为原始值字符串，第二个操作数是数字，转换为字符串，然后两个字符串连接在一起。</p>
+<h2 id="Example-3-数字和布尔值"><a href="#Example-3-数字和布尔值" class="headerlink" title="Example 3:数字和布尔值"></a>Example 3:数字和布尔值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = 10 + true; //11</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>10 + true （布尔值true将转换为数字1）</li>
+<li>10 + 1 （数字做加法运算）</li>
+<li>11</li>
+</ul>
+<p>因为两个操作数都不是字符串，布尔值将转换为数字符，然后作数字加法运算。</p>
+<h2 id="Example-4-数字和对象"><a href="#Example-4-数字和对象" class="headerlink" title="Example 4: 数字和对象"></a>Example 4: 数字和对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = 15 + &#123;&#125;; // &quot;15[object Object]&quot;</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>15 + {} （第二个操作数是一个对象，对象转换为字符串”[object Object]”）</li>
+<li>15 + “[object Object]” （数字15转换为字符串”15”）</li>
+<li>“15” + “[object Object]” （连接字符串）</li>
+<li>“15[object Object]”</li>
+</ul>
+<p>第二个操作数是一个对象，转换为原始值字符串。因为valueOf()方法返回的是对象本身，而不是一个原始值，所以再使用toString()方法，返回一个字符串。</p>
+<p>第二个操作数转换之后是一个字符串，故数字也将转换为一个字符串，再把字符串连接在一起。</p>
+<h2 id="Example-5-数字和null"><a href="#Example-5-数字和null" class="headerlink" title="Example 5:数字和null"></a>Example 5:数字和null</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = 8 + null; // 8</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>8 + null（因为操作数没有字符串，null将转换为数字0）</li>
+<li>8 + 0 （两个数字做加法运算）</li>
+<li>8</li>
+</ul>
+<p>如果操作数不是对象或字符串时，null会转换为数字，然后做数字加法运算。</p>
+<h2 id="Example-6-字符串和null"><a href="#Example-6-字符串和null" class="headerlink" title="Example 6:字符串和null"></a>Example 6:字符串和null</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = &quot;queen&quot; + null; // &quot;queennull&quot;</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>“queen” + null （因为第一个操作数是一个字符串，null将转换为一个字符串”null”）</li>
+<li>“queen” + “null” （连接字符串）</li>
+<li>“queennull”</li>
+</ul>
+<p>因为第一个操作数是一个字符串，所以null将转换为一个字符串”null”，然后两个把字符串连接在一起。</p>
+<h2 id="Example-7-数字和undefined"><a href="#Example-7-数字和undefined" class="headerlink" title="Example 7: 数字和undefined"></a>Example 7: 数字和undefined</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result = 12 + undefined; // NaN</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li>12 + undefined （因为没有任何一个操作数是字符串，undefined将转换为一个数字NaN）</li>
+<li>12 + NaN （做数字加法运算）</li>
+<li>NaN</li>
+</ul>
+<p>因为没有操作数是对象或字符串，undefined将转换为NaN。两个数字做加法运算，之所以要做加法，是因为typeof(NaN) == “number”，又因为任何一个数字和NaN做加法运算，所以等于NaN。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>以避免潜在的问题，不使用加法运算符处理对象，除非你清楚地使用toString()或valueOf()方法。</p>
+<p>如在实例中看到的，开发中要明确场景的转换规则，以防JavaScript给你带来的惊喜哦。</p>
+<p>参考资料：</p>
+<p>详解加法运算符<a href="https://segmentfault.com/a/1190000007184573" target="_blank" rel="noopener"></a></p>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/11/27/闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/27/闭包/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T10:24:46+08:00">
+                2017-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><h2 id="闭包的特性"><a href="#闭包的特性" class="headerlink" title="闭包的特性"></a>闭包的特性</h2><ol>
+<li>函数嵌套函数</li>
+<li>函数内部可以引用外部的参数和变量</li>
+<li>参数和变量不会被垃圾回收制回收</li>
+</ol>
+<h2 id="闭包的定义及其优缺点"><a href="#闭包的定义及其优缺点" class="headerlink" title="闭包的定义及其优缺点"></a>闭包的定义及其优缺点</h2><p>闭包 是指有权访问另一个函数作用域中的变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量</p>
+<p>闭包的缺点就是常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。</p>
+<p>闭包是javascript语言的一大特点，主要应用闭包场合主要是为了：设计私有的方法和变量。</p>
+<p>一般函数执行完毕后，局部活动对象就被销毁，内存中仅仅保存全局作用域。但闭包的情况不同！</p>
+<h2 id="嵌套函数的闭包"><a href="#嵌套函数的闭包" class="headerlink" title="嵌套函数的闭包"></a>嵌套函数的闭包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function aaa() &#123;  </span><br><span class="line">  var a = 1;  </span><br><span class="line">  return function()&#123;</span><br><span class="line">   alert(a++)</span><br><span class="line">  &#125;;  </span><br><span class="line">&#125;         </span><br><span class="line">var fun = aaa();  </span><br><span class="line">fun();// 1 执行后 a++，，然后a还在~  </span><br><span class="line">fun();// 2   </span><br><span class="line">fun = null;//a被回收！！</span><br></pre></td></tr></table></figure>
+<p>闭包会使变量始终保存在内存中，如果不当使用会增大内存消耗。</p>
+<h2 id="javascript的垃圾回收原理"><a href="#javascript的垃圾回收原理" class="headerlink" title="javascript的垃圾回收原理"></a>javascript的垃圾回收原理</h2><ol>
+<li>在javascript中，如果一个对象不再被引用，那么这个对象就会被GC回收； </li>
+<li>如果两个对象互相引用，而不再被第3者所引用，那么这两个互相引用的对象也会被回收。</li>
+</ol>
+<h2 id="使用闭包的好处"><a href="#使用闭包的好处" class="headerlink" title="使用闭包的好处"></a>使用闭包的好处</h2><p>那么使用闭包有什么好处呢？使用闭包的好处是：</p>
+<ol>
+<li>希望一个变量长期驻扎在内存中</li>
+<li>避免全局变量的污染</li>
+<li>私有成员的存在</li>
+</ol>
+<h2 id="一、全局变量的累加"><a href="#一、全局变量的累加" class="headerlink" title="一、全局变量的累加"></a>一、全局变量的累加</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var a = 1;</span><br><span class="line">function abc()&#123;</span><br><span class="line">        a++;</span><br><span class="line">        alert(a);</span><br><span class="line">&#125;</span><br><span class="line">abc();              //2</span><br><span class="line">abc();            //3</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="二、局部变量"><a href="#二、局部变量" class="headerlink" title="二、局部变量"></a>二、局部变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function abc()&#123;</span><br><span class="line">        var a = 1;</span><br><span class="line">        a++;</span><br><span class="line">        alert(a);</span><br><span class="line">&#125;</span><br><span class="line">abc();                       //2</span><br><span class="line">abc();                    //2</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="三、局部变量的累加"><a href="#三、局部变量的累加" class="headerlink" title="三、局部变量的累加"></a>三、局部变量的累加</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function outer()&#123;</span><br><span class="line">        var x=10;</span><br><span class="line">        return function()&#123;             //函数嵌套函数</span><br><span class="line">                x++;</span><br><span class="line">                alert(x);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">var y = outer();              //外部函数赋给变量y;</span><br><span class="line">y();                 //y函数调用一次，结果为11，相当于outer()()；</span><br><span class="line">y();                //y函数调用第二次，结果为12，实现了累加</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="函数声明与函数表达式"><a href="#函数声明与函数表达式" class="headerlink" title="函数声明与函数表达式"></a>函数声明与函数表达式</h2><p>在js中我们可以通过关键字function来声明一个函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function abc()&#123;</span><br><span class="line">        alert(123);</span><br><span class="line">&#125;</span><br><span class="line">abc();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>我们也可以通过一个”()”来将这个声明变成一个表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">(function ()&#123;</span><br><span class="line">        alert(123);</span><br><span class="line">&#125;)();                   //然后通过()直接调用前面的表达式即可，因此函数可以不必写名字；</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="四、模块化代码，减少全局变量的污染"><a href="#四、模块化代码，减少全局变量的污染" class="headerlink" title="四、模块化代码，减少全局变量的污染"></a>四、模块化代码，减少全局变量的污染</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var abc = (function()&#123;      //abc为外部匿名函数的返回值</span><br><span class="line">        var a = 1;</span><br><span class="line">        return function()&#123;</span><br><span class="line">                a++;</span><br><span class="line">                alert(a);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">abc();    //2 ；调用一次abc函数，其实是调用里面内部函数的返回值    </span><br><span class="line">abc();    //3</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="五、私有成员的存在"><a href="#五、私有成员的存在" class="headerlink" title="五、私有成员的存在"></a>五、私有成员的存在</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var aaa = (function()&#123;</span><br><span class="line">    var a = 1;</span><br><span class="line">    function bbb()&#123;</span><br><span class="line">            a++;</span><br><span class="line">            alert(a);</span><br><span class="line">    &#125;</span><br><span class="line">    function ccc()&#123;</span><br><span class="line">            a++;</span><br><span class="line">            alert(a);</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">            b:bbb,             //json结构</span><br><span class="line">            c:ccc</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">aaa.b();     //2</span><br><span class="line">aaa.c()      //3</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="六-使用匿名函数实现累加"><a href="#六-使用匿名函数实现累加" class="headerlink" title="六.使用匿名函数实现累加"></a>六.使用匿名函数实现累加</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//使用匿名函数实现局部变量驻留内存中，从而实现累加</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"> function box()&#123;</span><br><span class="line">     var age = 100;</span><br><span class="line">     return function()&#123;          //匿名函数</span><br><span class="line">          age++;</span><br><span class="line">          return age;</span><br><span class="line">     &#125;;</span><br><span class="line"> &#125; </span><br><span class="line">var b = box();</span><br><span class="line">alert(b());</span><br><span class="line">alert(b());    //即alert(box()())；</span><br><span class="line">alert(b());</span><br><span class="line">alert(b);            //     function () &#123;</span><br><span class="line">                        //   age++;</span><br><span class="line">                       // return age;</span><br><span class="line">                      //       &#125;</span><br><span class="line">b = null；  //解除引用，等待垃圾回收</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>过度使用闭包会导致性能的下降。函数里放匿名函数，则产生了闭包</p>
+<h2 id="七、在循环中直接找到对应元素的索引"><a href="#七、在循环中直接找到对应元素的索引" class="headerlink" title="七、在循环中直接找到对应元素的索引"></a>七、在循环中直接找到对应元素的索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; </span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span><br><span class="line">    &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">            &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=UTF-8&quot; /&gt;</span><br><span class="line">            &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    window.onload = function()&#123;</span><br><span class="line">            var aLi = document.getElementsByTagName(&apos;li&apos;);</span><br><span class="line">            for (var i=0;i&lt;aLi.length;i++)&#123;</span><br><span class="line">                    aLi[i].onclick = function()&#123;        //当点击时for循环已经结束</span><br><span class="line">                    alert(i);</span><br><span class="line">                    &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/script&gt;        </span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                    &lt;li&gt;123&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;456&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;789&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;010&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="八、使用闭包改写上面代码"><a href="#八、使用闭包改写上面代码" class="headerlink" title="八、使用闭包改写上面代码"></a>八、使用闭包改写上面代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; </span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span><br><span class="line">    &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">            &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=UTF-8&quot; /&gt;</span><br><span class="line">            &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    window.onload = function()&#123;</span><br><span class="line">            var aLi = document.getElementsByTagName(&apos;li&apos;);</span><br><span class="line">            for (var i=0;i&lt;aLi.length;i++)&#123;</span><br><span class="line">                    (function(i)&#123;</span><br><span class="line">                            aLi[i].onclick = function()&#123;</span><br><span class="line">                                    alert(i);</span><br><span class="line">                            &#125;;</span><br><span class="line">                    &#125;)(i);</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">    &lt;/script&gt;  </span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                    &lt;li&gt;123&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;456&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;789&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="九-内存泄露问题"><a href="#九-内存泄露问题" class="headerlink" title="九.内存泄露问题"></a>九.内存泄露问题</h2><p>由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁驻留在内存中的元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function closure()&#123;</span><br><span class="line">    var oDiv = document.getElementById(&apos;oDiv&apos;);//oDiv用完之后一直驻留在内存中</span><br><span class="line">    oDiv.onclick = function () &#123;</span><br><span class="line">        alert(&apos;oDiv.innerHTML&apos;);//这里用oDiv导致内存泄露</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">closure();</span><br><span class="line">//最后应将oDiv解除引用来避免内存泄露</span><br><span class="line">function closure()&#123;</span><br><span class="line">    var oDiv = document.getElementById(&apos;oDiv&apos;);</span><br><span class="line">    var test = oDiv.innerHTML;</span><br><span class="line">    oDiv.onclick = function () &#123;</span><br><span class="line">        alert(test);</span><br><span class="line">    &#125;;</span><br><span class="line">    oDiv = null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://segmentfault.com/a/1190000000652891" target="_blank" rel="noopener">详解js闭包</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="noopener">学习Javascript闭包</a></p>
+<p><a href="http://www.cnblogs.com/pp-cat/p/4384610.html" target="_blank" rel="noopener">javascript闭包的理解</a></p>
+          
+        
+      
+    </div>
     
     
     
@@ -658,6 +1994,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -701,7 +2041,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -712,7 +2052,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -723,7 +2063,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
