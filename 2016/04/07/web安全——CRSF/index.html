@@ -125,7 +125,7 @@
 <meta property="og:description" content="内容 什么是CRSF CRSF原理是什么 CSRF攻击的本质原因 CRSF防御手段  什么是CRSFCSRF（Cross Site Request Forgery），中文是跨站点请求伪造。CSRF攻击者在用户已经登录目标网站之后，诱使用户访问一个攻击页面，利用目标网站对用户的信任，以用户身份在攻击页面对目标网站发起伪造用户操作的请求，达到攻击目的。 CRSF原理是什么 从上图可以看出，要完成一次C">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic002.cnblogs.com/img/hyddd/200904/2009040916453171.jpg">
-<meta property="og:updated_time" content="2018-04-07T15:03:56.000Z">
+<meta property="og:updated_time" content="2018-04-08T02:42:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web安全——CRSF">
 <meta name="twitter:description" content="内容 什么是CRSF CRSF原理是什么 CSRF攻击的本质原因 CRSF防御手段  什么是CRSFCSRF（Cross Site Request Forgery），中文是跨站点请求伪造。CSRF攻击者在用户已经登录目标网站之后，诱使用户访问一个攻击页面，利用目标网站对用户的信任，以用户身份在攻击页面对目标网站发起伪造用户操作的请求，达到攻击目的。 CRSF原理是什么 从上图可以看出，要完成一次C">
@@ -404,8 +404,14 @@
 <li>登录受信任网站A，并在本地生成Cookie。</li>
 <li>在不登出A的情况下，访问危险网站B。</li>
 </ol>
-<p>示例一</p>
-<p>示例二</p>
+<p>示例一、使用get请求</p>
+<p>银行网站A，它以GET请求来完成银行转账的操作，如：<a href="http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000" target="_blank" rel="noopener">http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000</a></p>
+<p>危险网站B，它里面有一段HTML的代码如下：</p>
+<p><code>&lt;img src=http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000&gt;</code></p>
+<p>银行网站A违反了HTTP规范，使用GET请求更新资源。在访问危险网站B的之前，你已经登录了银行网站A，而B中的<img>以GET的方式请求第三方资源（这里的第三方就是指银行网站了，原本这是一个合法的请求，但这里被不法分子利用了），所以你的浏览器会带上你的银行网站A的Cookie发出Get请求，去获取资源“<a href="http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000”，结果银行网站服务器收到请求后，认为这是一个更新资源操作（转账操作），所以就立刻进行转账操作....." target="_blank" rel="noopener">http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000”，结果银行网站服务器收到请求后，认为这是一个更新资源操作（转账操作），所以就立刻进行转账操作.....</a>.</p>
+<p>示例二、使用POST请求完成转账操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">　　&lt;head&gt;</span><br><span class="line">　　　　&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">　　　　　　function steal()</span><br><span class="line">　　　　　　&#123;</span><br><span class="line">          　　　　 iframe = document.frames[&quot;steal&quot;];</span><br><span class="line">　　     　　      iframe.document.Submit(&quot;transfer&quot;);</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　&lt;/script&gt;</span><br><span class="line">　　&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">　　&lt;body onload=&quot;steal()&quot;&gt;</span><br><span class="line">　　　　&lt;iframe name=&quot;steal&quot; display=&quot;none&quot;&gt;</span><br><span class="line">　　　　　　&lt;form method=&quot;POST&quot; name=&quot;transfer&quot;　action=&quot;http://www.myBank.com/Transfer.php&quot;&gt;</span><br><span class="line">　　　　　　　　&lt;input type=&quot;hidden&quot; name=&quot;toBankId&quot; value=&quot;11&quot;&gt;</span><br><span class="line">　　　　　　　　&lt;input type=&quot;hidden&quot; name=&quot;money&quot; value=&quot;1000&quot;&gt;</span><br><span class="line">　　　　　　&lt;/form&gt;</span><br><span class="line">　　　　&lt;/iframe&gt;</span><br><span class="line">　　&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>总结：CSRF攻击是源于WEB的隐式身份验证机制！WEB的身份验证机制虽然可以保证一个请求是来自于某个用户的浏览器，但却无法保证该请求是用户批准发送的！</p>
 <h3 id="CRSF防御手段"><a href="#CRSF防御手段" class="headerlink" title="CRSF防御手段"></a>CRSF防御手段</h3><p>目前防御CSRF攻击主要有三种策略：验证HTTP Referer字段；在请求地址中添加token并验证；在HTTP头中自定义属性并验证。</p>
 <h4 id="验证http-referer字段"><a href="#验证http-referer字段" class="headerlink" title="验证http referer字段"></a>验证http referer字段</h4><p>根据HTTP协议，在HTTP头中有一个字段叫Referer，它记录了该HTTP请求的来源地址。在通常情况下，访问一个安全受限页面的请求来自于同一个网站，比如需要访问<a href="http://bank.example/withdraw?account=bob&amp;amount=1000000&amp;for=Mallory，用户必须先登陆" target="_blank" rel="noopener">http://bank.example/withdraw?account=bob&amp;amount=1000000&amp;for=Mallory，用户必须先登陆</a> bank.example，然后通过点页面上的按钮来触发转帐事件。这时，该转帐请求的Referer值就是转账按钮所在页面的URL，通常是以bank.example 域名开头的地址。而如果黑客要对银行网站实话CSRF攻击，他只能在他自己的网站构造请求，当用户通过黑客的网站发送请求到银行时，该请求的Referer是指向黑客自己的网站。因此，要防御CSRF攻击，银行网站只需要对于每一个转账请求验证期Referer值，如果是以 bank.example 域名开头，则说明该请求是来自银行网站自己的请求，是合法的。如果Referer是其他网站的话，则有可能是黑客的CSRF攻击，拒绝该请求。</p>
 <p>这种方法的显而见的好处就是简单易行，网站的普通人员不需要操心CSRF的漏洞，只需要在最后给所有安全敏感的请求统一个拦截器来检查Referer的值就可以。特别是对于当前现有的系统，不需要改变当前系统任何已有代码和逻辑，没有风险，非常便捷。</p>
@@ -470,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/07/amd、cmd、common和umd区别/" rel="next" title="amd、cmd、common和umd区别">
-                <i class="fa fa-chevron-left"></i> amd、cmd、common和umd区别
+              <a href="/2016/04/07/javascript引擎的执行机制/" rel="next" title="javascript引擎的执行机制">
+                <i class="fa fa-chevron-left"></i> javascript引擎的执行机制
               </a>
             
           </div>
@@ -559,7 +565,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -570,7 +576,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -581,7 +587,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

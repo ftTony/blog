@@ -124,15 +124,15 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="什么是web缓存Web缓存是指一个Web资源（如html页面，图片，js，数据等）存在于Web服务器和客户端（浏览器）之间的副本。缓存会根据进来的请求保存输出内容的副本；当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://images0.cnblogs.com/blog2015/546321/201505/181713440417853.png">
-<meta property="og:image" content="http://images0.cnblogs.com/blog2015/546321/201505/181722532916918.png">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/skynet/201211/201211281402437389.png">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/skynet/201211/201211281402442505.png">
-<meta property="og:updated_time" content="2018-04-07T13:57:13.000Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/181713440417853.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/181722532916918.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/201211281402437389.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/201211281402442505.png">
+<meta property="og:updated_time" content="2018-04-09T13:00:32.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http缓存">
 <meta name="twitter:description" content="什么是web缓存Web缓存是指一个Web资源（如html页面，图片，js，数据等）存在于Web服务器和客户端（浏览器）之间的副本。缓存会根据进来的请求保存输出内容的副本；当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载">
-<meta name="twitter:image" content="http://images0.cnblogs.com/blog2015/546321/201505/181713440417853.png">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/http/181713440417853.png">
 
 
 
@@ -429,7 +429,7 @@
 <p>Last-Modified: Mon, 19 Nov 2012 08:38:01 GMT    服务器端文件的最后修改时间</p>
 <p>ETag: “20b1add7ec1cd1:0”    服务器端文件的Etag值</p>
 <p>Cache-Control与Expires的作用一致，Last-Modified与ETag的作用也相近。</p>
-<p><img src="http://images0.cnblogs.com/blog2015/546321/201505/181713440417853.png" alt=""></p>
+<p><img src="/images/http/181713440417853.png" alt=""></p>
 <p>现在默认浏览器均默认使用HTTP 1.1，所以Expires和Last-Modified的作用基本可以忽略，具备Cache-Control和Etag即可。</p>
 <h4 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h4><p>为什么使用ETag呢？ 主要是为了解决Last-Modified 无法解决的一些问题。</p>
 <p>1.某些服务器不能精确得到文件的最后修改时间，这样无法通过最后个性时间来判断文件是否更新了</p>
@@ -437,11 +437,11 @@
 <p>3.一些文件的最后修改时间改变了，但是内容并未改变。 我们不希望客户端认为这个文件修改了。</p>
 <p>ETag根据实体内容生成的一段hash字符串（类似于MD5或者SHA1之后的结果），可以标识资源的状态。 当资源发送改变时，ETag也随之发生变化。</p>
 <p>当然用户的行为也会影响浏览器的缓存</p>
-<p><img src="http://images0.cnblogs.com/blog2015/546321/201505/181722532916918.png" alt=""></p>
+<p><img src="/images/http/181722532916918.png" alt=""></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>浏览器第一次请求</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/skynet/201211/201211281402437389.png" alt=""></p>
+<p><img src="/images/http/201211281402437389.png" alt=""></p>
 <p>浏览器再次请求时</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/skynet/201211/201211281402442505.png" alt=""></p>
+<p><img src="/images/http/201211281402442505.png" alt=""></p>
 <p>参考资料：</p>
 <p><a href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html" target="_blank" rel="noopener">http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html</a></p>
 <p><a href="http://www.cnblogs.com/skylar/p/browser-http-caching.html" target="_blank" rel="noopener">http://www.cnblogs.com/skylar/p/browser-http-caching.html</a></p>
@@ -510,8 +510,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/08/https详解/" rel="prev" title="https详解">
-                https详解 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/08/前端测试工具实践/" rel="prev" title="前端测试工具实践">
+                前端测试工具实践 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -589,7 +589,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,7 +600,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -611,7 +611,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

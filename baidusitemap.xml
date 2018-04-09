@@ -4,6 +4,878 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/http%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2018-04-09T13:38:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>http安全</title>
+        <pubTime>2015-04-08T02:51:55.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/10/08/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2018-04-09T13:38:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>浏览器渲染原理</title>
+        <pubTime>2015-10-08T02:52:39.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="原理" url="http://blog.xiaowuzi.info/categories/%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/07/08/http2/</loc>
+    <lastmod>2018-04-09T13:37:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>http2</title>
+        <pubTime>2016-07-08T02:53:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/05/11/TCP%E4%B8%8EUDP/</loc>
+    <lastmod>2018-04-09T13:37:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>TCP与UDP</title>
+        <pubTime>2013-05-11T02:53:51.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/%E8%99%9A%E6%8B%9FDOM/</loc>
+    <lastmod>2018-04-09T13:36:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>虚拟DOM</title>
+        <pubTime>2015-04-08T02:54:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/09/08/%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7/</loc>
+    <lastmod>2018-04-09T13:36:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端错误监控</title>
+        <pubTime>2016-09-08T02:54:44.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工程" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/08/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99(%E4%B8%80)/</loc>
+    <lastmod>2018-04-09T13:35:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>面试资料（一）</title>
+        <pubTime>2014-04-08T02:55:14.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="面试" url="http://blog.xiaowuzi.info/categories/%E9%9D%A2%E8%AF%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/03/08/javascript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
+    <lastmod>2018-04-09T13:34:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript执行上下文与作用域</title>
+        <pubTime>2013-03-08T02:56:38.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/12/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/</loc>
+    <lastmod>2018-04-09T13:33:55.011Z</lastmod>
+    <data>
+        <display>
+        <title>vue父子组件数据传递</title>
+        <pubTime>2016-04-12T02:57:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/11/vue%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2018-04-09T13:33:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>vue路由原理</title>
+        <pubTime>2016-04-11T02:57:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
+    <lastmod>2018-04-09T13:33:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>vue双向数据绑定</title>
+        <pubTime>2016-05-08T02:57:02.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/03/08/css%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2018-04-09T13:32:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>css动画</title>
+        <pubTime>2014-03-08T02:59:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="CSS" url="http://blog.xiaowuzi.info/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/12/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%B0%83%E8%AF%95/</loc>
+    <lastmod>2018-04-09T13:31:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>移动端调试</title>
+        <pubTime>2014-04-12T02:54:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="mobile" url="http://blog.xiaowuzi.info/categories/mobile/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/11/%E7%A7%BB%E5%8A%A8web%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2018-04-09T13:28:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>移动web知识</title>
+        <pubTime>2014-04-11T03:01:47.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="mobile" url="http://blog.xiaowuzi.info/categories/mobile/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/11/08/gulp%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:27:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>gulp学习</title>
+        <pubTime>2014-11-08T03:06:33.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/05/06/fiddler%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:25:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>fiddler学习</title>
+        <pubTime>2014-05-06T03:03:13.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/05/01/chrome%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2018-04-09T13:24:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>chrome开发者工具</title>
+        <pubTime>2013-05-01T03:04:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/webpack%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:23:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>webpack学习</title>
+        <pubTime>2015-04-08T03:06:41.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/02/08/linux%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:23:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux学习</title>
+        <pubTime>2014-02-08T03:06:57.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.xiaowuzi.info/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/08/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:22:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>git常用命令学习</title>
+        <pubTime>2014-04-08T03:08:54.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/08/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86/</loc>
+    <lastmod>2018-04-09T13:21:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端学习资料收集</title>
+        <pubTime>2014-04-08T03:10:38.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="学习资料" url="http://blog.xiaowuzi.info/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-04-09T13:20:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>nginx配置</title>
+        <pubTime>2015-04-08T03:12:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="服务器" url="http://blog.xiaowuzi.info/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/10/12/javascript%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0extend/</loc>
+    <lastmod>2018-04-09T13:18:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript从零实现extend</title>
+        <pubTime>2013-10-12T03:13:55.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/09/08/javascript%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0each/</loc>
+    <lastmod>2018-04-09T13:17:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript从零实现each</title>
+        <pubTime>2013-09-08T03:14:05.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/06/08/javascript%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9B%B8%E7%AD%89/</loc>
+    <lastmod>2018-04-09T13:17:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript判断两个对象相等</title>
+        <pubTime>2013-06-08T03:14:42.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/08/08/javascript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
+    <lastmod>2018-04-09T13:17:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript实现一个模板引擎</title>
+        <pubTime>2014-08-08T03:15:02.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/05/08/canvas%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:16:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>canvas学习</title>
+        <pubTime>2014-05-08T03:16:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%BA%8C)/</loc>
+    <lastmod>2018-04-09T13:15:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端性能(二)</title>
+        <pubTime>2015-04-08T03:23:42.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="性能" url="http://blog.xiaowuzi.info/categories/%E6%80%A7%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%B8%80)/</loc>
+    <lastmod>2018-04-09T13:15:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端性能(一)</title>
+        <pubTime>2015-04-08T03:22:46.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="性能" url="http://blog.xiaowuzi.info/categories/%E6%80%A7%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/07/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2018-04-09T13:13:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端测试工具</title>
+        <pubTime>2016-04-07T03:24:36.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2018-04-09T13:13:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端测试工具实践</title>
+        <pubTime>2016-04-08T03:24:50.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="实践" url="http://blog.xiaowuzi.info/categories/%E5%AE%9E%E8%B7%B5/"/>
+          
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%AE%9E%E8%B7%B5/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/08/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2018-04-09T13:10:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>其他</title>
+        <pubTime>2014-04-08T03:25:15.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="其他" url="http://blog.xiaowuzi.info/categories/%E5%85%B6%E4%BB%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/javascript%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2018-04-09T13:07:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript动画</title>
+        <pubTime>2015-04-08T03:35:18.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript 基础" url="http://blog.xiaowuzi.info/categories/javascript-%E5%9F%BA%E7%A1%80/"/>
+          
+             
+              <breadCrumb title="动画" url="http://blog.xiaowuzi.info/categories/javascript-%E5%9F%BA%E7%A1%80/%E5%8A%A8%E7%94%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8BDOM%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:07:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript之DOM学习</title>
+        <pubTime>2013-04-08T03:30:16.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript 基础" url="http://blog.xiaowuzi.info/categories/javascript-%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:06:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>websocket学习</title>
+        <pubTime>2016-04-08T03:31:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/npm%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:05:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>npm学习</title>
+        <pubTime>2015-04-08T03:52:47.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工程化" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/flex%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-09T13:04:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>flex学习</title>
+        <pubTime>2015-04-08T02:57:46.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="css" url="http://blog.xiaowuzi.info/categories/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/02/08/dom%E4%BA%8B%E4%BB%B6/</loc>
+    <lastmod>2018-04-09T13:03:35.715Z</lastmod>
+    <data>
+        <display>
+        <title>DOM事件</title>
+        <pubTime>2013-02-08T03:57:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
+    <lastmod>2018-04-09T13:00:32.147Z</lastmod>
+    <data>
+        <display>
+        <title>http缓存</title>
+        <pubTime>2016-04-08T02:45:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94XSS/</loc>
+    <lastmod>2018-04-09T12:53:42.574Z</lastmod>
+    <data>
+        <display>
+        <title>web安全——XSS</title>
+        <pubTime>2018-04-07T13:02:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="web安全" url="http://blog.xiaowuzi.info/categories/web%E5%AE%89%E5%85%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2017/12/01/%E7%9B%B4%E6%92%AD%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2018-04-08T03:49:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>直播理论与实践</title>
+        <pubTime>2017-12-01T07:08:40.000Z</pubTime>
+        
+        <tag>直播</tag>
+         
+         
+           
+             
+              <breadCrumb title="实践" url="http://blog.xiaowuzi.info/categories/%E5%AE%9E%E8%B7%B5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/09/javascript%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</loc>
+    <lastmod>2018-04-08T03:33:33.920Z</lastmod>
+    <data>
+        <display>
+        <title>javascript之深浅拷贝</title>
+        <pubTime>2016-04-09T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/10/promise%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-08T03:33:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>promise学习</title>
+        <pubTime>2016-04-10T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/javascript%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
+    <lastmod>2018-04-08T03:32:15.809Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript原型与原型链</title>
+        <pubTime>2016-04-08T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8B%E9%97%AD%E5%8C%85/</loc>
+    <lastmod>2018-04-08T03:31:46.827Z</lastmod>
+    <data>
+        <display>
+        <title>javascript之s闭包</title>
+        <pubTime>2013-04-08T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/10/javascript%E4%B9%8B%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2018-04-08T03:20:53.690Z</lastmod>
+    <data>
+        <display>
+        <title>javascript基础之继承</title>
+        <pubTime>2013-04-10T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/07/07/javascript%E4%B9%8B%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA/</loc>
+    <lastmod>2018-04-08T03:20:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript之对象创建</title>
+        <pubTime>2013-07-07T14:38:14.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94CRSF/</loc>
+    <lastmod>2018-04-08T02:42:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>web安全——CRSF</title>
+        <pubTime>2016-04-07T13:03:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="web安全" url="http://blog.xiaowuzi.info/categories/web%E5%AE%89%E5%85%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2014/04/07/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</loc>
     <lastmod>2018-04-07T15:25:48.000Z</lastmod>
     <data>
@@ -70,24 +942,6 @@
         <display>
         <title>几种常见的设计模式</title>
         <pubTime>2014-06-07T14:39:06.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/07/07/js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2018-04-07T15:23:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>js创建对象</title>
-        <pubTime>2013-07-07T14:38:14.000Z</pubTime>
         
          
            
@@ -184,60 +1038,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94CRSF/</loc>
-    <lastmod>2018-04-07T15:03:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>web安全——CRSF</title>
-        <pubTime>2016-04-07T13:03:08.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="web安全" url="http://blog.xiaowuzi.info/categories/web%E5%AE%89%E5%85%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2018/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94XSS/</loc>
-    <lastmod>2018-04-07T14:48:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>web安全——XSS</title>
-        <pubTime>2018-04-07T13:02:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="web安全" url="http://blog.xiaowuzi.info/categories/web%E5%AE%89%E5%85%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/04/10/%E7%BB%A7%E6%89%BF/</loc>
-    <lastmod>2018-04-07T14:37:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>继承</title>
-        <pubTime>2013-04-10T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/07/09/this%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
     <lastmod>2018-04-07T14:36:43.000Z</lastmod>
     <data>
@@ -280,42 +1080,6 @@
         <display>
         <title>javascript引擎的执行机制</title>
         <pubTime>2016-04-07T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/JavaScript%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
-    <lastmod>2018-04-07T14:35:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript原型与原型链</title>
-        <pubTime>2016-04-08T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/10/Promise%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-07T14:34:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>Promise学习</title>
-        <pubTime>2016-04-10T12:51:07.000Z</pubTime>
         
          
            
@@ -442,24 +1206,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2013/04/08/%E9%97%AD%E5%8C%85/</loc>
-    <lastmod>2018-04-07T14:06:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>闭包</title>
-        <pubTime>2013-04-08T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/04/07/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E7%9B%B8%E7%AD%89&%E4%B8%A5%E6%A0%BC%E7%9B%B8%E7%AD%89/</loc>
     <lastmod>2018-04-07T14:04:28.000Z</lastmod>
     <data>
@@ -516,48 +1262,12 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/09/JavaScript%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</loc>
-    <lastmod>2018-04-07T13:57:28.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript之深浅拷贝</title>
-        <pubTime>2016-04-09T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-04-07T13:57:19.000Z</lastmod>
     <data>
         <display>
         <title>http详解</title>
         <pubTime>2016-04-07T12:45:48.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
-    <lastmod>2018-04-07T13:57:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>http缓存</title>
-        <pubTime>2016-04-08T02:45:48.000Z</pubTime>
         
          
            

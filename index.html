@@ -699,9 +699,171 @@
           
             <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
 <li>什么是XSS攻击</li>
-<li>XSS种类</li>
-<li>XSS防御手段</li>
+<li>XSS攻击方式</li>
+<li>XSS的危害</li>
+<li>XSS防御措施</li>
 </ol>
+<h3 id="什么是XSS攻击"><a href="#什么是XSS攻击" class="headerlink" title="什么是XSS攻击"></a>什么是XSS攻击</h3><p>跨站点脚本（Cross-site scripting，XSS）是一种允许攻击者在另一个用户的浏览器中执行恶意脚本的脚本注入式攻击。</p>
+<h3 id="XSS攻击方式"><a href="#XSS攻击方式" class="headerlink" title="XSS攻击方式"></a>XSS攻击方式</h3><ol>
+<li>反射型</li>
+</ol>
+<p><code>将用户输入的存在XSS攻击的数据，发送给后台，后台并未对数据进行存储，也未经过任何过滤，直接返回给客户端。被浏览器渲染。就可能导致XSS攻击；</code></p>
+<p>例一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.xss.com?x=&lt;script&gt;alert(&apos;xss&apos;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>示例图</p>
+<p><img src="/images/xss/640.webp" alt=""></p>
+<p>攻击者构造了一个包含恶意文本的URL发送给受害者</p>
+<p>受害者被攻击者欺骗，通过访问这个URL向网站发出请求</p>
+<p>网站给受害者的返回中包含了来自URL的的恶意文本</p>
+<p>受害者的浏览器执行了来自返回中的恶意脚本，把受害者的cookie发送给攻击者的服务器</p>
+<ol start="2">
+<li>存储型</li>
+</ol>
+<p><code>数据库中存有的存在XSS攻击的数据，返回给客户端。若数据未经过任何转义。被浏览器渲染。就可能导致XSS攻击；</code></p>
+<ol start="3">
+<li>基于DOM的XSS攻击</li>
+</ol>
+<p><code>与前面两种不一样的地方是不需要提交到服务器中，可直接在浏览器中执行</code></p>
+<p>常见的输入输出点可利用下面这些：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//常见的输入点：</span><br><span class="line">document.URL</span><br><span class="line">document.URLUnencoded</span><br><span class="line">document.location(and many of its properties)</span><br><span class="line">document.referrer</span><br><span class="line">window.location(and many of its properties)</span><br><span class="line">//常见的输出点：</span><br><span class="line">document.write(…)</span><br><span class="line">document.writeln(…)</span><br><span class="line">document.body.innerHtml = …</span><br><span class="line">//直接修改DOM树：</span><br><span class="line">document.forms[0].action = … (and various other collections)</span><br><span class="line">document.attachEvent(…)</span><br><span class="line">document.create…(…)</span><br><span class="line">document.execCommand(…)</span><br><span class="line">document.body.…(accessing the DOM through the body object)</span><br><span class="line">window.attachEvent(…)</span><br><span class="line">//替换document URL：</span><br><span class="line">document.location = … (and assigning to location’ s href, host and hostname)</span><br><span class="line">document.location.hostname = …</span><br><span class="line">document.location.replace(…)</span><br><span class="line">document.location.assign(…)</span><br><span class="line">document.URL = …</span><br><span class="line">window.navigate(…)</span><br><span class="line">//打开或修改新窗口：</span><br><span class="line">document.open(…)</span><br><span class="line">window.open(…)</span><br><span class="line">window.location.href = … (and assigning to location’ s href, host and hostname)</span><br><span class="line">//直接执行脚本：</span><br><span class="line">eval(…)</span><br><span class="line">window.execScript(…)</span><br><span class="line">window.setInterval(…)</span><br><span class="line">window.setTimeout(…)</span><br></pre></td></tr></table></figure>
+<h3 id="XSS的危害"><a href="#XSS的危害" class="headerlink" title="XSS的危害"></a>XSS的危害</h3><ol>
+<li>挂马</li>
+</ol>
+<p>所谓挂马就是通过各种方法获得网站管理员账号，然后登陆网站后台，网页挂马可通过嵌入iframe实现</p>
+<ol start="2">
+<li>盗取用户COOKIE</li>
+</ol>
+<p>骑过“document.cookie”读取cookie信息，发起劫持，可直接通过加密的cookie登录凭证登录登陆用户的账户。</p>
+<ol start="3">
+<li>DDOS（Distributed Denial of Service）分布式拒绝攻击</li>
+</ol>
+<p>在目标流星器中注入Ajax请求的代码，Ajax请求的响应有同源策略的限制，但请求不会，所以可以同时发起请求攻击。</p>
+<ol start="4">
+<li>钓鱼攻击</li>
+</ol>
+<p>在网页中，伪造真实的登录框，欺骗用户登录时，账号密码就会被盗取。</p>
+<ol start="5">
+<li>劫持用户web行为</li>
+</ol>
+<p>网站的很多操作是可以http的get或post请求完成的，攻击者可通过代码发起这两种请求，例如构造form、ajax等。</p>
+<ol start="6">
+<li>XSS Worm（蠕虫）</li>
+</ol>
+<p>当被攻击用户查看存在XSS蠕虫代码的内容时，蠕虫触发并开始感染传播。</p>
+<p>用户之间发生交互行为的页面，存在存储型XSS，比较容易发起XSS Worm攻击。</p>
+<h3 id="XSS防御措施"><a href="#XSS防御措施" class="headerlink" title="XSS防御措施"></a>XSS防御措施</h3><h3 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</h3><p>浏览器将禁止页面的JS访问带有HttpOnly属性的Cookie。此属性解决的是XSS后的Cookie劫持攻击。</p>
+<p>Cookie的使用过程大致如下：</p>
+<ol>
+<li><p>浏览器向服务器发起请求</p>
+</li>
+<li><p>服务器响应后发送Set-Cookie头（此时可设置HttpOnly），向客户端浏览器写入Cookie</p>
+</li>
+<li><p>浏览器访问该域下的所有页面都将发送该Cookie（只要Cookie还没过期）</p>
+</li>
+</ol>
+<p>PHP代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&quot;Set-Cookie: hidden=value; httpOnly&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="输入检查"><a href="#输入检查" class="headerlink" title="输入检查"></a>输入检查</h3><p>在服务器与客户端添加验证规则，在特定的地方使用特定的规则，例如不匹配“script标签或&lt;、&gt;特殊符号”等。</p>
+<p>启用“白名单原则”，可用于标签、属性或事件，只让正常的“a、div”等标签通过。</p>
+<p>下面是<a href="https://code.google.com/archive/p/domxsswiki/wikis/FindingDOMXSS.wiki" target="_blank" rel="noopener">FindingDOMXSS</a>中对输入点（sources）的匹配规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/(location\s*[\[.])|([.\[]\s*[&quot;&apos;]?\s*(arguments|dialogArguments|innerHTML|write(ln)?</span><br><span class="line">|open(Dialog)?|showModalDialog|cookie|URL|documentURI|baseURI|referrer|</span><br><span class="line">name|opener|parent|top|content|self|frames)\W)|(localStorage|sessionStorage|Database)/</span><br></pre></td></tr></table></figure>
+<p>字符串类型的数据，需要针对&lt;、&gt;、/、’、”、&amp;五个字符进行实体化转义。</p>
+<p><img src="/images/xss/01.webp" alt=""></p>
+<h3 id="转出检查"><a href="#转出检查" class="headerlink" title="转出检查"></a>转出检查</h3><p>变量输出到HTML页面时，可以使用编码或转义的方式防御XSS攻击。</p>
+<p>针对HTML与JavaScript的编码可通过HtmlEncode和JavaScriptEncode实现，具体的函数内容可<a href="http://www.cnblogs.com/lovesong/p/5211667.html" target="_blank" rel="noopener">参考此处</a>。</p>
+<p>在<a href="https://code.google.com/archive/p/domxsswiki/wikis/FindingDOMXSS.wiki" target="_blank" rel="noopener">FindingDOMXSS</a>中同样给出了输出点（sinks）的匹配规则</p>
+<p>具体如下：</p>
+<p>情况一</p>
+<p>数据类型：String</p>
+<p>上下文：HTML Body</p>
+<p>示例代码：<span>UNTRUSTED DATA</span></p>
+<p>防御措施：HTML Entity编码</p>
+<p>情况二</p>
+<p>数据类型：String</p>
+<p>上下文：安全HTML变量</p>
+<p>示例代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; name=&quot;fname&quot; value=&quot;UNTRUSTED DATA&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>防御措施</p>
+<ol>
+<li><p>HTML Attribute编码</p>
+</li>
+<li><p>只把不可信数据放在安全白名单内的变量上（白名单在下文列出）</p>
+</li>
+<li><p>严格地校验不安全变量，如background、id和name</p>
+</li>
+</ol>
+<p>情况三</p>
+<p>数据类型：String</p>
+<p>上下文：GET参数</p>
+<p>示例代码：<a href="/site/search?value=UNTRUSTED DATA">clickme</a></p>
+<p>防御措施：URL编码</p>
+<p>情况四</p>
+<p>数据类型：String</p>
+<p>上下文：使用在src或href变量上的不可信URLs</p>
+<p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;UNTRUSTED URL&quot;&gt;clickme&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;iframe src=&quot;UNTRUSTED URL&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>防御措施：</p>
+<ol>
+<li><p>对输入进行规范化</p>
+</li>
+<li><p>URL校验</p>
+</li>
+<li><p>URL安全性认证</p>
+</li>
+<li><p>只允许使用http和https协议（避免使用JavaScript协议去打开一个新窗口）</p>
+</li>
+<li><p>HTML Attribute编码</p>
+</li>
+</ol>
+<p>情况五</p>
+<p>数据类型：String</p>
+<p>上下文：CSS值</p>
+<p>示例代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;width: UNTRUSTED DATA;&quot;&gt;Selection&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>防御措施：</p>
+<ol>
+<li><p>使用CSS编码</p>
+</li>
+<li><p>使用CSS Hex编码</p>
+</li>
+<li><p>良好的CSS设计</p>
+</li>
+</ol>
+<p>情况六</p>
+<p>数据类型：String</p>
+<p>上下文：JavaScript变量</p>
+<p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;var currentValue=&apos;UNTRUSTED DATA&apos;;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;someFunction(&apos;UNTRUSTED DATA&apos;);&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>防御措施：</p>
+<ol>
+<li><p>确保所有变量值都被引号括起来</p>
+</li>
+<li><p>使用JavaScript Hex编码</p>
+</li>
+<li><p>使用JavaScript Unicode编码</p>
+</li>
+<li><p>避免使用“反斜杠转译”（\”、\’或者\）</p>
+</li>
+</ol>
+<p>情况七</p>
+<p>数据类型：HTML</p>
+<p>上下文：HTML Body</p>
+<p>示例代码：<code>&lt;div&gt;UNTRUSTED HTML&lt;/div&gt;</code></p>
+<p>防御措施：</p>
+<p>[HTML校验 (JSoup, AntiSamy, HTML Sanitizer)]</p>
+<p><code>(https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet#RULE_.236_-_Use_an_HTML_Policy_engine_to_validate_or_clean_user-driven_HTML_in_an_outbound_way)</code></p>
+<p>情况八</p>
+<p>数据类型：String</p>
+<p>上下文：DOM XSS</p>
+<p>示例代码：<code>&lt;script&gt;document.write(&quot;UNTRUSTED INPUT: &quot; + document.location.hash);&lt;script/&gt;</code></p>
+<h3 id="DOM-Based-XSS防御"><a href="#DOM-Based-XSS防御" class="headerlink" title="DOM Based XSS防御"></a>DOM Based XSS防御</h3><p>DOM Based XSS是直接从“JavaScript”中输出数据到HTML页面里，前面提到的都是从“服务器”中输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//x是从服务器中输出的，并且做了JavaScriptEncode操作</span><br><span class="line">var x=&quot;\x20\x27onclick\x3dalert\x281\x29\x3b&quot;;</span><br><span class="line">//在输出后会变成&lt;a href=&quot; &quot; onclick=&quot;alert(1);&quot;&gt;test&lt;/a&gt;还是能执行点击</span><br><span class="line">document.write(&quot;&lt;a href=&apos;&quot;+x+&quot;&gt;test&lt;/a&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>所以要在合适的地方再做一次编码操作，下面是分情况说明：</p>
+<p>如果输出到事件或脚本中，则再做一次JavaScriptEncode；如果输出到HTML内容或属性中，就再做一次HtmlEncode。</p>
+<p>在OWASP中有一篇《<a href="https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet" target="_blank" rel="noopener">DOM based XSS Prevention Cheat Sheet</a>》，详细记录了发生场景和解决指南。</p>
+<p> 参考资料：</p>
+<p> <a href="http://www.cnblogs.com/strick/p/6349911.html" target="_blank" rel="noopener">谨慎能捕千秋蝉（一）——XSS</a></p>
+<p> <a href="https://mp.weixin.qq.com/s/GMA2OpBLtRTEU2E2DoE_iQ" target="_blank" rel="noopener">如何让前端更安全？——XSS攻击和防御详解</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/21308080" target="_blank" rel="noopener">了解XSS攻击</a></p>
+<p><a href="http://www.cnblogs.com/lovesong/p/5199623.html" target="_blank" rel="noopener">前端安全之XSS攻击</a></p>
           
         
       
@@ -857,6 +1019,175 @@
         
       
     </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2017/12/01/直播理论与实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/01/直播理论与实践/" itemprop="url">直播理论与实践</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-01T15:08:40+08:00">
+                2017-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/实践/" itemprop="url" rel="index">
+                    <span itemprop="name">实践</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>直播在互联网中已经成为一个必不可少的东西，作为了一家互联公司直播当然也少不了了，目前直播在牛牛软件中主要功能是教育跟宣传作用。</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>直播构成</li>
+<li>直播流程</li>
+<li>web中直播技术<ul>
+<li>hls协议</li>
+<li>rtmp协议</li>
+<li>hls与rtmp对比</li>
+</ul>
+</li>
+<li>实践<ul>
+<li>安装nginx、nginx-rtmp-module、FFmpeg（以下操作均在mac下进行）</li>
+<li>nginx.conf配置文件，配置RTMP、HLS</li>
+<li>重启nginx</li>
+<li>查看端口是否启动</li>
+<li>FFmpeg执行命令</li>
+<li>代码</li>
+<li>效果</li>
+</ul>
+</li>
+<li>直播中遇到坑</li>
+<li>总结</li>
+</ol>
+<h2 id="直播构成（使用角色）"><a href="#直播构成（使用角色）" class="headerlink" title="直播构成（使用角色）"></a>直播构成（使用角色）</h2><p><img src="/images/live/c19343ac6b031af7s.png" alt="Markdown"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/01/直播理论与实践/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
     
     
     
@@ -1381,7 +1712,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/05/07/跨域/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/09/08/前端错误监控/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1400,7 +1731,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/05/07/跨域/" itemprop="url">跨域</a></h1>
+                <a class="post-title-link" href="/2016/09/08/前端错误监控/" itemprop="url">前端错误监控</a></h1>
         
 
         <div class="post-meta">
@@ -1412,127 +1743,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-07T22:46:18+08:00">
-                2016-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/17/web常见几种攻击方式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/17/web常见几种攻击方式/" itemprop="url">web常见几种攻击方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-17T22:56:11+08:00">
-                2016-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-08T10:54:44+08:00">
+                2016-09-08
               </time>
             
 
@@ -1554,8 +1766,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web安全/" itemprop="url" rel="index">
-                    <span itemprop="name">web安全</span>
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
                   </a>
                 </span>
 
@@ -1593,14 +1805,7 @@
       
         
           
-            <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
-<li>DDOS攻击</li>
-<li>SQL注入</li>
-<li>XSS 攻击</li>
-<li>CRSF攻击</li>
-</ol>
-<h3 id="DDOS攻击"><a href="#DDOS攻击" class="headerlink" title="DDOS攻击"></a>DDOS攻击</h3><h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><h3 id="XSS-攻击"><a href="#XSS-攻击" class="headerlink" title="XSS 攻击"></a>XSS 攻击</h3><h3 id="CRSF攻击"><a href="#CRSF攻击" class="headerlink" title="CRSF攻击"></a>CRSF攻击</h3><p>参考资料</p>
-<p>《白帽子讲Web安全》</p>
+            
           
         
       
@@ -1648,7 +1853,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/15/web性能优化手段/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/07/08/http2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1667,7 +1872,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/04/15/web性能优化手段/" itemprop="url">web性能优化手段</a></h1>
+                <a class="post-title-link" href="/2016/07/08/http2/" itemprop="url">http2</a></h1>
         
 
         <div class="post-meta">
@@ -1679,8 +1884,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-15T22:46:53+08:00">
-                2016-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-08T10:53:07+08:00">
+                2016-07-08
               </time>
             
 
@@ -1689,6 +1894,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1758,7 +1985,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1804,7 +2031,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1815,7 +2042,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1826,7 +2053,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

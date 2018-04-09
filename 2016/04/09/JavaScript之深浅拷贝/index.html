@@ -119,16 +119,16 @@
 
 <meta name="description" content="前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScript 中的数据类型可以分为两种：基本类型值（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript之深浅拷贝">
-<meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/index.html">
+<meta property="og:title" content="javascript之深浅拷贝">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/09/javascript之深浅拷贝/index.html">
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScript 中的数据类型可以分为两种：基本类型值（">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-31%20%E4%B8%8B%E5%8D%8817.21.50%20%E4%B8%8B%E5%8D%88.png">
 <meta property="og:image" content="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-11-02%20%E4%B8%8B%E5%8D%8813.20.45%20%E4%B8%8B%E5%8D%88.png">
-<meta property="og:updated_time" content="2018-04-07T13:57:28.000Z">
+<meta property="og:updated_time" content="2018-04-08T03:33:33.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript之深浅拷贝">
+<meta name="twitter:title" content="javascript之深浅拷贝">
 <meta name="twitter:description" content="前言本文要解决的问题：  为什么会有深拷贝（deep clone）和浅拷贝（shallow clone）的存在 理解 JavaScript 中深拷贝和浅拷贝的区别 JavaScript 拷贝对象的注意事项 JavaScript 拷贝对象和数组的实现方法  部分代码可在这里找到：Github。如果发现错误，欢迎指出。 一， 理解问题原因所在JavaScript 中的数据类型可以分为两种：基本类型值（">
 <meta name="twitter:image" content="http://markdown-1252710547.coscd.myqcloud.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-31%20%E4%B8%8B%E5%8D%8817.21.50%20%E4%B8%8B%E5%8D%88.png">
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/">
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/04/09/javascript之深浅拷贝/">
 
 
 
 
 
-  <title>JavaScript之深浅拷贝 | 小武子博客</title>
+  <title>javascript之深浅拷贝 | 小武子博客</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/09/JavaScript之深浅拷贝/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/09/javascript之深浅拷贝/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript之深浅拷贝</h1>
+          <h1 class="post-title" itemprop="name headline">javascript之深浅拷贝</h1>
         
 
         <div class="post-meta">
@@ -540,7 +540,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/08/JavaScript原型与原型链/" rel="next" title="JavaScript原型与原型链">
+              <a href="/2016/04/08/javascript原型与原型链/" rel="next" title="JavaScript原型与原型链">
                 <i class="fa fa-chevron-left"></i> JavaScript原型与原型链
               </a>
             
@@ -550,8 +550,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/10/Promise学习/" rel="prev" title="Promise学习">
-                Promise学习 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/10/promise学习/" rel="prev" title="promise学习">
+                promise学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -629,7 +629,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -640,7 +640,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -651,7 +651,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
