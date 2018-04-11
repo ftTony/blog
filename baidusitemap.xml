@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
+    <lastmod>2018-04-10T03:50:24.481Z</lastmod>
+    <data>
+        <display>
+        <title>http缓存</title>
+        <pubTime>2016-04-08T02:45:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/https%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-04-10T02:38:02.103Z</lastmod>
+    <data>
+        <display>
+        <title>https详解</title>
+        <pubTime>2016-04-08T08:45:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-04-10T02:35:23.960Z</lastmod>
+    <data>
+        <display>
+        <title>http详解</title>
+        <pubTime>2016-04-07T12:45:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2015/04/08/http%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2018-04-09T13:38:33.000Z</lastmod>
     <data>
@@ -694,24 +748,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
-    <lastmod>2018-04-09T13:00:32.147Z</lastmod>
-    <data>
-        <display>
-        <title>http缓存</title>
-        <pubTime>2016-04-08T02:45:48.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2018/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94XSS/</loc>
     <lastmod>2018-04-09T12:53:42.574Z</lastmod>
     <data>
@@ -1255,42 +1291,6 @@
            
              
               <breadCrumb title="模块化" url="http://blog.xiaowuzi.info/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-04-07T13:57:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>http详解</title>
-        <pubTime>2016-04-07T12:45:48.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/https%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-04-07T13:57:07.000Z</lastmod>
-    <data>
-        <display>
-        <title>https详解</title>
-        <pubTime>2016-04-08T08:45:48.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
           
         </display>
     </data>

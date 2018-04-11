@@ -124,12 +124,12 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 为什么需要httpsHTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。 举个最常见的例子，用户登陆。用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/517641/201510/517641-20151004202254433-181254043.png">
-<meta property="og:updated_time" content="2018-04-07T13:57:07.000Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/517641-20151004202254433-181254043.png">
+<meta property="og:updated_time" content="2018-04-10T02:38:02.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="https详解">
 <meta name="twitter:description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 为什么需要httpsHTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。 举个最常见的例子，用户登陆。用">
-<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/517641/201510/517641-20151004202254433-181254043.png">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/http/517641-20151004202254433-181254043.png">
 
 
 
@@ -396,7 +396,7 @@
 <h3 id="为什么需要https"><a href="#为什么需要https" class="headerlink" title="为什么需要https"></a><strong>为什么需要https</strong></h3><p>HTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。</p>
 <p>举个最常见的例子，用户登陆。用户输入账号，密码，采用HTTP的话，只要在代理服务器上做点手脚就可以拿到你的密码了。</p>
 <p><code>用户登陆 --&gt; 代理服务器（做手脚）--&gt; 实际授权服务器</code></p>
-<h3 id="HTTPS过程"><a href="#HTTPS过程" class="headerlink" title="HTTPS过程"></a><strong>HTTPS过程</strong></h3><p><img src="http://images2015.cnblogs.com/blog/517641/201510/517641-20151004202254433-181254043.png" alt=""></p>
+<h3 id="HTTPS过程"><a href="#HTTPS过程" class="headerlink" title="HTTPS过程"></a><strong>HTTPS过程</strong></h3><p><img src="/images/http/517641-20151004202254433-181254043.png" alt=""></p>
 <p>1.客户端发送HTTPS请求给服务器端；</p>
 <p>2.服务器端发送CA证书和公钥PublicKey给客户端，注意这个公钥用的是非对称加密钥，只有服务器端才有PublicKey对应的PrivateKey;</p>
 <p>3.客户端生成一个会话的密钥SessionKey,注意这个SessionKey是对称密钥，加密解密都是同一个秘钥；<br><a id="more"></a><br>4.客户端用公钥PublicKey来对会话秘钥SessionKey进行加密生成EncryptKey传递给服务器；</p>

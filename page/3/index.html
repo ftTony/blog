@@ -686,7 +686,8 @@
 <p>2.降低服务器压力</p>
 <p>3.减少服务器压力</p>
 <p>4.减少网络延迟，加快页面打开速度</p>
-<h3 id="web缓存的类型"><a href="#web缓存的类型" class="headerlink" title="web缓存的类型"></a><strong>web缓存的类型</strong></h3><p>1.数据库缓存</p>
+<h3 id="web缓存的类型"><a href="#web缓存的类型" class="headerlink" title="web缓存的类型"></a><strong>web缓存的类型</strong></h3><p>web缓存可以分为：数据库缓存、CDN缓存、代理服务器缓存、浏览器缓存、应用层缓存。</p>
+<p>1.数据库缓存</p>
 <p>   Web应用，特别是SNS类型的应用，往往关系比较复杂，数据库表繁多，如果频繁进行数据库查询，很容易导致数据库不堪重荷。为了提供查询的性能，会将查询后的数据放到内存中进行缓存，下次查询时，直接从内存缓存直接返回，提供响应效率。比如常用的缓存方案有memcached redist等。<br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1317,7 +1318,7 @@
         
           <h3 id="http的定义和历史"><a href="#http的定义和历史" class="headerlink" title="http的定义和历史"></a><strong>http的定义和历史</strong></h3><p>  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。</p>
 <h3 id="http三次握手"><a href="#http三次握手" class="headerlink" title="http三次握手"></a><strong>http三次握手</strong></h3><p>   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以理解为进程到进程之间的通信.</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/CareySon/201204/201204271057008113.png" alt=""></p>
+<p><img src="/images/http/201204271057008113.png" alt=""></p>
 <h3 id="http的主要特点"><a href="#http的主要特点" class="headerlink" title="http的主要特点"></a><strong>http的主要特点</strong></h3><p>1.支持客户/服务器模式<br>2.简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。<br>3.灵活：http允许传轮任意类型的数据对象。正在传输的类型由Content-Type加以标记。<br>4.无连接：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>
           <!--noindex-->
           <div class="post-button text-center">

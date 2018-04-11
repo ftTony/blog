@@ -124,13 +124,13 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/CareySon/201204/201204271057008113.png">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/CareySon/201204/201204271057105124.png">
-<meta property="og:updated_time" content="2018-04-07T13:57:19.000Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/201204271057008113.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/201204271057105124.png">
+<meta property="og:updated_time" content="2018-04-10T02:35:23.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http详解">
 <meta name="twitter:description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以">
-<meta name="twitter:image" content="http://images.cnblogs.com/cnblogs_com/CareySon/201204/201204271057008113.png">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/http/201204271057008113.png">
 
 
 
@@ -394,7 +394,7 @@
       
         <h3 id="http的定义和历史"><a href="#http的定义和历史" class="headerlink" title="http的定义和历史"></a><strong>http的定义和历史</strong></h3><p>  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。</p>
 <h3 id="http三次握手"><a href="#http三次握手" class="headerlink" title="http三次握手"></a><strong>http三次握手</strong></h3><p>   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以理解为进程到进程之间的通信.</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/CareySon/201204/201204271057008113.png" alt=""></p>
+<p><img src="/images/http/201204271057008113.png" alt=""></p>
 <h3 id="http的主要特点"><a href="#http的主要特点" class="headerlink" title="http的主要特点"></a><strong>http的主要特点</strong></h3><p>1.支持客户/服务器模式<br>2.简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。<br>3.灵活：http允许传轮任意类型的数据对象。正在传输的类型由Content-Type加以标记。<br>4.无连接：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br><a id="more"></a></p>
 <h3 id="http请求详解"><a href="#http请求详解" class="headerlink" title="http请求详解"></a><strong>http请求详解</strong></h3><p>http请求由三部分组成，分别是：请求行、消息报头、请求正文</p>
 <p>http的请求方法：GET POST HEAD PUT DELETE TRACE CONNECT OPTIONS </p>
@@ -411,7 +411,7 @@
 <p>第二部分HTTP头在HTTP请求可以是3种HTTP头：1.请求头(request header)  2.普通头(general header)  3.实体头(entity header) 通常来说，由于Get请求往往不包含内容实体，因此也不会有实体头。</p>
 <p>第三部分内容只在POST请求中存在，因为GET请求并不包含任何实体。</p>
 <p>完整的http请求图如下：</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/CareySon/201204/201204271057105124.png" alt=""></p>
+<p><img src="/images/http/201204271057105124.png" alt=""></p>
 <p>请求报头允许客户端向服务器端传递请求的附加信息以及客户端自身的信息。</p>
 <p>Accept请求报头域用于指定客户端接受哪些类型的信息。eg：Accept：image/gif，表明客户端希望接受GIF图象格式的资源；Accept:text/html,表明客户希望接受html文本。</p>
 <p>Accept-Charset请求报头域用于指定客户端接受的字符集。eg：Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受。</p>
