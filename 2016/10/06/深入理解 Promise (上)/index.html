@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Pro">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解 Promise (上)">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2016/10/06/深入理解 Promise (上)/index.html">
+<meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Pro">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-13T07:32:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入理解 Promise (上)">
+<meta name="twitter:description" content="自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Pro">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2016/10/06/深入理解 Promise (上)/">
+
+
+
+
+
+  <title>深入理解 Promise (上) | 小武子博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小武子博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/10/06/深入理解 Promise (上)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">深入理解 Promise (上)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-06T10:39:04+08:00">
+                2016-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Promise 呢？是否有误用或错误使用 Promise 呢？是否知道 Promise 的实现原理和 Promise 的花样玩法呢？下面让我们一起来探讨一下吧。</p>
+<p>在回顾知识的时候，总是能发现更多相关知识，从原理到源码再到实践，是一个深入浅出的过程，一边总结，一边实践，发现有太多太多的东西需要说明，本以为三言两语就能说清楚的东西，一下子就变成了长篇大论，为了便于阅读理解，我分成上中下三篇，文中不免有错漏之处，烦请各位大神们指出。</p>
+<h2 id="上-理论知识"><a href="#上-理论知识" class="headerlink" title="上 - 理论知识"></a>上 - 理论知识</h2><ul>
+<li>Promise 规范</li>
+<li>ES6 Promise API</li>
+<li>Polyfill和扩展类库</li>
+<li><p>Promise 在应用中的错误用法和误区</p>
+<ol>
+<li>当作回调使用</li>
+<li>没有返回值</li>
+<li>没有catch</li>
+<li>catch()与then(null, onRejected)</li>
+<li>断链</li>
+<li>穿透</li>
+<li>长度未知的串行与并行</li>
+<li>Promise.resolve的使用</li>
+</ol>
+</li>
+<li><p>最佳实践</p>
+<a id="more"></a>
+<h2 id="Promise-规范"><a href="#Promise-规范" class="headerlink" title="Promise 规范"></a>Promise 规范</h2></li>
+</ul>
+<p>这里只列举规范中的大致内容，详细内容请查看 <a href="https://segmentfault.com/a/1190000002452115" target="_blank" rel="noopener">Promises/A+中文</a>  ，这是ES6 Promises的前身，是一个社区规范，它和 ES6 Promises 有很多共通的内容。</p>
+<ol>
+<li><strong>状态</strong> Promise 的初始状态是 Pending ，状态只能被转换为（Resolved）Fulfilled或Rejected，状态的转换不可逆。</li>
+<li><strong>then</strong> 必须有 then 方法，接收两个可选函数参数onFulfilled、onRejected，then 方法必须返回一个新的 Promise 对象，为了保证 then 中回调的执行顺序，回调必须使用异步执行。</li>
+<li><strong>兼容</strong> 不同的 Promise 的实现必须可以互相调用</li>
+</ol>
+<h2 id="ES6-Promise-API"><a href="#ES6-Promise-API" class="headerlink" title="ES6 Promise API"></a>ES6 Promise API</h2><p>如果你对 Promise的使用 还不是很了解，可参考阅读以下资料：</p>
+<ul>
+<li><a href="http://liubin.org/promises-book/#introduction" target="_blank" rel="noopener">promises-book</a>(非常推荐大家阅读的资料，对Promise讲解十分细致详尽)</li>
+<li><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">阮一峰的Promise科普文</a></li>
+<li><a href="http://coderlt.coding.me/2016/07/17/ES6-promise/" target="_blank" rel="noopener">ES6笔记 - Promise模式</a>（我自己阅读《ECMAScript 6 入门》的笔记）</li>
+</ul>
+<p>这里只对ES6 Promise API做简要说明</p>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><ul>
+<li>.then(resolvedFn, rejectFn)</li>
+<li>为Promise实例添加状态改变时的回调，返回值是一个 <strong>新的Promise实例</strong></li>
+<li>.catch()</li>
+<li>是 .then(null, rejectFn) 的语法糖，返回值也是一个 <strong>新的Promise对象</strong></li>
+<li>Promise对象的错误具有冒泡性质，错误会不断的向后传递，直到 .catch() 捕获</li>
+<li>正因为 then 和 catch 返回的都是 Promise 对象，所以才可以不断的链式调用</li>
+</ul>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><ul>
+<li><p>Promise.resolve()</p>
+<ol>
+<li>将现有对象转换为Promise对象</li>
+<li>如果参数是promise实例，则直接返回这个实例</li>
+<li>如果参数是thenabled对象（有then方法的对象），则先将其转换为promise对象，然后立即执行这个对象的then方法</li>
+<li>如果参数是个原始值，则返回一个promise对象，状态为resolved，这个原始值会传递给回调</li>
+<li>没有参数，直接返回一个resolved的Promise对象</li>
+<li>Promise.reject()</li>
+<li>同上，不同的是返回的promise对象的状态为rejected</li>
+</ol>
+</li>
+<li><p>Promise.reject()</p>
+<p>  同上，不同的是返回的promise对象的状态为rejected</p>
+</li>
+</ul>
+<ul>
+<li><p>Promise.all()</p>
+<ol>
+<li>接收一个Promise实例的数组或具有Iterator接口的对象，</li>
+<li>如果元素不是Promise对象，则使用Promise.resolve转成Promise对象</li>
+<li>如果全部成功，状态变为resolved，返回值将组成一个数组传给回调</li>
+<li>只要有一个失败，状态就变为rejected，返回值将直接传递给回调</li>
+<li>all() 的返回值也是新的Promise对象</li>
+</ol>
+</li>
+<li><p>Promise.race()</p>
+</li>
+</ul>
+<pre><code>1. 同上，区别是，只要有一个Promise实例率先发生变化（无论是状态变成resolved还是rejected）都触发then中的回调，返回值将传递给回调
+1. race()的返回值也是新的Promise对象
+</code></pre><h2 id="Polyfill和扩展类库"><a href="#Polyfill和扩展类库" class="headerlink" title="Polyfill和扩展类库"></a>Polyfill和扩展类库</h2><h3 id="Polyfill"><a href="#Polyfill" class="headerlink" title="Polyfill"></a>Polyfill</h3><p>只需要在浏览器中加载Polyfill类库，就能使用IE10等或者还没有提供对Promise支持的浏览器中使用Promise里规定的方法。</p>
+<p><a href="https://github.com/calvinmetcalf/lie" target="_blank" rel="noopener">calvinmetcalf/lie</a> 非常简洁的 promise 库，中篇中的手动封装实现就是参考了这个库<br>jakearchibald/es6-promise 兼容 Promises/A+ 的类库， 它只是 RSVP.js 的一个子集，只实现了Promises 规定的 API。<br><a href="https://github.com/stefanpenner/es6-promise" target="_blank" rel="noopener">yahoo/ypromise</a> 这是一个独立版本的 YUI 的 Promise Polyfill，具有和 ES6 Promises 的兼容性。</p>
+<h3 id="Promise扩展类库"><a href="#Promise扩展类库" class="headerlink" title="Promise扩展类库"></a>Promise扩展类库</h3><p>Promise扩展类库除了实现了Promise中定义的规范之外，还增加了自己独自定义的功能。</p>
+<p><a href="https://github.com/kriskowal/q" target="_blank" rel="noopener">kriskowal/q</a> 类库 Q 实现了 Promises 和 Deferreds 等规范。 它自2009年开始开发，还提供了面向Node.js的文件IO API Q-IO 等， 是一个在很多场景下都能用得到的类库。</p>
+<p><a href="https://github.com/petkaantonov/bluebird" target="_blank" rel="noopener">petkaantonov/bluebird</a>这个类库除了兼容 Promise 规范之外，还扩展了取消promise对象的运行，取得promise的运行进度，以及错误处理的扩展检测等非常丰富的功能，此外它在实现上还在性能问题下了很大的功夫。</p>
+<p><strong>注意</strong></p>
+<p>在项目中，有可能两个不同的模块使用的是两个不同的Promise类库，那么在大部分的Promise的实现中，都是遵循 Promise/A+ 标准和兼容ES6 Promise接口的，也是不同的Promise的实现是可以互相调用的，如何调用，将在下面说明。</p>
+<h2 id="错误用法及误区"><a href="#错误用法及误区" class="headerlink" title="错误用法及误区"></a>错误用法及误区</h2><h3 id="当作回调来用-Callback-Hell"><a href="#当作回调来用-Callback-Hell" class="headerlink" title="当作回调来用 Callback Hell"></a>当作回调来用 Callback Hell</h3><p><code>loadAsync1().then(function(data1) {
+  loadAsync2(data1).then(function(data2) {
+    loadAsync3(data2).then(okFn, failFn)
+  });
+});</code></p>
+<p>Promise是用来解决异步嵌套回调的，这种写法虽然可行，但违背了Promise的设计初衷</p>
+<p>改成下面的写法，会让结构更加清晰</p>
+<p><code>loadAsync1()
+    .then(function(data1) {
+        loadAsync2(data1)
+    })
+    .then(function(data2){
+        loadAsync3(data2)
+    })
+    .then(res=&gt;console.log(res))</code></p>
+<p>promise 的神奇之处在于让我们能够在回调函数里面使用 return 和 throw， 所以在then中可以return出一个promise对象或普通的值，也可以throw出一个错误对象，但如果没有任何返回，将默认返回 undefined，那么后面的then中的回调参数接收到的将是undefined，而不是上一个then中内部函数 loadAsync2 执行的结果，后面都将是undefined。</p>
+<h3 id="没有Catch"><a href="#没有Catch" class="headerlink" title="没有Catch"></a>没有Catch</h3><p><code>loadAsync1()
+    .then(function(data1) {
+        return loadAsync2(data1)
+    })
+    .then(function(data2){
+        return loadAsync3(data2)
+    })
+    .then(okFn, failFn)</code></p>
+<p>这里的调用，并没有添加catch方法，那么如果中间某个环节发生错误，将不会被捕获，控制台将看不到任何错误，不利于调试查错，所以最好在最后添加catch方法用于捕获错误。</p>
+<p>添加catch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">loadAsync1()</span><br><span class="line">	.then(function(data1) &#123;</span><br><span class="line">		return loadAsync2(data1)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(function(data2)&#123;</span><br><span class="line">	    return loadAsync3(data2)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(okFn, failFn)</span><br><span class="line">	.catch(err=&gt;console.log(err))</span><br></pre></td></tr></table></figure>
+<h3 id="catch-与then-null-fn"><a href="#catch-与then-null-fn" class="headerlink" title="catch()与then(null, fn)"></a>catch()与then(null, fn)</h3><p>在有些情况下catch与then(null, fn)并不等同，如下</p>
+<p><code>ajaxLoad1()
+    .then(res=&gt;{ return ajaxLoad2() })
+    .catch(err=&gt; console.log(err))</code></p>
+<p>此时，catch捕获的并不是ajaxLoad1的错误，而是ajaxLoad2的错误，所以有时候，两者还是要结合起来使用：</p>
+<p><code>ajaxLoad1()
+    .then(res=&gt;{ return ajaxLoad2() }, err=&gt;console.log(err))
+    .catch(err=&gt; console.log(err))</code></p>
+<h3 id="断链-The-Broken-Chain"><a href="#断链-The-Broken-Chain" class="headerlink" title="断链 The Broken Chain"></a>断链 The Broken Chain</h3><p><code>function loadAsyncFnX(){ return Promise.resolve(1); }
+function doSth(){ return 2; }
+function asyncFn(){
+    var promise = loadAsyncFnX()
+    promise.then(function(){
+        return doSth();
+    })
+    return promise;
+}
+asyncFn().then(res=&gt;console.log(res)).catch(err=&gt;console.log(err))
+// 1</code></p>
+<p>上面这种用法，从执行结果来看，then中回调的参数其实并不是doSth()返回的结果，而是loadAsyncFnX()返回的结果，catch 到的错误也是 loadAsyncFnX()中的错误，所以 doSth() 的结果和错误将不会被后而的then中的回调捕获到，形成了断链，因为 then 方法将返回一个新的Promise对象，而不是原来的Promise对象。</p>
+<p>改写如下</p>
+<p><code>function loadAsyncFnX(){ return Promise.resolve(1); }
+function doSth(){ return 2; }
+function asyncFn(){
+    var promise = loadAsyncFnX()
+    return promise.then(function(){
+        return doSth();
+    })
+}
+asyncFn().then(res=&gt;console.log(res)).catch(err=&gt;console.log(err))
+// 2</code></p>
+<h3 id="穿透-Fall-Through"><a href="#穿透-Fall-Through" class="headerlink" title="穿透 Fall Through"></a>穿透 Fall Through</h3><p><code>new Promise(resolve=&gt;resolve(8))
+  .then(1)
+  .catch(null)
+  .then(Promise.resolve(9))
+  .then(res=&gt; console.log(res))
+// 8</code></p>
+<p>这里，如果then或catch接收的不是函数，那么就会发生穿透行为，所以在应用过程中，应该保证then接收到的参数始终是一个函数。</p>
+<h3 id="长度未知的串行与并行"><a href="#长度未知的串行与并行" class="headerlink" title="长度未知的串行与并行"></a>长度未知的串行与并行</h3><p>并行执行</p>
+<p><code>getAsyncArr()
+    .then(promiseArr=&gt;{
+        var resArr = [];
+        promiseArr.forEach(v=&gt;{
+            v().then(res=&gt; resArr.push(res))
+        })
+        return resArr;
+    })
+    .then(res=&gt;console.log(res))</code></p>
+<p>使用forEach遍历执行promise，在上面的实现中，第二个then有可能拿到的是空的结果或者不完整的结果，因为，第二个then的回调无法预知 promiseArr 中每一个promise是否都执行完成，那么这里可以使用 Promise.all 结合 map 方法去改善</p>
+<p><code>getAsyncArr()
+    .then(promiseArr=&gt;{
+        return Promise.all(promiseArr);
+    })
+    .then(res=&gt;console.log(res))</code></p>
+<p>如果需要串行执行，那和我们可以利用数据的reduce来处理串行执行</p>
+<p><code>var pA = [
+    function(){return new Promise(resolve=&gt;resolve(1))},
+    function(data){return new Promise(resolve=&gt;resolve(1+data))},
+    function(data){return new Promise(resolve=&gt;resolve(1+data))}
+]
+pA.reduce((prev, next)=&gt;prev.then(next).then(res=&gt;res),Promise.resolve())
+.then(res=&gt;console.log(res))
+// 3</code></p>
+<h3 id="Promise-resolve的用法"><a href="#Promise-resolve的用法" class="headerlink" title="Promise.resolve的用法"></a>Promise.resolve的用法</h3><p>Promise.reoslve 有一个作用就是可以将 thenable 对象转换为 promise 对象。</p>
+<p>thenable 对象，指的是一个具有 .then 方法的对象。</p>
+<p>要求是 thenable 对象所拥有的 then 方法应该和 Promise 所拥有的 then 方法具有同样的功能和处理过程。</p>
+<p>一个标准的 thenable 对象应该是这样的</p>
+<p><code>var thenable = {
+  then: function(resolve, reject) {
+    resolve(42);
+  }
+};</code></p>
+<p>使用 Promise.resolve转换</p>
+<p><code>Promise.resolve(thenable).then(function(value) {
+  console.log(value);  // 42
+});</code></p>
+<p>同样具有标准的thenable特性的是 不同的实现Promise标准的类库，所以 ES6 Promise 与 Q 与buldbird 的对象都是可以互相转换的。</p>
+<p>jQueyr的defer对象转换为ES6 Promise对象</p>
+<p><code>Promise.resolve($.ajax(&#39;api/data.json&#39;)).then(res=&gt;console.log(res)))</code></p>
+<p>但也不是所有thenable对象都能被成功转换，主要看各种类库实现是否遵循 Promise/A+标准，不过此类使用场景并不多，不做深入讨论。</p>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ol>
+<li>then方法中 永远 return 或 throw</li>
+<li>如果 promise 链中可能出现错误，一定添加 catch</li>
+<li>永远传递函数给 then 方法</li>
+<li>不要把 promise 写成嵌套</li>
+</ol>
+<p>经过本篇的对Promise相关知识的理解和学习，基本上对Promise的概念和使用有了比较详细的了解，下一篇就让我们一起进入 Promise 的源码世界看一看吧。</p>
+<p>阅读参考</p>
+<p><a href="http://efe.baidu.com/blog/promises-anti-pattern/" target="_blank" rel="noopener">谈谈使用 promise 时候的一些反模式</a></p>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Tony 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Tony 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/05/深入理解 Promise (中)/" rel="next" title="深入理解 Promise (中)">
+                <i class="fa fa-chevron-left"></i> 深入理解 Promise (中)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/07/es6学习记录/" rel="prev" title="es6学习记录">
+                es6学习记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tony</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上-理论知识"><span class="nav-number">1.</span> <span class="nav-text">上 - 理论知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-规范"><span class="nav-number">2.</span> <span class="nav-text">Promise 规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-Promise-API"><span class="nav-number">3.</span> <span class="nav-text">ES6 Promise API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例方法"><span class="nav-number">4.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态方法"><span class="nav-number">5.</span> <span class="nav-text">静态方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polyfill和扩展类库"><span class="nav-number">6.</span> <span class="nav-text">Polyfill和扩展类库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Polyfill"><span class="nav-number">6.1.</span> <span class="nav-text">Polyfill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise扩展类库"><span class="nav-number">6.2.</span> <span class="nav-text">Promise扩展类库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误用法及误区"><span class="nav-number">7.</span> <span class="nav-text">错误用法及误区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当作回调来用-Callback-Hell"><span class="nav-number">7.1.</span> <span class="nav-text">当作回调来用 Callback Hell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#没有Catch"><span class="nav-number">7.2.</span> <span class="nav-text">没有Catch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#catch-与then-null-fn"><span class="nav-number">7.3.</span> <span class="nav-text">catch()与then(null, fn)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断链-The-Broken-Chain"><span class="nav-number">7.4.</span> <span class="nav-text">断链 The Broken Chain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#穿透-Fall-Through"><span class="nav-number">7.5.</span> <span class="nav-text">穿透 Fall Through</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长度未知的串行与并行"><span class="nav-number">7.6.</span> <span class="nav-text">长度未知的串行与并行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-resolve的用法"><span class="nav-number">7.7.</span> <span class="nav-text">Promise.resolve的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最佳实践"><span class="nav-number">7.8.</span> <span class="nav-text">最佳实践</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

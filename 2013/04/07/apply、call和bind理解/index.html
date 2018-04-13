@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="在JavaScript中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。 call、apply、bind方法的共同点和区别： apply、call、bind三都是用来改变函数的this对象的指向的； apply、call、bind三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-13T07:08:27.172Z">
+<meta property="og:updated_time" content="2018-04-13T07:27:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply、call和bind理解">
 <meta name="twitter:description" content="在JavaScript中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。 call、apply、bind方法的共同点和区别： apply、call、bind三都是用来改变函数的this对象的指向的； apply、call、bind三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本">
@@ -431,6 +431,8 @@
 <p>　　MDN的解释是：bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
 <p>注意：bind方法的返回值是函数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var bar=function()&#123;   </span><br><span class="line">  console.log(this.x);   </span><br><span class="line">&#125;</span><br><span class="line">var foo=&#123; </span><br><span class="line">     x:3   </span><br><span class="line">&#125;   </span><br><span class="line">bar();  </span><br><span class="line">bar.bind(foo)();</span><br><span class="line"> /*或*/</span><br><span class="line">var func=bar.bind(foo);   </span><br><span class="line">func();</span><br><span class="line">输出：</span><br><span class="line">undefined</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<p>手动实现一个bind</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if(typeof Function.prototype.bind===&quot;undefined&quot;)&#123;</span><br><span class="line">Function.prototype.bind=function(thisArgs)&#123;</span><br><span class="line">  var fn=this,</span><br><span class="line">        slice=Arr.prototype.slice,</span><br><span class="line">        args=slice.call(arguments,1);</span><br><span class="line">        return function()&#123;</span><br><span class="line">          return fn.apply(thisArgs,args.concat(slice.call(arguments)));</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>参考资料：</p>
 <p>1.<a href="http://ghmagical.com/article/page/id/UPLfoGI9vJ91" target="_blank" rel="noopener">JS中的call、apply、bind方法</a></p>
 <p>2.<a href="https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more" target="_blank" rel="noopener">js中call、apply、bind那些事
@@ -577,7 +579,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -588,7 +590,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
