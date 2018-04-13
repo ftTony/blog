@@ -125,9 +125,10 @@
 <meta property="og:description" content="什么是web缓存Web缓存是指一个Web资源（如html页面，图片，js，数据等）存在于Web服务器和客户端（浏览器）之间的副本。缓存会根据进来的请求保存输出内容的副本；当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http/161233e63a84f043.png">
-<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/181722532916918.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/161233e63a97e53e.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http/161233e6685e5e73.png">
-<meta property="og:updated_time" content="2018-04-10T03:50:24.481Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/181722532916918.png">
+<meta property="og:updated_time" content="2018-04-11T03:45:04.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http缓存">
 <meta name="twitter:description" content="什么是web缓存Web缓存是指一个Web资源（如html页面，图片，js，数据等）存在于Web服务器和客户端（浏览器）之间的副本。缓存会根据进来的请求保存输出内容的副本；当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载">
@@ -421,14 +422,61 @@
 <tbody>
 <tr>
 <td>Cache-Control</td>
+<td>无</td>
 <td>控制缓存的行为</td>
 </tr>
 <tr>
 <td>Pragma</td>
+<td>可省略</td>
 <td>http1.0的旧社会遗留物，值为“no-cache”时禁用缓存</td>
 </tr>
 </tbody>
 </table>
+<p>Cache-Control和浏览器相关的命令</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>private</td>
+<td>无</td>
+<td>表明响应只能被单个用户缓存，不能作为共享缓存（即代理服务器不能缓存它）</td>
+</tr>
+<tr>
+<td>public</td>
+<td>可省略</td>
+<td>表明响应可以被任何对象（包括：发送请求的客户端，代理服务器，等等）缓存</td>
+</tr>
+<tr>
+<td>no-cache</td>
+<td>可省略</td>
+<td>缓存前必需确认其有效性</td>
+</tr>
+<tr>
+<td>no-store</td>
+<td>无</td>
+<td>不缓存请求或响应的任何内容</td>
+</tr>
+<tr>
+<td>max-age=[s]</td>
+<td>必需</td>
+<td>响应的最大值</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>max-age（单位为s）设置缓存的存在时间，相对于发送请求的时间。只有响应报文首部设置Cache-Control为非0的max-age或者设置了大于请求日期的Expires（下文会讲）才有可能命中强缓存。当满足这个条件，同时响应报文首部中Cache-Control不存在no-cache、no-store且请求报文首部不存在Pragma字段，才会真正命中强缓存。以下所有图片均为刷新（command+R）的截图。</li>
+<li></li>
+<li>no-cache  表示请求必须先与服务器确认缓存的有效性，如果有效才能使用缓存（协商缓存），无论是响应报文首部还是请求报文首部出现这个字段均一定不会命中强缓存。Chrome硬性重新加载（Command+shift+R）会在请求的首部加上Pragma：no-cache和Cache-Control：no-cache。</li>
+<li>no-store  表示禁止浏览器以及所有中间缓存存储任何版本的返回响应，一定不会出现强缓存和协商缓存，适合个人隐私数据或者经济类数据。</li>
+<li>public 表明响应可以被浏览器、CDN等等缓存。</li>
+<li>private 响应只作为私有的缓存，不能被CDN等缓存。如果要求HTTP认证，响应会自动设置为private。</li>
+</ul>
 <p>2.请求首部字段</p>
 <table>
 <thead>
@@ -479,20 +527,35 @@
 </tr>
 </tbody>
 </table>
-<h4 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h4><p>为什么使用ETag呢？ 主要是为了解决Last-Modified 无法解决的一些问题。</p>
-<p>1.某些服务器不能精确得到文件的最后修改时间，这样无法通过最后个性时间来判断文件是否更新了</p>
-<p>2.某些文件的修改非常频繁，在秒以下的时间内进行修改Last-Modified只能精确到秒。</p>
-<p>3.一些文件的最后修改时间改变了，但是内容并未改变。 我们不希望客户端认为这个文件修改了。</p>
-<p>ETag根据实体内容生成的一段hash字符串（类似于MD5或者SHA1之后的结果），可以标识资源的状态。 当资源发送改变时，ETag也随之发生变化。</p>
-<p>当然用户的行为也会影响浏览器的缓存</p>
-<p><img src="/images/http/181722532916918.png" alt=""></p>
+<h4 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h4><p>与强缓存主要是Pragma、Cache-Control 、Expires</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Expires&quot; content=&quot;-1&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>注意上面两条指令的作用是不允许浏览器缓存当前页面以及页面上引用的资源，强制浏览器每次请求当前页面时都需要从服务器端获取最新版本。这种方式仅对部分浏览器有效，而且不影响代理服务器对该页面的缓存控制，原因是因为代理服务器并不会去解析页面上的内容。</p>
+<h4 id="控制协商缓存"><a href="#控制协商缓存" class="headerlink" title="控制协商缓存"></a>控制协商缓存</h4><ol>
+<li>Last-Modified/If-Modified-Since</li>
+</ol>
+<p>If-Modified-Since是一个请求首部字段，并且只能用在GET或者HEAD请求中。Last-Modified是一个响应首部字段，包含服务器认定的资源作出修改的日期及时间。当带着If-Modified-Since头访问服务器请求资源时，服务器会检查Last-Modified，如果Last-Modified的时间早于或等于If-Modified-Since则会返回一个不带主体的304响应，否则将重新返回资源。</p>
+<blockquote>
+<p>If-Modified-Since: , :: GMT Last-Modified: , :: GMT</p>
+</blockquote>
+<ol>
+<li>ETag/If-None-Match </li>
+</ol>
+<p>ETag是一个响应首部字段，它是根据实体内容生成的一段hash字符串，标识资源的状态，由服务端产生。If-None-Match是一个条件式的请求首部。如果请求资源时在请求首部加上这个字段，值为之前服务器端返回的资源上的ETag，则当且仅当服务器上没有任何资源的ETag属性值与这个首部中列出的时候，服务器才会返回带有所请求资源实体的200响应，否则服务器会返回不带实体的304响应。ETag优先级比Last-Modified高，同时存在时会以ETag为准。</p>
+<blockquote>
+<p>If-None-Match: &lt;etag_value&gt; If-None-Match: &lt;etag_value&gt;, &lt;etag_value&gt;, … If-None-Match: *</p>
+</blockquote>
+<p><img src="/images/http/161233e63a97e53e.png" alt="image"></p>
+<blockquote>
+</blockquote>
+<p>ETag属性之间的比较采用的是弱比较算法，即两个文件除了每个比特都相同外，内容一致也可以认为是相同的。例如，如果两个页面仅仅在页脚的生成时间有所不同，就可以认为二者是相同的。</p>
+<p>因为ETag的特性，所以相较于Last-Modified有一些优势：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.  某些情况下服务器无法获取资源的最后修改时间</span><br><span class="line">2.  资源的最后修改时间变了但是内容没变，使用ETag可以正确缓存</span><br><span class="line">3.  如果资源修改非常频繁，在秒以下的时间进行修改，Last-Modified只能精确到秒</span><br></pre></td></tr></table></figure>
 <h3 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h3><p><img src="/images/http/161233e6685e5e73.png" alt="image"></p>
+<h3 id="用户行为对浏览器的影响"><a href="#用户行为对浏览器的影响" class="headerlink" title="用户行为对浏览器的影响"></a>用户行为对浏览器的影响</h3><p><img src="/images/http/181722532916918.png" alt="image"></p>
 <p>参考资料：</p>
-<p><a href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html" target="_blank" rel="noopener">http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html</a></p>
-<p><a href="http://www.cnblogs.com/skylar/p/browser-http-caching.html" target="_blank" rel="noopener">http://www.cnblogs.com/skylar/p/browser-http-caching.html</a></p>
-<p><a href="http://www.cnblogs.com/yjf512/p/3244882.html" target="_blank" rel="noopener">http://www.cnblogs.com/yjf512/p/3244882.html</a></p>
-<p><a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">http://www.cnblogs.com/vajoy/p/5341664.html</a></p>
-<p><a href="http://www.cnblogs.com/lovesong/p/5352973.html" target="_blank" rel="noopener">http://www.cnblogs.com/lovesong/p/5352973.html</a></p>
+<p><a href="http://www.cnblogs.com/skylar/p/browser-http-caching.html" target="_blank" rel="noopener">透过浏览器看HTTP缓存</a></p>
+<p><a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">浅谈浏览器http的缓存机制</a></p>
+<p><a href="https://juejin.im/post/5a673af06fb9a01c927ed880" target="_blank" rel="noopener">浏览器HTTP缓存机制</a></p>
       
     </div>
     
@@ -634,7 +697,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -689,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是web缓存"><span class="nav-number">1.</span> <span class="nav-text">什么是web缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web缓存的作用"><span class="nav-number">2.</span> <span class="nav-text">web缓存的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web缓存的类型"><span class="nav-number">3.</span> <span class="nav-text">web缓存的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http报文中与缓存相关的首部字段"><span class="nav-number">3.1.</span> <span class="nav-text">http报文中与缓存相关的首部字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ETag"><span class="nav-number">3.2.</span> <span class="nav-text">ETag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整体流程"><span class="nav-number">4.</span> <span class="nav-text">整体流程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是web缓存"><span class="nav-number">1.</span> <span class="nav-text">什么是web缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web缓存的作用"><span class="nav-number">2.</span> <span class="nav-text">web缓存的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web缓存的类型"><span class="nav-number">3.</span> <span class="nav-text">web缓存的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http报文中与缓存相关的首部字段"><span class="nav-number">3.1.</span> <span class="nav-text">http报文中与缓存相关的首部字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制缓存"><span class="nav-number">3.2.</span> <span class="nav-text">强制缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制协商缓存"><span class="nav-number">3.3.</span> <span class="nav-text">控制协商缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整体流程"><span class="nav-number">4.</span> <span class="nav-text">整体流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户行为对浏览器的影响"><span class="nav-number">5.</span> <span class="nav-text">用户行为对浏览器的影响</span></a></li></ol></div>
             
 
           </div>

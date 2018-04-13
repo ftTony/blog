@@ -117,22 +117,26 @@
 
 
 
-<meta name="description" content="内容 排序算法分类 各种排序算法对比 冒泡排序  排序算法分类 各种排序算法对比 冒泡排序算法描述 冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。">
+<meta name="description" content="内容 排序算法分类 各种排序算法对比 冒泡排序 插入排序 快速排序 归并排序 堆排序  排序算法说明稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面； 不稳定：如果a原本在b的前面，而a=b，排序之后a可能会出现在b后面； 内排序：所有排序操作都在内存中完成； 外排序：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行。 时间复杂度：一个算法执行所耗费的时间 空">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序算法">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2018/04/07/排序算法/index.html">
 <meta property="og:site_name" content="小武子博客">
-<meta property="og:description" content="内容 排序算法分类 各种排序算法对比 冒泡排序  排序算法分类 各种排序算法对比 冒泡排序算法描述 冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。">
+<meta property="og:description" content="内容 排序算法分类 各种排序算法对比 冒泡排序 插入排序 快速排序 归并排序 堆排序  排序算法说明稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面； 不稳定：如果a原本在b的前面，而a=b，排序之后a可能会出现在b后面； 内排序：所有排序操作都在内存中完成； 外排序：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行。 时间复杂度：一个算法执行所耗费的时间 空">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2016/11/29/b93d9288a682f5538667fb1fa4c65220?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="http://img.blog.csdn.net/20160916153212716">
-<meta property="og:image" content="http://img.blog.csdn.net/20160916160748389">
-<meta property="og:updated_time" content="2018-04-07T14:26:11.000Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/algorithm/20160916154036887.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/algorithm/20160916153212716.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/algorithm/20160916160748389.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/algorithm/20160916173802597.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/algorithm/20160916164754013.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/algorithm/20160917001326254.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/algorithm/20160917105502853.png">
+<meta property="og:updated_time" content="2018-04-13T06:58:10.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法">
-<meta name="twitter:description" content="内容 排序算法分类 各种排序算法对比 冒泡排序  排序算法分类 各种排序算法对比 冒泡排序算法描述 冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2016/11/29/b93d9288a682f5538667fb1fa4c65220?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta name="twitter:description" content="内容 排序算法分类 各种排序算法对比 冒泡排序 插入排序 快速排序 归并排序 堆排序  排序算法说明稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面； 不稳定：如果a原本在b的前面，而a=b，排序之后a可能会出现在b后面； 内排序：所有排序操作都在内存中完成； 外排序：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行。 时间复杂度：一个算法执行所耗费的时间 空">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/algorithm/20160916154036887.png">
 
 
 
@@ -398,16 +402,101 @@
 <li>排序算法分类</li>
 <li>各种排序算法对比</li>
 <li>冒泡排序</li>
+<li>插入排序</li>
+<li>快速排序</li>
+<li>归并排序</li>
+<li>堆排序</li>
 </ol>
-<h3 id="排序算法分类"><a href="#排序算法分类" class="headerlink" title="排序算法分类"></a>排序算法分类</h3><p><img src="https://user-gold-cdn.xitu.io/2016/11/29/b93d9288a682f5538667fb1fa4c65220?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"></p>
-<h3 id="各种排序算法对比"><a href="#各种排序算法对比" class="headerlink" title="各种排序算法对比"></a>各种排序算法对比</h3><p><img src="http://img.blog.csdn.net/20160916153212716" alt="image"></p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法描述</p>
-<p><code>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</code><br><a id="more"></a><br>方法一</p>
+<h3 id="排序算法说明"><a href="#排序算法说明" class="headerlink" title="排序算法说明"></a>排序算法说明</h3><p>稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；</p>
+<p>不稳定：如果a原本在b的前面，而a=b，排序之后a可能会出现在b后面；</p>
+<p>内排序：所有排序操作都在内存中完成；</p>
+<p>外排序：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行。</p>
+<p>时间复杂度：一个算法执行所耗费的时间</p>
+<p>空间复杂度：运行完一个程序所需内存的大小。</p>
+<h3 id="排序算法分类"><a href="#排序算法分类" class="headerlink" title="排序算法分类"></a>排序算法分类</h3><p><img src="/images/algorithm/20160916154036887.png" alt="image"></p>
+<h3 id="各种排序算法对比"><a href="#各种排序算法对比" class="headerlink" title="各种排序算法对比"></a>各种排序算法对比</h3><p><img src="/images/algorithm/20160916153212716.png" alt="image"></p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><hr>
+<blockquote>
+<p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。<br><a id="more"></a></p>
+</blockquote>
+<h4 id="算法描述和实现"><a href="#算法描述和实现" class="headerlink" title="算法描述和实现"></a>算法描述和实现</h4><hr>
+<ul>
+<li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个；</li>
+<li>重复步骤1~3，直到排序完成。</li>
+</ul>
+<p>代码实现</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function bubbleSort(arr)&#123;</span><br><span class="line">    var len=arr.length;</span><br><span class="line">    for(var i=0;i&lt;len;i++)&#123;</span><br><span class="line">        for(var j=0;j&lt;len-i-1;j++)&#123;</span><br><span class="line">            if(arr[j]&gt;arr[j+1)&#123;</span><br><span class="line">                var temp=arr[j+1];</span><br><span class="line">                arr[j+1]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>方法二</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function bubbleSort2(arr) &#123;</span><br><span class="line">    console.time(&apos;改进后冒泡排序耗时&apos;);</span><br><span class="line">    var i = arr.length-1;  //初始时,最后位置保持不变</span><br><span class="line">    while ( i&gt; 0) &#123;</span><br><span class="line">        var pos= 0; //每趟开始时,无记录交换</span><br><span class="line">        for (var j= 0; j&lt; i; j++)</span><br><span class="line">            if (arr[j]&gt; arr[j+1]) &#123;</span><br><span class="line">                pos= j; //记录交换的位置</span><br><span class="line">                var tmp = arr[j]; arr[j]=arr[j+1];arr[j+1]=tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        i= pos; //为下一趟排序作准备</span><br><span class="line">     &#125;</span><br><span class="line">     console.timeEnd(&apos;改进后冒泡排序耗时&apos;);</span><br><span class="line">     return arr;</span><br><span class="line">&#125;</span><br><span class="line">var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];</span><br><span class="line">console.log(bubbleSort2(arr));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20160916160748389" alt="image"></p>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h3 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h3><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3>
+<p>排序效果图：</p>
+<p><img src="/images/algorithm/20160916160748389.png" alt="image"></p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h4 id="算法描述-1"><a href="#算法描述-1" class="headerlink" title="算法描述"></a>算法描述</h4><hr>
+<blockquote>
+<p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+</blockquote>
+<h4 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h4><blockquote>
+<p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+</blockquote>
+<h4 id="算法描述和实现-1"><a href="#算法描述和实现-1" class="headerlink" title="算法描述和实现"></a>算法描述和实现</h4><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
+<ol>
+<li>从第一个元素开始，该元素可以认为已经被排序；</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置；</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</li>
+<li>将新元素插入到该位置后；</li>
+<li>重复步骤2~5。</li>
+</ol>
+<p>代码实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function insertionSort(array)&#123;</span><br><span class="line">    if(Object.prototype.toString.call(array).slice(8,-1)===&apos;Array&apos;)&#123;</span><br><span class="line">        for(var i=1;i&lt;array.length;i++)&#123;</span><br><span class="line">            var key=array[i];</span><br><span class="line">            var j=i-1;</span><br><span class="line">            while(j&gt;=0 &amp;&amp; array[j]&gt;key)&#123;</span><br><span class="line">                array[j+1]=array[j];</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            array[j+1]=key;</span><br><span class="line">        &#125;</span><br><span class="line">        return array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>插入排序动图演示:</p>
+<p><img src="/images/algorithm/20160916173802597.png" alt="image"></p>
+<h3 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h3><h4 id="算法描述-2"><a href="#算法描述-2" class="headerlink" title="算法描述"></a>算法描述</h4><hr>
+<blockquote>
+<p>快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function quickSort2()&#123;</span><br><span class="line">    if(arr.length&lt;=1) return arr;</span><br><span class="line">    var pivotIndex=Math.floor(arr.length/2);</span><br><span class="line">    var pivot=arr.splice(pivotIndex,1)[0];</span><br><span class="line">    var left=[];</span><br><span class="line">    var right=[];</span><br><span class="line">    for(var i=0;i&lt;arr.length;i++)&#123;</span><br><span class="line">        if(arr[i]&lt;pivot)&#123;</span><br><span class="line">            left.push(arr[i]);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return quickSort2(left).concat([pivot],quickSort2(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><h4 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h4><hr>
+<blockquote>
+<p>选择排序(Selection-sort)是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+</blockquote>
+<h4 id="算法描述-3"><a href="#算法描述-3" class="headerlink" title="算法描述"></a>算法描述</h4><hr>
+<blockquote>
+<ol>
+<li>初始状态：无序区为R[1..n]，有序区为空；</li>
+<li>第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中-选出关键字最小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</li>
+<li>n-1趟结束，数组有序化了。</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function selectionSort(arr)&#123;</span><br><span class="line">    var len=arr.length;</span><br><span class="line">    var minIndEX,temp;</span><br><span class="line">    for(var i=0;i&lt;len-1;i++)&#123;</span><br><span class="line">        minIndex=i;</span><br><span class="line">        for(var j=i+1;j&lt;len;j++)&#123;</span><br><span class="line">            if(arr[j]&lt;arr[minIndex])&#123;</span><br><span class="line">                minIndex=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp=arr[i];</span><br><span class="line">        arr[i]=arr[minIndex];</span><br><span class="line">        arr[minIndex]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="选择排序动图"><a href="#选择排序动图" class="headerlink" title="选择排序动图"></a>选择排序动图</h4><p><img src="/images/algorithm/20160916164754013.png" alt="image"></p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h4 id="算法简介-1"><a href="#算法简介-1" class="headerlink" title="算法简介"></a>算法简介</h4><hr>
+<blockquote>
+<p>归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。归并排序是一种稳定的排序方法。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为2-路归并。</p>
+</blockquote>
+<h4 id="算法描述和实现-2"><a href="#算法描述和实现-2" class="headerlink" title="算法描述和实现"></a>算法描述和实现</h4><hr>
+<ul>
+<li>把长度为n的输入序列分成两个长度为n/2的子序列；</li>
+<li>对这两个子序列分别采用归并排序；</li>
+<li>将两个排序好的子序列合并成一个最终的排序序列。</li>
+</ul>
+<p>js代码实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function mergeSort(arr)&#123;</span><br><span class="line">    var len=arr.length;</span><br><span class="line">    if(len&lt;2) return arr;</span><br><span class="line">    var middle=Math.floor(len/2),</span><br><span class="line">        left=arr.slice(0,middle),</span><br><span class="line">        right=arr.slice(middle);</span><br><span class="line">        return merge(mergeSort(left),mergeSort(right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function merge(left,right)&#123;</span><br><span class="line">    var result=[];</span><br><span class="line">    while(left[0] &amp;&amp; right[0])&#123;</span><br><span class="line">        if(left[0]&lt;=right[0])&#123;</span><br><span class="line">            result.push(left.shift());</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            result.push(right.shif());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    while(left.length) result.push(left.shift());</span><br><span class="line">    while(right.length) result.push(right.shift());</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="归并排序动图"><a href="#归并排序动图" class="headerlink" title="归并排序动图"></a>归并排序动图</h4><p><img src="/images/algorithm/20160917001326254.png" alt="image"></p>
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><h4 id="算法简介-2"><a href="#算法简介-2" class="headerlink" title="算法简介"></a>算法简介</h4><blockquote>
+<p>堆排序是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
+</blockquote>
+<h4 id="算法描述和实现-3"><a href="#算法描述和实现-3" class="headerlink" title="算法描述和实现"></a>算法描述和实现</h4><ol>
+<li>将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；</li>
+<li>将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；</li>
+<li>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。</li>
+</ol>
+<p>代码实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">function heapSort(array)&#123;</span><br><span class="line">    if(Object.prototype.toString.call(array).slice(8,-1)===&apos;Array&apos;)&#123;</span><br><span class="line">        //建堆</span><br><span class="line">        var heapSize=array.length,temp;</span><br><span class="line">        for(var i=Math.floor(heapSize/2)-1;i&gt;=0;i--)&#123;</span><br><span class="line">            heapify(array,i,heapSize);</span><br><span class="line">        &#125;</span><br><span class="line">        //堆排序</span><br><span class="line">        for(var j=heapSize-1;j&gt;=1;j--)&#123;</span><br><span class="line">            temp=arra[0];</span><br><span class="line">            array[0]=array[j];</span><br><span class="line">            array[j]=temp;</span><br><span class="line">            heapify(array,0,--heapSize);</span><br><span class="line">        &#125;</span><br><span class="line">        return array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function heapify(arr,x,len)&#123;</span><br><span class="line">    if(Object.prototye.toString.call(arr).slice(8,-1)===&apos;Array&apos; &amp;&amp; typeof x===&apos;number&apos;)&#123;</span><br><span class="line">        var l=2*x+1,r=2*x+2,largest=x,temp;</span><br><span class="line">        if(l&lt;len &amp;&amp; arr[l]&gt;arr[largest])&#123;</span><br><span class="line">            largest=l;</span><br><span class="line">        &#125;</span><br><span class="line">        if(r&lt;len &amp;&amp; arr[r]&gt;arr[largest])&#123;</span><br><span class="line">            largest=r;</span><br><span class="line">        &#125;</span><br><span class="line">        if(largest!=x)&#123;</span><br><span class="line">            temp=arr[x];</span><br><span class="line">            arr[x]=arr[largest];</span><br><span class="line">            arr[largest]=temp;</span><br><span class="line">            heapify(arr,largest,len);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>堆排序动图演示：<br><img src="/images/algorithm/20160917105502853.png" alt="image"></p>
+<p>参考资料：</p>
+<p><a href="http://blog.damonare.cn/2016/12/20/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%EF%BC%88javascript%E6%8F%8F%E8%BF%B0%EF%BC%89/" target="_blank" rel="noopener">十大经典排序算法总结（javascript描述）</a></p>
       
     </div>
     
@@ -555,7 +644,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -610,7 +699,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序算法分类"><span class="nav-number">2.</span> <span class="nav-text">排序算法分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种排序算法对比"><span class="nav-number">3.</span> <span class="nav-text">各种排序算法对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">4.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入排序"><span class="nav-number">5.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快排"><span class="nav-number">6.</span> <span class="nav-text">快排</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择排序"><span class="nav-number">7.</span> <span class="nav-text">选择排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序算法说明"><span class="nav-number">2.</span> <span class="nav-text">排序算法说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序算法分类"><span class="nav-number">3.</span> <span class="nav-text">排序算法分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种排序算法对比"><span class="nav-number">4.</span> <span class="nav-text">各种排序算法对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">5.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述"><span class="nav-number">5.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述和实现"><span class="nav-number">5.2.</span> <span class="nav-text">算法描述和实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入排序"><span class="nav-number">6.</span> <span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述-1"><span class="nav-number">6.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法简介"><span class="nav-number">6.2.</span> <span class="nav-text">算法简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述和实现-1"><span class="nav-number">6.3.</span> <span class="nav-text">算法描述和实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快排"><span class="nav-number">7.</span> <span class="nav-text">快排</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述-2"><span class="nav-number">7.1.</span> <span class="nav-text">算法描述</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择排序"><span class="nav-number">8.</span> <span class="nav-text">选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法介绍"><span class="nav-number">8.1.</span> <span class="nav-text">算法介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述-3"><span class="nav-number">8.2.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择排序动图"><span class="nav-number">8.3.</span> <span class="nav-text">选择排序动图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序"><span class="nav-number">9.</span> <span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法简介-1"><span class="nav-number">9.1.</span> <span class="nav-text">算法简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述和实现-2"><span class="nav-number">9.2.</span> <span class="nav-text">算法描述和实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归并排序动图"><span class="nav-number">9.3.</span> <span class="nav-text">归并排序动图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆排序"><span class="nav-number">10.</span> <span class="nav-text">堆排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法简介-2"><span class="nav-number">10.1.</span> <span class="nav-text">算法简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述和实现-3"><span class="nav-number">10.2.</span> <span class="nav-text">算法描述和实现</span></a></li></ol></li></ol></div>
             
 
           </div>

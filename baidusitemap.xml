@@ -4,8 +4,84 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/07/apply%E3%80%81call%E5%92%8Cbind%E7%90%86%E8%A7%A3/</loc>
+    <lastmod>2018-04-13T07:08:27.172Z</lastmod>
+    <data>
+        <display>
+        <title>apply、call和bind理解</title>
+        <pubTime>2013-04-07T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-04-13T07:05:41.295Z</lastmod>
+    <data>
+        <display>
+        <title>前端常见算法</title>
+        <pubTime>2018-04-07T13:11:35.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-04-13T06:58:10.141Z</lastmod>
+    <data>
+        <display>
+        <title>排序算法</title>
+        <pubTime>2018-04-07T13:04:08.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94XSS/</loc>
+    <lastmod>2018-04-11T06:46:54.637Z</lastmod>
+    <data>
+        <display>
+        <title>web安全——XSS</title>
+        <pubTime>2018-04-07T13:02:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="web安全" url="http://blog.xiaowuzi.info/categories/web%E5%AE%89%E5%85%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
-    <lastmod>2018-04-10T03:50:24.481Z</lastmod>
+    <lastmod>2018-04-11T03:45:04.091Z</lastmod>
     <data>
         <display>
         <title>http缓存</title>
@@ -748,24 +824,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2018/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94XSS/</loc>
-    <lastmod>2018-04-09T12:53:42.574Z</lastmod>
-    <data>
-        <display>
-        <title>web安全——XSS</title>
-        <pubTime>2018-04-07T13:02:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="web安全" url="http://blog.xiaowuzi.info/categories/web%E5%AE%89%E5%85%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2017/12/01/%E7%9B%B4%E6%92%AD%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2018-04-08T03:49:17.000Z</lastmod>
     <data>
@@ -1008,24 +1066,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2018/04/07/apply%E3%80%81call%E5%92%8Cbind%E7%90%86%E8%A7%A3/</loc>
-    <lastmod>2018-04-07T15:17:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>apply、call和bind理解</title>
-        <pubTime>2018-04-07T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2016/05/07/%E8%B7%A8%E5%9F%9F/</loc>
     <lastmod>2018-04-07T15:16:07.000Z</lastmod>
     <data>
@@ -1035,24 +1075,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/17/web%E5%B8%B8%E8%A7%81%E5%87%A0%E7%A7%8D%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2018-04-07T15:15:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>web常见几种攻击方式</title>
-        <pubTime>2016-04-17T14:56:11.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="web安全" url="http://blog.xiaowuzi.info/categories/web%E5%AE%89%E5%85%A8/"/>
-          
         </display>
     </data>
     </url>
@@ -1168,26 +1190,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2018/04/07/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-04-07T14:26:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>排序算法</title>
-        <pubTime>2018-04-07T13:04:08.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/04/12/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2018-04-07T14:12:21.000Z</lastmod>
     <data>
@@ -1253,26 +1255,6 @@
            
              
               <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2018/04/07/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-04-07T14:03:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端常见算法</title>
-        <pubTime>2018-04-07T13:11:35.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://blog.xiaowuzi.info/categories/%E7%AE%97%E6%B3%95/"/>
           
         </display>
     </data>

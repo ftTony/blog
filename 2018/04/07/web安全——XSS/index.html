@@ -124,13 +124,13 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="内容 什么是XSS攻击 XSS攻击方式 XSS的危害 XSS防御措施  什么是XSS攻击跨站点脚本（Cross-site scripting，XSS）是一种允许攻击者在另一个用户的浏览器中执行恶意脚本的脚本注入式攻击。 XSS攻击方式 反射型  将用户输入的存在XSS攻击的数据，发送给后台，后台并未对数据进行存储，也未经过任何过滤，直接返回给客户端。被浏览器渲染。就可能导致XSS攻击； 例一： 1">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/xss/eb141420f5d5638711537444b863eb76_r.jpg">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/xss/640.webp">
-<meta property="og:image" content="http://blog.xiaowuzi.info/images/xss/01.webp">
-<meta property="og:updated_time" content="2018-04-09T12:53:42.574Z">
+<meta property="og:updated_time" content="2018-04-11T06:46:54.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web安全——XSS">
 <meta name="twitter:description" content="内容 什么是XSS攻击 XSS攻击方式 XSS的危害 XSS防御措施  什么是XSS攻击跨站点脚本（Cross-site scripting，XSS）是一种允许攻击者在另一个用户的浏览器中执行恶意脚本的脚本注入式攻击。 XSS攻击方式 反射型  将用户输入的存在XSS攻击的数据，发送给后台，后台并未对数据进行存储，也未经过任何过滤，直接返回给客户端。被浏览器渲染。就可能导致XSS攻击； 例一： 1">
-<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/xss/640.webp">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/xss/eb141420f5d5638711537444b863eb76_r.jpg">
 
 
 
@@ -406,7 +406,7 @@
 <p>例一：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.xss.com?x=&lt;script&gt;alert(&apos;xss&apos;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>示例图</p>
-<p><img src="/images/xss/640.webp" alt=""></p>
+<p><img src="/images/xss/eb141420f5d5638711537444b863eb76_r.jpg" alt=""></p>
 <p>攻击者构造了一个包含恶意文本的URL发送给受害者</p>
 <p>受害者被攻击者欺骗，通过访问这个URL向网站发出请求</p>
 <p>网站给受害者的返回中包含了来自URL的的恶意文本</p>
@@ -421,6 +421,7 @@
 <p><code>与前面两种不一样的地方是不需要提交到服务器中，可直接在浏览器中执行</code></p>
 <p>常见的输入输出点可利用下面这些：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//常见的输入点：</span><br><span class="line">document.URL</span><br><span class="line">document.URLUnencoded</span><br><span class="line">document.location(and many of its properties)</span><br><span class="line">document.referrer</span><br><span class="line">window.location(and many of its properties)</span><br><span class="line">//常见的输出点：</span><br><span class="line">document.write(…)</span><br><span class="line">document.writeln(…)</span><br><span class="line">document.body.innerHtml = …</span><br><span class="line">//直接修改DOM树：</span><br><span class="line">document.forms[0].action = … (and various other collections)</span><br><span class="line">document.attachEvent(…)</span><br><span class="line">document.create…(…)</span><br><span class="line">document.execCommand(…)</span><br><span class="line">document.body.…(accessing the DOM through the body object)</span><br><span class="line">window.attachEvent(…)</span><br><span class="line">//替换document URL：</span><br><span class="line">document.location = … (and assigning to location’ s href, host and hostname)</span><br><span class="line">document.location.hostname = …</span><br><span class="line">document.location.replace(…)</span><br><span class="line">document.location.assign(…)</span><br><span class="line">document.URL = …</span><br><span class="line">window.navigate(…)</span><br><span class="line">//打开或修改新窗口：</span><br><span class="line">document.open(…)</span><br><span class="line">window.open(…)</span><br><span class="line">window.location.href = … (and assigning to location’ s href, host and hostname)</span><br><span class="line">//直接执行脚本：</span><br><span class="line">eval(…)</span><br><span class="line">window.execScript(…)</span><br><span class="line">window.setInterval(…)</span><br><span class="line">window.setTimeout(…)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="XSS的危害"><a href="#XSS的危害" class="headerlink" title="XSS的危害"></a>XSS的危害</h3><ol>
 <li>挂马</li>
 </ol>
@@ -463,7 +464,7 @@
 <p>下面是<a href="https://code.google.com/archive/p/domxsswiki/wikis/FindingDOMXSS.wiki" target="_blank" rel="noopener">FindingDOMXSS</a>中对输入点（sources）的匹配规则：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/(location\s*[\[.])|([.\[]\s*[&quot;&apos;]?\s*(arguments|dialogArguments|innerHTML|write(ln)?</span><br><span class="line">|open(Dialog)?|showModalDialog|cookie|URL|documentURI|baseURI|referrer|</span><br><span class="line">name|opener|parent|top|content|self|frames)\W)|(localStorage|sessionStorage|Database)/</span><br></pre></td></tr></table></figure>
 <p>字符串类型的数据，需要针对&lt;、&gt;、/、’、”、&amp;五个字符进行实体化转义。</p>
-<p><img src="/images/xss/01.webp" alt=""></p>
+<p><img src="/images/xss/640.webp" alt=""></p>
 <h3 id="转出检查"><a href="#转出检查" class="headerlink" title="转出检查"></a>转出检查</h3><p>变量输出到HTML页面时，可以使用编码或转义的方式防御XSS攻击。</p>
 <p>针对HTML与JavaScript的编码可通过HtmlEncode和JavaScriptEncode实现，具体的函数内容可<a href="http://www.cnblogs.com/lovesong/p/5211667.html" target="_blank" rel="noopener">参考此处</a>。</p>
 <p>在<a href="https://code.google.com/archive/p/domxsswiki/wikis/FindingDOMXSS.wiki" target="_blank" rel="noopener">FindingDOMXSS</a>中同样给出了输出点（sinks）的匹配规则</p>
@@ -611,8 +612,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/apply、call和bind理解/" rel="next" title="apply、call和bind理解">
-                <i class="fa fa-chevron-left"></i> apply、call和bind理解
+              <a href="/2017/12/01/直播理论与实践/" rel="next" title="直播理论与实践">
+                <i class="fa fa-chevron-left"></i> 直播理论与实践
               </a>
             
           </div>
@@ -700,7 +701,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
