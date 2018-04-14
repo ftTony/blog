@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Pro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-13T07:32:56.000Z">
+<meta property="og:updated_time" content="2018-04-13T08:07:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解 Promise (上)">
 <meta name="twitter:description" content="自从ES6流行起来，Promise 的使用变得更频繁更广泛了，比如异步请求一般返回一个 Promise 对象，Generator 中 yield 后面一般跟 Promise 对象，ES7中 Async 函数中 await 后面一般也是 Promise 对象，还有更多的 NodeAPI 也会返回 Promise 对象，可以说现在的编程中 Promise 的使用无处不在，那么我们是否真的弄懂了 Pro">
@@ -471,112 +471,41 @@
 <p><a href="https://github.com/petkaantonov/bluebird" target="_blank" rel="noopener">petkaantonov/bluebird</a>这个类库除了兼容 Promise 规范之外，还扩展了取消promise对象的运行，取得promise的运行进度，以及错误处理的扩展检测等非常丰富的功能，此外它在实现上还在性能问题下了很大的功夫。</p>
 <p><strong>注意</strong></p>
 <p>在项目中，有可能两个不同的模块使用的是两个不同的Promise类库，那么在大部分的Promise的实现中，都是遵循 Promise/A+ 标准和兼容ES6 Promise接口的，也是不同的Promise的实现是可以互相调用的，如何调用，将在下面说明。</p>
-<h2 id="错误用法及误区"><a href="#错误用法及误区" class="headerlink" title="错误用法及误区"></a>错误用法及误区</h2><h3 id="当作回调来用-Callback-Hell"><a href="#当作回调来用-Callback-Hell" class="headerlink" title="当作回调来用 Callback Hell"></a>当作回调来用 Callback Hell</h3><p><code>loadAsync1().then(function(data1) {
-  loadAsync2(data1).then(function(data2) {
-    loadAsync3(data2).then(okFn, failFn)
-  });
-});</code></p>
+<h2 id="错误用法及误区"><a href="#错误用法及误区" class="headerlink" title="错误用法及误区"></a>错误用法及误区</h2><h3 id="当作回调来用-Callback-Hell"><a href="#当作回调来用-Callback-Hell" class="headerlink" title="当作回调来用 Callback Hell"></a>当作回调来用 Callback Hell</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loadAsync1().then(function(data1) &#123;</span><br><span class="line">  loadAsync2(data1).then(function(data2) &#123;</span><br><span class="line">    loadAsync3(data2).then(okFn, failFn)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Promise是用来解决异步嵌套回调的，这种写法虽然可行，但违背了Promise的设计初衷</p>
 <p>改成下面的写法，会让结构更加清晰</p>
-<p><code>loadAsync1()
-    .then(function(data1) {
-        loadAsync2(data1)
-    })
-    .then(function(data2){
-        loadAsync3(data2)
-    })
-    .then(res=&gt;console.log(res))</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">loadAsync1()</span><br><span class="line">	.then(function(data1) &#123;</span><br><span class="line">		loadAsync2(data1)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(function(data2)&#123;</span><br><span class="line">	    loadAsync3(data2)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(res=&gt;console.log(res))</span><br></pre></td></tr></table></figure>
 <p>promise 的神奇之处在于让我们能够在回调函数里面使用 return 和 throw， 所以在then中可以return出一个promise对象或普通的值，也可以throw出一个错误对象，但如果没有任何返回，将默认返回 undefined，那么后面的then中的回调参数接收到的将是undefined，而不是上一个then中内部函数 loadAsync2 执行的结果，后面都将是undefined。</p>
-<h3 id="没有Catch"><a href="#没有Catch" class="headerlink" title="没有Catch"></a>没有Catch</h3><p><code>loadAsync1()
-    .then(function(data1) {
-        return loadAsync2(data1)
-    })
-    .then(function(data2){
-        return loadAsync3(data2)
-    })
-    .then(okFn, failFn)</code></p>
+<h3 id="没有Catch"><a href="#没有Catch" class="headerlink" title="没有Catch"></a>没有Catch</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">loadAsync1()</span><br><span class="line">	.then(function(data1) &#123;</span><br><span class="line">		return loadAsync2(data1)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(function(data2)&#123;</span><br><span class="line">	    return loadAsync3(data2)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(okFn, failFn)</span><br></pre></td></tr></table></figure>
 <p>这里的调用，并没有添加catch方法，那么如果中间某个环节发生错误，将不会被捕获，控制台将看不到任何错误，不利于调试查错，所以最好在最后添加catch方法用于捕获错误。</p>
 <p>添加catch</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">loadAsync1()</span><br><span class="line">	.then(function(data1) &#123;</span><br><span class="line">		return loadAsync2(data1)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(function(data2)&#123;</span><br><span class="line">	    return loadAsync3(data2)</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(okFn, failFn)</span><br><span class="line">	.catch(err=&gt;console.log(err))</span><br></pre></td></tr></table></figure>
 <h3 id="catch-与then-null-fn"><a href="#catch-与then-null-fn" class="headerlink" title="catch()与then(null, fn)"></a>catch()与then(null, fn)</h3><p>在有些情况下catch与then(null, fn)并不等同，如下</p>
-<p><code>ajaxLoad1()
-    .then(res=&gt;{ return ajaxLoad2() })
-    .catch(err=&gt; console.log(err))</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ajaxLoad1()</span><br><span class="line">	.then(res=&gt;&#123; return ajaxLoad2() &#125;)</span><br><span class="line">	.catch(err=&gt; console.log(err))</span><br></pre></td></tr></table></figure>
 <p>此时，catch捕获的并不是ajaxLoad1的错误，而是ajaxLoad2的错误，所以有时候，两者还是要结合起来使用：</p>
-<p><code>ajaxLoad1()
-    .then(res=&gt;{ return ajaxLoad2() }, err=&gt;console.log(err))
-    .catch(err=&gt; console.log(err))</code></p>
-<h3 id="断链-The-Broken-Chain"><a href="#断链-The-Broken-Chain" class="headerlink" title="断链 The Broken Chain"></a>断链 The Broken Chain</h3><p><code>function loadAsyncFnX(){ return Promise.resolve(1); }
-function doSth(){ return 2; }
-function asyncFn(){
-    var promise = loadAsyncFnX()
-    promise.then(function(){
-        return doSth();
-    })
-    return promise;
-}
-asyncFn().then(res=&gt;console.log(res)).catch(err=&gt;console.log(err))
-// 1</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ajaxLoad1()</span><br><span class="line">	.then(res=&gt;&#123; return ajaxLoad2() &#125;, err=&gt;console.log(err))</span><br><span class="line">	.catch(err=&gt; console.log(err));</span><br></pre></td></tr></table></figure>
+<h3 id="断链-The-Broken-Chain"><a href="#断链-The-Broken-Chain" class="headerlink" title="断链 The Broken Chain"></a>断链 The Broken Chain</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function loadAsyncFnX()&#123; return Promise.resolve(1); &#125;</span><br><span class="line">function doSth()&#123; return 2; &#125;</span><br><span class="line">function asyncFn()&#123;</span><br><span class="line">	var promise = loadAsyncFnX()</span><br><span class="line">    promise.then(function()&#123;</span><br><span class="line">		return doSth();</span><br><span class="line">    &#125;)</span><br><span class="line">	return promise;</span><br><span class="line">&#125;</span><br><span class="line">asyncFn().then(res=&gt;console.log(res)).catch(err=&gt;console.log(err))</span><br><span class="line">// 1</span><br></pre></td></tr></table></figure>
 <p>上面这种用法，从执行结果来看，then中回调的参数其实并不是doSth()返回的结果，而是loadAsyncFnX()返回的结果，catch 到的错误也是 loadAsyncFnX()中的错误，所以 doSth() 的结果和错误将不会被后而的then中的回调捕获到，形成了断链，因为 then 方法将返回一个新的Promise对象，而不是原来的Promise对象。</p>
 <p>改写如下</p>
-<p><code>function loadAsyncFnX(){ return Promise.resolve(1); }
-function doSth(){ return 2; }
-function asyncFn(){
-    var promise = loadAsyncFnX()
-    return promise.then(function(){
-        return doSth();
-    })
-}
-asyncFn().then(res=&gt;console.log(res)).catch(err=&gt;console.log(err))
-// 2</code></p>
-<h3 id="穿透-Fall-Through"><a href="#穿透-Fall-Through" class="headerlink" title="穿透 Fall Through"></a>穿透 Fall Through</h3><p><code>new Promise(resolve=&gt;resolve(8))
-  .then(1)
-  .catch(null)
-  .then(Promise.resolve(9))
-  .then(res=&gt; console.log(res))
-// 8</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function loadAsyncFnX()&#123; return Promise.resolve(1); &#125;</span><br><span class="line">function doSth()&#123; return 2; &#125;</span><br><span class="line">function asyncFn()&#123;</span><br><span class="line">	var promise = loadAsyncFnX()</span><br><span class="line">    return promise.then(function()&#123;</span><br><span class="line">		return doSth();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">asyncFn().then(res=&gt;console.log(res)).catch(err=&gt;console.log(err))</span><br><span class="line">// 2</span><br></pre></td></tr></table></figure>
+<h3 id="穿透-Fall-Through"><a href="#穿透-Fall-Through" class="headerlink" title="穿透 Fall Through"></a>穿透 Fall Through</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new Promise(resolve=&gt;resolve(8))</span><br><span class="line">  .then(1)</span><br><span class="line">  .catch(null)</span><br><span class="line">  .then(Promise.resolve(9))</span><br><span class="line">  .then(res=&gt; console.log(res))</span><br><span class="line">// 8</span><br></pre></td></tr></table></figure>
 <p>这里，如果then或catch接收的不是函数，那么就会发生穿透行为，所以在应用过程中，应该保证then接收到的参数始终是一个函数。</p>
 <h3 id="长度未知的串行与并行"><a href="#长度未知的串行与并行" class="headerlink" title="长度未知的串行与并行"></a>长度未知的串行与并行</h3><p>并行执行</p>
-<p><code>getAsyncArr()
-    .then(promiseArr=&gt;{
-        var resArr = [];
-        promiseArr.forEach(v=&gt;{
-            v().then(res=&gt; resArr.push(res))
-        })
-        return resArr;
-    })
-    .then(res=&gt;console.log(res))</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getAsyncArr()</span><br><span class="line">	.then(promiseArr=&gt;&#123;</span><br><span class="line">		var resArr = [];</span><br><span class="line">		promiseArr.forEach(v=&gt;&#123;</span><br><span class="line">			v().then(res=&gt; resArr.push(res))</span><br><span class="line">		&#125;)</span><br><span class="line">		return resArr;</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(res=&gt;console.log(res))</span><br></pre></td></tr></table></figure>
 <p>使用forEach遍历执行promise，在上面的实现中，第二个then有可能拿到的是空的结果或者不完整的结果，因为，第二个then的回调无法预知 promiseArr 中每一个promise是否都执行完成，那么这里可以使用 Promise.all 结合 map 方法去改善</p>
-<p><code>getAsyncArr()
-    .then(promiseArr=&gt;{
-        return Promise.all(promiseArr);
-    })
-    .then(res=&gt;console.log(res))</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getAsyncArr()</span><br><span class="line">	.then(promiseArr=&gt;&#123;</span><br><span class="line">		return Promise.all(promiseArr);</span><br><span class="line">	&#125;)</span><br><span class="line">	.then(res=&gt;console.log(res))</span><br></pre></td></tr></table></figure>
 <p>如果需要串行执行，那和我们可以利用数据的reduce来处理串行执行</p>
-<p><code>var pA = [
-    function(){return new Promise(resolve=&gt;resolve(1))},
-    function(data){return new Promise(resolve=&gt;resolve(1+data))},
-    function(data){return new Promise(resolve=&gt;resolve(1+data))}
-]
-pA.reduce((prev, next)=&gt;prev.then(next).then(res=&gt;res),Promise.resolve())
-.then(res=&gt;console.log(res))
-// 3</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var pA = [</span><br><span class="line">	function()&#123;return new Promise(resolve=&gt;resolve(1))&#125;,</span><br><span class="line">	function(data)&#123;return new Promise(resolve=&gt;resolve(1+data))&#125;,</span><br><span class="line">	function(data)&#123;return new Promise(resolve=&gt;resolve(1+data))&#125;</span><br><span class="line">]</span><br><span class="line">pA.reduce((prev, next)=&gt;prev.then(next).then(res=&gt;res),Promise.resolve())</span><br><span class="line">.then(res=&gt;console.log(res))</span><br><span class="line">// 3</span><br></pre></td></tr></table></figure>
 <h3 id="Promise-resolve的用法"><a href="#Promise-resolve的用法" class="headerlink" title="Promise.resolve的用法"></a>Promise.resolve的用法</h3><p>Promise.reoslve 有一个作用就是可以将 thenable 对象转换为 promise 对象。</p>
 <p>thenable 对象，指的是一个具有 .then 方法的对象。</p>
 <p>要求是 thenable 对象所拥有的 then 方法应该和 Promise 所拥有的 then 方法具有同样的功能和处理过程。</p>
 <p>一个标准的 thenable 对象应该是这样的</p>
-<p><code>var thenable = {
-  then: function(resolve, reject) {
-    resolve(42);
-  }
-};</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var thenable = &#123;</span><br><span class="line">  then: function(resolve, reject) &#123;</span><br><span class="line">    resolve(42);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>使用 Promise.resolve转换</p>
-<p><code>Promise.resolve(thenable).then(function(value) {
-  console.log(value);  // 42
-});</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Promise.resolve(thenable).then(function(value) &#123;</span><br><span class="line">  console.log(value);  // 42</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>同样具有标准的thenable特性的是 不同的实现Promise标准的类库，所以 ES6 Promise 与 Q 与buldbird 的对象都是可以互相转换的。</p>
 <p>jQueyr的defer对象转换为ES6 Promise对象</p>
-<p><code>Promise.resolve($.ajax(&#39;api/data.json&#39;)).then(res=&gt;console.log(res)))</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Promise.resolve($.ajax(&apos;api/data.json&apos;)).then(res=&gt;console.log(res)))</span><br></pre></td></tr></table></figure>
 <p>但也不是所有thenable对象都能被成功转换，主要看各种类库实现是否遵循 Promise/A+标准，不过此类使用场景并不多，不做深入讨论。</p>
 <h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ol>
 <li>then方法中 永远 return 或 throw</li>

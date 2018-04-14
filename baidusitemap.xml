@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://blog.xiaowuzi.info/2016/10/04/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Promise/</loc>
-    <lastmod>2018-04-13T07:33:11.000Z</lastmod>
+    <lastmod>2018-04-13T08:10:06.000Z</lastmod>
     <data>
         <display>
         <title>深入理解Promise</title>
@@ -14,7 +14,43 @@
          
            
              
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8BDOM%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-13T08:09:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript之DOM学习</title>
+        <pubTime>2013-04-08T03:30:16.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/javascript%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2018-04-13T08:09:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript动画</title>
+        <pubTime>2015-04-08T03:35:18.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>
@@ -23,7 +59,7 @@
     
   <url>
     <loc>http://blog.xiaowuzi.info/2016/10/06/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%8A)/</loc>
-    <lastmod>2018-04-13T07:32:56.000Z</lastmod>
+    <lastmod>2018-04-13T08:07:50.000Z</lastmod>
     <data>
         <display>
         <title>深入理解 Promise (上)</title>
@@ -107,24 +143,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/javascript%E5%8A%A8%E7%94%BB/</loc>
-    <lastmod>2018-04-13T07:13:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>javascript动画</title>
-        <pubTime>2015-04-08T03:35:18.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript 基础" url="http://blog.xiaowuzi.info/categories/javascript-%E5%9F%BA%E7%A1%80/"/>
-          
         </display>
     </data>
     </url>
@@ -776,24 +794,6 @@
            
              
               <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8BDOM%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:07:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>javascript之DOM学习</title>
-        <pubTime>2013-04-08T03:30:16.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript 基础" url="http://blog.xiaowuzi.info/categories/javascript-%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>
