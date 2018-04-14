@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/10/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
+    <lastmod>2018-04-14T12:12:26.441Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解 Promise (中)</title>
+        <pubTime>2016-10-05T04:39:04.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/10/04/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Promise/</loc>
     <lastmod>2018-04-13T08:10:06.000Z</lastmod>
     <data>
@@ -64,26 +84,6 @@
         <display>
         <title>深入理解 Promise (上)</title>
         <pubTime>2016-10-06T02:39:04.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/10/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
-    <lastmod>2018-04-13T07:32:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解 Promise (中)</title>
-        <pubTime>2016-10-05T04:39:04.000Z</pubTime>
         
         <tag>javascript</tag>
          

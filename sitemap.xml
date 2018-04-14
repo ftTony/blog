@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/10/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
+    
+    <lastmod>2018-04-14T12:12:26.441Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/10/04/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Promise/</loc>
     
     <lastmod>2018-04-13T08:10:06.000Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://blog.xiaowuzi.info/2016/10/06/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%8A)/</loc>
     
     <lastmod>2018-04-13T08:07:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/10/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
-    
-    <lastmod>2018-04-13T07:32:44.000Z</lastmod>
     
   </url>
   
