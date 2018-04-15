@@ -117,20 +117,23 @@
 
 
 
-<meta name="description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以">
+<meta name="description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 HTTP协议是基于请求与相应，具体如图 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="http详解">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/07/http详解/index.html">
 <meta property="og:site_name" content="小武子博客">
-<meta property="og:description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以">
+<meta property="og:description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 HTTP协议是基于请求与相应，具体如图 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/http-resource-2.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http/201204271057008113.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/http-resource-3.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http/201204271057105124.png">
-<meta property="og:updated_time" content="2018-04-10T02:35:23.960Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/http-resource-4.png">
+<meta property="og:updated_time" content="2018-04-14T15:54:47.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http详解">
-<meta name="twitter:description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以">
-<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/http/201204271057008113.png">
+<meta name="twitter:description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 HTTP协议是基于请求与相应，具体如图 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/http2/http-resource-2.png">
 
 
 
@@ -393,10 +396,16 @@
 
       
         <h3 id="http的定义和历史"><a href="#http的定义和历史" class="headerlink" title="http的定义和历史"></a><strong>http的定义和历史</strong></h3><p>  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。</p>
+<p>HTTP协议是基于请求与相应，具体如图<br><img src="/images/http2/http-resource-2.png" alt=""></p>
 <h3 id="http三次握手"><a href="#http三次握手" class="headerlink" title="http三次握手"></a><strong>http三次握手</strong></h3><p>   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以理解为进程到进程之间的通信.</p>
-<p><img src="/images/http/201204271057008113.png" alt=""></p>
-<h3 id="http的主要特点"><a href="#http的主要特点" class="headerlink" title="http的主要特点"></a><strong>http的主要特点</strong></h3><p>1.支持客户/服务器模式<br>2.简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。<br>3.灵活：http允许传轮任意类型的数据对象。正在传输的类型由Content-Type加以标记。<br>4.无连接：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br><a id="more"></a></p>
-<h3 id="http请求详解"><a href="#http请求详解" class="headerlink" title="http请求详解"></a><strong>http请求详解</strong></h3><p>http请求由三部分组成，分别是：请求行、消息报头、请求正文</p>
+<p><img src="/images/http/201204271057008113.png" alt=""><br><a id="more"></a></p>
+<h3 id="http的主要特点"><a href="#http的主要特点" class="headerlink" title="http的主要特点"></a><strong>http的主要特点</strong></h3><ol>
+<li>支持客户/服务器模式</li>
+<li>简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。</li>
+<li>灵活：http允许传轮任意类型的数据对象。正在传输的类型由Content-Type加以标记。</li>
+<li>无连接：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
+</ol>
+<h3 id="http请求详解"><a href="#http请求详解" class="headerlink" title="http请求详解"></a><strong>http请求详解</strong></h3><p>http请求由三部分组成，分别是：请求行、消息报头、请求正文<br><img src="/images/http2/http-resource-3.png" alt=""></p>
 <p>http的请求方法：GET POST HEAD PUT DELETE TRACE CONNECT OPTIONS </p>
 <p>GET     请求获取Request-URI所标识的资源</p>
 <p>POST    在Request-URI所标识的资源后附加新的数据</p>
@@ -412,53 +421,76 @@
 <p>第三部分内容只在POST请求中存在，因为GET请求并不包含任何实体。</p>
 <p>完整的http请求图如下：</p>
 <p><img src="/images/http/201204271057105124.png" alt=""></p>
-<p>请求报头允许客户端向服务器端传递请求的附加信息以及客户端自身的信息。</p>
-<p>Accept请求报头域用于指定客户端接受哪些类型的信息。eg：Accept：image/gif，表明客户端希望接受GIF图象格式的资源；Accept:text/html,表明客户希望接受html文本。</p>
-<p>Accept-Charset请求报头域用于指定客户端接受的字符集。eg：Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受。</p>
-<p>Accept-Encoding请求报头域类似于Accept，但是它是用于指定可接受的内容编码。eg：Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受。</p>
-<p>Accept-Language请求报头域类似于Accept，但是它是用于指定一种自然语言。eg：Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受。</p>
-<p>Authorization请求报头域主要用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证。</p>
-<p>Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的，eg：<br>我们在浏览器中输入：<a href="http://www.guet.edu.cn/index.html" target="_blank" rel="noopener">http://www.guet.edu.cn/index.html</a><br>浏览器发送的请求消息中，就会包含Host请求报头域，如下：<br>Host：<a href="http://www.guet.edu.cn" target="_blank" rel="noopener">www.guet.edu.cn</a><br>此处使用缺省端口号80，若指定了端口号，则变成：Host：<a href="http://www.guet.edu.cn:指定端口号" target="_blank" rel="noopener">www.guet.edu.cn:指定端口号</a></p>
-<p>User-Agent<br>我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了。</p>
+<h4 id="请求报文示例"><a href="#请求报文示例" class="headerlink" title="请求报文示例"></a>请求报文示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.1</span><br><span class="line">Host: www.baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line">Accept-Encoding: gzip, deflate, sdch, br</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,en;q=0.6,id;q=0.4</span><br><span class="line">Cookie: PSTM=1490844191; BIDUPSID=2145FF54639208435F60E1E165379255; BAIDUID=CFA344942EE2E0EE081D8B13B5C847F9:FG=1;</span><br></pre></td></tr></table></figure>
+<h4 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h4><p>请求行由请求方法、URL 和 HTTP 协议版本组成，它们之间用空格分开。</p>
+<p><code>GET / HTTP/1.1</code></p>
+<h4 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h4><ul>
+<li>请求头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。请求头通知服务器有关于客户端请求的信息，典型的请求头有：</li>
+<li>User-Agent：用户代理信息 - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 …</li>
+<li>Accept：客户端可识别的内容类型列表 - text/html,application/xhtml+xml,application/xml</li>
+<li>Accept-Language：客户端可接受的自然语言 - zh-CN,zh;q=0.8,en;q=0.6,id;q=0.4</li>
+<li>Accept-Encoding：客户端可接受的编码压缩格式 - gzip, deflate, sdch, br</li>
+<li>Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机 - <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></li>
+<li>connection：连接方式</li>
+<li>close：告诉WEB服务器或代理服务器，在完成本次请求的响应后，断开连接</li>
+<li>keep-alive：告诉WEB服务器或代理服务器。在完成本次请求的响应后，保持连接，以等待后续请求</li>
+<li>Cookie：存储于客户端扩展字段，向同一域名的服务端发送属于该域的cookie - PSTM=1490844191; BIDUPSID=2145FF54639208435F60E1E165379255;</li>
+</ul>
+<h4 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h4><p>最后一个请求头之后是一个空行，发送回车符和换行符，通知服务器以下不再有请求头。</p>
+<h4 id="请求体"><a href="#请求体" class="headerlink" title="请求体"></a>请求体</h4><p>请求数据不在 GET 方法中使用，而是在 POST 方法中使用。与请求数据相关的最常使用的请求头是 Content-Type和 Content-Length。</p>
 <h3 id="http响应详解"><a href="#http响应详解" class="headerlink" title="http响应详解"></a><strong>http响应详解</strong></h3><p>当Web服务器收到HTTP请求后，会根据请求的信息做某些处理(这些处理可能仅仅是静态的返回页，或是包含Asp.net,PHP,Jsp等语言进行处理后返回)，相应的返回一个HTTP响应。HTTP响应在结构上很类似于HTTP请求,也是由三部分组成，分别为:状态行  HTTP头  返回内容</p>
-<p>状态行内容如：<code>HTTP/1.1 200 OK</code></p>
-<p>第一部分是HTTP版本，第二部分是响应状态码，第三部分是状态码的描述，因此也可以把第二和第三部分看成一个部分。</p>
-<p>http状态码分别有：</p>
-<p>信息类 (100-199)</p>
-<p>响应成功 (200-299)：</p>
-<p>  200:表示成功</p>
-<p>  204:表示服务器接􏰖的请求已成功􏰗理,但在返回的响应报文 中不含实体的主体部分</p>
-<p>  206:客户端进行了􏰥围请求,而服务器成功􏰱行了这部分的GET请求</p>
-<p>重定向类 (300-399)</p>
-<p>  301:􏱔􏱕􏱖永久性重定向。该状态码表示请求的资源已被分配了新的 URI,以 后应使用资源现在所指的 URI。也就是说,如果已经􏱗资源对应的 URI 保存为书􏱆了,这时应该􏱘 Location 首部字段提示的 URI 重新保存。</p>
-<p>  302:􏱲临时􏱖重定向。该状态码表示请求的资源已被分配了新的 URI,希 望用户(本􏱳)能使用新的 URI 􏱴问。和 301 Moved Permanently 状态码相􏱶,但 302 状态码代表的资源 不是被􏱔􏱕􏱷动,只是􏱲时􏱖􏱸的。􏱹􏱺􏱻说,已􏱷动的资源对应的 URI 将来还有可能发生改变。􏰚如,用户􏱗 URI 保存成书􏱆,但不会􏱙 301 状态码出现时那样􏱼更新书􏱆,而是仍􏱽保留返回 302 状态码的页 面对应的 URI。</p>
-<p>  303:该状态码表示由于请求对应的资源存在着另一个 URI,应使用 GET 方法定向􏲅􏲆请求的资源。</p>
-<p>  304:该状态码表示客户端发送􏲡􏲢􏲣件的请求 A 时,服务器端􏰘许请求 􏱴问资源,但未满足􏲣件的􏰞􏰟。304 状态码返回时,不包含􏰙何响应 的主体部分。304 􏲈然被􏲪分在 3􏰶􏰶 􏲫别中,但是和重定向􏲬没有关系。</p>
-<p>客户端错误类 (400-499)</p>
-<p>  400:该状态码表示请求报文中存在􏳁法􏲸􏲹。当􏲸􏲹发生时,需修改请求 的内容后再􏱳发送请求。另外,浏览器会􏱙 200 OK 一样对待该状态码。</p>
-<p>  401:该状态码表示发送的请求需要有通过 HTTP 认证(BASIC 认证、 DIGEST 认证)的认证信􏰝。</p>
-<p>  403:该状态码表明对请求资源的􏱴问被服务器􏳖绝了。未􏲅得文件􏲭􏳙的􏱴问授权,􏱴问权􏳚出现某些问题(从未授权的 发送源 IP 地􏳛􏳜图􏱴问)等􏳝举的􏰞􏰟都可能是发生 403 的原因。</p>
-<p>  404:该状态码表明服务器上无法􏳧到请求的资源。􏳨此之外,也可以在 服务器端􏳖绝请求且不想说明理由时使用。</p>
-<p>服务端错误类 (500-599)</p>
-<p>  500:该状态码表明服务器端在􏰱行请求时发生了􏲸􏲹。也有可能是 Web 应用存在的 bug 或某些􏱲时的􏳱􏳲。</p>
-<p>  503:该状态码表明服务器􏳺时􏰗于􏳻􏳼􏳽或正在进行停机维􏳾,现在无法􏰗理请求。</p>
-<p>第三部分http响应内容就是第三部分HTTP响应内容就是HTTP请求所请求的信息。这个信息可以是一个HTML，也可以是一个图片。</p>
-<p> Location: 服务器通过这个头，来告诉浏览器跳到哪里</p>
-<p> Server：服务器通过这个头，告诉浏览器服务器的型号</p>
-<p> Refresh：服务器通过这个头，告诉浏览器定时刷新</p>
-<p> Content-Disposition: 服务器通过这个头，告诉浏览器以下载方式打数据</p>
-<p> Transfer-Encoding：服务器通过这个头，告诉浏览器数据是以分块方式回送的</p>
-<p> Expires: -1  控制浏览器不要缓存</p>
-<p> Cache-Control: no-cache  </p>
-<p> Content-Encoding实体报头域被用作媒体类型的修饰符，它的值指示了已经被应用到实体正文的附加内容的编码，因而要获得Content-Type报头域中所引用的媒体类型，必须采用相应的解码机制。Content-Encoding这样用于记录文档的压缩方法，eg：Content-Encoding：gzip</p>
-<p> Content-Language实体报头域描述了资源所用的自然语言。没有设置该域则认为实体内容将提供给所有的语言阅读<br>者。eg：Content-Language:da</p>
-<p>Content-Length实体报头域用于指明实体正文的长度，以字节方式存储的十进制数字来表示。</p>
-<p>Content-Type实体报头域用语指明发送给接收者的实体正文的媒体类型。eg：<br>Content-Type:text/html;charset=ISO-8859-1<br>Content-Type:text/html;charset=GB2312</p>
-<p>Last-Modified实体报头域用于指示资源的最后修改日期和时间。</p>
-<p>Expires实体报头域给出响应过期的日期和时间。为了让代理服务器或浏览器在一段时间以后更新缓存中(再次访问曾访问过的页面时，直接从缓存中加载，缩短响应时间和降低服务器负载)的页面，我们可以使用Expires实体报头域指定页面过期的时间。eg：Expires：Thu，15 Sep 2006 16:23:12 GMT<br>HTTP1.1的客户端和缓存必须将其他非法的日期格式（包括0）看作已经过期。eg：为了让浏览器不要缓存页面，我们也可以利用Expires实体报头域，设置为0，jsp中程序如下：response.setDateHeader(“Expires”,”0”);</p>
+<p><img src="/images/http2/http-resource-4.png" alt=""></p>
+<p>响应报文示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Server: bfe/1.0.8.18</span><br><span class="line">Date: Thu, 30 Mar 2017 12:28:00 GMT</span><br><span class="line">Content-Type: text/html; charset=utf-8</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cache-Control: private</span><br><span class="line">Expires: Thu, 30 Mar 2017 12:27:43 GMT</span><br><span class="line">Set-Cookie: BDSVRTM=0; path=/</span><br></pre></td></tr></table></figure>
+<h4 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a>状态行</h4><p>状态行格式： HTTP-Version Status-Code Reason-Phrase CRLF</p>
+<ol>
+<li>HTTP-Version - HTTP 协议版本</li>
+<li>Status-Code - 状态码</li>
+<li>Reason-Phrase - 状态码描述</li>
+<li>CRLF - 回车/换行符</li>
+</ol>
+<h4 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h4><p>响应头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。响应头域允许服务器传递不能放在状态行的附加信息，这些域主要描述服务器的信息和Request-URI进一步的信息，典型的响应头有：</p>
+<ol>
+<li>Server：包含处理请求的原始服务器的软件信息</li>
+<li>Date：服务器日期</li>
+<li>Content-Type：返回的资源类型 (MIME)</li>
+<li>Connection：连接方式</li>
+<li>close：连接已经关闭</li>
+<li>keep-alive：连接已保持，在等待本次连接的后续请求</li>
+<li>Cache-Control：缓存控制</li>
+<li>Expires：设置过期时间</li>
+<li>Set-Cookie：设置 Cookie 信息</li>
+</ol>
+<h4 id="空行-1"><a href="#空行-1" class="headerlink" title="空行"></a>空行</h4><p>最后一个响应头之后是一个空行，发送回车符和换行符，通知浏览器以下不再有响应头。</p>
+<h4 id="响应体"><a href="#响应体" class="headerlink" title="响应体"></a>响应体</h4><p>服务器返回给浏览器的响应信息，下面是百度首页的响应体片段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;!--STATUS OK--&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;icon&quot; sizes=&quot;any&quot; mask href=&quot;//www.baidu.com/img/baidu.svg&quot;&gt;</span><br><span class="line">    &lt;title&gt;百度一下，你就知道&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>状态代码由三位数字组成，第一个数字定义了响应的类别，且有五种可能取值：</p>
+<ul>
+<li>1xx：指示信息 – 表示请求已接收，继续处理</li>
+<li>2xx：成功 – 表示请求已被成功接收</li>
+<li>3xx：重定向 – 要完成请求必须进行更进一步的操作</li>
+<li>4xx：客户端错误 – 请求有语法错误或请求无法实现</li>
+<li>5xx：服务器错误 – 服务器未能实现合法的请求</li>
+</ul>
+<p>常见状态代码、状态描述的说明如下：</p>
+<ul>
+<li>200 OK：客户端请求成功</li>
+<li>204 No Content：没有新文档，浏览器应该继续显示原来的文档</li>
+<li>206 Partial Content：客户发送了一个带有Range头的GET请求，服务器完成了它</li>
+<li>301 Moved Permanently：所请求的页面已经转移至新的url</li>
+<li>302 Found：所请求的页面已经临时转移至新的url</li>
+<li>304 Not Modified：客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的文档还可以继续使用。</li>
+<li>400 Bad Request：客户端请求有语法错误，不能被服务器所理解</li>
+<li>401 Unauthorized：请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用</li>
+<li>403 Forbidden：对被请求页面的访问被禁止</li>
+<li>404 Not Found：请求资源不存在</li>
+<li>500 Internal Server Error：服务器发生不可预期的错误</li>
+<li>503 Server Unavailable：请求未完成，服务器临时过载或当机，一段时间后可能恢复正常</li>
+</ul>
 <p>参照资料：</p>
 <p><a href="http://www.cnblogs.com/CareySon/archive/2012/04/27/HTTP-Protocol.html" target="_blank" rel="noopener">HTTP协议漫淡</a></p>
 <p><a href="http://www.cnblogs.com/li0803/archive/2008/11/03/1324746.html" target="_blank" rel="noopener">http协议详解</a></p>
+<p><a href="https://github.com/semlinker/awesome-http#http-%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">http协议</a></p>
 <p>《图解http》</p>
       
     </div>
@@ -522,8 +554,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/07/javascript引擎的执行机制/" rel="prev" title="javascript引擎的执行机制">
-                javascript引擎的执行机制 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/07/amd、cmd、common和umd区别/" rel="prev" title="amd、cmd、common和umd区别">
+                amd、cmd、common和umd区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -601,7 +633,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#http的定义和历史"><span class="nav-number">1.</span> <span class="nav-text">http的定义和历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http三次握手"><span class="nav-number">2.</span> <span class="nav-text">http三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http的主要特点"><span class="nav-number">3.</span> <span class="nav-text">http的主要特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http请求详解"><span class="nav-number">4.</span> <span class="nav-text">http请求详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http响应详解"><span class="nav-number">5.</span> <span class="nav-text">http响应详解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#http的定义和历史"><span class="nav-number">1.</span> <span class="nav-text">http的定义和历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http三次握手"><span class="nav-number">2.</span> <span class="nav-text">http三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http的主要特点"><span class="nav-number">3.</span> <span class="nav-text">http的主要特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http请求详解"><span class="nav-number">4.</span> <span class="nav-text">http请求详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#请求报文示例"><span class="nav-number">4.1.</span> <span class="nav-text">请求报文示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求行"><span class="nav-number">4.2.</span> <span class="nav-text">请求行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求头"><span class="nav-number">4.3.</span> <span class="nav-text">请求头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空行"><span class="nav-number">4.4.</span> <span class="nav-text">空行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求体"><span class="nav-number">4.5.</span> <span class="nav-text">请求体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http响应详解"><span class="nav-number">5.</span> <span class="nav-text">http响应详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#状态行"><span class="nav-number">5.1.</span> <span class="nav-text">状态行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应头"><span class="nav-number">5.2.</span> <span class="nav-text">响应头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空行-1"><span class="nav-number">5.3.</span> <span class="nav-text">空行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应体"><span class="nav-number">5.4.</span> <span class="nav-text">响应体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态码"><span class="nav-number">5.5.</span> <span class="nav-text">状态码</span></a></li></ol></li></ol></div>
             
 
           </div>

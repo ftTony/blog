@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/07/08/http2/</loc>
+    
+    <lastmod>2018-04-15T02:00:09.495Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-04-14T15:54:47.734Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
+    
+    <lastmod>2018-04-14T12:49:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/10/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
     
-    <lastmod>2018-04-14T12:12:26.441Z</lastmod>
+    <lastmod>2018-04-14T12:37:55.105Z</lastmod>
     
   </url>
   
@@ -79,13 +100,6 @@
   </url>
   
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
-    
-    <lastmod>2018-04-11T03:45:04.091Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.xiaowuzi.info/2016/04/08/https%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-04-10T02:38:02.103Z</lastmod>
@@ -93,30 +107,9 @@
   </url>
   
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
-    
-    <lastmod>2018-04-10T02:35:23.960Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/http%E5%AE%89%E5%85%A8/</loc>
-    
-    <lastmod>2018-04-09T13:38:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.xiaowuzi.info/2015/10/08/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</loc>
     
     <lastmod>2018-04-09T13:38:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/07/08/http2/</loc>
-    
-    <lastmod>2018-04-09T13:37:27.000Z</lastmod>
     
   </url>
   
@@ -131,13 +124,6 @@
     <loc>http://blog.xiaowuzi.info/2015/04/08/%E8%99%9A%E6%8B%9FDOM/</loc>
     
     <lastmod>2018-04-09T13:36:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/09/08/%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7/</loc>
-    
-    <lastmod>2018-04-09T13:36:18.000Z</lastmod>
     
   </url>
   
