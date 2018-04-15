@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
+    
+    <lastmod>2018-04-15T07:05:36.958Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2018-04-15T04:12:31.709Z</lastmod>
@@ -16,16 +23,9 @@
   </url>
   
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
-    
-    <lastmod>2018-04-15T02:59:39.418Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.xiaowuzi.info/2016/07/08/http2/</loc>
     
-    <lastmod>2018-04-15T02:05:19.000Z</lastmod>
+    <lastmod>2018-04-15T02:06:44.000Z</lastmod>
     
   </url>
   

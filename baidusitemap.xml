@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
+    <lastmod>2018-04-15T07:05:36.958Z</lastmod>
+    <data>
+        <display>
+        <title>vue双向数据绑定</title>
+        <pubTime>2016-05-08T02:57:02.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2018-04-15T04:12:31.709Z</lastmod>
     <data>
@@ -40,26 +58,8 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
-    <lastmod>2018-04-15T02:59:39.418Z</lastmod>
-    <data>
-        <display>
-        <title>vue双向数据绑定</title>
-        <pubTime>2016-05-08T02:57:02.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2016/07/08/http2/</loc>
-    <lastmod>2018-04-15T02:05:19.000Z</lastmod>
+    <lastmod>2018-04-15T02:06:44.000Z</lastmod>
     <data>
         <display>
         <title>http2</title>
