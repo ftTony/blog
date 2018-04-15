@@ -126,7 +126,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/vue/132184689-57b310ea1804f_articlex.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/vue/1117380429-57b3110440af0.png">
-<meta property="og:updated_time" content="2018-04-15T07:05:36.958Z">
+<meta property="og:updated_time" content="2018-04-15T07:28:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue双向数据绑定">
 <meta name="twitter:description" content="几种实现双向数据绑定做法目前几种主流的mvc(vm)框架都实现了单向数据绑定，而我所理解的双向数据绑定无非就是在单向绑定的基础上给可输入元素（input、textare等）添加了change(input)事件，来动态修改model和 view，并没有多高深。所以无需太过介怀是实现的单向或双向绑定。 实现数据绑定的做法有大致如下几种：  发布者-订阅者模式（backbone.js） 脏值检查（ang">
@@ -400,7 +400,7 @@
 <p>数据劫持（vue.js）</p>
 </blockquote>
 <p><strong>发布者-订阅者模式:</strong> 一般通过sub, pub的方式实现数据和视图的绑定监听，更新数据方式通常做法是 vm.set(‘property’, value)，这里有篇文章讲的比较详细，有兴趣可点<a href="http://www.html-js.com/article/Study-of-twoway-data-binding-JavaScript-talk-about-JavaScript-every-day" target="_blank" rel="noopener">这里</a></p>
-<p>这种方式现在毕竟太low了，我们更希望通过 vm.property = value 这种方式更新数据，同时自动更新视图，于是有了下面两种方式</p>
+<p>这种方式现在毕竟太low了，我们更希望通过 vm.property = value 这种方式更新数据，同时自动更新视图，于是有了下面两种方式<br><a id="more"></a></p>
 <p><strong>脏值检查:</strong>angular.js 是通过脏值检测的方式比对数据是否有变更，来决定是否更新视图，最简单的方式就是通过 setInterval() 定时轮询检测数据变动，当然Google不会这么low，angular只有在指定的事件触发时进入脏值检测，大致如下：</p>
 <ul>
 <li>DOM事件，譬如用户输入文本，点击按钮等。( ng-click )</li>
@@ -453,8 +453,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function MVVM(options)&#123;</span><br><span class="line">	this.$options=options;</span><br><span class="line">	var data=this._data=this.$options.data;</span><br><span class="line">	observe(data,this);</span><br><span class="line">	this.$compile=new Compile(optiosn.el || document.body,this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>但是这里有个问题，从代码中可看出监听的数据对象是options.data，每次需要更新视图，则必须通过<code>var vm = new MVVM({data:{name: &#39;kindeng&#39;}}); vm._data.name = &#39;dmq&#39;;</code> 这样的方式来改变数据。</p>
 <p>改造后的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function MVVM(options)&#123;</span><br><span class="line">	this.$options=options</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function MVVM(options)&#123;</span><br><span class="line">	this.$options=options;</span><br><span class="line">	var data=this._data=this.$options.data,me=this;</span><br><span class="line">	//属性代理，实现 vm.xxx-&gt;vm._data.xxx</span><br><span class="line">	Object.keys(data).forEach(function(key)&#123;</span><br><span class="line">		me._proxy(key);</span><br><span class="line">	&#125;);</span><br><span class="line">	observe(data,this);</span><br><span class="line">	this.$compile=new Compile(options.el || document.body,this);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">MVVM.prototye=&#123;</span><br><span class="line">	_proxy:function(key)&#123;</span><br><span class="line">		var me=this;</span><br><span class="line">		_proxy:function(key)&#123;</span><br><span class="line">			configurable:false,</span><br><span class="line">			enumerable:true,</span><br><span class="line">			get:function proxyGetter()&#123;</span><br><span class="line">				return me._data[key];</span><br><span class="line">			&#125;,</span><br><span class="line">			set:function proxySetter(newVal)&#123;</span><br><span class="line">				me._data[key]=newVal;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>参考资料：</p>
+<p><a href="http://www.cnblogs.com/kidney/p/6052935.html" target="_blank" rel="noopener">Vue.js双向绑定的实现原理</a></p>
+<p><a href="https://segmentfault.com/a/1190000006599500" target="_blank" rel="noopener">剖析Vue原理&amp;实现双向绑定MVVM</a></p>
       
     </div>
     
@@ -607,7 +609,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
