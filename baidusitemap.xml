@@ -4,8 +4,62 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-04-15T04:12:31.709Z</lastmod>
+    <data>
+        <display>
+        <title>nginx配置</title>
+        <pubTime>2015-04-08T03:12:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/npm%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-15T04:03:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>npm学习</title>
+        <pubTime>2015-04-08T03:52:47.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
+    <lastmod>2018-04-15T02:59:39.418Z</lastmod>
+    <data>
+        <display>
+        <title>vue双向数据绑定</title>
+        <pubTime>2016-05-08T02:57:02.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/07/08/http2/</loc>
-    <lastmod>2018-04-15T02:00:09.495Z</lastmod>
+    <lastmod>2018-04-15T02:05:19.000Z</lastmod>
     <data>
         <display>
         <title>http2</title>
@@ -405,24 +459,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
-    <lastmod>2018-04-09T13:33:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>vue双向数据绑定</title>
-        <pubTime>2016-05-08T02:57:02.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2014/03/08/css%E5%8A%A8%E7%94%BB/</loc>
     <lastmod>2018-04-09T13:32:12.000Z</lastmod>
     <data>
@@ -603,24 +639,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-04-09T13:20:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>nginx配置</title>
-        <pubTime>2015-04-08T03:12:52.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="服务器" url="http://blog.xiaowuzi.info/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/10/12/javascript%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0extend/</loc>
     <lastmod>2018-04-09T13:18:23.000Z</lastmod>
     <data>
@@ -776,24 +794,6 @@
            
              
               <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/npm%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:05:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>npm学习</title>
-        <pubTime>2015-04-08T03:52:47.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="工程化" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
           
         </display>
     </data>

@@ -1855,7 +1855,24 @@
       
         
           
-            
+            <h3 id="重新认识Object-defineProperty"><a href="#重新认识Object-defineProperty" class="headerlink" title="重新认识Object.defineProperty()"></a>重新认识Object.defineProperty()</h3><p>Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p><code>obj</code> 要在其上定义属性。</p>
+<p><code>prop</code>要定义或修改的属性的名称</p>
+<p><code>descriptor</code> 将被定义或个性的属性描述符。</p>
+<p>属性描述符具有以下可选键值：</p>
+<p><code>configurable</code>当且仅当该属性的configurable为true时，该属性描述符才能被改变，同时该属性也能从对应的对象上被删除。默认为false.</p>
+<p><code>enumerable</code></p>
+<p>数据描述符同时具有以下可选键值：</p>
+<p><code>value</code>该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。默认为 undefined。</p>
+<p><code>writable</code>当且仅当该属性的writable为true时，value才能被赋值运算符改变。默认为 false。</p>
+<p>存取描述符同时具有以下可选键值：</p>
+<p><code>get</code>一个给属性提供 getter 的方法，如果没有 getter 则为 undefined。该方法返回值被用作属性值。默认为 undefined。</p>
+<p><code>set</code>一个给属性提供 setter 的方法，如果没有 setter 则为 undefined。该方法将接受唯一参数，并将该参数的新值分配给该属性。默认为 undefined。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&#125;; // 创建一个新对象</span><br><span class="line"></span><br><span class="line">// 在对象中添加一个属性与数据描述符的示例</span><br><span class="line">Object.defineProperty(o, &quot;a&quot;, &#123;</span><br><span class="line">  value : 37,</span><br><span class="line">  writable : true,</span><br><span class="line">  enumerable : true,</span><br><span class="line">  configurable : true</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//对象o拥有了属性a，值为37</span><br></pre></td></tr></table></figure>
+<p>关于<code>Object.defineProperty()</code><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">详细使用请点击这里阅读更多用法</a>。</p>
+<h3 id="vue双向数据绑定"><a href="#vue双向数据绑定" class="headerlink" title="vue双向数据绑定"></a>vue双向数据绑定</h3><p>Vue.js的数据绑定原理依赖于Object.defineProperty，尤大大在<a href="https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A6%82%E4%BD%95%E8%BF%BD%E8%B8%AA%E5%8F%98%E5%8C%96" target="_blank" rel="noopener">Vue.js文档</a>中就已经提到过，这也是Vue.js不支持E8 以及更低版本浏览器的原因。Vue通过设定对象属性的 setter/getter 方法来监听数据的变化，通过getter进行依赖收集，而每个setter方法就是一个观察者，在数据变更的时候通知订阅者更新视图。</p>
+<h3 id="极简双向绑定的实现"><a href="#极简双向绑定的实现" class="headerlink" title="极简双向绑定的实现"></a>极简双向绑定的实现</h3><h3 id="实现一个vue"><a href="#实现一个vue" class="headerlink" title="实现一个vue"></a>实现一个vue</h3><p>参考资料：</p>
           
         
       
@@ -1951,7 +1968,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

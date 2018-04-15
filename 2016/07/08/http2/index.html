@@ -133,7 +133,7 @@
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/162b00ad267dee2d.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/162b00ad297f1b6d.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/162b00ac006aa53c.png">
-<meta property="og:updated_time" content="2018-04-15T02:00:09.495Z">
+<meta property="og:updated_time" content="2018-04-15T02:05:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http2">
 <meta name="twitter:description" content="主要内容 http发展史 http1.x存在的问题 HTTP2新增加功能  http发展史 http1.x存在的问题 协议规定客户端对同一域的迸发连接最多只能2个（浏览器实现一般2~8个），但是现代网页平均一个页面需要加载40个资源。 线头阻塞问题：同一个连接中的请求，需要一个接一个串行发送和接收 基于文本协议，请求和响应的头信息非常大，并且无法压缩。 不能控制响应优先级，必须按照请求顺序响应。">
@@ -413,14 +413,13 @@
 <li>只能单向请求，也就是客户端请求什么，服务器只能返回什么。</li>
 </ul>
 <h3 id="HTTP2新增加功能"><a href="#HTTP2新增加功能" class="headerlink" title="HTTP2新增加功能"></a>HTTP2新增加功能</h3><a id="more"></a>
-<p>####1. 二进制分帧<br>HTTP2在维持原有HTTP范式的前提下，实现突破性能限制，改进传输性能，实现低延迟和高吞吐量的其中一个关键是：<strong>在应用层（HTTP2）和传输层（TCP or UDP）</strong>之间增加了二进分帧层。<br><img src="/images/http2/162b00ac007dcd84.png" alt=""></p>
+<h4 id="1-二进制分帧"><a href="#1-二进制分帧" class="headerlink" title="1. 二进制分帧"></a>1. 二进制分帧</h4><p>HTTP2在维持原有HTTP范式的前提下，实现突破性能限制，改进传输性能，实现低延迟和高吞吐量的其中一个关键是：<strong>在应用层（HTTP2）和传输层（TCP or UDP）</strong>之间增加了二进分帧层。<br><img src="/images/http2/162b00ac007dcd84.png" alt=""></p>
 <p>帧（Frame）是 HTTP2 通讯中的最小传输单位，所有帧以固定的 9 个八位字节头部开头，随后是一个可变长度的有效载荷</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">帧结构图</span><br><span class="line"> +-----------------------------------------------+</span><br><span class="line"> |                 长度Length (24)                |</span><br><span class="line"> +---------------+---------------+---------------+</span><br><span class="line"> |   类型Type (8)    |   标志Flags (8)   |</span><br><span class="line"> +-+-------------+---------------+-------------------------------+</span><br><span class="line"> |R|                 流标识符Stream Identifier (31)               |</span><br><span class="line"> +=+=============================================================+</span><br><span class="line"> |                   帧载荷Frame Payload (0...)                 ...</span><br><span class="line"> +---------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
 <p>规范中一共定义了10个不同的帧，其中最基础的两种分别对应于HTTP1.x 的 DATA 和 HEADERS。</p>
 <p>一个真正的HTTP2请求类似下图：</p>
 <p><img src="/images/http2/162b00ac00ad3772.png" alt=""></p>
-<p>####2.首部压缩</p>
-<p>我们都知道<strong>HTTP协议本身是无状态</strong>的：每个请求之间<strong>互不关联</strong>，每个请求都需要携带服务器所需要的所有细节信息。比如说请求1发送服务器信息“我是用户A”，然后请求二发送信息“修改我的用户名为XX”，这时如果请求二没有携带“我是用户A”的信息，那么服务器是不知道要修改用户的用户名的。</p>
+<h4 id="2-首部压缩"><a href="#2-首部压缩" class="headerlink" title="2.首部压缩"></a>2.首部压缩</h4><p>我们都知道<strong>HTTP协议本身是无状态</strong>的：每个请求之间<strong>互不关联</strong>，每个请求都需要携带服务器所需要的所有细节信息。比如说请求1发送服务器信息“我是用户A”，然后请求二发送信息“修改我的用户名为XX”，这时如果请求二没有携带“我是用户A”的信息，那么服务器是不知道要修改用户的用户名的。</p>
 <p>这显然是不符合当前 web 应用系统架构的，因为一般系统都需要进行鉴权，日志记录，安全校验等限制，所以需要获取当前操作用户的信息，出于安全和性能考虑我们不能在消息体中明文包含这些信息，HTTP2 之前的解决方案一般是使用 Cookies 头、服务器session 等方式模拟出“状态”。而使用 Cookies 头的缺点就是每个请求都需要携带庞大的重复的信息并且无法压缩，假设一个请求的 header 是2kb，那么一百个请求就是重复的 200Kb 信息，这是一个巨大的带宽浪费。</p>
 <p>HTTP2 增加了两个特性解决上述问题：</p>
 <ul>
@@ -610,7 +609,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -654,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http发展史"><span class="nav-number">2.</span> <span class="nav-text">http发展史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http1-x存在的问题"><span class="nav-number">3.</span> <span class="nav-text">http1.x存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP2新增加功能"><span class="nav-number">4.</span> <span class="nav-text">HTTP2新增加功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-http2支持服务器推送"><span class="nav-number">4.1.</span> <span class="nav-text">3.http2支持服务器推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-多路复用（Multiplexing）和流"><span class="nav-number">4.2.</span> <span class="nav-text">4.多路复用（Multiplexing）和流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-优先级与依赖性"><span class="nav-number">4.3.</span> <span class="nav-text">5.优先级与依赖性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器与服务器已经对http2协议提供了支持："><span class="nav-number">4.4.</span> <span class="nav-text">浏览器与服务器已经对http2协议提供了支持：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">4.5.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http发展史"><span class="nav-number">2.</span> <span class="nav-text">http发展史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http1-x存在的问题"><span class="nav-number">3.</span> <span class="nav-text">http1.x存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP2新增加功能"><span class="nav-number">4.</span> <span class="nav-text">HTTP2新增加功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-二进制分帧"><span class="nav-number">4.1.</span> <span class="nav-text">1. 二进制分帧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-首部压缩"><span class="nav-number">4.2.</span> <span class="nav-text">2.首部压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-http2支持服务器推送"><span class="nav-number">4.3.</span> <span class="nav-text">3.http2支持服务器推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-多路复用（Multiplexing）和流"><span class="nav-number">4.4.</span> <span class="nav-text">4.多路复用（Multiplexing）和流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-优先级与依赖性"><span class="nav-number">4.5.</span> <span class="nav-text">5.优先级与依赖性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器与服务器已经对http2协议提供了支持："><span class="nav-number">4.6.</span> <span class="nav-text">浏览器与服务器已经对http2协议提供了支持：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">4.7.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div>
             
 
           </div>
