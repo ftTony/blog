@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。 我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript原型与原型链">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2013/04/08/javascript原型与原型链/index.html">
+<meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。 我">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414fdfc08?w=1378&h=514&f=png&s=69237">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414f54951?w=1370&h=938&f=png&s=121320">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e416e2c295?w=826&h=1198&f=png&s=206402">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414d534ef?w=1362&h=1536&f=png&s=222883">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e41507798b?w=2054&h=1454&f=png&s=316686">
+<meta property="og:updated_time" content="2018-04-16T06:23:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript原型与原型链">
+<meta name="twitter:description" content="前言原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识） 源代码：GitHub 原型1. 原型是什么？在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。 我">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414fdfc08?w=1378&h=514&f=png&s=69237">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2013/04/08/javascript原型与原型链/">
+
+
+
+
+
+  <title>JavaScript原型与原型链 | 小武子博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小武子博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2013/04/08/javascript原型与原型链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript原型与原型链</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-04-08T20:51:07+08:00">
+                2013-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原型，作为前端开发者，或多或少都有听说。你可能一直想了解它，但是由于各种原因还没有了解，现在就跟随我来一起探索它吧。本文将由浅入深，一点一点揭开 JavaScript 原型的神秘面纱。（需要了解基本的 JavaScript 对象知识）</p>
+<p>源代码：<a href="https://github.com/chhpt/JavaScript-Exploration/tree/master/prototype_and_prototype_chain" target="_blank" rel="noopener">GitHub</a></p>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="1-原型是什么？"><a href="#1-原型是什么？" class="headerlink" title="1. 原型是什么？"></a>1. 原型是什么？</h3><p>在我们深入探索之前，当然要先了解原型是什么了，不然一切都无从谈起。谈起原型，那得先从对象说起，且让我们慢慢说起。</p>
+<p>我们都知道，JavaScript 是一门基于对象的脚本语言，但是它却没有类的概念，所以 JavaScript 中的对象和基于类的语言（如 Java）中的对象有所不同。JavaScript 中的对象是无序属性的集合，其属性可以包含基本值，对象或者函数，听起来更像是键值对的集合，事实上也比较类似。有了对象，按理说得有继承，不然对象之间没有任何联系，也就真沦为键值对的集合了。那没有类的 JavaScript 是怎么实现继承的呢？</p>
+<p>我们知道，在 JavaScript 中可以使用构造函数语法（通过 new 调用的函数通常被称为构造函数）来创建一个新的对象，像下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">// 构造函数，无返回值</span><br><span class="line">function Person(name) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">// 通过 new 新建一个对象</span><br><span class="line">var person = new Person(&apos;Mike&apos;);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>这和一般面向对象编程语言中创建对象（Java 或 C++）的语法很类似，只不过是一种简化的设计，<code>new</code> 后面跟的不是类，而是构造函数。这里的构造函数可以看做是一种类型，就像面向对象编程语言中的类，但是这样创建的对象除了属性一样外，并没有其他的任何联系，对象之间无法共享属性和方法。每当我们新建一个对象时，都会方法和属性分配一块新的内存，这是极大的资源浪费。考虑到这一点，JavaScript 的设计者 Brendan Eich 决定为构造函数设置一个属性。这个属性指向一个对象，所有实例对象需要共享的属性和方法，都放在这个对象里面，那些不需要共享的属性和方法，就放在构造函数里面。实例对象一旦创建，将自动引用这个对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，不共享的，另一种是引用的，共享的。这个对象就是原型（prototype）对象，简称为原型。</p>
+<p>我们创建的每个函数都有一个 prototype（原型）属性，这个属性是一个指针，指向一个对象，这个对象就是调用构造函数而创建的对象实例的原型。原型可以包含所有实例共享的属性和方法，也就是说只要是原型有的属性和方法，通过调用构造函数而生成的对象实例都会拥有这些属性和方法。看下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">function Person(name) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.age = &apos;20&apos;;</span><br><span class="line">Person.prototype.sayName = function() &#123;</span><br><span class="line">  console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var person1 = new Person(&apos;Jack&apos;);</span><br><span class="line">var person2 = new Person(&apos;Mike&apos;);</span><br><span class="line"></span><br><span class="line">person1.sayName(); // Jack</span><br><span class="line">person2.sayName(); // Mike</span><br><span class="line">console.log(person1.age); // 20</span><br><span class="line">console.log(person2.age); // 20</span><br></pre></td></tr></table></figure>
+<p>这段代码中我们声明了一个 <code>Person</code> 函数，并在这个函数的原型上添加了 <code>age</code> 属性和 <code>sayName</code> 方法，然后生成了两个对象实例 <code>person1</code> 和 <code>person2</code>，这两个实例分别拥有自己的属性 <code>name</code> 和原型的属性 <code>age</code> 以及方法 <code>sayName</code>。所有的实例对象共享原型对象的属性和方法，那么看起来，原型对象就像是类，我们就可以用原型来实现继承了。</p>
+<h3 id="2-constructor-与-Prototype"><a href="#2-constructor-与-Prototype" class="headerlink" title="2. constructor 与 [[Prototype]]"></a>2. constructor 与 [[Prototype]]</h3><p>我们知道每个函数都有一个 prototype 属性，指向函数的原型，因此当我们拿到一个函数的时候，就可以确定函数的原型。反之，如果给我们一个函数的原型，我们怎么知道这个原型是属于哪个函数的呢？这就要说说原型的 constructor 属性了：</p>
+<blockquote>
+<p>在默认情况下，所有原型对象都会自动获得一个 constructor （构造函数）属性，这个属性包含一个指向 prototype 属性所在函数的指针。</p>
+</blockquote>
+<p>也就是说每个原型都有都有一个 constructor 属性，指向了原型所在的函数，拿前面的例子来说 Person.prototype.constructor 指向 Person。下面是构造函数和原型的关系说明图：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414fdfc08?w=1378&amp;h=514&amp;f=png&amp;s=69237" alt=""></p>
+<p>继续，让我们说说 <code>[[prototype]]</code>。</p>
+<p>当我们调用构造函数创建一个新的实例（新的对象）之后，比如上面例子中的 <code>person1</code>，实例的内部会包含一个指针（内部属性），指向构造函数的原型。ECMA-262 第 5 版中管这个指针叫[[Prototype]]。我们可与更新函数和原型的关系图：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414f54951?w=1370&amp;h=938&amp;f=png&amp;s=121320" alt=""></p>
+<p>不过在脚本中没有标准的方式访问 [[Prototype]] ， 但在 Firefox、Safari 和 Chrome 中可以通过 <code>__proto__</code>属性访问。而在其他实现中，这个属性对脚本则是完全不可见的。不过，要明确的真正重要的一点就是，这个连接存在于实例与构造函数的原型对象之间，而不是存在于实例与构造函数之间。</p>
+<p>在 VSCode 中开启调试模式，我们可以看到这些关系：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e416e2c295?w=826&amp;h=1198&amp;f=png&amp;s=206402" alt=""></p>
+<p>从上图中我们可以看到 <code>Person</code> 的 <code>prototype</code> 属性和 <code>person1</code> 的 <code>__proto__</code> 属性是完全一致的，<code>Person.prototype</code> 包含了一个 <code>constructor</code> 属性，指向了 <code>Person</code> 函数。这些可以很好的印证我们上面所说的构造函数、原型、<code>constructor</code> 以及 <code>__proto__</code> 之间的关系。</p>
+<h3 id="3-对象实例与原型"><a href="#3-对象实例与原型" class="headerlink" title="3. 对象实例与原型"></a>3. 对象实例与原型</h3><p>了解完构造函数，原型，对象实例之间的关系后，下面我们来深入探讨一下对象和原型之间的关系。</p>
+<h4 id="1-判断对象实例和原型之间的关系"><a href="#1-判断对象实例和原型之间的关系" class="headerlink" title="1. 判断对象实例和原型之间的关系"></a>1. 判断对象实例和原型之间的关系</h4><p>因为我们无法直接访问实例对象的 <code>__proto__</code> 属性，所以当我们想要确定一个对象实例和某个原型之间是否存在关系时，可能会有些困难，好在我们有一些方法可以判断。</p>
+<p>我们可以通过 <code>isPrototypeOf()</code> 方法判断某个原型和对象实例是否存在关系，或者，我们也可以使用 ES5 新增的方法 <code>Object.getPrototypeOf()</code> 获取一个对象实例 <code>__proto__</code> 属性的值。看下面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">console.log(Person.prototype.isPrototypeOf(person1)); // true</span><br><span class="line">console.log(Object.getPrototypeOf(person1) == Person.prototype); // true</span><br></pre></td></tr></table></figure>
+<h4 id="2-对象实例属性和方法的获取"><a href="#2-对象实例属性和方法的获取" class="headerlink" title="2. 对象实例属性和方法的获取"></a>2. 对象实例属性和方法的获取</h4><p>每当代码读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先从对象实例本身开始。如果在实例对象中找到了具有给定名字的属性，则返回该属性的值。如果没有找到，则继续搜索 <code>__proto__</code> 指针指向的原型对象，在原型对象中查找具有给定名字的属性，如果在原型对象中找到了这个属性，则返回该属性的值。如果还找不到，就会接着查找原型的原型，直到最顶层为止。这正是多个对象实例共享原型所保存的属性和方法的基本原理。</p>
+<p>虽然可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值。我们在实例中添加的一个属性，会屏蔽原型中的同名属性。另外，通过 <code>hasOwnProperty</code> 方法能判断对象实例中是否存在某个属性（不能判断对象原型中是否存在该属性）。来看下面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">function Person()&#123; &#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.name = &apos;Nicholas&apos;;</span><br><span class="line">Person.prototype.age = 29;</span><br><span class="line">Person.prototype.job = &apos;Software Engineer&apos;;</span><br><span class="line">Person.prototype.sayName = function()&#123; console.log(this.name); &#125;;</span><br><span class="line"></span><br><span class="line">var person1 = new Person();</span><br><span class="line">var person2 = new Person();</span><br><span class="line"></span><br><span class="line">// 注意，此处不能用 name，因为函数本身存在 name 属性</span><br><span class="line">console.log(person1.hasOwnProperty(&apos;age&apos;)); // false</span><br><span class="line">console.log(Person.hasOwnProperty(&apos;age&apos;)); // false</span><br><span class="line">person1.name = &apos;Greg&apos;;</span><br><span class="line">console.log(person1.hasOwnProperty(&apos;name&apos;)); // true</span><br><span class="line">console.log(person1.name); //&quot;Greg&quot;——来自实例</span><br><span class="line">console.log(person2.name); //&quot;Nicholas&quot;——来自原型</span><br></pre></td></tr></table></figure>
+<h4 id="3-in-操作符"><a href="#3-in-操作符" class="headerlink" title="3. in 操作符"></a>3. in 操作符</h4><p>有两种方式使用 in 操作符：</p>
+<ul>
+<li><p>单独使用</p>
+<blockquote>
+<p>在单独使用时，in 操作符会在通过对象能够访问给定属性时返回 true，无论该属性存在于实例中还是原型中。</p>
+</blockquote>
+</li>
+<li><p>for-in 循环中使用。</p>
+<blockquote>
+<p>在使用 for-in 循环时，返回的是所有能够通过对象访问的、可枚举的（enumerated）属性，其中既包括存在于实例中的属性， 也包括存在于原型中的属性。如果需要获取所有的属性（包括不可枚举的属性），可以使用 Object.getOwnPropertyNames() 方法。</p>
+</blockquote>
+</li>
+</ul>
+<p>看下面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">function Person()&#123;</span><br><span class="line">  this.name = &apos;Mike&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.age = 29;</span><br><span class="line">Person.prototype.job = &apos;Software Engineer&apos;;</span><br><span class="line">Person.prototype.sayName = function()&#123; console.log(this.name); &#125;;</span><br><span class="line"></span><br><span class="line">var person = new Person();</span><br><span class="line"></span><br><span class="line">for(var item in person) &#123;</span><br><span class="line">  console.log(item); // name age job sayName</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&apos;name&apos; in person); // true - 来自实例</span><br><span class="line">console.log(&apos;age&apos; in person); //  true - 来自原型</span><br></pre></td></tr></table></figure>
+<h4 id="4-原型的动态性"><a href="#4-原型的动态性" class="headerlink" title="4. 原型的动态性"></a>4. 原型的动态性</h4><p>由于在对象中查找属性的过程是一次搜索，而实例与原型之间的连接只不过是一个指针，而非一个副本，因此我们对原型对象所做的任何修改都能够立即从实例上反映出来——即使是先创建了实例后修改原型也照样如此：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">var person = new Person();</span><br><span class="line"></span><br><span class="line">Person.prototype.sayHi = function()&#123; console.log(&quot;hi&quot;); &#125;;</span><br><span class="line">person.sayHi(); // &quot;hi&quot;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，先创建了 <code>Person</code> 的一个实例，并将其保存在 <code>person</code> 中。然后，下一条语句在 <code>Person.prototype</code> 中添加了一个方法 <code>sayHi()</code>。即使 <code>person</code> 实例是在添加新方法之前创建的，但它仍然可以访问这个新方法。在调用这个方法时，首先会查找 <code>person</code> 实例中是否有这个方法，发现没有，然后到 <code>person</code> 的原型对象中查找，原型中存在这个方法，查找结束。；</p>
+<p>但是下面这种代码所得到的结果就完全不一样了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">function Person() &#123;&#125;</span><br><span class="line"></span><br><span class="line">var person = new Person();</span><br><span class="line"></span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">  constructor: Person,</span><br><span class="line">  name: &quot;Nicholas&quot;,</span><br><span class="line">  age: 29,</span><br><span class="line">  job: &quot;Software Engineer&quot;,</span><br><span class="line">  sayName: function () &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.sayName(); // error</span><br></pre></td></tr></table></figure>
+<p>仔细观察上面的代码，我们直接用对象字面量语法给 <code>Person.prototype</code> 赋值，这似乎没有什么问题。但是我们要知道字面量语法会生成一个新的对象，也就是说这里的 <code>Person.prototype</code> 是一个新的对象，和 <code>person</code> 的 <code>__proto__</code> 属性不再有任何关系了。此时，我们再尝试调用 <code>sayName</code> 方法就会报错，因为 <code>person</code> 的 <code>__proto__</code> 属性指向的还是原来的原型对象，而原来的原型对象上并没有 <code>sayName</code> 方法，所以就会报错。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h3 id="1-原型的原型"><a href="#1-原型的原型" class="headerlink" title="1. 原型的原型"></a>1. 原型的原型</h3><p>在前面的例子，我们是直接在原型上添加属性和方法，或者用一个新的对象赋值给原型，那么如果我们让原型对象等于另一个类型的实例，结果会怎样呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">function Person() &#123;</span><br><span class="line">  this.age = &apos;20&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.weight = &apos;120&apos;;</span><br><span class="line"></span><br><span class="line">function Engineer() &#123;</span><br><span class="line">  this.work = &apos;Front-End&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Engineer.prototype = new Person();</span><br><span class="line"></span><br><span class="line">Engineer.prototype.getAge = function() &#123;</span><br><span class="line">  console.log(this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var person = new Person();</span><br><span class="line">var engineer = new Engineer();</span><br><span class="line"></span><br><span class="line">console.log(person.age); // 20</span><br><span class="line">engineer.getAge(); // 20</span><br><span class="line">console.log(engineer.weight); // 120</span><br><span class="line">console.log(Engineer.prototype.__proto__ == Person.prototype); // true</span><br></pre></td></tr></table></figure>
+<p>在上面代码中，有两个构造函数 <code>Person</code> 和 <code>Engineer</code>，可以看做是两个类型，<code>Engineer</code> 的原型是 <code>Person</code> 的一个实例，<strong>也就是说 <code>Engineer</code> 的原型指向了 <code>Person</code> 的原型</strong>（注意上面的最后一行代码）。然后我们分别新建一个 <code>Person</code> 和 <code>Engineer</code> 的实例对象，可以看到 <code>engineer</code> 实例对象能够访问到 <code>Person</code> 的 <code>age</code> 和 <code>weight</code> 属性，这很好理解：<code>Engineer</code> 的原型是 <code>Person</code> 的实例对象，<code>Person</code> 的实例对象包含了 <code>age</code> 属性，而 <code>weight</code> 属性是 <code>Person</code> 原型对象的属性，<code>Person</code> 的实例对象自然可以访问原型中的属性，同理，<code>Engineer</code> 的实例对象 <code>engineer</code> 也能访问 <code>Engineer</code> 原型上的属性，间接的也能访问 <code>Person</code> 原型的属性。</p>
+<p>看起来关系有些复杂，不要紧，我们用一张图片来解释这些关系：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e414d534ef?w=1362&amp;h=1536&amp;f=png&amp;s=222883" alt=""></p>
+<p>是不是一下就很清楚了，顺着图中红色的线，<code>engineer</code> 实例对象可以顺利的获取 <code>Person</code> 实例的属性以及 <code>Person</code> 原型的属性。至此，已经铺垫的差不多了，我们理解了原型的原型之后，也就很容易理解原型链了。</p>
+<h3 id="2-原型链"><a href="#2-原型链" class="headerlink" title="2. 原型链"></a>2. 原型链</h3><p>原型链其实不难理解，上图中的红色线组成的链就可以称之为原型链，只不过这是一个不完整的原型链。我们可以这样定义原型链：</p>
+<blockquote>
+<p>原型对象可以包含一个指向另一个原型（原型2）的指针，相应地，另一个原型（原型2）中也可以包含着一个指向对应构造函数（原型2 的构造函数）的指针。假如另一个原型（原型2）又是另一个类型（原型3 的构造函数）的实例，那么上述关系依然成立，如此层层递进，就构成了实例与原型的链条。这就是所谓原型链的基本概念。</p>
+</blockquote>
+<p>结合上面的图，这个概念不难理解。上面的图中只有两个原型，那么当有更多的原型之后，这个红色的线理论上可以无限延伸，也就构成了原型链。</p>
+<p>通过实现原型链，本质上扩展了前面提到过的原型搜索机制：当以读取模式访问一个实例的属性时，首先会在实例中搜索该属性。如果没有找到该属性，则会继续搜索实例的原型。在通过原型链实现继承的情况下，搜索过程就得以沿着原型链继续向上。在找不到属性或方法的情况下，搜索过程总是要一环一环地前行到原型链末端才会停下来。</p>
+<p>那么原型链的末端又是什么呢？我们要知道，所有函数的 <code>默认原型</code> 都是 Object 的实例，因此默认原型都会包含一个内部指针，指向 <code>Object.prototype</code>。我们可以在上面代码的尾部加上一行代码进行验证：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">console.log(Person.prototype.__proto__ == Object.prototype); // true</span><br></pre></td></tr></table></figure>
+<p>那 <code>Object.prototype</code> 的原型又是什么呢，不可能没有终点啊？聪明的小伙伴可能已经猜到了，没错，就是 <code>null</code>，null 表示此处不应该有值，也就是终点了。我们可以在 Chrome 的控制台或 Node 中验证一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">console.log(Object.prototype.__proto__); // null</span><br></pre></td></tr></table></figure>
+<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p>Constructor：保存着用于创建当前对象的函数。</p>
+<p>hasOwnProperty(propertyName)：用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中，作为参数的属性名（propertyName）必须以字符串形式指定(例如：o.hasOwnProperty(“name”))</p>
+<p>isPrototypeOf(object)：用于检查传入的对象是否是另一个对象的原型。</p>
+<p>toLocaleString() ：返回对象的字符串表示，该字符串与执行环境的地区对应。</p>
+<p>toString() ：返回对象的字符串表示。</p>
+<p>valueOf() ：返回对象的字符串、数值或布尔值表示。通常与 toString() 方法的返回值相同。</p>
+<p>instanceof 用来判断一个构造函数的prototype属性所指向的对象是否存在另外一个要检测对象的原型链上</p>
+<p>我们更新一下关系图：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/14/15fb87e41507798b?w=2054&amp;h=1454&amp;f=png&amp;s=316686" alt=""></p>
+<p>至此，一切已经很清楚了，下面我们来说说原型链的用处。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li>《JavaScript 高级程序设计》</li>
+<li><a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">Javascript深入之从原型到原型链</a></li>
+<li><a href="https://juejin.im/post/5a0a5dc4f265da430b7abffb?utm_source=gold_browser_extension" target="_blank" rel="noopener">深入理解JavaScript之从原型到原型链</a></li>
+<li><a href="https://segmentfault.com/a/1190000011880268" target="_blank" rel="noopener">原型图解</a></li>
+</ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Tony 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Tony 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/04/08/javascript之DOM学习/" rel="next" title="javascript之DOM学习">
+                <i class="fa fa-chevron-left"></i> javascript之DOM学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/04/08/javascript之闭包/" rel="prev" title="javascript之s闭包">
+                javascript之s闭包 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tony</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">2.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型是什么？"><span class="nav-number">2.1.</span> <span class="nav-text">1. 原型是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-constructor-与-Prototype"><span class="nav-number">2.2.</span> <span class="nav-text">2. constructor 与 [[Prototype]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-对象实例与原型"><span class="nav-number">2.3.</span> <span class="nav-text">3. 对象实例与原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-判断对象实例和原型之间的关系"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 判断对象实例和原型之间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对象实例属性和方法的获取"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 对象实例属性和方法的获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-in-操作符"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. in 操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-原型的动态性"><span class="nav-number">2.3.4.</span> <span class="nav-text">4. 原型的动态性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">3.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型的原型"><span class="nav-number">3.1.</span> <span class="nav-text">1. 原型的原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-原型链"><span class="nav-number">3.2.</span> <span class="nav-text">2. 原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法"><span class="nav-number">3.3.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">3.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

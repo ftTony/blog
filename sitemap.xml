@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/05/07/%E8%B7%A8%E5%9F%9F/</loc>
+    
+    <lastmod>2018-04-17T12:23:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
+    
+    <lastmod>2018-04-16T06:23:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94CRSF/</loc>
     
-    <lastmod>2018-04-16T03:50:58.000Z</lastmod>
+    <lastmod>2018-04-16T03:54:55.000Z</lastmod>
     
   </url>
   
@@ -366,13 +380,6 @@
   </url>
   
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/javascript%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
-    
-    <lastmod>2018-04-08T03:32:15.809Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8B%E9%97%AD%E5%8C%85/</loc>
     
     <lastmod>2018-04-08T03:31:46.827Z</lastmod>
@@ -397,13 +404,6 @@
     <loc>http://blog.xiaowuzi.info/2014/04/07/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</loc>
     
     <lastmod>2018-04-07T15:25:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/05/07/%E8%B7%A8%E5%9F%9F/</loc>
-    
-    <lastmod>2018-04-07T15:16:07.000Z</lastmod>
     
   </url>
   

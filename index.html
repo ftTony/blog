@@ -1817,6 +1817,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1845,9 +1867,24 @@
 
       
         
-          
-            
-          
+          <h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3><p>跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。</p>
+<h4 id="广义的跨域："><a href="#广义的跨域：" class="headerlink" title="广义的跨域："></a>广义的跨域：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.) 资源跳转： A链接、重定向、表单提交</span><br><span class="line">2.) 资源嵌入： &lt;link&gt;、&lt;script&gt;、&lt;img&gt;、&lt;frame&gt;等dom标签，还有样式中background:url()、@font-face()等文件外链</span><br><span class="line">3.) 脚本请求： js发起的ajax请求、dom和js对象的跨域操作等</span><br></pre></td></tr></table></figure>
+<p>其实我们通常所说的跨域是狭义的，是由浏览器同源策略限制的类请求场景。</p>
+<h4 id="什么是同源策略？"><a href="#什么是同源策略？" class="headerlink" title="什么是同源策略？"></a>什么是同源策略？</h4><p>同源策略/SOP（Same origin policy）是一种约定，由Netscape公司1995年引入浏览器，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。</p>
+<p>同源策略限制以下几种行为：</p>
+<blockquote>
+<p>1.) Cookie、LocalStorage 和 IndexDB 无法读取</p>
+<p>2.) DOM 和 Js对象无法获得</p>
+<p>3.) AJAX 请求不能发送</p>
+</blockquote>
+<h4 id="常见跨域场景"><a href="#常见跨域场景" class="headerlink" title="常见跨域场景"></a>常见跨域场景</h4>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/07/跨域/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
