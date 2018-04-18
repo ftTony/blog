@@ -296,160 +296,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/07/javascript引擎的执行机制/" itemprop="url">javascript引擎的执行机制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
-                2016-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
-<li>js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</li>
-<li>js中的event loop(1)</li>
-<li>js中的event loop(2)</li>
-<li>说说setTimeout</li>
-</ol>
-<h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
-<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/04/07/javascript引擎的执行机制/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/http详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1397,7 +1243,16 @@
       
         
           
-            
+            <ul>
+<li>白屏时间</li>
+<li>首屏时间</li>
+<li>用户可交互时间</li>
+<li>总下载时间</li>
+<li>DNS解析时间</li>
+<li>TCP连接时间</li>
+<li>HTTP请求时间</li>
+<li>HTTP响应时间</li>
+</ul>
           
         
       
@@ -1537,12 +1392,32 @@
 
       
         
-          
-            
-          
+          <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ul>
+<li>网页内容</li>
+<li>服务器</li>
+<li>Cookie</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>图片</li>
+</ul>
+<h3 id="网页内容"><a href="#网页内容" class="headerlink" title="网页内容"></a>网页内容</h3><h4 id="1-减少http请求次数"><a href="#1-减少http请求次数" class="headerlink" title="1. 减少http请求次数"></a>1. 减少http请求次数</h4><p>80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧。</p>
+<ul>
+<li>捆绑文件: 现在有很多现成的库可以帮你将多个脚本文件捆绑成一个文件，将多个样式表文件捆绑成一个文件，以此来减少文件的下载次数。</li>
+<li>CSS Sprites: 就是把多个图片拼成一副图片，然后通过CSS来控制在什么地方具体显示这整张图片的什么位置。</li>
+<li>Image Maps： 也是将多幅图拼在一起，然后通过坐标来控制显示导航.</li>
+<li>Inline images: 通过编码的字符串将图片内嵌到网页文本中。这个有点不好，增加了css文件体质的大小</li>
+</ul>
+<h4 id="2-减少DNS查询次数"><a href="#2-减少DNS查询次数" class="headerlink" title="2. 减少DNS查询次数"></a>2. 减少DNS查询次数</h4><p>DNS查询也消耗响应时间，如果我们的网页内容来自各个不同的domain (比如嵌入了开放广告，引用了外部图片或脚本)，那么客户端首次解析这些domain也需要消耗一定的时间。DNS查询结果缓存在本地系统和浏览器中一段时间，所以DNS查询一般是对首次访问响应速度有所影响。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/04/08/前端性能(一)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1759,6 +1634,147 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/04/08/webpack学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/04/08/webpack学习/" itemprop="url">webpack学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-08T11:06:41+08:00">
+                2015-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1809,7 +1825,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

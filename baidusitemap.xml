@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%BA%8C)/</loc>
+    <lastmod>2018-04-18T03:39:11.854Z</lastmod>
+    <data>
+        <display>
+        <title>前端性能(二)</title>
+        <pubTime>2015-04-08T03:23:42.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="性能" url="http://blog.xiaowuzi.info/categories/%E6%80%A7%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%B8%80)/</loc>
+    <lastmod>2018-04-18T03:38:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端性能(一)</title>
+        <pubTime>2015-04-08T03:22:46.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="性能" url="http://blog.xiaowuzi.info/categories/%E6%80%A7%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
+    <lastmod>2018-04-17T12:47:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>http缓存</title>
+        <pubTime>2016-04-08T02:45:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/05/07/%E8%B7%A8%E5%9F%9F/</loc>
     <lastmod>2018-04-17T12:23:07.000Z</lastmod>
     <data>
@@ -244,24 +298,6 @@
         <display>
         <title>http详解</title>
         <pubTime>2016-04-07T12:45:48.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
-    <lastmod>2018-04-14T12:49:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>http缓存</title>
-        <pubTime>2016-04-08T02:45:48.000Z</pubTime>
         
          
            
@@ -840,42 +876,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%BA%8C)/</loc>
-    <lastmod>2018-04-09T13:15:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端性能(二)</title>
-        <pubTime>2015-04-08T03:23:42.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="性能" url="http://blog.xiaowuzi.info/categories/%E6%80%A7%E8%83%BD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%B8%80)/</loc>
-    <lastmod>2018-04-09T13:15:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端性能(一)</title>
-        <pubTime>2015-04-08T03:22:46.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="性能" url="http://blog.xiaowuzi.info/categories/%E6%80%A7%E8%83%BD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2016/04/07/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-04-09T13:13:53.000Z</lastmod>
     <data>
@@ -1046,21 +1046,6 @@
         <display>
         <title>防抖与节流</title>
         <pubTime>2014-04-07T15:21:51.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/15/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/</loc>
-    <lastmod>2018-04-07T15:15:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>web性能优化手段</title>
-        <pubTime>2016-04-15T14:46:53.000Z</pubTime>
         
          
            

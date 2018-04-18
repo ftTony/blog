@@ -117,14 +117,24 @@
 
 
 
+<meta name="description" content="内容 网页内容 服务器 Cookie CSS JavaScript 图片  网页内容1. 减少http请求次数80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧。  捆绑文件: 现在有很多现成的库可以帮你将多个脚本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端性能(一)">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2015/04/08/前端性能(一)/index.html">
 <meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="内容 网页内容 服务器 Cookie CSS JavaScript 图片  网页内容1. 减少http请求次数80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧。  捆绑文件: 现在有很多现成的库可以帮你将多个脚本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T13:15:05.000Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/performance/271803378472085.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/performance/271806366758617.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/performance/271816592069038.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/performance/271811179878326.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/performance/271812081441450.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/performance/271818200509469.png">
+<meta property="og:updated_time" content="2018-04-18T03:38:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能(一)">
+<meta name="twitter:description" content="内容 网页内容 服务器 Cookie CSS JavaScript 图片  网页内容1. 减少http请求次数80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧。  捆绑文件: 现在有很多现成的库可以帮你将多个脚本">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/performance/271803378472085.png">
 
 
 
@@ -386,7 +396,151 @@
       
 
       
-        
+        <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ul>
+<li>网页内容</li>
+<li>服务器</li>
+<li>Cookie</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>图片</li>
+</ul>
+<h3 id="网页内容"><a href="#网页内容" class="headerlink" title="网页内容"></a>网页内容</h3><h4 id="1-减少http请求次数"><a href="#1-减少http请求次数" class="headerlink" title="1. 减少http请求次数"></a>1. 减少http请求次数</h4><p>80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧。</p>
+<ul>
+<li>捆绑文件: 现在有很多现成的库可以帮你将多个脚本文件捆绑成一个文件，将多个样式表文件捆绑成一个文件，以此来减少文件的下载次数。</li>
+<li>CSS Sprites: 就是把多个图片拼成一副图片，然后通过CSS来控制在什么地方具体显示这整张图片的什么位置。</li>
+<li>Image Maps： 也是将多幅图拼在一起，然后通过坐标来控制显示导航.</li>
+<li>Inline images: 通过编码的字符串将图片内嵌到网页文本中。这个有点不好，增加了css文件体质的大小</li>
+</ul>
+<h4 id="2-减少DNS查询次数"><a href="#2-减少DNS查询次数" class="headerlink" title="2. 减少DNS查询次数"></a>2. 减少DNS查询次数</h4><p>DNS查询也消耗响应时间，如果我们的网页内容来自各个不同的domain (比如嵌入了开放广告，引用了外部图片或脚本)，那么客户端首次解析这些domain也需要消耗一定的时间。DNS查询结果缓存在本地系统和浏览器中一段时间，所以DNS查询一般是对首次访问响应速度有所影响。<br><a id="more"></a></p>
+<h4 id="3-避免页面跳转"><a href="#3-避免页面跳转" class="headerlink" title="3. 避免页面跳转"></a>3. 避免页面跳转</h4><p>当客户端收到服务器的跳转回复时，客户端再次根据服务器回复中的location指定的地址再次发送请求，例如以下跳转回复。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 301 Moved Permanently</span><br><span class="line">Location: http://example.com/newuri</span><br><span class="line">Content-Type: text/html</span><br></pre></td></tr></table></figure>
+<p>当客户端遇到这种回复的时候，用户只能等待客户端再次发送请求，有的网站甚至会一直跳n次，跳到他想带你去的地方…当然在这个时候用户看不到任何页面内容，只有浏览器的进度条一直在刷新。</p>
+<h4 id="4-缓存Ajax"><a href="#4-缓存Ajax" class="headerlink" title="4. 缓存Ajax"></a>4. 缓存Ajax</h4><p>Ajax可以帮助我们异步的下载网页内容，但是有些网页内容即使是异步的，用户还是在等待它的返回结果，例如ajax的返回是用户联系人的下拉列表。所以我们还是要注意尽量应用以下规则提高ajax的响应速度。</p>
+<ul>
+<li>添加Expires 或 Cache-Control报文头使回复可以被客户端缓存</li>
+<li>压缩回复内容</li>
+<li>减少dns查询</li>
+<li>精简javascript</li>
+<li>避免跳转</li>
+<li>配置Etags</li>
+</ul>
+<h4 id="5-延迟加载"><a href="#5-延迟加载" class="headerlink" title="5. 延迟加载"></a>5. 延迟加载</h4><p>这里讨论延迟加载需要我们知道我们的网页最初加载需要的最小内容集是什么。剩下的内容就可以推到延迟加载的集合中。</p>
+<p>Javascript是典型的可以延迟加载内容。一个比较激进的做法是开发网页时先确保网页在没有Javascript的时候也可以基本工作，然后通过延迟加载脚本来完成一些高级的功能。</p>
+<h4 id="6-提前加载"><a href="#6-提前加载" class="headerlink" title="6. 提前加载"></a>6. 提前加载</h4><p>与延迟加载目的相反，提前加载的是为了提前加载接下来网页中访问的资源，下面是提前加载的类型</p>
+<p>无条件提前加载：当前网页加载完成后，马上去下载一些其他的内容</p>
+<p>有条件加载：根据用户的输入推断需要加载的内容</p>
+<p>有预期的的加载：这种情况一般发生在网页重新设计时，由于用户经常访问旧网页，本地对旧的网页内容缓存充分从而显得旧网页速度很快，而新的网页内容却没有缓存，设计者可以在旧网页的内容中预先加载一些新网页中可能用到的内容，这样新的网页就会生下来一些需要下载的资源。</p>
+<h4 id="7-减少DOM元素数量"><a href="#7-减少DOM元素数量" class="headerlink" title="7. 减少DOM元素数量"></a>7. 减少DOM元素数量</h4><p>网页中元素过多对网页的加载和脚本的执行都是沉重的负担，500个元素和5000个元素在加载速度上会有很大差别。</p>
+<h4 id="8-根据域名划分内容"><a href="#8-根据域名划分内容" class="headerlink" title="8. 根据域名划分内容"></a>8. 根据域名划分内容</h4><p>浏览器一般对同一个域的下载连接数有所限制，按照域名划分下载内容可以浏览器增大并行下载连接，但是注意控制域名使用在2-4个之间，不然dns查询也是个问题。</p>
+<p>一般网站规划会将静态资源放在类似于static.example.com，动态内容放在<a href="http://www.example.com上。这样做还有一个好处是可以在静态的域名上避免使用cookie。后面我们会在cookie的规则中提到。" target="_blank" rel="noopener">www.example.com上。这样做还有一个好处是可以在静态的域名上避免使用cookie。后面我们会在cookie的规则中提到。</a>   </p>
+<h4 id="9-减少iframe数量"><a href="#9-减少iframe数量" class="headerlink" title="9. 减少iframe数量"></a>9. 减少iframe数量</h4><p>使用iframe要注意理解iframe的优缺点</p>
+<p>优点</p>
+<ul>
+<li>可以用来加载速度较慢的内容，例如广告。</li>
+<li>安全沙箱保护。浏览器会对iframe中的内容进行安全控制。</li>
+<li>脚本可以并行下载</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>即使iframe内容为空也消耗加载时间</li>
+<li>会阻止页面加载</li>
+<li>没有语义</li>
+</ul>
+<h4 id="10-避免404"><a href="#10-避免404" class="headerlink" title="10. 避免404"></a>10. 避免404</h4><p>404我们都不陌生，代表服务器没有找到资源，我们要特别要注意404的情况不要在我们提供的网页资源上，客户端发送一个请求但是服务器却返回一个无用的结果，时间浪费掉了。</p>
+<p>更糟糕的是我们网页中需要加载一个外部脚本，结果返回一个404，不仅阻塞了其他脚本下载，下载回来的内容(404)客户端还会将其当成Javascript去解析。</p>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="1-使用CDN"><a href="#1-使用CDN" class="headerlink" title="1. 使用CDN"></a>1. 使用CDN</h4><p>再次强调第一条黄金定律，减少网页内容的下载时间。提高下载速度还可以通过CDN(内容分发网络)来提升。CDN通过部署在不同地区的服务器来提高客户的下载速度。</p>
+<h4 id="2-添加Expires-或Cache-Control报文头"><a href="#2-添加Expires-或Cache-Control报文头" class="headerlink" title="2. 添加Expires 或Cache-Control报文头"></a>2. 添加Expires 或Cache-Control报文头</h4><ul>
+<li>对于静态内容添加Expires，将静态内容设为永不过期，或者很长时间以后。</li>
+<li>对于动态内容应用合适的Cache-Control，让浏览器根据条件来发送请求。</li>
+</ul>
+<p>关于Expires或Cache-Control内容可以参考<a href="http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/">http缓存</a></p>
+<h4 id="3-Gzip压缩传输文件"><a href="#3-Gzip压缩传输文件" class="headerlink" title="3. Gzip压缩传输文件"></a>3. Gzip压缩传输文件</h4><p>Gzip通常可以减少70%网页内容的大小，包括脚本、样式表、图片等文件。Gzip比deflate更高效，主流服务器都有相应的压缩支持模块。</p>
+<h4 id="4-配置ETags"><a href="#4-配置ETags" class="headerlink" title="4. 配置ETags"></a>4. 配置ETags</h4><p>虽然标题叫配制ETags，但是这里你要根据具体情况进行一些判断。首先Etag简单来说是通过一个文件版本标识使得服务器可以轻松判断该请求的内容是否有所更新，如果没有就回复304 (not modified)，从而避免下载整个文件。</p>
+<p>但是Etags的版本信息即使主流服务器未能很好地支持跨服务器的判断，比如你从一个服务器集群中一台得到Etags，然后发送到了另一台那么校验很有可能会失败。</p>
+<h4 id="5-使用GET-Ajax请求"><a href="#5-使用GET-Ajax请求" class="headerlink" title="5. 使用GET Ajax请求"></a>5. 使用GET Ajax请求</h4><p>浏览器在实现XMLHttpRequest POST的时候分成两步，先发header，然后发送数据。而GET却可以用一个TCP报文完成请求。另外GET从语义上来讲是去服务器取数据，而POST则是向服务器发送数据，所以我们使用Ajax请求数据的时候尽量通过GET来完成。</p>
+<h4 id="6-避免空的图片src"><a href="#6-避免空的图片src" class="headerlink" title="6. 避免空的图片src"></a>6. 避免空的图片src</h4><p>空的图片src仍然会使浏览器发送请求到服务器，这样完全是浪费时间，而且浪费服务器的资源。尤其是你的网站每天被很多人访问的时候，这种空请求造成的伤害不容忽略。</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h4 id="1-减少Cookie大小"><a href="#1-减少Cookie大小" class="headerlink" title="1. 减少Cookie大小"></a>1. 减少Cookie大小</h4><ul>
+<li>去除没有必要的cookie，如果网页不需要cookie就完全禁掉</li>
+<li>将cookie的大小减到最小</li>
+<li>注意cookie设置的domain级别，没有必要情况下不要影响到sub-domain</li>
+<li>设置合适的过期时间，比较长的过期时间可以提高响应速度。</li>
+</ul>
+<h4 id="2-页面内容使用无cookie域名"><a href="#2-页面内容使用无cookie域名" class="headerlink" title="2. 页面内容使用无cookie域名"></a>2. 页面内容使用无cookie域名</h4><p>大多数网站的静态资源都没必要cookie，我们可以采用不同的domain来单独存放这些静态文件，这样做不仅可以减少cookie大小从而提高响应速度，还有一个好处是有些proxy拒绝缓存带有cookie的内容，如果能将这些静态资源cookie去除，那就可以得到这些proxy的缓存支持。</p>
+<p>常见的划分domain的方式是将静态文件放在static.example.com，动态内容放在<a href="http://www.example.com。" target="_blank" rel="noopener">www.example.com。</a></p>
+<p>也有一些网站需要在二级域名上应用cookie，所有的子域都会继承，这种情况下一般会再购买一个专门的域名来存放cookie-free的静态资源。</p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h4 id="1-将样式表置顶"><a href="#1-将样式表置顶" class="headerlink" title="1. 将样式表置顶"></a>1. 将样式表置顶</h4><p>经样式表(css)放在网页的HEAD中会让网页显得加载速度更快，因为这样做可以使浏览器逐步加载已将下载的网页内容。这对内容比较多的网页尤其重要，用户不用一直等待在一个白屏上，而是可以先看已经下载的内容。</p>
+<p>如果将样式表放在底部，浏览器会拒绝渲染已经下载的网页，因为大多数浏览器在实现时都努力避免重绘，样式表中的内容是绘制网页的关键信息，没有下载下来之前只好对不起观众了。</p>
+<h4 id="2-避免CSS表达式"><a href="#2-避免CSS表达式" class="headerlink" title="2. 避免CSS表达式"></a>2. 避免CSS表达式</h4><p>CSS表达式可以动态的设置CSS属性，在IE5-IE8中支持，其他浏览器中表达式会被忽略。</p>
+<p>CSS表达式的问题在于它被重新计算的次数远比我们想象的要多，不仅在网页绘制或大小改变时计算，即使我们滚动屏幕或者移动鼠标的时候也在计算，因此我们还是尽量避免使用它来防止使用不当而造成的性能损耗。</p>
+<h4 id="3-用代替-import"><a href="#3-用代替-import" class="headerlink" title="3. 用代替@import"></a>3. 用<link>代替@import</h4><p>避免使用@import的原因很简单，因为它相当于将css放在网页内容底部。</p>
+<h4 id="4-避免使用Filters"><a href="#4-避免使用Filters" class="headerlink" title="4. 避免使用Filters"></a>4. 避免使用Filters</h4><p>AlphaImageLoad也是IE5.5 - IE8中支持，这种滤镜的使用会导致图片在下载的时候阻塞网页绘制，另外使用这种滤镜会导致内存使用量的问题</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><h4 id="1-将脚本置底"><a href="#1-将脚本置底" class="headerlink" title="1. 将脚本置底"></a>1. 将脚本置底</h4><p>HTTP/1.1 specification建议浏览器对同一个hostname不要超过两个并行下载连接， 所以当你从多个domain下载图片的时候可以提高并行下载连接数量。但是当脚本在下载的时候，即使是来自不同的hostname浏览器也不会下载其他资源，因为浏览器要在脚本下载之后依次解析和执行。</p>
+<ul>
+<li>把脚本置底，这样可以让网页渲染所需要的内容尽快加载显示给用户。</li>
+<li>现在主流浏览器都支持defer关键字，可以指定脚本在文档加载后执行。</li>
+<li>HTML5中新加了async关键字，可以让脚本异步执行。</li>
+</ul>
+<h4 id="2-使用外部Javascirpt和CSS文件"><a href="#2-使用外部Javascirpt和CSS文件" class="headerlink" title="2. 使用外部Javascirpt和CSS文件"></a>2. 使用外部Javascirpt和CSS文件</h4><p>使用外部Javascript和CSS文件可以使这些文件被浏览器缓存，从而在不同的请求内容之间重用。</p>
+<p>同时将Javascript和CSS从inline变为external也减小了网页内容的大小。</p>
+<p>使用外部Javascript和CSS文件的决定因素在于这些外部文件的重用率，如果用户在浏览我们的页面时会访问多次相同页面或者可以重用脚本的不同页面，那么外部文件形式可以为你带来很大的好处。但对于用户通常只会访问一次的页面。</p>
+<h4 id="3-精简Javascript和CSS"><a href="#3-精简Javascript和CSS" class="headerlink" title="3. 精简Javascript和CSS"></a>3. 精简Javascript和CSS</h4><p>主要通过打包压缩手段，可以使用webpack等工具。</p>
+<h4 id="4-去除重复脚本"><a href="#4-去除重复脚本" class="headerlink" title="4. 去除重复脚本"></a>4. 去除重复脚本</h4><p>重复的脚本不仅浪费浏览器的下载时间，而且浪费解析和执行时间。一般用来避免引入重复脚本的做法是使用统一的脚本管理模块，这样不仅可以避免重复脚本引入，还可以兼顾脚本依赖管理和版本管理。</p>
+<h4 id="5-减少DOM访问"><a href="#5-减少DOM访问" class="headerlink" title="5. 减少DOM访问"></a>5. 减少DOM访问</h4><ul>
+<li>缓存已经访问过的元素</li>
+<li>Offline更新节点然后再加回DOM Tree</li>
+<li>避免通过Javascript修复layout</li>
+</ul>
+<h4 id="6-使用智能事件处理"><a href="#6-使用智能事件处理" class="headerlink" title="6. 使用智能事件处理"></a>6. 使用智能事件处理</h4><p>这里说智能的事件处理需要开发者对事件处理有更深入的了解，通过事件冒泡。</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><h4 id="1-优化图像"><a href="#1-优化图像" class="headerlink" title="1. 优化图像"></a>1. 优化图像</h4><ul>
+<li>检查GIF图片中图像颜色的数量是否和调色板规格一致。如果你发现图片中只用到了4种颜色，而在调色板的中显示的256色的颜色槽，那么这张图片就还有压缩的空间。可以使用imagemagick检查： </li>
+<li>identify -verbose image.gif</li>
+<li>尝试把GIF格式转换成PNG格式，看看是否节省空间。大多数情况下是可以压缩的。下面这条简单的命令可以安全地把GIF格式转换为PNG格式： </li>
+<li>convert image.gif image.png</li>
+<li>在所有的PNG图片上运行pngcrush（或者其它PNG优化工具）。例如： </li>
+<li>pngcrush image.png -rem alla -reduce -brute result.png</li>
+<li>在所有的JPEG图片上运行jpegtran。这个工具可以对图片中的出现的锯齿等做无损操作，同时它还可以用于优化和清除图片中的注释以及其它无用信息 </li>
+<li>jpegtran -copy none -optimize -perfect src.jpg dest.jpg<h4 id="2-优化CSS-Sprite"><a href="#2-优化CSS-Sprite" class="headerlink" title="2. 优化CSS Sprite"></a>2. 优化CSS Sprite</h4></li>
+<li>Spirite中水平排列图片，垂直排列会增加文件大小；</li>
+<li>Spirite中把颜色较近的组合在一起可以降低颜色数，理想状况是低于256色以便适用PNG8格式；</li>
+<li>不要在Spirite的图像中间留有较大空隙。这虽然不大会增加文件大小,但对于用户代理来说它需要更少的内存来把图片解压为像素地图。100×100的图片为1万像素，1000×1000就是100万像素。<h4 id="3-不要在HTML中缩放图片"><a href="#3-不要在HTML中缩放图片" class="headerlink" title="3. 不要在HTML中缩放图片"></a>3. 不要在HTML中缩放图片</h4>不要通过图片缩放来适应页面，如果你需要小图片，就直接使用小图片吧。<h4 id="4-使用小且可缓存的favicon-ico"><a href="#4-使用小且可缓存的favicon-ico" class="headerlink" title="4. 使用小且可缓存的favicon.ico"></a>4. 使用小且可缓存的favicon.ico</h4></li>
+<li>存在</li>
+<li>文件尽量小，最好小于1k</li>
+<li>设置一个长的过期时间</li>
+</ul>
+<h3 id="测试网页性能工具"><a href="#测试网页性能工具" class="headerlink" title="测试网页性能工具"></a>测试网页性能工具</h3><p>性能监测工具我划分为3类，一类检测规范的遵循情况，一类检测Js的执行效率，还有监控网页的加载速度，如首屏加载时间。</p>
+<h4 id="类型一"><a href="#类型一" class="headerlink" title="类型一"></a>类型一</h4><p>可为项目后续优化提供参考。分数低，不一定网页首屏加载慢。</p>
+<ul>
+<li>yslow（Firfox、chrome的插件）</li>
+</ul>
+<p>按照yahoo!的网页性能优化标准来评分。</p>
+<p><img src="/images/performance/271803378472085.png" alt=""></p>
+<ul>
+<li>pagespeed</li>
+</ul>
+<p>参照google网页性能优化标准来评测，下面是一个网站的评测<br><img src="/images/performance/271806366758617.png" alt=""></p>
+<p>如避免重定向、压缩图片、指定缓存验证工具、启用 Keep-Alive等这些建议在yslow中没有的，所以跑完yslow，可以再跑下pagespeed。</p>
+<h4 id="类型二"><a href="#类型二" class="headerlink" title="类型二"></a>类型二</h4><ul>
+<li>DynaTrace Ajax Edition</li>
+</ul>
+<p>需要本地安装，目前只支持IE，firefox。工具除了提供常规的性能优化建议外，还统计了Js方法的执行时间。</p>
+<p><img src="/images/performance/271816592069038.png" alt=""></p>
+<ul>
+<li>speed tracer<br>google的另外一套工具，speed tracer，追踪加载过程，以图形化方式展示，有执行时间，可以定位到Js代码，但一般都定位到封装库的源码中。</li>
+</ul>
+<p><img src="/images/performance/271811179878326.png" alt=""></p>
+<h3 id="类型三"><a href="#类型三" class="headerlink" title="类型三"></a>类型三</h3><ul>
+<li>基调</li>
+</ul>
+<p>从分布在各省市、运营商的节点，测试出不同的系统、浏览器对同一网页的加载性能、首屏时间、脚本报错统计；更加接近用户角度。需要购买服务。</p>
+<p>下面是某站点一周的首屏加载时间统计</p>
+<p><img src="/images/performance/271812081441450.png" alt=""></p>
+<p>下面是即时监测某网页的一些数据</p>
+<p><img src="/images/performance/271818200509469.png" alt=""></p>
+<p>性能监控还有腾讯优测，或都使用js的performance自行开发。</p>
+<p>参考资料</p>
+<p><a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">雅虎35条军规</a></p>
+<p><a href="http://www.cnblogs.com/developersupport/p/webpage-performance-best-practices.html" target="_blank" rel="noopener">毫秒必争，前端网页性能最佳实践</a></p>
+<p><a href="http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/" target="_blank" rel="noopener">7 天打造前端性能监控系统</a></p>
       
     </div>
     
@@ -503,8 +657,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -519,7 +682,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,6 +727,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页内容"><span class="nav-number">2.</span> <span class="nav-text">网页内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-减少http请求次数"><span class="nav-number">2.1.</span> <span class="nav-text">1. 减少http请求次数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-减少DNS查询次数"><span class="nav-number">2.2.</span> <span class="nav-text">2. 减少DNS查询次数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-避免页面跳转"><span class="nav-number">2.3.</span> <span class="nav-text">3. 避免页面跳转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-缓存Ajax"><span class="nav-number">2.4.</span> <span class="nav-text">4. 缓存Ajax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-延迟加载"><span class="nav-number">2.5.</span> <span class="nav-text">5. 延迟加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-提前加载"><span class="nav-number">2.6.</span> <span class="nav-text">6. 提前加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-减少DOM元素数量"><span class="nav-number">2.7.</span> <span class="nav-text">7. 减少DOM元素数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-根据域名划分内容"><span class="nav-number">2.8.</span> <span class="nav-text">8. 根据域名划分内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-减少iframe数量"><span class="nav-number">2.9.</span> <span class="nav-text">9. 减少iframe数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-避免404"><span class="nav-number">2.10.</span> <span class="nav-text">10. 避免404</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器"><span class="nav-number">3.</span> <span class="nav-text">服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用CDN"><span class="nav-number">3.1.</span> <span class="nav-text">1. 使用CDN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-添加Expires-或Cache-Control报文头"><span class="nav-number">3.2.</span> <span class="nav-text">2. 添加Expires 或Cache-Control报文头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Gzip压缩传输文件"><span class="nav-number">3.3.</span> <span class="nav-text">3. Gzip压缩传输文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-配置ETags"><span class="nav-number">3.4.</span> <span class="nav-text">4. 配置ETags</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-使用GET-Ajax请求"><span class="nav-number">3.5.</span> <span class="nav-text">5. 使用GET Ajax请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-避免空的图片src"><span class="nav-number">3.6.</span> <span class="nav-text">6. 避免空的图片src</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">4.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-减少Cookie大小"><span class="nav-number">4.1.</span> <span class="nav-text">1. 减少Cookie大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-页面内容使用无cookie域名"><span class="nav-number">4.2.</span> <span class="nav-text">2. 页面内容使用无cookie域名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">5.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-将样式表置顶"><span class="nav-number">5.1.</span> <span class="nav-text">1. 将样式表置顶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-避免CSS表达式"><span class="nav-number">5.2.</span> <span class="nav-text">2. 避免CSS表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-用代替-import"><span class="nav-number">5.3.</span> <span class="nav-text">3. 用代替@import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-避免使用Filters"><span class="nav-number">5.4.</span> <span class="nav-text">4. 避免使用Filters</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">6.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-将脚本置底"><span class="nav-number">6.1.</span> <span class="nav-text">1. 将脚本置底</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用外部Javascirpt和CSS文件"><span class="nav-number">6.2.</span> <span class="nav-text">2. 使用外部Javascirpt和CSS文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-精简Javascript和CSS"><span class="nav-number">6.3.</span> <span class="nav-text">3. 精简Javascript和CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-去除重复脚本"><span class="nav-number">6.4.</span> <span class="nav-text">4. 去除重复脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-减少DOM访问"><span class="nav-number">6.5.</span> <span class="nav-text">5. 减少DOM访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-使用智能事件处理"><span class="nav-number">6.6.</span> <span class="nav-text">6. 使用智能事件处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">7.</span> <span class="nav-text">图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-优化图像"><span class="nav-number">7.1.</span> <span class="nav-text">1. 优化图像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-优化CSS-Sprite"><span class="nav-number">7.2.</span> <span class="nav-text">2. 优化CSS Sprite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-不要在HTML中缩放图片"><span class="nav-number">7.3.</span> <span class="nav-text">3. 不要在HTML中缩放图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-使用小且可缓存的favicon-ico"><span class="nav-number">7.4.</span> <span class="nav-text">4. 使用小且可缓存的favicon.ico</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试网页性能工具"><span class="nav-number">8.</span> <span class="nav-text">测试网页性能工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类型一"><span class="nav-number">8.1.</span> <span class="nav-text">类型一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型二"><span class="nav-number">8.2.</span> <span class="nav-text">类型二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型三"><span class="nav-number">9.</span> <span class="nav-text">类型三</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
