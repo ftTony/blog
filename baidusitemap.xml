@@ -4,8 +4,80 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2014/02/08/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-04-20T12:15:49.930Z</lastmod>
+    <data>
+        <display>
+        <title>linux基本命令</title>
+        <pubTime>2014-02-08T03:06:57.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.xiaowuzi.info/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/08/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-04-20T09:48:54.870Z</lastmod>
+    <data>
+        <display>
+        <title>git常用命令</title>
+        <pubTime>2014-04-08T03:08:54.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/19/vim%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-04-19T09:18:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>vim使用</title>
+        <pubTime>2015-04-19T08:52:27.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.xiaowuzi.info/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/19/bash%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-19T09:17:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>bash学习</title>
+        <pubTime>2015-04-19T08:52:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.xiaowuzi.info/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%BA%8C)/</loc>
-    <lastmod>2018-04-18T03:39:11.854Z</lastmod>
+    <lastmod>2018-04-19T08:18:09.000Z</lastmod>
     <data>
         <display>
         <title>前端性能(二)</title>
@@ -23,7 +95,7 @@
     
   <url>
     <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%B8%80)/</loc>
-    <lastmod>2018-04-18T03:38:28.000Z</lastmod>
+    <lastmod>2018-04-19T07:55:22.000Z</lastmod>
     <data>
         <display>
         <title>前端性能(一)</title>
@@ -756,42 +828,6 @@
         <display>
         <title>webpack学习</title>
         <pubTime>2015-04-08T03:06:41.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2014/02/08/linux%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:23:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>linux学习</title>
-        <pubTime>2014-02-08T03:06:57.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.xiaowuzi.info/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2014/04/08/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:22:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>git常用命令学习</title>
-        <pubTime>2014-04-08T03:08:54.000Z</pubTime>
         
          
            

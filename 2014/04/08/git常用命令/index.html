@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="分支模型用 git flow 初始化工程目录完成后，只能看到两个分支（长期分支）： master 分支： 用于上线的分支，保护性分支，只包含经过测试的稳定代码，开发人员不能直接工作在此分支上，也不能直接提交改动到 master 分支上。 develop分支： 是开发人员进行任何新的开发的基础分支，当开始一个新的feature 分支的时候，要从 develop 分出去；另外此分支也汇集所有的已完成的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2014/04/08/git常用命令/index.html">
+<meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="分支模型用 git flow 初始化工程目录完成后，只能看到两个分支（长期分支）： master 分支： 用于上线的分支，保护性分支，只包含经过测试的稳定代码，开发人员不能直接工作在此分支上，也不能直接提交改动到 master 分支上。 develop分支： 是开发人员进行任何新的开发的基础分支，当开始一个新的feature 分支的时候，要从 develop 分出去；另外此分支也汇集所有的已完成的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/git/162e212a2aefef98.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/git/162e214ce0328177.png">
+<meta property="og:updated_time" content="2018-04-20T09:48:54.870Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="分支模型用 git flow 初始化工程目录完成后，只能看到两个分支（长期分支）： master 分支： 用于上线的分支，保护性分支，只包含经过测试的稳定代码，开发人员不能直接工作在此分支上，也不能直接提交改动到 master 分支上。 develop分支： 是开发人员进行任何新的开发的基础分支，当开始一个新的feature 分支的时候，要从 develop 分出去；另外此分支也汇集所有的已完成的">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/git/162e212a2aefef98.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2014/04/08/git常用命令/">
+
+
+
+
+
+  <title>git常用命令 | 小武子博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小武子博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/04/08/git常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git常用命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-08T11:08:54+08:00">
+                2014-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="分支模型"><a href="#分支模型" class="headerlink" title="分支模型"></a>分支模型</h3><p>用 git flow 初始化工程目录完成后，只能看到两个分支（长期分支）：</p>
+<p><strong>master 分支：</strong> 用于上线的分支，保护性分支，只包含经过测试的稳定代码，开发人员不能直接工作在此分支上，也不能直接提交改动到 master 分支上。</p>
+<p><strong>develop分支：</strong> 是开发人员进行任何新的开发的基础分支，当开始一个新的feature 分支的时候，要从 develop 分出去；另外此分支也汇集所有的已完成的功能，等待合并到 master 分支上线。上面两个分支被称为 长期分支  ，存在于项目的整个生命周期中，其他分支，是临时性的，根据需要来创建，当完成了自己的任务后，就会被删掉。</p>
+<p><strong>feature 分支：</strong> 平常的开发工作使用最频繁的分支。<br><strong>创建功能分支：</strong><br>如下命令会创建一个名为”feature/” 的功能分支，该分支默认从 develop检出，在做功能性开发的时候，检出一个独立的分支，是版本控制中一个重要 的原则。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow feature start &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
+<p>完成功能分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow feature finish &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
+<p>该命令会把我们在当前分支的代码整合到‘develop’分支中去，之后，git-flow 会进行清理操作，删除当下完成的功能分支，将分支切换到‘develop’。</p>
+<p><strong>release 分支：</strong></p>
+<p>创建 release 分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow release start 1.1.5</span><br></pre></td></tr></table></figure>
+<p>当你认为现在的‘develop’分支的代码已经是一个成熟的 release 版本的时候，这意味着：首先它包括所有新功能和必要的修复；其二，它已经被彻底的测试过了。如果上述两点都满足，那就是时候创建 release 分支了。<br>note：release 分支是使用版本号命名的，这个命名方案会让 Git-flow在我们完成 release 后，适当的自动去标记那些 release 提交。</p>
+<p>完成 release 分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow release finish 1.1.5</span><br></pre></td></tr></table></figure>
+<p>上述命令会完成如下一系列操作：</p>
+<ul>
+<li>git-flow 会拉取远程仓库，确保目前是最新的版本。</li>
+<li>release 内容会被合并到 master和develop两个长期分支中去。这样不仅产品代码是最新的，新开的功能分支也将基于最新的代码。</li>
+<li>为了便于识别和做历史参考，release 提交会被标记上这个 release 的名字</li>
+<li>清理操作，版本分支会被删除，并且回到 develop 分支。</li>
+</ul>
+<blockquote>
+<p>note： 从 Git 的角度看来，release 版本现在已经完成，依据设置，对 master的提交可能已经触发了编译部署流程。或者手动部署。</p>
+</blockquote>
+<p><strong>hotfix分支：</strong></p>
+<p>很多时候，当对 release版本做全面测试的时候，可能就会发现一些小错误，在这种情况下，git-flow会提供一个特定的hotfix工作流程。</p>
+<p>创建 hotfix 分支:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow hotfix start bug-fixed</span><br></pre></td></tr></table></figure>
+<p>上述命令会创建一个名为：hotfix/bug-fixed 的分支，这是对产品代码的修复，所以 hotfix 分支是基于 master 分支检出的。<br>这也是和 release 分支最明显的区别，release 分支是基于 develop 分支检出的。因为不能再一个还不完全稳定的分支上对产品代码进行修复。<br>就像 release 一样，修复这个错误，会直接影响到项目的版本号。</p>
+<p>完成 hotfix分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow hotfix finish bug-fixed</span><br></pre></td></tr></table></figure>
+<p>上述命令类似于发布一个 release 版本：</p>
+<ul>
+<li>完成的改动会被合并到 master 中，同样也会合并到 develop 分支中，这样就可以确保这个错误不会再次出现在下一个 release 中；</li>
+<li>这个 hotfix 将会被标记起来以便于参考；</li>
+<li>当前的 hotfix 分支将会被删除，然后切换到 develop 分支；</li>
+</ul>
+<blockquote>
+<p>note： 完成 hotfix 分支之后，自动或手动启动编译部署流程</p>
+</blockquote>
+<p>下图为整体流程图：</p>
+<p><img src="/images/git/162e212a2aefef98.png" alt=""></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="主要分支"><a href="#主要分支" class="headerlink" title="主要分支"></a>主要分支</h4><ul>
+<li>master: 永远处在即将发布(production-ready)状态</li>
+<li>develop: 最新的开发状态</li>
+</ul>
+<h4 id="辅助分支"><a href="#辅助分支" class="headerlink" title="辅助分支"></a>辅助分支</h4><ul>
+<li>feature: 开发新功能的分支, 基于 develop, 完成后 merge 回 develop</li>
+<li>release: 准备要发布版本的分支, 用来修复 bug. 基于 develop, 完成后 merge 回 develop 和 master</li>
+<li>hotfix: 修复 master 上的问题, 等不及 release 版本就必须马上上线. 基于 master, 完成后 merge回 master 和 develop</li>
+</ul>
+<h3 id="git-整体流程图"><a href="#git-整体流程图" class="headerlink" title="git 整体流程图"></a>git 整体流程图</h3><p><img src="/images/git/162e214ce0328177.png" alt=""></p>
+<h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 在当前目录新建一个Git代码库</span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"># 新建一个目录，将其初始化为Git代码库</span><br><span class="line">$ git init [project-name]</span><br><span class="line"></span><br><span class="line"># 下载一个项目和它的整个代码历史</span><br><span class="line">$ git clone [url]</span><br></pre></td></tr></table></figure>
+<h3 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h3><p>Git的设置文件为 .gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 显示当前的Git配置</span><br><span class="line">$ git config --list</span><br><span class="line"></span><br><span class="line"># 编辑Git配置文件</span><br><span class="line">$ git config -e [--global]</span><br><span class="line"></span><br><span class="line"># 设置提交代码时的用户信息</span><br><span class="line">$ git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">$ git config [--global] user.email &quot;[email address]&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="增加删除文件"><a href="#增加删除文件" class="headerlink" title="增加删除文件"></a>增加删除文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 添加指定文件到暂存区</span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># 添加指定目录到暂存区，包括子目录</span><br><span class="line">$ git add [dir]</span><br><span class="line"></span><br><span class="line"># 添加当前目录的所有文件到暂存区</span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"># 添加每个变化前，都会要求确认</span><br><span class="line"># 对于同一个文件的多处变化，可以实现分次提交</span><br><span class="line">$ git add -p</span><br><span class="line"></span><br><span class="line"># 删除工作区文件，并且将这次删除放入暂存区</span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># 停止追踪指定文件，但该文件会保留在工作区</span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"></span><br><span class="line"># 改名文件，并且将这个改名放入暂存区</span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
+<h3 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 提交暂存区到仓库区</span><br><span class="line">$ git commit -m [message]</span><br><span class="line"></span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">$ git commit -v</span><br><span class="line"></span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+<h3 id="分支命令"><a href="#分支命令" class="headerlink" title="分支命令"></a>分支命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line"># 列出所有远程分支</span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"># 列出所有本地分支和远程分支</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向指定commit</span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 切换到指定分支，并更新工作区</span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"># 切换到上一个分支</span><br><span class="line">$ git checkout -</span><br><span class="line"></span><br><span class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">$ git merge [branch]</span><br><span class="line"></span><br><span class="line"># 选择一个commit，合并进当前分支</span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"># 删除分支</span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"># 删除远程分支</span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+<h3 id="标签命令"><a href="#标签命令" class="headerlink" title="标签命令"></a>标签命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有tag</span><br><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"># 新建一个tag在当前commit</span><br><span class="line">$ git tag [tag]</span><br><span class="line"></span><br><span class="line"># 新建一个tag在指定commit</span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"></span><br><span class="line"># 删除本地tag</span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"></span><br><span class="line"># 删除远程tag</span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"># 查看tag信息</span><br><span class="line">$ git show [tag]</span><br><span class="line"></span><br><span class="line"># 提交指定tag</span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"></span><br><span class="line"># 提交所有tag</span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向某个tag</span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+<h3 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># 显示有变更的文件</span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"># 显示当前分支的版本历史</span><br><span class="line">$ git log</span><br><span class="line"></span><br><span class="line"># 显示commit历史，以及每次commit发生变更的文件</span><br><span class="line">$ git log --stat</span><br><span class="line"></span><br><span class="line"># 搜索提交历史，根据关键词</span><br><span class="line">$ git log -S [keyword]</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line">$ git log [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span><br><span class="line">$ git log [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"># 显示某个文件的版本历史，包括文件改名</span><br><span class="line">$ git log --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"></span><br><span class="line"># 显示指定文件相关的每一次diff</span><br><span class="line">$ git log -p [file]</span><br><span class="line"></span><br><span class="line"># 显示过去5次提交</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"># 显示所有提交过的用户，按提交次数排序</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"># 显示指定文件是什么人在什么时间修改过</span><br><span class="line">$ git blame [file]</span><br><span class="line"></span><br><span class="line"># 显示暂存区和工作区的差异</span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"># 显示暂存区和上一个commit的差异</span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"></span><br><span class="line"># 显示工作区与当前分支最新commit之间的差异</span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"># 显示两次提交之间的差异</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"># 显示今天你写了多少行代码</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"></span><br><span class="line"># 显示某次提交的元数据和内容变化</span><br><span class="line">$ git show [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交发生变化的文件</span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交时，某个文件的内容</span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+<h3 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 下载远程仓库的所有变动</span><br><span class="line">$ git fetch [remote]</span><br><span class="line"></span><br><span class="line"># 显示所有远程仓库</span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"># 显示某个远程仓库的信息</span><br><span class="line">$ git remote show [remote]</span><br><span class="line"></span><br><span class="line"># 增加一个新的远程仓库，并命名</span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"># 取回远程仓库的变化，并与本地分支合并</span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 上传本地指定分支到远程仓库</span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line">$ git push [remote] --force</span><br><span class="line"></span><br><span class="line"># 推送所有分支到远程仓库</span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># 恢复暂存区的指定文件到工作区</span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">$ git reset [file]</span><br><span class="line"></span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">$ git reset [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert [commit]</span><br><span class="line"></span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://juejin.im/post/5ad99c05f265da0b9265231b" target="_blank" rel="noopener">git 常用命令收集与git-flow 简介</a></p>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Tony 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Tony 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/04/08/面试资料(一)/" rel="next" title="面试资料（一）">
+                <i class="fa fa-chevron-left"></i> 面试资料（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/04/08/前端学习资料收集/" rel="prev" title="前端学习资料收集">
+                前端学习资料收集 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tony</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分支模型"><span class="nav-number">1.</span> <span class="nav-text">分支模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要分支"><span class="nav-number">2.1.</span> <span class="nav-text">主要分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#辅助分支"><span class="nav-number">2.2.</span> <span class="nav-text">辅助分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-整体流程图"><span class="nav-number">3.</span> <span class="nav-text">git 整体流程图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化仓库"><span class="nav-number">4.</span> <span class="nav-text">初始化仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Git"><span class="nav-number">5.</span> <span class="nav-text">配置 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加删除文件"><span class="nav-number">6.</span> <span class="nav-text">增加删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提交"><span class="nav-number">7.</span> <span class="nav-text">代码提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支命令"><span class="nav-number">8.</span> <span class="nav-text">分支命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签命令"><span class="nav-number">9.</span> <span class="nav-text">标签命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看信息"><span class="nav-number">10.</span> <span class="nav-text">查看信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程同步"><span class="nav-number">11.</span> <span class="nav-text">远程同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">12.</span> <span class="nav-text">撤销</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

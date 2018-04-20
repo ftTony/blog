@@ -296,6 +296,333 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/04/08/nginx配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/04/08/nginx配置/" itemprop="url">nginx配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-08T11:12:52+08:00">
+                2015-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Ngnix介绍"><a href="#Ngnix介绍" class="headerlink" title="Ngnix介绍"></a><strong>Ngnix介绍</strong></h3><p>Nginx是一款轻量级的网页服务器、反向代理器以及电子邮件代理服务器。其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。类似的web服务器有Apache、IIS</p>
+<h3 id="Nginx基本配置与参数说明"><a href="#Nginx基本配置与参数说明" class="headerlink" title="Nginx基本配置与参数说明"></a><strong>Nginx基本配置与参数说明</strong></h3><p>nginx配置文件主要分为六个区域：main(全局设置)、events(nginx工作模式)、http(http设置)、server(主机设置)、location(URL匹配)、upstream(负载均衡器设置)。</p>
+<h5 id="main模块如下："><a href="#main模块如下：" class="headerlink" title="main模块如下："></a>main模块如下：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">user nobody nobody;</span><br><span class="line">worker_processes 2;</span><br><span class="line">error_log /usr/local/var/log/nginx/error.log  notice;</span><br><span class="line">pid        /usr/local/var/run/nginx/nginx.pid;</span><br><span class="line">worker_rlimit_nofile 1024;</span><br></pre></td></tr></table></figure>
+<p>user 来指定Nginx Worker进程运行用户以及用户组，默认同nobody账号运行。</p>
+<p>worker_processes来指定了Nginx要开启的子进程数。每个Nginx进程平均耗费10M~12M内存。根据经验，一般指定1个进程就足够了，如果是多核CPU，建议指定和CPU的数量一样的进程数即可。我这里写2，那么就会开启2个子进程，总共3个进程。</p>
+<p>error_log用来定义全局错误日志文件。日志输出级别有debug、info、notice、warn、error、crit可供选择，其中，debug输出日志最为最详细，而crit输出日志最少。</p>
+<p>pid用来指定进程id的存储文件位置。</p>
+<p>worker_rlimit_nofile用于指定一个nginx进程可以打开的最多文件描述符数目，这里是65535，需要使用命令“ulimit -n 65535”来设置。</p>
+<h5 id="events-模块"><a href="#events-模块" class="headerlink" title="events 模块"></a>events 模块</h5><p>events模块来用指定nginx的工作模式和工作模式及连接数上限，一般是这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">events &#123;</span><br><span class="line">    use kqueue; #mac平台</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>use用来指定Nginx的工作模式。Nginx支持的工作模式有select、poll、kqueue、epoll、rtsig和/dev/poll。其中select和poll都是标准的工作模式，kqueue和epoll是高效的工作模式，不同的是epoll用在Linux平台上，而kqueue用在BSD系统中，因为Mac基于BSD,所以Mac也得用这个模式，对于Linux系统，epoll工作模式是首选。</p>
+<p>worker_connections用于定义Nginx每个进程的最大连接数，即接收前端的最大请求数，默认是1024。最大客户端连接数由worker_processes和worker_connections决定，即Max_clients=worker_processes<em>worker_connections，在作为反向代理时，Max_clients变为：Max_clients = worker_processes </em> worker_connections/4。<br>进程的最大连接数受Linux系统进程的最大打开文件数限制，在执行操作系统命令“ulimit -n 65536”后worker_connections的设置才能生效。</p>
+<h5 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h5><p>http模块可以说是最核心的模块了，它负责HTTP服务器相关属性的配置，它里面的server和upstream子模块，至关重要。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">   http&#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line">    log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; </span><br><span class="line">    &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;</span><br><span class="line">    &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;</span><br><span class="line">    access_log  /usr/local/var/log/nginx/access.log  main;</span><br><span class="line">    sendfile        on;</span><br><span class="line">    tcp_nopush      on;</span><br><span class="line">    tcp_nodelay     on;</span><br><span class="line">    keepalive_timeout  10;</span><br><span class="line">    #gzip  on;</span><br><span class="line">    upstream myproject &#123;</span><br><span class="line">        .....</span><br><span class="line">    &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面详细介绍下这段代码中每个配置选项的含义。 </p>
+<p>include 来用设定文件的mime类型,类型在配置文件目录下的mime.type文件定义，来告诉nginx来识别文件类型。</p>
+<p>default_type设定了默认的类型为二进制流，也就是当文件类型未定义时使用这种方式，例如在没有配置asp 的locate 环境时，Nginx是不予解析的，此时，用浏览器访问asp文件就会出现下载了。</p>
+<p>log_format用于设置日志的格式，和记录哪些参数，这里设置为main，刚好用于access_log来纪录这种类型。</p>
+<p>access_log 用来纪录每次的访问日志的文件地址，后面的main是日志的格式样式，对应于log_format的main。</p>
+<p>sendfile参数用于开启高效文件传输模式。将tcp_nopush和tcp_nodelay两个指令设置为on用于防止网络阻塞。</p>
+<p>keepalive_timeout设置客户端连接保持活动的超时时间。在超过这个时间之后，服务器会关闭该连接。</p>
+<h5 id="server-模块"><a href="#server-模块" class="headerlink" title="server 模块"></a>server 模块</h5><p>sever 模块是http的子模块，它用来定一个虚拟主机，我们先讲最基本的配置，这些在后面再讲。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       8080;</span><br><span class="line">        server_name  localhost 192.168.12.10 www.yangyi.com;</span><br><span class="line">        # 全局定义，如果都是这一个目录，这样定义最简单。</span><br><span class="line">        root   /Users/yangyi/www;</span><br><span class="line">        index  index.php index.html index.htm; </span><br><span class="line">        charset utf-8;</span><br><span class="line">        access_log  usr/local/var/log/host.access.log  main;</span><br><span class="line">        aerror_log  usr/local/var/log/host.error.log  error;</span><br><span class="line">        ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>server标志定义虚拟主机开始。 </p>
+<p>listen用于指定虚拟主机的服务端口。 </p>
+<p>server_name用来指定IP地址或者域名，多个域名之间用空格分开。 </p>
+<p>root 表示在这整个server虚拟主机内，全部的root web根目录。注意要和locate {}下面定义的区分开来。 </p>
+<p>index 全局定义访问的默认首页地址。注意要和locate {}下面定义的区分开来。 </p>
+<p>charset用于设置网页的默认编码格式。 </p>
+<p>access_log用来指定此虚拟主机的访问日志存放路径，最后的main用于指定访问日志的输出格式。</p>
+<h3 id="Nginx集群配置"><a href="#Nginx集群配置" class="headerlink" title="Nginx集群配置"></a><strong>Nginx集群配置</strong></h3><h5 id="location-模块"><a href="#location-模块" class="headerlink" title="location 模块"></a>location 模块</h5><p>location模块是nginx中用的最多的，也是最重要的模块了，什么负载均衡啊、反向代理啊、虚拟域名啊都与它相关：</p>
+<p>location 根据它字面意思就知道是来定位的，定位URL，解析URL，所以，它也提供了强大的正则匹配功能，也支持条件判断匹配，用户可以通过location指令实现Nginx对动、静态网页进行过滤处理。像我们的php环境搭建就是用到了它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    root   /Users/yangyi/www;</span><br><span class="line">    index  index.php index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>location /表示匹配访问根目录。</p>
+<p>root指令用于指定访问根目录时，虚拟主机的web目录，这个目录可以是相对路径（相对路径是相对于nginx的安装目录）。也可以是绝对路径。</p>
+<p>index用于设定我们只输入域名后访问的默认首页地址，有个先后顺序：index.php index.html index.htm，如果没有开启目录浏览权限，又找不到这些默认首页，就会报403错误。</p>
+<p>location 还有一种方式就是正则匹配，开启正则匹配这样：location ~。后面加个~。</p>
+<p>下面这个例子是运用正则匹配来链接php。我们之前搭建环境也是这样做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root           /Users/yangyi/www;</span><br><span class="line">    fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">    fastcgi_index  index.php;</span><br><span class="line">    include        fastcgi.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>.php$ 熟悉正则的我们直到，这是匹配.php结尾的URL，用来解析php文件。里面的root也是一样，用来表示虚拟主机的根目录。<br>fast_pass链接的是php-fpm 的地址，之前我们也搭建过。</p>
+<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a><strong>Nginx反向代理</strong></h3><h5 id="什么是反向代理"><a href="#什么是反向代理" class="headerlink" title="什么是反向代理"></a>什么是反向代理</h5><p>反向代理是指以代理服务器来接受internet上的连接请求，然后奖请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就是表现为一个服务器.</p>
+<p>代理情况：<br>client —(send request)—&gt; clinet proxy –(send request)—&gt; server</p>
+<h5 id="反射代理的作用"><a href="#反射代理的作用" class="headerlink" title="反射代理的作用"></a>反射代理的作用</h5><p>保护网站安全：任何来自internet的请求都必须先经过代理器；<br>通过配置缓存功能加速web请求：可以缓存真实web服务器上的某些静态资源，减轻真实web服务器的负载压力；</p>
+<p>实现负载均衡：充当负载均衡服务器均衡分发请求，平衡集群中各个服务器的负载压力。</p>
+<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a><strong>参考资料：</strong></h3><p><a href="http://www.nginx.cn/76.html" target="_blank" rel="noopener">nginx基本配置与参数说明</a></p>
+<p><a href="http://manual.51yip.com/nginx/StandardHTTPModules/index.html" target="_blank" rel="noopener">Nginx标准HTTP模块</a></p>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/04/08/webpack学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/04/08/webpack学习/" itemprop="url">webpack学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-08T11:06:41+08:00">
+                2015-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/04/08/flex学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1411,288 +1738,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/04/12/移动端调试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/04/12/移动端调试/" itemprop="url">移动端调试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-12T10:54:19+08:00">
-                2014-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mobile/" itemprop="url" rel="index">
-                    <span itemprop="name">mobile</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/04/11/移动web知识/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/04/11/移动web知识/" itemprop="url">移动web知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-11T11:01:47+08:00">
-                2014-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mobile/" itemprop="url" rel="index">
-                    <span itemprop="name">mobile</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1743,7 +1788,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -117,17 +117,19 @@
 
 
 
-<meta name="description" content="白屏时间 首屏时间 用户可交互时间 总下载时间 DNS解析时间 TCP连接时间 HTTP请求时间 HTTP响应时间">
+<meta name="description" content="上一篇/)我们主要是根据雅虎的36条军规讲页面性能的。 内容 性能概念 performance数据 performance.timing 信息计算出网页性能数据  性能概念 白屏时间：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间 首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间 用户可操作时间：用户可以进行正常的点击、输入等操作 页面总下载时间：页面所有资源都">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端性能(二)">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2015/04/08/前端性能(二)/index.html">
 <meta property="og:site_name" content="小武子博客">
-<meta property="og:description" content="白屏时间 首屏时间 用户可交互时间 总下载时间 DNS解析时间 TCP连接时间 HTTP请求时间 HTTP响应时间">
+<meta property="og:description" content="上一篇/)我们主要是根据雅虎的36条军规讲页面性能的。 内容 性能概念 performance数据 performance.timing 信息计算出网页性能数据  性能概念 白屏时间：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间 首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间 用户可操作时间：用户可以进行正常的点击、输入等操作 页面总下载时间：页面所有资源都">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-18T03:39:11.854Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/performance/072455NuJ.png">
+<meta property="og:updated_time" content="2018-04-19T08:18:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能(二)">
-<meta name="twitter:description" content="白屏时间 首屏时间 用户可交互时间 总下载时间 DNS解析时间 TCP连接时间 HTTP请求时间 HTTP响应时间">
+<meta name="twitter:description" content="上一篇/)我们主要是根据雅虎的36条军规讲页面性能的。 内容 性能概念 performance数据 performance.timing 信息计算出网页性能数据  性能概念 白屏时间：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间 首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间 用户可操作时间：用户可以进行正常的点击、输入等操作 页面总下载时间：页面所有资源都">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/performance/072455NuJ.png">
 
 
 
@@ -389,16 +391,38 @@
       
 
       
-        <ul>
-<li>白屏时间</li>
-<li>首屏时间</li>
-<li>用户可交互时间</li>
-<li>总下载时间</li>
-<li>DNS解析时间</li>
-<li>TCP连接时间</li>
-<li>HTTP请求时间</li>
-<li>HTTP响应时间</li>
+        <p><a href="http://localhost:4000/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%B8%80" target="_blank" rel="noopener">上一篇</a>/)我们主要是根据雅虎的36条军规讲页面性能的。</p>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ul>
+<li>性能概念</li>
+<li>performance数据</li>
+<li>performance.timing 信息计算出网页性能数据</li>
 </ul>
+<h3 id="性能概念"><a href="#性能概念" class="headerlink" title="性能概念"></a>性能概念</h3><ul>
+<li>白屏时间：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间</li>
+<li>首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间</li>
+<li>用户可操作时间：用户可以进行正常的点击、输入等操作</li>
+<li>页面总下载时间：页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间</li>
+<li>自定义的时间点：对于开发人员来说，完全可以自定义一些时间点，例如：某个组件 init 完成的时间、某个重要模块加载的时间等等</li>
+</ul>
+<p><img src="/images/performance/072455NuJ.png" alt=""><br><a id="more"></a></p>
+<h4 id="performance数据"><a href="#performance数据" class="headerlink" title="performance数据"></a>performance数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">var performance = &#123;  </span><br><span class="line">    // memory 是非标准属性，只在 Chrome 有</span><br><span class="line">    // 财富问题：我有多少内存</span><br><span class="line">    memory: &#123;</span><br><span class="line">        usedJSHeapSize:  16100000, // JS 对象（包括V8引擎内部对象）占用的内存，一定小于 totalJSHeapSize</span><br><span class="line">        totalJSHeapSize: 35100000, // 可使用的内存</span><br><span class="line">        jsHeapSizeLimit: 793000000 // 内存大小限制</span><br><span class="line">    &#125;,</span><br><span class="line"> </span><br><span class="line">    //  哲学问题：我从哪里来？</span><br><span class="line">    navigation: &#123;</span><br><span class="line">        redirectCount: 0, // 如果有重定向的话，页面通过几次重定向跳转而来</span><br><span class="line">        type: 0           // 0   即 TYPE_NAVIGATENEXT 正常进入的页面（非刷新、非重定向等）</span><br><span class="line">                          // 1   即 TYPE_RELOAD       通过 window.location.reload() 刷新的页面</span><br><span class="line">                          // 2   即 TYPE_BACK_FORWARD 通过浏览器的前进后退按钮进入的页面（历史记录）</span><br><span class="line">                          // 255 即 TYPE_UNDEFINED    非以上方式进入的页面</span><br><span class="line">    &#125;,</span><br><span class="line"> </span><br><span class="line">    timing: &#123;</span><br><span class="line">        // 在同一个浏览器上下文中，前一个网页（与当前页面不一定同域）unload 的时间戳，如果无前一个网页 unload ，则与 fetchStart 值相等</span><br><span class="line">        navigationStart: 1441112691935,</span><br><span class="line"> </span><br><span class="line">        // 前一个网页（与当前页面同域）unload 的时间戳，如果无前一个网页 unload 或者前一个网页与当前页面不同域，则值为 0</span><br><span class="line">        unloadEventStart: 0,</span><br><span class="line"> </span><br><span class="line">        // 和 unloadEventStart 相对应，返回前一个网页 unload 事件绑定的回调函数执行完毕的时间戳</span><br><span class="line">        unloadEventEnd: 0,</span><br><span class="line"> </span><br><span class="line">        // 第一个 HTTP 重定向发生时的时间。有跳转且是同域名内的重定向才算，否则值为 0 </span><br><span class="line">        redirectStart: 0,</span><br><span class="line"> </span><br><span class="line">        // 最后一个 HTTP 重定向完成时的时间。有跳转且是同域名内部的重定向才算，否则值为 0 </span><br><span class="line">        redirectEnd: 0,</span><br><span class="line"> </span><br><span class="line">        // 浏览器准备好使用 HTTP 请求抓取文档的时间，这发生在检查本地缓存之前</span><br><span class="line">        fetchStart: 1441112692155,</span><br><span class="line"> </span><br><span class="line">        // DNS 域名查询开始的时间，如果使用了本地缓存（即无 DNS 查询）或持久连接，则与 fetchStart 值相等</span><br><span class="line">        domainLookupStart: 1441112692155,</span><br><span class="line"> </span><br><span class="line">        // DNS 域名查询完成的时间，如果使用了本地缓存（即无 DNS 查询）或持久连接，则与 fetchStart 值相等</span><br><span class="line">        domainLookupEnd: 1441112692155,</span><br><span class="line"> </span><br><span class="line">        // HTTP（TCP） 开始建立连接的时间，如果是持久连接，则与 fetchStart 值相等</span><br><span class="line">        // 注意如果在传输层发生了错误且重新建立连接，则这里显示的是新建立的连接开始的时间</span><br><span class="line">        connectStart: 1441112692155,</span><br><span class="line"> </span><br><span class="line">        // HTTP（TCP） 完成建立连接的时间（完成握手），如果是持久连接，则与 fetchStart 值相等</span><br><span class="line">        // 注意如果在传输层发生了错误且重新建立连接，则这里显示的是新建立的连接完成的时间</span><br><span class="line">        // 注意这里握手结束，包括安全连接建立完成、SOCKS 授权通过</span><br><span class="line">        connectEnd: 1441112692155,</span><br><span class="line"> </span><br><span class="line">        // HTTPS 连接开始的时间，如果不是安全连接，则值为 0</span><br><span class="line">        secureConnectionStart: 0,</span><br><span class="line"> </span><br><span class="line">        // HTTP 请求读取真实文档开始的时间（完成建立连接），包括从本地读取缓存</span><br><span class="line">        // 连接错误重连时，这里显示的也是新建立连接的时间</span><br><span class="line">        requestStart: 1441112692158,</span><br><span class="line"> </span><br><span class="line">        // HTTP 开始接收响应的时间（获取到第一个字节），包括从本地读取缓存</span><br><span class="line">        responseStart: 1441112692686,</span><br><span class="line"> </span><br><span class="line">        // HTTP 响应全部接收完成的时间（获取到最后一个字节），包括从本地读取缓存</span><br><span class="line">        responseEnd: 1441112692687,</span><br><span class="line"> </span><br><span class="line">        // 开始解析渲染 DOM 树的时间，此时 Document.readyState 变为 loading，并将抛出 readystatechange 相关事件</span><br><span class="line">        domLoading: 1441112692690,</span><br><span class="line"> </span><br><span class="line">        // 完成解析 DOM 树的时间，Document.readyState 变为 interactive，并将抛出 readystatechange 相关事件</span><br><span class="line">        // 注意只是 DOM 树解析完成，这时候并没有开始加载网页内的资源</span><br><span class="line">        domInteractive: 1441112693093,</span><br><span class="line"> </span><br><span class="line">        // DOM 解析完成后，网页内资源加载开始的时间</span><br><span class="line">        // 在 DOMContentLoaded 事件抛出前发生</span><br><span class="line">        domContentLoadedEventStart: 1441112693093,</span><br><span class="line"> </span><br><span class="line">        // DOM 解析完成后，网页内资源加载完成的时间（如 JS 脚本加载执行完毕）</span><br><span class="line">        domContentLoadedEventEnd: 1441112693101,</span><br><span class="line"> </span><br><span class="line">        // DOM 树解析完成，且资源也准备就绪的时间，Document.readyState 变为 complete，并将抛出 readystatechange 相关事件</span><br><span class="line">        domComplete: 1441112693214,</span><br><span class="line"> </span><br><span class="line">        // load 事件发送给文档，也即 load 回调函数开始执行的时间</span><br><span class="line">        // 注意如果没有绑定 load 事件，值为 0</span><br><span class="line">        loadEventStart: 1441112693214,</span><br><span class="line"> </span><br><span class="line">        // load 事件的回调函数执行完毕的时间</span><br><span class="line">        loadEventEnd: 1441112693215</span><br><span class="line"> </span><br><span class="line">        // 字母顺序</span><br><span class="line">        // connectEnd: 1441112692155,</span><br><span class="line">        // connectStart: 1441112692155,</span><br><span class="line">        // domComplete: 1441112693214,</span><br><span class="line">        // domContentLoadedEventEnd: 1441112693101,</span><br><span class="line">        // domContentLoadedEventStart: 1441112693093,</span><br><span class="line">        // domInteractive: 1441112693093,</span><br><span class="line">        // domLoading: 1441112692690,</span><br><span class="line">        // domainLookupEnd: 1441112692155,</span><br><span class="line">        // domainLookupStart: 1441112692155,</span><br><span class="line">        // fetchStart: 1441112692155,</span><br><span class="line">        // loadEventEnd: 1441112693215,</span><br><span class="line">        // loadEventStart: 1441112693214,</span><br><span class="line">        // navigationStart: 1441112691935,</span><br><span class="line">        // redirectEnd: 0,</span><br><span class="line">        // redirectStart: 0,</span><br><span class="line">        // requestStart: 1441112692158,</span><br><span class="line">        // responseEnd: 1441112692687,</span><br><span class="line">        // responseStart: 1441112692686,</span><br><span class="line">        // secureConnectionStart: 0,</span><br><span class="line">        // unloadEventEnd: 0,</span><br><span class="line">        // unloadEventStart: 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="计算性能指标"><a href="#计算性能指标" class="headerlink" title="计算性能指标"></a>计算性能指标</h3><p>可以使用Navigation.timing 统计到的时间数据来计算一些页面性能指标，比如DNS查询耗时、白屏时间、domready等等。如下：</p>
+<ul>
+<li>DNS查询耗时 = domainLookupEnd - domainLookupStart</li>
+<li>TCP链接耗时 = connectEnd - connectStart</li>
+<li>request请求耗时 = responseEnd - responseStart</li>
+<li>解析dom树耗时 = domComplete - domInteractive</li>
+<li>白屏时间 = domloadng - fetchStart</li>
+<li>domready时间 = domContentLoadedEventEnd - fetchStart</li>
+<li>onload时间 = loadEventEnd - fetchStart</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">// 计算加载时间</span><br><span class="line">function getPerformanceTiming () &#123;  </span><br><span class="line">    var performance = window.performance;</span><br><span class="line"> </span><br><span class="line">    if (!performance) &#123;</span><br><span class="line">        // 当前浏览器不支持</span><br><span class="line">        console.log(&apos;你的浏览器不支持 performance 接口&apos;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    var t = performance.timing;</span><br><span class="line">    var times = &#123;&#125;;</span><br><span class="line"> </span><br><span class="line">    //【重要】页面加载完成的时间</span><br><span class="line">    //【原因】这几乎代表了用户等待页面可用的时间</span><br><span class="line">    times.loadPage = t.loadEventEnd - t.navigationStart;</span><br><span class="line"> </span><br><span class="line">    //【重要】解析 DOM 树结构的时间</span><br><span class="line">    //【原因】反省下你的 DOM 树嵌套是不是太多了！</span><br><span class="line">    times.domReady = t.domComplete - t.responseEnd;</span><br><span class="line"> </span><br><span class="line">    //【重要】重定向的时间</span><br><span class="line">    //【原因】拒绝重定向！比如，http://example.com/ 就不该写成 http://example.com</span><br><span class="line">    times.redirect = t.redirectEnd - t.redirectStart;</span><br><span class="line"> </span><br><span class="line">    //【重要】DNS 查询时间</span><br><span class="line">    //【原因】DNS 预加载做了么？页面内是不是使用了太多不同的域名导致域名查询的时间太长？</span><br><span class="line">    // 可使用 HTML5 Prefetch 预查询 DNS ，见：[HTML5 prefetch](http://segmentfault.com/a/1190000000633364)            </span><br><span class="line">    times.lookupDomain = t.domainLookupEnd - t.domainLookupStart;</span><br><span class="line"> </span><br><span class="line">    //【重要】读取页面第一个字节的时间</span><br><span class="line">    //【原因】这可以理解为用户拿到你的资源占用的时间，加异地机房了么，加CDN 处理了么？加带宽了么？加 CPU 运算速度了么？</span><br><span class="line">    // TTFB 即 Time To First Byte 的意思</span><br><span class="line">    // 维基百科：https://en.wikipedia.org/wiki/Time_To_First_Byte</span><br><span class="line">    times.ttfb = t.responseStart - t.navigationStart;</span><br><span class="line"> </span><br><span class="line">    //【重要】内容加载完成的时间</span><br><span class="line">    //【原因】页面内容经过 gzip 压缩了么，静态资源 css/js 等压缩了么？</span><br><span class="line">    times.request = t.responseEnd - t.requestStart;</span><br><span class="line"> </span><br><span class="line">    //【重要】执行 onload 回调函数的时间</span><br><span class="line">    //【原因】是否太多不必要的操作都放到 onload 回调函数里执行了，考虑过延迟加载、按需加载的策略么？</span><br><span class="line">    times.loadEvent = t.loadEventEnd - t.loadEventStart;</span><br><span class="line"> </span><br><span class="line">    // DNS 缓存时间</span><br><span class="line">    times.appcache = t.domainLookupStart - t.fetchStart;</span><br><span class="line"> </span><br><span class="line">    // 卸载页面的时间</span><br><span class="line">    times.unloadEvent = t.unloadEventEnd - t.unloadEventStart;</span><br><span class="line"> </span><br><span class="line">    // TCP 建立连接完成握手的时间</span><br><span class="line">    times.connect = t.connectEnd - t.connectStart;</span><br><span class="line"> </span><br><span class="line">    return times;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://tech.meituan.com/Optimization_of_front_end_sensory_properties.html" target="_blank" rel="noopener">前端感官性能的衡量和优化实践</a></p>
+<p><a href="http://www.alloyteam.com/2015/09/explore-performance/" target="_blank" rel="noopener">初探 performance – 监控网页与程序性能</a></p>
+<p><a href="https://www.cnblogs.com/chuaWeb/p/PerformanceMonitoring.html" target="_blank" rel="noopener">前端性能——监控起步</a></p>
+<p><a href="https://juejin.im/entry/58ba9cb5128fe100643da2cc" target="_blank" rel="noopener">前端性能监控</a></p>
+<p><a href="http://fex.baidu.com/blog/2014/05/front_end-data/" target="_blank" rel="noopener">前端数据之美 – 基础篇</a></p>
       
     </div>
     
@@ -515,8 +539,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -531,7 +564,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -576,6 +609,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能概念"><span class="nav-number">2.</span> <span class="nav-text">性能概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#performance数据"><span class="nav-number">2.1.</span> <span class="nav-text">performance数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算性能指标"><span class="nav-number">3.</span> <span class="nav-text">计算性能指标</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
