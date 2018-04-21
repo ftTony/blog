@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://blog.xiaowuzi.info</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/08/https%E8%AF%A6%E8%A7%A3/</loc>
+        <lastmod>2018-04-21T11:34:25.138Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/02/08/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-04-20T12:25:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/04/08/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-04-20T09:48:54.870Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/19/vim%E4%BD%BF%E7%94%A8/</loc>
+        <lastmod>2018-04-19T09:18:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/19/bash%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-19T09:17:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%BA%8C)/</loc>
+        <lastmod>2018-04-19T08:18:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD(%E4%B8%80)/</loc>
+        <lastmod>2018-04-19T07:55:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/08/http%E7%BC%93%E5%AD%98/</loc>
+        <lastmod>2018-04-17T12:47:08.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/05/07/%E8%B7%A8%E5%9F%9F/</loc>
+        <lastmod>2018-04-17T12:23:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
+        <lastmod>2018-04-16T06:23:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94CRSF/</loc>
+        <lastmod>2018-04-16T03:54:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/03/07/%E5%81%8F%E5%87%BD%E6%95%B0%E3%80%81%E6%83%B0%E6%80%A7%E5%87%BD%E6%95%B0%E3%80%81%E6%9F%AF%E9%87%8C%E5%8C%96%E5%87%BD%E6%95%B0/</loc>
+        <lastmod>2018-04-15T11:05:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/06/07/%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+        <lastmod>2018-04-15T10:46:12.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/05/08/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</loc>
+        <lastmod>2018-04-15T10:41:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/10/07/es6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+        <lastmod>2018-04-15T07:31:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/07/08/this%E7%90%86%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+        <lastmod>2018-04-15T07:30:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/07/09/this%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+        <lastmod>2018-04-15T07:30:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/09/08/javascript%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0each%E3%80%81extend/</loc>
+        <lastmod>2018-04-15T07:29:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2018-04-15T04:12:31.709Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/npm%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-15T04:03:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/07/08/http2/</loc>
+        <lastmod>2018-04-15T02:06:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
+        <lastmod>2018-04-14T15:54:47.734Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/10/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%AD)/</loc>
+        <lastmod>2018-04-14T12:37:55.105Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/10/04/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Promise/</loc>
+        <lastmod>2018-04-13T08:10:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8BDOM%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-13T08:09:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/javascript%E5%8A%A8%E7%94%BB/</loc>
+        <lastmod>2018-04-13T08:09:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/10/06/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20Promise%20(%E4%B8%8A)/</loc>
+        <lastmod>2018-04-13T08:07:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/07/apply%E3%80%81call%E5%92%8Cbind%E7%90%86%E8%A7%A3/</loc>
+        <lastmod>2018-04-13T07:27:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/08/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E5%AE%9E%E8%B7%B5/</loc>
+        <lastmod>2018-04-13T07:14:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2018/04/07/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/</loc>
+        <lastmod>2018-04-13T07:05:41.295Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2018/04/07/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+        <lastmod>2018-04-13T06:58:10.141Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2018/04/07/web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94XSS/</loc>
+        <lastmod>2018-04-11T06:46:54.637Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/10/08/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</loc>
+        <lastmod>2018-04-09T13:38:01.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/05/11/TCP%E4%B8%8EUDP/</loc>
+        <lastmod>2018-04-09T13:37:05.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/%E8%99%9A%E6%8B%9FDOM/</loc>
+        <lastmod>2018-04-09T13:36:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/04/08/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99(%E4%B8%80)/</loc>
+        <lastmod>2018-04-09T13:35:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/03/08/javascript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
+        <lastmod>2018-04-09T13:34:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/12/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/</loc>
+        <lastmod>2018-04-09T13:33:55.011Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/11/vue%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86/</loc>
+        <lastmod>2018-04-09T13:33:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/03/08/css%E5%8A%A8%E7%94%BB/</loc>
+        <lastmod>2018-04-09T13:32:12.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/04/12/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%B0%83%E8%AF%95/</loc>
+        <lastmod>2018-04-09T13:31:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/04/11/%E7%A7%BB%E5%8A%A8web%E7%9F%A5%E8%AF%86/</loc>
+        <lastmod>2018-04-09T13:28:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/11/08/gulp%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-09T13:27:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/05/06/fiddler%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-09T13:25:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/05/01/chrome%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/</loc>
+        <lastmod>2018-04-09T13:24:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/webpack%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-09T13:23:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/04/08/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86/</loc>
+        <lastmod>2018-04-09T13:21:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/06/08/javascript%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9B%B8%E7%AD%89/</loc>
+        <lastmod>2018-04-09T13:17:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/08/08/javascript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
+        <lastmod>2018-04-09T13:17:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/05/08/canvas%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-09T13:16:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/07/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</loc>
+        <lastmod>2018-04-09T13:13:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-09T13:06:23.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2015/04/08/flex%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-04-09T13:04:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/02/08/dom%E4%BA%8B%E4%BB%B6/</loc>
+        <lastmod>2018-04-09T13:03:35.715Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2017/12/01/%E7%9B%B4%E6%92%AD%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
+        <lastmod>2018-04-08T03:49:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/09/javascript%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</loc>
+        <lastmod>2018-04-08T03:33:33.920Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8B%E9%97%AD%E5%8C%85/</loc>
+        <lastmod>2018-04-08T03:31:46.827Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/10/javascript%E4%B9%8B%E7%BB%A7%E6%89%BF/</loc>
+        <lastmod>2018-04-08T03:20:53.690Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/07/07/javascript%E4%B9%8B%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA/</loc>
+        <lastmod>2018-04-08T03:20:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2014/04/07/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</loc>
+        <lastmod>2018-04-07T15:25:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/07/javascript%E5%BC%95%E6%93%8E%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</loc>
+        <lastmod>2018-04-07T14:35:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/12/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</loc>
+        <lastmod>2018-04-07T14:12:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/11/%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+        <lastmod>2018-04-07T14:11:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/09/%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/</loc>
+        <lastmod>2018-04-07T14:09:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/04/07/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E7%9B%B8%E7%AD%89&%E4%B8%A5%E6%A0%BC%E7%9B%B8%E7%AD%89/</loc>
+        <lastmod>2018-04-07T14:04:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2016/04/07/amd%E3%80%81cmd%E3%80%81common%E5%92%8Cumd%E5%8C%BA%E5%88%AB/</loc>
+        <lastmod>2018-04-07T13:58:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.xiaowuzi.info/2013/07/07/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/</loc>
+        <lastmod>2018-04-07T13:08:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->

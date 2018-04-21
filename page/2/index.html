@@ -831,13 +831,17 @@
         
           <h3 id="什么是HTTPS"><a href="#什么是HTTPS" class="headerlink" title="什么是HTTPS"></a><strong>什么是HTTPS</strong></h3><p>   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。</p>
 <p>   简单理解就是https=http+加密+认证+完整性保护</p>
+<p>如图：</p>
+<p><img src="/images/http/v2-54ff04e1b0cc698f08f76d6356f59fac_b.png" alt=""></p>
+<p>SSL（Secure Socket Layer，安全套接字层）：1994年为 Netscape 所研发，SSL 协议位于 TCP/IP 协议与各种应用层协议之间，为数据通讯提供安全支持。</p>
+<p>TLS（Transport Layer Security，传输层安全）：其前身是 SSL，它最初的几个版本（SSL 1.0、SSL 2.0、SSL 3.0）由网景公司开发，1999年从 3.1 开始被 IETF 标准化并改名，发展至今已经有 TLS 1.0、TLS 1.1、TLS 1.2 三个版本。SSL3.0和TLS1.0由于存在安全漏洞，已经很少被使用到。TLS 1.3 改动会比较大，目前还在草案阶段，目前使用最广泛的是TLS 1.1、TLS 1.2。</p>
 <h3 id="为什么需要https"><a href="#为什么需要https" class="headerlink" title="为什么需要https"></a><strong>为什么需要https</strong></h3><p>HTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。</p>
-<p>举个最常见的例子，用户登陆。用户输入账号，密码，采用HTTP的话，只要在代理服务器上做点手脚就可以拿到你的密码了。</p>
-<p><code>用户登陆 --&gt; 代理服务器（做手脚）--&gt; 实际授权服务器</code></p>
-<h3 id="HTTPS过程"><a href="#HTTPS过程" class="headerlink" title="HTTPS过程"></a><strong>HTTPS过程</strong></h3><p><img src="/images/http/517641-20151004202254433-181254043.png" alt=""></p>
-<p>1.客户端发送HTTPS请求给服务器端；</p>
-<p>2.服务器端发送CA证书和公钥PublicKey给客户端，注意这个公钥用的是非对称加密钥，只有服务器端才有PublicKey对应的PrivateKey;</p>
-<p>3.客户端生成一个会话的密钥SessionKey,注意这个SessionKey是对称密钥，加密解密都是同一个秘钥；<br>
+<p>HTTP传输面临的风险有：</p>
+<ul>
+<li>窃听风险：黑客可以获知通信内容。</li>
+<li>篡改风险：黑客可以修改通信内容。</li>
+<li>冒充风险：黑客可以冒充他人身份参与通信。</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/04/08/https详解/#more" rel="contents">
@@ -847,7 +851,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     
@@ -1487,160 +1491,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/07/javascript引擎的执行机制/" itemprop="url">javascript引擎的执行机制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
-                2016-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
-<li>js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</li>
-<li>js中的event loop(1)</li>
-<li>js中的event loop(2)</li>
-<li>说说setTimeout</li>
-</ol>
-<h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
-<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/04/07/javascript引擎的执行机制/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/amd、cmd、common和umd区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1746,6 +1596,160 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/04/07/amd、cmd、common和umd区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/07/javascript引擎的执行机制/" itemprop="url">javascript引擎的执行机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</li>
+<li>js中的event loop(1)</li>
+<li>js中的event loop(2)</li>
+<li>说说setTimeout</li>
+</ol>
+<h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
+<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/07/javascript引擎的执行机制/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

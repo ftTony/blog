@@ -117,19 +117,22 @@
 
 
 
-<meta name="description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 为什么需要httpsHTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。 举个最常见的例子，用户登陆。用">
+<meta name="description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 如图：  SSL（Secure Socket Layer，安全套接字层）：1994年为 Netscape 所研发，SSL 协议位于 TCP/IP 协议与各种应用层协议之间，为数据通">
 <meta property="og:type" content="article">
 <meta property="og:title" content="https详解">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/08/https详解/index.html">
 <meta property="og:site_name" content="小武子博客">
-<meta property="og:description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 为什么需要httpsHTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。 举个最常见的例子，用户登陆。用">
+<meta property="og:description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 如图：  SSL（Secure Socket Layer，安全套接字层）：1994年为 Netscape 所研发，SSL 协议位于 TCP/IP 协议与各种应用层协议之间，为数据通">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/v2-54ff04e1b0cc698f08f76d6356f59fac_b.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http/517641-20151004202254433-181254043.png">
-<meta property="og:updated_time" content="2018-04-10T02:38:02.103Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/W1G5Qdj.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/http/e464309875c608aefd964d905345a0a0_r.jpg">
+<meta property="og:updated_time" content="2018-04-21T11:34:25.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="https详解">
-<meta name="twitter:description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 为什么需要httpsHTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。 举个最常见的例子，用户登陆。用">
-<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/http/517641-20151004202254433-181254043.png">
+<meta name="twitter:description" content="什么是HTTPS   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。    简单理解就是https=http+加密+认证+完整性保护 如图：  SSL（Secure Socket Layer，安全套接字层）：1994年为 Netscape 所研发，SSL 协议位于 TCP/IP 协议与各种应用层协议之间，为数据通">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/http/v2-54ff04e1b0cc698f08f76d6356f59fac_b.png">
 
 
 
@@ -393,28 +396,91 @@
       
         <h3 id="什么是HTTPS"><a href="#什么是HTTPS" class="headerlink" title="什么是HTTPS"></a><strong>什么是HTTPS</strong></h3><p>   HTTPS并非是应用层的一种新协议。只是HTTP通信接口部分用SSL(Secure Socket Layer)和TLS协议代替而已。</p>
 <p>   简单理解就是https=http+加密+认证+完整性保护</p>
+<p>如图：</p>
+<p><img src="/images/http/v2-54ff04e1b0cc698f08f76d6356f59fac_b.png" alt=""></p>
+<p>SSL（Secure Socket Layer，安全套接字层）：1994年为 Netscape 所研发，SSL 协议位于 TCP/IP 协议与各种应用层协议之间，为数据通讯提供安全支持。</p>
+<p>TLS（Transport Layer Security，传输层安全）：其前身是 SSL，它最初的几个版本（SSL 1.0、SSL 2.0、SSL 3.0）由网景公司开发，1999年从 3.1 开始被 IETF 标准化并改名，发展至今已经有 TLS 1.0、TLS 1.1、TLS 1.2 三个版本。SSL3.0和TLS1.0由于存在安全漏洞，已经很少被使用到。TLS 1.3 改动会比较大，目前还在草案阶段，目前使用最广泛的是TLS 1.1、TLS 1.2。</p>
 <h3 id="为什么需要https"><a href="#为什么需要https" class="headerlink" title="为什么需要https"></a><strong>为什么需要https</strong></h3><p>HTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。</p>
-<p>举个最常见的例子，用户登陆。用户输入账号，密码，采用HTTP的话，只要在代理服务器上做点手脚就可以拿到你的密码了。</p>
-<p><code>用户登陆 --&gt; 代理服务器（做手脚）--&gt; 实际授权服务器</code></p>
-<h3 id="HTTPS过程"><a href="#HTTPS过程" class="headerlink" title="HTTPS过程"></a><strong>HTTPS过程</strong></h3><p><img src="/images/http/517641-20151004202254433-181254043.png" alt=""></p>
-<p>1.客户端发送HTTPS请求给服务器端；</p>
-<p>2.服务器端发送CA证书和公钥PublicKey给客户端，注意这个公钥用的是非对称加密钥，只有服务器端才有PublicKey对应的PrivateKey;</p>
-<p>3.客户端生成一个会话的密钥SessionKey,注意这个SessionKey是对称密钥，加密解密都是同一个秘钥；<br><a id="more"></a><br>4.客户端用公钥PublicKey来对会话秘钥SessionKey进行加密生成EncryptKey传递给服务器；</p>
-<p>4.1服务器端收到这个加密后的EncryptKey后用PrivateKey解密就可以得到这个SessionKey了；</p>
-<p>4.2服务器端收到这个加密后的EncryptKey需要回复一个确认消息给客户端</p>
-<p>5.客户端用这个SessionKey来对后续需要发送的Message来进行加密，就是EncryptMessage，然后发送给服务器端；</p>
-<p>5.1服务器端收到这个EnctyptMessage后就需要拿刚才解密的SessionKey来进解密；就可以得到Message了；</p>
-<p>5.2服务器端根据客户端的请求来进行返回一系列的Response响应；</p>
+<p>HTTP传输面临的风险有：</p>
+<ul>
+<li>窃听风险：黑客可以获知通信内容。</li>
+<li>篡改风险：黑客可以修改通信内容。</li>
+<li>冒充风险：黑客可以冒充他人身份参与通信。</li>
+</ul>
+<a id="more"></a>
 <h3 id="HTTPS如何加密数据的"><a href="#HTTPS如何加密数据的" class="headerlink" title="HTTPS如何加密数据的"></a><strong>HTTPS如何加密数据的</strong></h3><h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><p>对称加密的意思就是，加密数据用的密钥，跟解密数据用的密钥是一样的。</p>
 <p>对称加密的优点在于加密、解密效率通常比较高。缺点在于，数据发送方、数据接收方需要协商、共享同一把密钥，并确保密钥不泄露给其他人。此外，对于多个有数据交换需求的个体，两两之间需要分配并维护一把密钥，这个带来的成本基本是不可接受的。</p>
 <h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><p>非对称加密的意思就是，加密数据用的密钥（公钥），跟解密数据用的密钥（私钥）是不一样的。</p>
-<p>什么叫做公钥呢？其实就是字面上的意思——公开的密钥，谁都可以查到。因此非对称加密也叫做公开密钥加密。</p>
+<p><strong>什么叫做公钥呢？</strong></p>
+<p>其实就是字面上的意思——公开的密钥，谁都可以查到。因此非对称加密也叫做公开密钥加密。</p>
 <p>相对应的，私钥就是非公开的密钥，一般是由网站的管理员持有。</p>
-<p>公钥、私钥两个有什么联系呢？</p>
+<p><strong>公钥、私钥两个有什么联系呢？</strong></p>
 <p>简单的说就是，通过公钥加密的数据，只能通过私钥解开。通过私钥加密的数据，只能通过公钥解开。</p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.cnblogs.com/Jote/articles/4854958.html" target="_blank" rel="noopener">http://www.cnblogs.com/Jote/articles/4854958.html</a></p>
-<p><a href="http://www.cnblogs.com/chyingp/p/https-introduction.html" target="_blank" rel="noopener">http://www.cnblogs.com/chyingp/p/https-introduction.html</a></p>
-<p>《图解HTTP》</p>
+<h3 id="HTTPS过程"><a href="#HTTPS过程" class="headerlink" title="HTTPS过程"></a><strong>HTTPS过程</strong></h3><p><img src="/images/http/517641-20151004202254433-181254043.png" alt=""></p>
+<ol>
+<li>客户端发送HTTPS请求给服务器端；</li>
+<li>服务器端发送CA证书和公钥PublicKey给客户端,注意这个公钥用的是非对称密钥,只有服务器端才有PublicKey对应的PrivateKey；</li>
+<li>客户端生成一个会话的密钥SessionKey,注意这个SessionKey是对称密钥,加密解密都是同一个秘钥；</li>
+<li>客户端用公钥PublicKey来对会话秘钥SessionKey进行加密生成EncryptKey传递给服务器；</li>
+<li>服务器端收到这个加密后的EncryptKey后用PrivateKey解密就可以得到这个SessionKey了；</li>
+<li>服务器端收到这个加密后的EncryptKey需要回复一个确认消息给客户端；</li>
+<li>客户端用这个SessionKey来对后续需要发送的Message来进行加密，就是EncryptMessage，然后发送给服务器端；</li>
+<li>服务器端收到这个EncryptMessage后就需要拿刚才解密的SessionKey来进行解密；就可以得到Message了；</li>
+<li>服务器端根据客户端的请求来进行返回一系列的Response响应；</li>
+</ol>
+<p>上面步骤中并不能保证数据安全，证书是如无法确定是合法的？证书非法可能有两种情况：</p>
+<p>证书是伪造的：压根不是CA颁发的</p>
+<p>证书被篡改过：比如将XX网站的公钥给替换了</p>
+<p>参考资料：<a href="http://www.cnblogs.com/Jote/articles/4854958.html" target="_blank" rel="noopener">HTTPS过程</a></p>
+<h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><h4 id="1-数字签名、摘要、数字证书"><a href="#1-数字签名、摘要、数字证书" class="headerlink" title="1.数字签名、摘要、数字证书"></a>1.数字签名、摘要、数字证书</h4><p>简单的来说，“摘要”就是对传输的内容，通过hash算法计算出一段固定长度的串。然后，在通过CA的私钥对这段摘要进行加密，加密后得到的结果就是“数字签名”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">明文 --&gt; hash运算 --&gt; 摘要 --&gt; 私钥加密 --&gt; 数字签名--&gt;CA的私钥--&gt;数字证书</span><br></pre></td></tr></table></figure>
+<p>参考资料：<a href="https://blog.csdn.net/bluishglc/article/details/7585965" target="_blank" rel="noopener">对称加密、数字摘要、数字签名、数字证书、SSL、HTTPS及其他</a>、<br><a href="http://www.cnblogs.com/heart-runner/archive/2012/01/30/2332020.html" target="_blank" rel="noopener">数字签名和数字证书</a></p>
+<h4 id="2-何为CA"><a href="#2-何为CA" class="headerlink" title="2.何为CA"></a>2.何为CA</h4><p>CA(Certificate Authority)，即证书认证机构，它的作用就是提供证书（即服务器证书，由域名、公司信息、序列号和签名信息组成）加强服务端和客户端之间信息交互的安全性，以及证书运维相关服务。任何个体/组织都可以扮演 CA 的角色，难的是你要能得到全世界各大操作系统、浏览器等的默认信任，能得到他们的默认信任，你也可以自己开一家CA公司了，这类证书通常叫做根证书。浏览器默认信任的 CA 大厂商有很多，比如 Symantec赛门铁克、Comodo、Godaddy、GolbalSign(百度微博等都是它签发的) 和 Digicert。</p>
+<p><strong>主要功能：</strong></p>
+<ol>
+<li>证书的颁发：接收、验证用户(包括下级认证中心和最终用户)的数字证书的申请。可以受理或拒绝</li>
+<li>证书的更新：认证中心可以定期更新所有用户的证书，或者根据用户的请求来更新用户的证书</li>
+<li>证书的查询：查询当前用户证书申请处理过程；查询用户证书的颁发信息，这类查询由目录服务器ldap来完成</li>
+<li>证书的作废：由于用户私钥泄密等原因，需要向认证中心提出证书作废的请求；证书已经过了有效期，认证中心自动将该证书作废。认证中心通过维护证书作废列表 (Certificate Revocation List,CRL) 来完成上述功能。</li>
+<li>证书的归档：证书具有一定的有效期，证书过了有效期之后就将作废，但是我们不能将作废的证书简单地丢弃，因为有时我们可能需要验证以前的某个交易过程中产生的数字签名，这时我们就需要查询作废的证书。</li>
+</ol>
+<h4 id="2-证书的种类：根证书、中间证书、服务器证书"><a href="#2-证书的种类：根证书、中间证书、服务器证书" class="headerlink" title="2.证书的种类：根证书、中间证书、服务器证书"></a>2.证书的种类：根证书、中间证书、服务器证书</h4><p><img src="/images/http/W1G5Qdj.png" alt=""></p>
+<ul>
+<li>服务器证书 server.pem 的签发者为中间证书机构 inter，inter 根据证书 inter.pem 验证 server.pem 确实为自己签发的有效证书；</li>
+<li>中间证书 inter.pem 的签发 CA 为 root，root 根据证书 root.pem 验证 inter.pem 为自己签发的合法证书；</li>
+<li>客户端内置信任 CA 的 root.pem 证书，因此服务器证书 server.pem 的被信任。</li>
+</ul>
+<h4 id="3-ssl证书的格式"><a href="#3-ssl证书的格式" class="headerlink" title="3.ssl证书的格式"></a>3.ssl证书的格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">1. 证书版本号(Version)</span><br><span class="line">版本号指明X.509证书的格式版本，现在的值可以为:</span><br><span class="line">    1) 0: v1</span><br><span class="line">    2) 1: v2</span><br><span class="line">    3) 2: v3</span><br><span class="line">也为将来的版本进行了预定义</span><br><span class="line"></span><br><span class="line">2. 证书序列号(Serial Number)</span><br><span class="line">序列号指定由CA分配给证书的唯一的&quot;数字型标识符&quot;。当证书被取消时，实际上是将此证书的序列号放入由CA签发的CRL中，</span><br><span class="line">这也是序列号唯一的原因。</span><br><span class="line"></span><br><span class="line">3. 签名算法标识符(Signature Algorithm)</span><br><span class="line">签名算法标识用来指定由CA签发证书时所使用的&quot;签名算法&quot;。算法标识符用来指定CA签发证书时所使用的:</span><br><span class="line">    1) 公开密钥算法</span><br><span class="line">    2) hash算法</span><br><span class="line">example: sha256WithRSAEncryption</span><br><span class="line">须向国际知名标准组织(如ISO)注册</span><br><span class="line"></span><br><span class="line">4. 签发机构名(Issuer)</span><br><span class="line">此域用来标识签发证书的CA的X.500 DN(DN-Distinguished Name)名字。包括:</span><br><span class="line">    1) 国家(C)</span><br><span class="line">    2) 省市(ST)</span><br><span class="line">    3) 地区(L)</span><br><span class="line">    4) 组织机构(O)</span><br><span class="line">    5) 单位部门(OU)</span><br><span class="line">    6) 通用名(CN)</span><br><span class="line">    7) 邮箱地址</span><br><span class="line"></span><br><span class="line">5. 有效期(Validity)</span><br><span class="line">指定证书的有效期，包括:</span><br><span class="line">    1) 证书开始生效的日期时间</span><br><span class="line">    2) 证书失效的日期和时间</span><br><span class="line">每次使用证书时，需要检查证书是否在有效期内。</span><br><span class="line"></span><br><span class="line">6. 证书用户名(Subject)</span><br><span class="line">指定证书持有者的X.500唯一名字。包括:</span><br><span class="line">    1) 国家(C)</span><br><span class="line">    2) 省市(ST)</span><br><span class="line">    3) 地区(L)</span><br><span class="line">    4) 组织机构(O)</span><br><span class="line">    5) 单位部门(OU)</span><br><span class="line">    6) 通用名(CN)</span><br><span class="line">    7) 邮箱地址</span><br><span class="line"></span><br><span class="line">7. 证书持有者公开密钥信息(Subject Public Key Info)</span><br><span class="line">证书持有者公开密钥信息域包含两个重要信息:</span><br><span class="line">    1) 证书持有者的公开密钥的值</span><br><span class="line">    2) 公开密钥使用的算法标识符。此标识符包含公开密钥算法和hash算法。</span><br><span class="line">8. 扩展项(extension)</span><br><span class="line">X.509 V3证书是在v2的基础上一标准形式或普通形式增加了扩展项，以使证书能够附带额外信息。标准扩展是指</span><br><span class="line">由X.509 V3版本定义的对V2版本增加的具有广泛应用前景的扩展项，任何人都可以向一些权威机构，如ISO，来</span><br><span class="line">注册一些其他扩展，如果这些扩展项应用广泛，也许以后会成为标准扩展项。</span><br><span class="line"></span><br><span class="line">9. 签发者唯一标识符(Issuer Unique Identifier)</span><br><span class="line">签发者唯一标识符在第2版加入证书定义中。此域用在当同一个X.500名字用于多个认证机构时，用一比特字符串</span><br><span class="line">来唯一标识签发者的X.500名字。可选。</span><br><span class="line"></span><br><span class="line">10. 证书持有者唯一标识符(Subject Unique Identifier)</span><br><span class="line">持有证书者唯一标识符在第2版的标准中加入X.509证书定义。此域用在当同一个X.500名字用于多个证书持有者时，</span><br><span class="line">用一比特字符串来唯一标识证书持有者的X.500名字。可选。</span><br><span class="line"></span><br><span class="line">11. 签名算法(Signature Algorithm)</span><br><span class="line">证书签发机构对证书上述内容的签名算法</span><br><span class="line">example: sha256WithRSAEncryption</span><br><span class="line"></span><br><span class="line">12. 签名值(Issuer&apos;s Signature)</span><br><span class="line">证书签发机构对证书上述内容的签名值</span><br></pre></td></tr></table></figure>
+<h4 id="4-ssl证书内容"><a href="#4-ssl证书内容" class="headerlink" title="4.ssl证书内容"></a>4.ssl证书内容</h4><ol>
+<li>颁发证书的机构的名字–CA</li>
+<li>证书内容本身的数字签名（用CA私钥加密）</li>
+<li>证书持有者的公钥</li>
+<li>证书签名用到的hash算法</li>
+</ol>
+<h4 id="5-如何辨别非法证书"><a href="#5-如何辨别非法证书" class="headerlink" title="5.如何辨别非法证书"></a>5.如何辨别非法证书</h4><p><strong>5.1 完全伪造的证书</strong></p>
+<ol>
+<li>证书颁发的机构是伪造的：浏览器不认识，直接认为是危险证书</li>
+<li>证书颁发的机构是确实存在的，于是根据CA名，找到对应内置的CA根证书、CA的公钥。</li>
+<li>用CA的公钥，对伪造的证书的摘要进行解密，发现解不了。认为是危险证书</li>
+</ol>
+<p><strong>5.2 篡改过的证书</strong></p>
+<ol>
+<li>检查证书，根据CA名，找到对应的CA根证书，以及CA的公钥。</li>
+<li>用CA的公钥，对证书的数字签名进行解密，得到对应的证书摘要AA</li>
+<li>根据证书签名使用的hash算法，计算出当前证书的摘要BB</li>
+<li>对比AA跟BB，发现不一致–&gt; 判定是危险证书</li>
+</ol>
+<p>如图：</p>
+<p><img src="/images/http/e464309875c608aefd964d905345a0a0_r.jpg" alt=""></p>
+<p>参考资料：<br><a href="http://www.cnblogs.com/chyingp/p/https-introduction.html" target="_blank" rel="noopener">HTTPS科普扫盲帖</a>、<a href="http://www.cnblogs.com/zhangshitong/p/6478721.html" target="_blank" rel="noopener">https原理通俗了解</a></p>
+<h4 id="6-自发签名证书"><a href="#6-自发签名证书" class="headerlink" title="6.自发签名证书"></a>6.自发签名证书</h4><p>这里不具体讲了，可以参考：<a href="https://www.cnblogs.com/liuxianan/p/https.html#%E8%87%AA%E5%88%B6%E8%AF%81%E4%B9%A6" target="_blank" rel="noopener">HTTPS从认识到线上实战全记录</a>、<a href="https://futu.im/posts/2017-08-03-https-certificate/" target="_blank" rel="noopener">HTTPS自建CA及自签名证书不完全指南（实战篇）</a></p>
+<h3 id="HTTPS性能损耗"><a href="#HTTPS性能损耗" class="headerlink" title="HTTPS性能损耗"></a>HTTPS性能损耗</h3><p>HTTPS 原理与优势：身份验证、信息加密与完整性校验等，且未对 TCP 和 HTTP 协议做任何修改。但通过增加新协议以实现更安全的通信必然需要付出代价，HTTPS 协议的性能损耗主要体现如下：</p>
+<p><strong>1. 增加延时</strong></p>
+<p>分析前面的握手过程，一次完整的握手至少需要两端依次来回两次通信，至少增加延时2 RTT，利用会话缓存从而复用连接，延时也至少1 RTT*。</p>
+<p><strong>2. 消耗较多的 CPU 资源</strong></p>
+<p>除数据传输之外，HTTPS 通信主要包括对对称加解密、非对称加解密(服务器主要采用私钥解密数据)；压测 TS8 机型的单核 CPU：对称加密算法AES-CBC-256 吞吐量 600Mbps，非对称 RSA 私钥解密200次/s。不考虑其它软件层面的开销，10G 网卡为对称加密需要消耗 CPU 约17核，24核CPU最多接入 HTTPS 连接 4800；</p>
+<p>静态节点当前10G 网卡的 TS8 机型的 HTTP 单机接入能力约为10w/s，如果将所有的 HTTP 连接变为HTTPS连接，则明显 RSA 的解密最先成为瓶颈。因此，RSA 的解密能力是当前困扰 HTTPS 接入的主要难题。</p>
+<p>参考资料：<br><a href="https://segmentfault.com/a/1190000004199917" target="_blank" rel="noopener">全站 HTTPS 来了</a></p>
       
     </div>
     
@@ -611,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是HTTPS"><span class="nav-number">1.</span> <span class="nav-text">什么是HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要https"><span class="nav-number">2.</span> <span class="nav-text">为什么需要https</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS过程"><span class="nav-number">3.</span> <span class="nav-text">HTTPS过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS如何加密数据的"><span class="nav-number">4.</span> <span class="nav-text">HTTPS如何加密数据的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对称加密"><span class="nav-number">4.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非对称加密"><span class="nav-number">4.2.</span> <span class="nav-text">非对称加密</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是HTTPS"><span class="nav-number">1.</span> <span class="nav-text">什么是HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要https"><span class="nav-number">2.</span> <span class="nav-text">为什么需要https</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS如何加密数据的"><span class="nav-number">3.</span> <span class="nav-text">HTTPS如何加密数据的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对称加密"><span class="nav-number">3.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非对称加密"><span class="nav-number">3.2.</span> <span class="nav-text">非对称加密</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS过程"><span class="nav-number">4.</span> <span class="nav-text">HTTPS过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书"><span class="nav-number">5.</span> <span class="nav-text">证书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数字签名、摘要、数字证书"><span class="nav-number">5.1.</span> <span class="nav-text">1.数字签名、摘要、数字证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-何为CA"><span class="nav-number">5.2.</span> <span class="nav-text">2.何为CA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-证书的种类：根证书、中间证书、服务器证书"><span class="nav-number">5.3.</span> <span class="nav-text">2.证书的种类：根证书、中间证书、服务器证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ssl证书的格式"><span class="nav-number">5.4.</span> <span class="nav-text">3.ssl证书的格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ssl证书内容"><span class="nav-number">5.5.</span> <span class="nav-text">4.ssl证书内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-如何辨别非法证书"><span class="nav-number">5.6.</span> <span class="nav-text">5.如何辨别非法证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-自发签名证书"><span class="nav-number">5.7.</span> <span class="nav-text">6.自发签名证书</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS性能损耗"><span class="nav-number">6.</span> <span class="nav-text">HTTPS性能损耗</span></a></li></ol></div>
             
 
           </div>
