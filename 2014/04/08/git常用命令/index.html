@@ -126,7 +126,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/git/162e212a2aefef98.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/git/162e214ce0328177.png">
-<meta property="og:updated_time" content="2018-04-20T09:48:54.870Z">
+<meta property="og:updated_time" content="2018-04-21T11:47:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
 <meta name="twitter:description" content="分支模型用 git flow 初始化工程目录完成后，只能看到两个分支（长期分支）： master 分支： 用于上线的分支，保护性分支，只包含经过测试的稳定代码，开发人员不能直接工作在此分支上，也不能直接提交改动到 master 分支上。 develop分支： 是开发人员进行任何新的开发的基础分支，当开始一个新的feature 分支的时候，要从 develop 分出去；另外此分支也汇集所有的已完成的">
@@ -395,8 +395,7 @@
         <h3 id="分支模型"><a href="#分支模型" class="headerlink" title="分支模型"></a>分支模型</h3><p>用 git flow 初始化工程目录完成后，只能看到两个分支（长期分支）：</p>
 <p><strong>master 分支：</strong> 用于上线的分支，保护性分支，只包含经过测试的稳定代码，开发人员不能直接工作在此分支上，也不能直接提交改动到 master 分支上。</p>
 <p><strong>develop分支：</strong> 是开发人员进行任何新的开发的基础分支，当开始一个新的feature 分支的时候，要从 develop 分出去；另外此分支也汇集所有的已完成的功能，等待合并到 master 分支上线。上面两个分支被称为 长期分支  ，存在于项目的整个生命周期中，其他分支，是临时性的，根据需要来创建，当完成了自己的任务后，就会被删掉。</p>
-<p><strong>feature 分支：</strong> 平常的开发工作使用最频繁的分支。<br><strong>创建功能分支：</strong><br>如下命令会创建一个名为”feature/” 的功能分支，该分支默认从 develop检出，在做功能性开发的时候，检出一个独立的分支，是版本控制中一个重要 的原则。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow feature start &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>feature 分支：</strong> 平常的开发工作使用最频繁的分支。<br><strong>创建功能分支：</strong><br>如下命令会创建一个名为”feature/” 的功能分支，该分支默认从 develop检出，在做功能性开发的时候，检出一个独立的分支，是版本控制中一个重要 的原则。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow feature start &lt;branch-name&gt;</span><br></pre></td></tr></table></figure></p>
 <p>完成功能分支：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git flow feature finish &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
 <p>该命令会把我们在当前分支的代码整合到‘develop’分支中去，之后，git-flow 会进行清理操作，删除当下完成的功能分支，将分支切换到‘develop’。</p>
@@ -597,7 +596,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

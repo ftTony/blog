@@ -388,150 +388,20 @@
 
       
         
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/11/vue路由原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/11/vue路由原理/" itemprop="url">vue路由原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-11T10:57:32+08:00">
-                2016-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript框架/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript框架</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
+          <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
+<li>父组件向子组件传递数据</li>
+<li>子组件修改父组件的数据</li>
+<li>非父子组件间的通信</li>
+</ol>
+<h3 id="父组件向子组件传递数据"><a href="#父组件向子组件传递数据" class="headerlink" title="父组件向子组件传递数据"></a>父组件向子组件传递数据</h3><p>该方式的数据传递是遵循 Vue 单向数据流的规则的，因此使用起来十分的自然。若父组件的数据改变子组件的 UI 展现也随之变化。<br>Parent.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Parent&lt;/h1&gt;</span><br><span class="line">    &lt;child :name=&quot;childName&quot; /&gt;</span><br><span class="line">    &lt;button @click=&quot;changeChildName&quot;&gt;change the child name&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Child from &apos;./Child&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Child,</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      childName: &apos;child name is what?&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeChildName() &#123;</span><br><span class="line">      this.childName = &apos;no name&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/12/vue父子组件数据传递/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -987,12 +857,32 @@
 
       
         
-          
-            
-          
+          <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
+<li>什么是WebSocket协议</li>
+<li>为什么要用WebSocket</li>
+<li>了解WebSocket</li>
+<li>WebkSocket相关API</li>
+<li>完整例子</li>
+</ol>
+<h3 id="什么是WebSocket协议"><a href="#什么是WebSocket协议" class="headerlink" title="什么是WebSocket协议"></a>什么是WebSocket协议</h3><p>websocket是html5规范中的一部分，它借鉴了socket这种思想，为web应用程序客户端和服务端之间提供了一种全双工通信机制。同时，它又是一种新的应用层协议，websocket协议是为了提供web应用程序和服务端全双工通信而专门制定的一种应用层协议，通常它表示ws://echo.websocket.org/?encoding=text HTTP/1.1，可以看到除了前面的协议名和http不同之外，它的表示地址就是传统的url地址。</p>
+<h3 id="为什么要用WebSocket"><a href="#为什么要用WebSocket" class="headerlink" title="为什么要用WebSocket"></a>为什么要用WebSocket</h3><p><strong>1. 现有的HTTP的架构模式</strong><br>Http是客户端/服务器模式中请求-响应所用的协议，在这种模式中，客户端（一般是web浏览器）向服务器提交HTTP请求，服务器响应请求的资源。关于HTTP协议请点击<a href="http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/">这里</a>。</p>
+<p><strong>2. HTTP的特点</strong></p>
+<p>HTTP是半双工协议，也就是说，在同一时刻流星只能单向流动，客户端向服务器发送请求，然后服务器响应请求。服务器不能主动推送数据给浏览器。当然这个http2已经支持了。</p>
+<p>当初这么设计也是有原因的，假如服务器能主动推送数据给浏览器的话，那么浏览器很容易受到攻击，比如一些广告商会主动把一些广告信息强行的传输给客户端。</p>
+<p>半双工的缺点是：效率非常低。</p>
+<p><strong>3. 了解HTTP轮询，长轮询及存在的问题</strong></p>
+<p>一般情况下，浏览器访问网页时，会向页面所在的服务器发送一个HTTP请求，Web服务器确认请求并向浏览器返回响应。但是像股价，实时新闻等到达浏览器</p>
+<p>显示页面时已经过时了，如果用户想要得到最新的实时信息，他们就要不断的刷新页面，这种显然是不切实际的。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/08/websocket学习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1491,6 +1381,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/07/javascript引擎的执行机制/" itemprop="url">javascript引擎的执行机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</li>
+<li>js中的event loop(1)</li>
+<li>js中的event loop(2)</li>
+<li>说说setTimeout</li>
+</ol>
+<h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
+<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/07/javascript引擎的执行机制/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/amd、cmd、common和umd区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1646,7 +1690,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/http详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1665,7 +1709,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/04/07/javascript引擎的执行机制/" itemprop="url">javascript引擎的执行机制</a></h1>
+                <a class="post-title-link" href="/2016/04/07/http详解/" itemprop="url">http详解</a></h1>
         
 
         <div class="post-meta">
@@ -1677,7 +1721,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:45:48+08:00">
                 2016-04-07
               </time>
             
@@ -1700,8 +1744,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -1738,18 +1782,13 @@
 
       
         
-          <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
-<li>js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</li>
-<li>js中的event loop(1)</li>
-<li>js中的event loop(2)</li>
-<li>说说setTimeout</li>
-</ol>
-<h3 id="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"><a href="#一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？" class="headerlink" title="一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？"></a>一、js为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？</h3><p>1.1、JS为什么是单线程的？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS最初被设计用在浏览器中,那么想象一下,如果浏览器中的JS是多线程的。</span><br><span class="line"></span><br><span class="line">场景描述:</span><br><span class="line"></span><br><span class="line">那么现在有2个进程,process1 process2,由于是多进程的JS,所以他们对同一个dom,同时进行操作</span><br><span class="line"></span><br><span class="line">process1 删除了该dom,而process2 编辑了该dom,同时下达2个矛盾的命令,浏览器究竟该如何执行呢?</span><br></pre></td></tr></table></figure>
-<p>这样想,JS为什么被设计成单线程应该就容易理解了吧。<br>
+          <h3 id="http的定义和历史"><a href="#http的定义和历史" class="headerlink" title="http的定义和历史"></a><strong>http的定义和历史</strong></h3><p>  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。</p>
+<p>HTTP协议是基于请求与相应，具体如图<br><img src="/images/http2/http-resource-2.png" alt=""></p>
+<h3 id="http三次握手"><a href="#http三次握手" class="headerlink" title="http三次握手"></a><strong>http三次握手</strong></h3><p>   HTTP是基于传输层的TCP协议，而TCP是一个端到端的面向连接的协议。所谓的端到端可以理解为进程到进程之间的通信.</p>
+<p><img src="/images/http/201204271057008113.png" alt=""><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/04/07/javascript引擎的执行机制/#more" rel="contents">
+            <a class="btn" href="/2016/04/07/http详解/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1837,7 +1876,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -117,14 +117,21 @@
 
 
 
+<meta name="description" content="内容 父组件向子组件传递数据 子组件修改父组件的数据 非父子组件间的通信  父组件向子组件传递数据该方式的数据传递是遵循 Vue 单向数据流的规则的，因此使用起来十分的自然。若父组件的数据改变子组件的 UI 展现也随之变化。Parent.vue 1234567891011121314151617181920212223242526&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue父子组件数据传递">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2016/04/12/vue父子组件数据传递/index.html">
 <meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="内容 父组件向子组件传递数据 子组件修改父组件的数据 非父子组件间的通信  父组件向子组件传递数据该方式的数据传递是遵循 Vue 单向数据流的规则的，因此使用起来十分的自然。若父组件的数据改变子组件的 UI 展现也随之变化。Parent.vue 1234567891011121314151617181920212223242526&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T13:33:55.011Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/vue/450204264-5a144af2158ce_articlex.gif">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/vue/1049604557-5a144b366b9e5_articlex.gif">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/vue/688812211-5a144b492bbef_articlex.gif">
+<meta property="og:updated_time" content="2018-04-21T14:01:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue父子组件数据传递">
+<meta name="twitter:description" content="内容 父组件向子组件传递数据 子组件修改父组件的数据 非父子组件间的通信  父组件向子组件传递数据该方式的数据传递是遵循 Vue 单向数据流的规则的，因此使用起来十分的自然。若父组件的数据改变子组件的 UI 展现也随之变化。Parent.vue 1234567891011121314151617181920212223242526&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/vue/450204264-5a144af2158ce_articlex.gif">
 
 
 
@@ -386,7 +393,41 @@
       
 
       
-        
+        <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
+<li>父组件向子组件传递数据</li>
+<li>子组件修改父组件的数据</li>
+<li>非父子组件间的通信</li>
+</ol>
+<h3 id="父组件向子组件传递数据"><a href="#父组件向子组件传递数据" class="headerlink" title="父组件向子组件传递数据"></a>父组件向子组件传递数据</h3><p>该方式的数据传递是遵循 Vue 单向数据流的规则的，因此使用起来十分的自然。若父组件的数据改变子组件的 UI 展现也随之变化。<br>Parent.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Parent&lt;/h1&gt;</span><br><span class="line">    &lt;child :name=&quot;childName&quot; /&gt;</span><br><span class="line">    &lt;button @click=&quot;changeChildName&quot;&gt;change the child name&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Child from &apos;./Child&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Child,</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      childName: &apos;child name is what?&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeChildName() &#123;</span><br><span class="line">      this.childName = &apos;no name&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Child.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&apos;name&apos;],</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="/images/vue/450204264-5a144af2158ce_articlex.gif" alt=""></p>
+<h3 id="子组件修改父组件的数据"><a href="#子组件修改父组件的数据" class="headerlink" title="子组件修改父组件的数据"></a>子组件修改父组件的数据</h3><ol>
+<li>子组件触发事件，父组件监听事件做出数据改变</li>
+<li>父组件将数据变更方法以 props 的形式传给子组件（借鉴 react 的父子通信方式）</li>
+</ol>
+<h4 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h4><p>父组件上通过 v-on 监听子组件所触发的事件。</p>
+<p>EventParent.vue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Event Parent&lt;/h1&gt;</span><br><span class="line">    &lt;child :name=&quot;childName&quot; @changeParent=&quot;changeChildName&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Child from &apos;./Child&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Child,</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      childName: &apos;child name is what?&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeChildName() &#123;</span><br><span class="line">      this.childName = &apos;no name&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>EventChild.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;&#123;name&#125;&#125;</span><br><span class="line">     &lt;button @click=&quot;changeParentData&quot;&gt;change the parent name&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&apos;name&apos;],</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeParentData() &#123;</span><br><span class="line">      this.$emit(&apos;changeParent&apos;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如图</p>
+<p><img src="/images/vue/1049604557-5a144b366b9e5_articlex.gif" alt=""></p>
+<h4 id="传递props"><a href="#传递props" class="headerlink" title="传递props"></a>传递props</h4><p>Parent.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Props Parent&lt;/h1&gt;</span><br><span class="line">    &lt;child :name=&quot;childName&quot; :changeName=&quot;changeChildName&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Child from &apos;./Child&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Child,</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      childName: &apos;child name is what?&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeChildName() &#123;</span><br><span class="line">      this.childName = &apos;no name&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>Child.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button @click=&quot;changeName&quot;&gt;Change Name&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&apos;name&apos;, &apos;changeName&apos;],</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如图</p>
+<p><img src="/images/vue/688812211-5a144b492bbef_articlex.gif" alt=""></p>
+<h3 id="非父子组件间的通信"><a href="#非父子组件间的通信" class="headerlink" title="非父子组件间的通信"></a>非父子组件间的通信</h3><p>上述三个实例都在讲述父子组件的通信，那么不相关的组件该如何通信呢？可以创建一个 Vue 的实例作为桥来中转事件。</p>
+<p>eventHub.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line"></span><br><span class="line">export default new Vue();</span><br></pre></td></tr></table></figure>
+<p>Child01.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是哥哥，我来触发事件&lt;/div&gt;</span><br><span class="line">    &lt;button @click=&quot;clickButton&quot;&gt;CLICK&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import EventHub from &apos;./eventHub&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    clickButton() &#123;</span><br><span class="line">      EventHub.$emit(&apos;emitevent&apos;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>Child02.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;我是弟弟，我来监听哥哥触发的事件来改变自己的数据&lt;/div&gt;</span><br><span class="line">    &lt;span&gt;&#123;&#123;title&#125;&#125;&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import EventHub from &apos;./eventHub&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  created() &#123;</span><br><span class="line">    EventHub.$on(&apos;emitevent&apos;, () =&gt; &#123;</span><br><span class="line">      this.title = &apos;Hi Brother&apos;;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &apos;Hello EveryOne~&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>除以上外，还可以使用vuex进行组件间传值。</p>
       
     </div>
     
@@ -439,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/11/vue路由原理/" rel="next" title="vue路由原理">
-                <i class="fa fa-chevron-left"></i> vue路由原理
+              <a href="/2016/04/09/javascript之深浅拷贝/" rel="next" title="javascript之深浅拷贝">
+                <i class="fa fa-chevron-left"></i> javascript之深浅拷贝
               </a>
             
           </div>
@@ -503,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -519,7 +569,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,6 +614,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件向子组件传递数据"><span class="nav-number">2.</span> <span class="nav-text">父组件向子组件传递数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件修改父组件的数据"><span class="nav-number">3.</span> <span class="nav-text">子组件修改父组件的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#监听事件"><span class="nav-number">3.1.</span> <span class="nav-text">监听事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传递props"><span class="nav-number">3.2.</span> <span class="nav-text">传递props</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非父子组件间的通信"><span class="nav-number">4.</span> <span class="nav-text">非父子组件间的通信</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

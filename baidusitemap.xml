@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-22T08:15:56.962Z</lastmod>
+    <data>
+        <display>
+        <title>websocket学习</title>
+        <pubTime>2016-04-08T03:31:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/12/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/</loc>
+    <lastmod>2018-04-21T14:01:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>vue父子组件数据传递</title>
+        <pubTime>2016-04-12T02:57:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/08/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-04-21T11:47:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>git常用命令</title>
+        <pubTime>2014-04-08T03:08:54.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/04/08/https%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-04-21T11:34:25.138Z</lastmod>
     <data>
@@ -33,24 +87,6 @@
            
              
               <breadCrumb title="linux" url="http://blog.xiaowuzi.info/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2014/04/08/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-04-20T09:48:54.870Z</lastmod>
-    <data>
-        <display>
-        <title>git常用命令</title>
-        <pubTime>2014-04-08T03:08:54.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -678,42 +714,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/12/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/</loc>
-    <lastmod>2018-04-09T13:33:55.011Z</lastmod>
-    <data>
-        <display>
-        <title>vue父子组件数据传递</title>
-        <pubTime>2016-04-12T02:57:19.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/11/vue%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2018-04-09T13:33:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>vue路由原理</title>
-        <pubTime>2016-04-11T02:57:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2014/03/08/css%E5%8A%A8%E7%94%BB/</loc>
     <lastmod>2018-04-09T13:32:12.000Z</lastmod>
     <data>
@@ -923,24 +923,6 @@
            
              
               <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:06:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>websocket学习</title>
-        <pubTime>2016-04-08T03:31:01.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
           
         </display>
     </data>
