@@ -117,14 +117,17 @@
 
 
 
+<meta name="description" content="函数柯里化定义：在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。 代码实现 123456789101112131415161718function curry()&amp;#123;	var l=func.length;	return function cu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="偏函数、惰性函数、柯里化函数">
-<meta property="og:url" content="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、柯里化函数/index.html">
+<meta property="og:title" content="函数柯里化、偏函数、惰性函数">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、函数柯里化/index.html">
 <meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="函数柯里化定义：在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。 代码实现 123456789101112131415161718function curry()&amp;#123;	var l=func.length;	return function cu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-15T11:05:57.000Z">
+<meta property="og:updated_time" content="2018-04-24T12:59:26.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="偏函数、惰性函数、柯里化函数">
+<meta name="twitter:title" content="函数柯里化、偏函数、惰性函数">
+<meta name="twitter:description" content="函数柯里化定义：在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。 代码实现 123456789101112131415161718function curry()&amp;#123;	var l=func.length;	return function cu">
 
 
 
@@ -154,13 +157,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、柯里化函数/">
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、函数柯里化/">
 
 
 
 
 
-  <title>偏函数、惰性函数、柯里化函数 | 小武子博客</title>
+  <title>函数柯里化、偏函数、惰性函数 | 小武子博客</title>
   
 
 
@@ -297,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、柯里化函数/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、函数柯里化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -314,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">偏函数、惰性函数、柯里化函数</h1>
+          <h1 class="post-title" itemprop="name headline">函数柯里化、偏函数、惰性函数</h1>
         
 
         <div class="post-meta">
@@ -386,7 +389,31 @@
       
 
       
-        
+        <h3 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h3><p><strong>定义：</strong>在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function curry()&#123;</span><br><span class="line">	var l=func.length;</span><br><span class="line">	return function curried()&#123;</span><br><span class="line">		if(args.length&lt;l)&#123;</span><br><span class="line">			return function()&#123;</span><br><span class="line">				var argsInner=[].slice.call(arguments);</span><br><span class="line">				return curried.apply(this,args.concat(argsInner));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			return func.apply(this,args);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var f = function(a,b,c) &#123;</span><br><span class="line">  return console.log([a,b,c])</span><br><span class="line">&#125;</span><br><span class="line">var curried = curry(f);</span><br><span class="line">curried(1,2,3)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>用途</strong></p>
+<ul>
+<li>延迟计算</li>
+<li>参数复用</li>
+<li>动态生成函数</li>
+</ul>
+<p>参考资料：<a href="https://github.com/mqyqingfeng/Blog/issues/42" target="_blank" rel="noopener">JavaScript专题之函数柯里化</a>、<a href="https://github.com/lensh/blog/issues/1" target="_blank" rel="noopener">柯里化</a></p>
+<h3 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h3><p><strong>定义：</strong>是指使用一个函数并将其应用一个或多个参数，但不是全部参数，在这个过程中创建一个新函数。</p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function apply(fn /* partial arguments... */) &#123;  </span><br><span class="line">    var args = [].slice.call(arguments, 1);</span><br><span class="line">    return function() &#123;</span><br><span class="line">        var _args = [].slice.call(arguments);</span><br><span class="line">        return fn.apply(this, args.concat(_args));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料：<a href="http://www.css88.com/archives/7781" target="_blank" rel="noopener">JavaScript 中的 Currying(柯里化) 和 Partial Application(偏函数应用)</a>、<a href="https://github.com/mqyqingfeng/Blog/issues/43" target="_blank" rel="noopener">JavaScript专题之偏函数</a></p>
+<h3 id="惰性函数"><a href="#惰性函数" class="headerlink" title="惰性函数"></a>惰性函数</h3><p><strong>定义：</strong>惰性函数就是解决每次都要进行判断的问题。</p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var foo = function() &#123;</span><br><span class="line">    var t = new Date();</span><br><span class="line">    foo = function() &#123;</span><br><span class="line">        return t;</span><br><span class="line">    &#125;;</span><br><span class="line">    return foo();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>参考资料：<a href="https://github.com/mqyqingfeng/Blog/issues/44" target="_blank" rel="noopener">JavaScript专题之惰性函数</a></p>
+<h3 id="组合函数"><a href="#组合函数" class="headerlink" title="组合函数"></a>组合函数</h3><p><strong>定义：</strong>会把你需要函数结合在一起，像一根管道一样，函数就是这跟管道的节点。你只需要从管道的开始端注入数据，管道会把你的数据处理成你想要的数据然后返回给你。</p>
+<p>compose简单的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var add = function(x)&#123;</span><br><span class="line">    return x+2;</span><br><span class="line">&#125;;</span><br><span class="line">var sub = function(x)&#123;</span><br><span class="line">    return  x-4;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var count = compose(add , sub);</span><br><span class="line"></span><br><span class="line">count(2);//0</span><br></pre></td></tr></table></figure>
+<p>代码实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function compose() &#123;</span><br><span class="line">    var args = arguments;</span><br><span class="line">    var start = args.length - 1;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        var i = start;</span><br><span class="line">        var result = args[start].apply(this, arguments);</span><br><span class="line">        while (i--) result = args[i].call(this, result);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>参考资料：<a href="https://yi-love.github.io/blog/javascript/2016/12/07/js-func-compose.html" target="_blank" rel="noopener">JavaScript函数式编程–代码组合(compose)</a>、<a href="https://github.com/mqyqingfeng/Blog/issues/45" target="_blank" rel="noopener">JavaScript专题之函数组合 </a></p>
       
     </div>
     
@@ -503,8 +530,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -519,7 +555,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -530,7 +566,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,6 +600,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数柯里化"><span class="nav-number">1.</span> <span class="nav-text">函数柯里化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偏函数"><span class="nav-number">2.</span> <span class="nav-text">偏函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#惰性函数"><span class="nav-number">3.</span> <span class="nav-text">惰性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合函数"><span class="nav-number">4.</span> <span class="nav-text">组合函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -117,14 +117,19 @@
 
 
 
+<meta name="description" content="内容 Flex介绍 基本概念 CSS属性说明 Flex项目属性 兼容性  弹性布局： Flex介绍Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持。Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。 基本概念采用Flex布局的元素为，称为 Flex容器，容器的直接子元素称为 Flex项目，容器默认有两个轴心线，用于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flex学习">
 <meta property="og:url" content="http://blog.xiaowuzi.info/2015/04/08/flex学习/index.html">
 <meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="内容 Flex介绍 基本概念 CSS属性说明 Flex项目属性 兼容性  弹性布局： Flex介绍Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持。Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。 基本概念采用Flex布局的元素为，称为 Flex容器，容器的直接子元素称为 Flex项目，容器默认有两个轴心线，用于">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T13:04:40.000Z">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/flex/1611cc8a90e05b23.png">
+<meta property="og:updated_time" content="2018-04-23T08:10:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flex学习">
+<meta name="twitter:description" content="内容 Flex介绍 基本概念 CSS属性说明 Flex项目属性 兼容性  弹性布局： Flex介绍Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持。Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。 基本概念采用Flex布局的元素为，称为 Flex容器，容器的直接子元素称为 Flex项目，容器默认有两个轴心线，用于">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/flex/1611cc8a90e05b23.png">
 
 
 
@@ -349,8 +354,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -386,7 +391,27 @@
       
 
       
-        
+        <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
+<li>Flex介绍</li>
+<li>基本概念</li>
+<li>CSS属性说明</li>
+<li>Flex项目属性</li>
+<li>兼容性</li>
+</ol>
+<p><strong>弹性布局：</strong></p>
+<h3 id="Flex介绍"><a href="#Flex介绍" class="headerlink" title="Flex介绍"></a>Flex介绍</h3><p>Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持。Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>采用Flex布局的元素为，称为 <strong>Flex容器</strong>，容器的直接子元素称为 Flex项目，容器默认有两个轴心线，用于项目的对齐与排列，水平主轴为 <strong>main axis</strong>，垂直主轴为 <strong>cross axis</strong>，主轴的开始位置为 <strong>start</strong>， 结束位置为 <strong>end</strong>。</p>
+<p><strong>主轴和交叉轴的判定：如果flex-direction为row，则主轴是水平方向，如果是column，则主轴是垂直方向</strong></p>
+<p><img src="/images/flex/1611cc8a90e05b23.png" alt=""></p>
+<h3 id="CSS属性说明"><a href="#CSS属性说明" class="headerlink" title="CSS属性说明"></a>CSS属性说明</h3><p>将任意元素的 display 属性设置为 flex，可将其转换为Flex容器 设为Flex容器后，子元素的 float、clear 和 vertical-align 属性将失效<br><a id="more"></a></p>
+<h4 id="Flex项目属性"><a href="#Flex项目属性" class="headerlink" title="Flex项目属性"></a>Flex项目属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">主轴方向：水平排列（默认） | 水平反向排列 | 垂直排列 | 垂直反向排列</span><br><span class="line">flex-direction: row | row-reverse | column | column-reverse;</span><br><span class="line"></span><br><span class="line">换行：不换行（默认） | 换行 | 反向换行(第一行在最后面)</span><br><span class="line">flex-wrap: nowrap | wrap | wrap-reverse;</span><br><span class="line"></span><br><span class="line">flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</span><br><span class="line">flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line"></span><br><span class="line">主轴对齐方式：起点对齐（默认） | 终点对齐 | 居中对齐 | 两端对齐 | 分散对齐</span><br><span class="line">justify-content: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line"></span><br><span class="line">交叉轴对齐方式：拉伸对齐（默认） | 起点对齐 | 终点对齐 | 居中对齐 | 第一行文字的基线对齐</span><br><span class="line">align-items: stretch | flex-start | flex-end | center | baseline;</span><br><span class="line"></span><br><span class="line">多根轴线对齐方式：拉伸对齐（默认） | 起点对齐 | 终点对齐 | 居中对齐 | 两端对齐 | 分散对齐</span><br><span class="line">align-content: stretch | flex-start | flex-end | center | space-between | space-around;</span><br></pre></td></tr></table></figure>
+<h4 id="Flex项目属性-1"><a href="#Flex项目属性-1" class="headerlink" title="Flex项目属性"></a>Flex项目属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">顺序：数值越小越靠前，默认为0</span><br><span class="line">order: &lt;number&gt;; </span><br><span class="line"></span><br><span class="line">放大比例：默认为0，如果有剩余空间也不放大，值为1则放大，2是1的双倍大小，以此类推</span><br><span class="line">flex-grow: &lt;number&gt;; </span><br><span class="line"></span><br><span class="line">缩小比例：默认为1，如果空间不足则会缩小，值为0不缩小</span><br><span class="line">flex-shrink: &lt;number&gt;;</span><br><span class="line"></span><br><span class="line">项目自身大小：默认auto，为原来的大小，可设置固定值 50px/50%</span><br><span class="line">flex-basis: &lt;length&gt; | auto;</span><br><span class="line"></span><br><span class="line">flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto</span><br><span class="line">两个快捷值：auto (1 1 auto) 和 none (0 0 auto)</span><br><span class="line">flex:none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]</span><br><span class="line"></span><br><span class="line">项目自身对齐：继承父元素（默认） | 起点对齐 | 终点对齐 | 居中对齐 | 基线对齐 | 拉伸对齐</span><br><span class="line">align-self: auto | flex-start | flex-end | center | baseline | stretch;</span><br></pre></td></tr></table></figure>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>flex主要经历了三个版本更新导致有很多兼容性问题</p>
+<p><strong>2009 version标志：</strong>display: box; or a property that is box-{*} (eg. box-pack)</p>
+<p><strong>2011 version标志：</strong>display: flexbox; or the flex() function or flex-pack property</p>
+<p><strong>2012 version标志：</strong>display: flex/inline-flex; and flex-{*} properties</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">/* 子元素-平均分栏 */</span><br><span class="line">.flex1 &#123;</span><br><span class="line">    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */</span><br><span class="line">    -moz-box-flex: 1;         /* OLD - Firefox 19- */</span><br><span class="line">    /* width: 20%; */         /* For old syntax, otherwise collapses. */</span><br><span class="line">                              /* 见本文底部评论@Lawrence */</span><br><span class="line">    -webkit-flex: 1;          /* Chrome */</span><br><span class="line">    -ms-flex: 1;              /* IE 10 */</span><br><span class="line">    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */</span><br><span class="line">&#125;</span><br><span class="line">/* 父元素-横向排列（主轴） */</span><br><span class="line">.flex-h &#123;</span><br><span class="line">    display: box;              /* OLD - Android 4.4- */</span><br><span class="line"></span><br><span class="line">    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */</span><br><span class="line">    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */</span><br><span class="line">    display: -ms-flexbox;      /* TWEENER - IE 10 */</span><br><span class="line">    display: -webkit-flex;     /* NEW - Chrome */</span><br><span class="line">    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /* 09版 */</span><br><span class="line">    -webkit-box-orient: horizontal;</span><br><span class="line">    /* 12版 */</span><br><span class="line">    -webkit-flex-direction: row;</span><br><span class="line">    -moz-flex-direction: row;</span><br><span class="line">    -ms-flex-direction: row;</span><br><span class="line">    -o-flex-direction: row;</span><br><span class="line">    flex-direction: row;</span><br><span class="line">&#125;</span><br><span class="line">/* 父元素-横向换行 */</span><br><span class="line">.flex-hw &#123;</span><br><span class="line">    /* 09版 */</span><br><span class="line">    /*-webkit-box-lines: multiple;*/</span><br><span class="line">    /* 12版 */</span><br><span class="line">    -webkit-flex-wrap: wrap;</span><br><span class="line">    -moz-flex-wrap: wrap;</span><br><span class="line">    -ms-flex-wrap: wrap;</span><br><span class="line">    -o-flex-wrap: wrap;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">&#125;</span><br><span class="line">/* 父元素-水平居中（主轴是横向才生效） */</span><br><span class="line">.flex-hc &#123;</span><br><span class="line">    /* 09版 */</span><br><span class="line">    -webkit-box-pack: center;</span><br><span class="line">    /* 12版 */</span><br><span class="line">    -webkit-justify-content: center;</span><br><span class="line">    -moz-justify-content: center;</span><br><span class="line">    -ms-justify-content: center;</span><br><span class="line">    -o-justify-content: center;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    /* 其它取值如下：</span><br><span class="line">        align-items     主轴原点方向对齐</span><br><span class="line">        flex-end        主轴延伸方向对齐</span><br><span class="line">        space-between   等间距排列，首尾不留白</span><br><span class="line">        space-around    等间距排列，首尾留白</span><br><span class="line">     */</span><br><span class="line">&#125;</span><br><span class="line">/* 父元素-纵向排列（主轴） */</span><br><span class="line">.flex-v &#123;</span><br><span class="line">    display: box;              /* OLD - Android 4.4- */</span><br><span class="line"></span><br><span class="line">    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */</span><br><span class="line">    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */</span><br><span class="line">    display: -ms-flexbox;      /* TWEENER - IE 10 */</span><br><span class="line">    display: -webkit-flex;     /* NEW - Chrome */</span><br><span class="line">    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /* 09版 */</span><br><span class="line">    -webkit-box-orient: vertical;</span><br><span class="line">    /* 12版 */</span><br><span class="line">    -webkit-flex-direction: column;</span><br><span class="line">    -moz-flex-direction: column;</span><br><span class="line">    -ms-flex-direction: column;</span><br><span class="line">    -o-flex-direction: column;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">&#125;</span><br><span class="line">/* 父元素-纵向换行 */</span><br><span class="line">.flex-vw &#123;</span><br><span class="line">    /* 09版 */</span><br><span class="line">    /*-webkit-box-lines: multiple;*/</span><br><span class="line">    /* 12版 */</span><br><span class="line">    -webkit-flex-wrap: wrap;</span><br><span class="line">    -moz-flex-wrap: wrap;</span><br><span class="line">    -ms-flex-wrap: wrap;</span><br><span class="line">    -o-flex-wrap: wrap;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">&#125;</span><br><span class="line">/* 父元素-竖直居中（主轴是横向才生效） */</span><br><span class="line">.flex-vc &#123;</span><br><span class="line">    /* 09版 */</span><br><span class="line">    -webkit-box-align: center;</span><br><span class="line">    /* 12版 */</span><br><span class="line">    -webkit-align-items: center;</span><br><span class="line">    -moz-align-items: center;</span><br><span class="line">    -ms-align-items: center;</span><br><span class="line">    -o-align-items: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">/* 子元素-显示在从左向右（从上向下）第1个位置，用于改变源文档顺序显示 */</span><br><span class="line">.flex-1 &#123;</span><br><span class="line">    -webkit-box-ordinal-group: 1;   /* OLD - iOS 6-, Safari 3.1-6 */</span><br><span class="line">    -moz-box-ordinal-group: 1;      /* OLD - Firefox 19- */</span><br><span class="line">    -ms-flex-order: 1;              /* TWEENER - IE 10 */</span><br><span class="line">    -webkit-order: 1;               /* NEW - Chrome */</span><br><span class="line">    order: 1;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */</span><br><span class="line">&#125;</span><br><span class="line">/* 子元素-显示在从左向右（从上向下）第2个位置，用于改变源文档顺序显示 */</span><br><span class="line">.flex-2 &#123;</span><br><span class="line">    -webkit-box-ordinal-group: 2;   /* OLD - iOS 6-, Safari 3.1-6 */</span><br><span class="line">    -moz-box-ordinal-group: 2;      /* OLD - Firefox 19- */</span><br><span class="line">    -ms-flex-order: 2;              /* TWEENER - IE 10 */</span><br><span class="line">    -webkit-order: 2;               /* NEW - Chrome */</span><br><span class="line">    order: 2;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料：<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇</a>、<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">Flex 布局教程：实例篇</a>、<a href="http://www.ayqy.net/blog/flexbox%E5%B8%83%E5%B1%80%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/" target="_blank" rel="noopener">flexbox布局的兼容性</a>、<a href="https://www.w3cplus.com/css3/using-flexbox.html" target="_blank" rel="noopener">使用Flexbox：新旧语法混用实现最佳浏览器兼容</a></p>
       
     </div>
     
@@ -503,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -519,7 +553,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -530,7 +564,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,6 +598,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex介绍"><span class="nav-number">2.</span> <span class="nav-text">Flex介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">3.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS属性说明"><span class="nav-number">4.</span> <span class="nav-text">CSS属性说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Flex项目属性"><span class="nav-number">4.1.</span> <span class="nav-text">Flex项目属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flex项目属性-1"><span class="nav-number">4.2.</span> <span class="nav-text">Flex项目属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">5.</span> <span class="nav-text">兼容性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

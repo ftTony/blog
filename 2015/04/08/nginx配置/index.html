@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="小武子博客">
 <meta property="og:description" content="Ngnix介绍Nginx是一款轻量级的网页服务器、反向代理器以及电子邮件代理服务器。其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。类似的web服务器有Apache、IIS Nginx基本配置与参数说明nginx配置文件主要分为六个区域：main(全局设置)、events(nginx工作模式)、http(http设置)、server(主机设置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-15T04:12:31.709Z">
+<meta property="og:updated_time" content="2018-04-23T02:31:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx配置">
 <meta name="twitter:description" content="Ngnix介绍Nginx是一款轻量级的网页服务器、反向代理器以及电子邮件代理服务器。其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。类似的web服务器有Apache、IIS Nginx基本配置与参数说明nginx配置文件主要分为六个区域：main(全局设置)、events(nginx工作模式)、http(http设置)、server(主机设置">
@@ -392,6 +392,7 @@
         <h3 id="Ngnix介绍"><a href="#Ngnix介绍" class="headerlink" title="Ngnix介绍"></a><strong>Ngnix介绍</strong></h3><p>Nginx是一款轻量级的网页服务器、反向代理器以及电子邮件代理服务器。其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。类似的web服务器有Apache、IIS</p>
 <h3 id="Nginx基本配置与参数说明"><a href="#Nginx基本配置与参数说明" class="headerlink" title="Nginx基本配置与参数说明"></a><strong>Nginx基本配置与参数说明</strong></h3><p>nginx配置文件主要分为六个区域：main(全局设置)、events(nginx工作模式)、http(http设置)、server(主机设置)、location(URL匹配)、upstream(负载均衡器设置)。</p>
 <h5 id="main模块如下："><a href="#main模块如下：" class="headerlink" title="main模块如下："></a>main模块如下：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">user nobody nobody;</span><br><span class="line">worker_processes 2;</span><br><span class="line">error_log /usr/local/var/log/nginx/error.log  notice;</span><br><span class="line">pid        /usr/local/var/run/nginx/nginx.pid;</span><br><span class="line">worker_rlimit_nofile 1024;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>user 来指定Nginx Worker进程运行用户以及用户组，默认同nobody账号运行。</p>
 <p>worker_processes来指定了Nginx要开启的子进程数。每个Nginx进程平均耗费10M~12M内存。根据经验，一般指定1个进程就足够了，如果是多核CPU，建议指定和CPU的数量一样的进程数即可。我这里写2，那么就会开启2个子进程，总共3个进程。</p>
 <p>error_log用来定义全局错误日志文件。日志输出级别有debug、info、notice、warn、error、crit可供选择，其中，debug输出日志最为最详细，而crit输出日志最少。</p>
@@ -576,7 +577,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -587,7 +588,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

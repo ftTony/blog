@@ -491,8 +491,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -529,12 +529,29 @@
 
       
         
-          
-            
-          
+          <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ol>
+<li>Flex介绍</li>
+<li>基本概念</li>
+<li>CSS属性说明</li>
+<li>Flex项目属性</li>
+<li>兼容性</li>
+</ol>
+<p><strong>弹性布局：</strong></p>
+<h3 id="Flex介绍"><a href="#Flex介绍" class="headerlink" title="Flex介绍"></a>Flex介绍</h3><p>Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持。Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>采用Flex布局的元素为，称为 <strong>Flex容器</strong>，容器的直接子元素称为 Flex项目，容器默认有两个轴心线，用于项目的对齐与排列，水平主轴为 <strong>main axis</strong>，垂直主轴为 <strong>cross axis</strong>，主轴的开始位置为 <strong>start</strong>， 结束位置为 <strong>end</strong>。</p>
+<p><strong>主轴和交叉轴的判定：如果flex-direction为row，则主轴是水平方向，如果是column，则主轴是垂直方向</strong></p>
+<p><img src="/images/flex/1611cc8a90e05b23.png" alt=""></p>
+<h3 id="CSS属性说明"><a href="#CSS属性说明" class="headerlink" title="CSS属性说明"></a>CSS属性说明</h3><p>将任意元素的 display 属性设置为 flex，可将其转换为Flex容器 设为Flex容器后，子元素的 float、clear 和 vertical-align 属性将失效<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/04/08/flex学习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -719,7 +736,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、柯里化函数/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/03/07/偏函数、惰性函数、函数柯里化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -738,7 +755,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/03/07/偏函数、惰性函数、柯里化函数/" itemprop="url">偏函数、惰性函数、柯里化函数</a></h1>
+                <a class="post-title-link" href="/2015/03/07/偏函数、惰性函数、函数柯里化/" itemprop="url">函数柯里化、偏函数、惰性函数</a></h1>
         
 
         <div class="post-meta">
@@ -811,9 +828,16 @@
 
       
         
-          
-            
-          
+          <h3 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h3><p><strong>定义：</strong>在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function curry()&#123;</span><br><span class="line">	var l=func.length;</span><br><span class="line">	return function curried()&#123;</span><br><span class="line">		if(args.length&lt;l)&#123;</span><br><span class="line">			return function()&#123;</span><br><span class="line">				var argsInner=[].slice.call(arguments);</span><br><span class="line">				return curried.apply(this,args.concat(argsInner));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			return func.apply(this,args);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var f = function(a,b,c) &#123;</span><br><span class="line">  return console.log([a,b,c])</span><br><span class="line">&#125;</span><br><span class="line">var curried = curry(f);</span><br><span class="line">curried(1,2,3)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/03/07/偏函数、惰性函数、函数柯里化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1424,7 +1448,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/05/06/fiddler学习/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/04/12/移动端调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1443,7 +1467,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/05/06/fiddler学习/" itemprop="url">fiddler学习</a></h1>
+                <a class="post-title-link" href="/2014/04/12/移动端调试/" itemprop="url">移动端调试</a></h1>
         
 
         <div class="post-meta">
@@ -1455,8 +1479,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-05-06T11:03:13+08:00">
-                2014-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-12T10:54:19+08:00">
+                2014-04-12
               </time>
             
 
@@ -1478,8 +1502,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/mobile/" itemprop="url" rel="index">
+                    <span itemprop="name">mobile</span>
                   </a>
                 </span>
 
@@ -1565,7 +1589,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/04/12/移动端调试/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2014/04/11/移动web知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony">
@@ -1584,7 +1608,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/04/12/移动端调试/" itemprop="url">移动端调试</a></h1>
+                <a class="post-title-link" href="/2014/04/11/移动web知识/" itemprop="url">移动web知识</a></h1>
         
 
         <div class="post-meta">
@@ -1596,8 +1620,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-12T10:54:19+08:00">
-                2014-04-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-04-11T11:01:47+08:00">
+                2014-04-11
               </time>
             
 
@@ -1743,7 +1767,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1754,7 +1778,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

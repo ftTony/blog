@@ -4,8 +4,117 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2015/03/07/%E5%81%8F%E5%87%BD%E6%95%B0%E3%80%81%E6%83%B0%E6%80%A7%E5%87%BD%E6%95%B0%E3%80%81%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</loc>
+    <lastmod>2018-04-24T12:59:26.257Z</lastmod>
+    <data>
+        <display>
+        <title>函数柯里化、偏函数、惰性函数</title>
+        <pubTime>2015-03-07T15:21:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2014/04/07/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</loc>
+    <lastmod>2018-04-23T12:44:46.373Z</lastmod>
+    <data>
+        <display>
+        <title>防抖与节流</title>
+        <pubTime>2014-04-07T15:21:51.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-04-23T08:19:14.224Z</lastmod>
+    <data>
+        <display>
+        <title>http详解</title>
+        <pubTime>2016-04-07T12:45:48.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/flex%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-04-23T08:10:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>flex学习</title>
+        <pubTime>2015-04-08T02:57:46.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="CSS" url="http://blog.xiaowuzi.info/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-04-23T02:31:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>nginx配置</title>
+        <pubTime>2015-04-08T03:12:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/02/08/javascript%E4%B9%8BDOM%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2018-04-22T09:24:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript之DOM事件机制</title>
+        <pubTime>2013-02-08T03:57:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-22T08:15:56.962Z</lastmod>
+    <lastmod>2018-04-22T09:00:37.233Z</lastmod>
     <data>
         <display>
         <title>websocket学习</title>
@@ -20,6 +129,8 @@
     </data>
     </url>
 
+    
+    
     
   <url>
     <loc>http://blog.xiaowuzi.info/2016/04/12/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/</loc>
@@ -238,24 +349,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2015/03/07/%E5%81%8F%E5%87%BD%E6%95%B0%E3%80%81%E6%83%B0%E6%80%A7%E5%87%BD%E6%95%B0%E3%80%81%E6%9F%AF%E9%87%8C%E5%8C%96%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2018-04-15T11:05:57.000Z</lastmod>
-    <data>
-        <display>
-        <title>偏函数、惰性函数、柯里化函数</title>
-        <pubTime>2015-03-07T15:21:06.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2014/06/07/%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-04-15T10:46:12.000Z</lastmod>
     <data>
@@ -364,24 +457,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/nginx%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-04-15T04:12:31.709Z</lastmod>
-    <data>
-        <display>
-        <title>nginx配置</title>
-        <pubTime>2015-04-08T03:12:52.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2015/04/08/npm%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2018-04-15T04:03:49.000Z</lastmod>
     <data>
@@ -406,24 +481,6 @@
         <display>
         <title>http2</title>
         <pubTime>2016-07-08T02:53:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/07/http%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-04-14T15:54:47.734Z</lastmod>
-    <data>
-        <display>
-        <title>http详解</title>
-        <pubTime>2016-04-07T12:45:48.000Z</pubTime>
         
          
            
@@ -786,24 +843,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2014/05/06/fiddler%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:25:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>fiddler学习</title>
-        <pubTime>2014-05-06T03:03:13.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/05/01/chrome%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-04-09T13:24:16.000Z</lastmod>
     <data>
@@ -930,42 +969,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/flex%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:04:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>flex学习</title>
-        <pubTime>2015-04-08T02:57:46.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="css" url="http://blog.xiaowuzi.info/categories/css/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/02/08/dom%E4%BA%8B%E4%BB%B6/</loc>
-    <lastmod>2018-04-09T13:03:35.715Z</lastmod>
-    <data>
-        <display>
-        <title>DOM事件</title>
-        <pubTime>2013-02-08T03:57:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2017/12/01/%E7%9B%B4%E6%92%AD%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2018-04-08T03:49:17.000Z</lastmod>
     <data>
@@ -1052,21 +1055,6 @@
              
               <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2014/04/07/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</loc>
-    <lastmod>2018-04-07T15:25:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>防抖与节流</title>
-        <pubTime>2014-04-07T15:21:51.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>

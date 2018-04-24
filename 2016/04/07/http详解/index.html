@@ -129,7 +129,7 @@
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/http-resource-3.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http/201204271057105124.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/http2/http-resource-4.png">
-<meta property="og:updated_time" content="2018-04-14T15:54:47.734Z">
+<meta property="og:updated_time" content="2018-04-23T08:19:14.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http详解">
 <meta name="twitter:description" content="http的定义和历史  HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。目前已经经历了四个版本，分别是http0.9，http1.0,http1.1及去年刚发布的http2.0。 HTTP协议是基于请求与相应，具体如图 http三次握手   HTTP是基于传输层的TCP协议，而TCP是一个">
@@ -406,17 +406,19 @@
 <li>无连接：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
 </ol>
 <h3 id="http请求详解"><a href="#http请求详解" class="headerlink" title="http请求详解"></a><strong>http请求详解</strong></h3><p>http请求由三部分组成，分别是：请求行、消息报头、请求正文<br><img src="/images/http2/http-resource-3.png" alt=""></p>
-<p>http的请求方法：GET POST HEAD PUT DELETE TRACE CONNECT OPTIONS </p>
-<p>GET     请求获取Request-URI所标识的资源</p>
-<p>POST    在Request-URI所标识的资源后附加新的数据</p>
-<p>HEAD    请求获取由Request-URI所标识的资源的响应消息报头</p>
-<p>PUT     请求服务器存储一个资源，并用Request-URI作为其标识</p>
-<p>DELETE  请求服务器删除Request-URI所标识的资源</p>
-<p>TRACE   请求服务器回送收到的请求信息，主要用于测试或诊断</p>
-<p>CONNECT 保留将来使用</p>
-<p>OPTIONS 请求查询服务器的性能，或者查询与资源相关的选项和需求</p>
-<p>HTTP请求由三部分组成：请求行  http头  内容</p>
-<p>请求行内容如下：<code>GET www.cnblogs.com HTTP/1.1</code>请求行写法是固定的，由三部分组成，第一部分是请求方法，第二部分是请求网址，第三部分是HTTP版本。｀</p>
+<p><strong>http的请求方法：</strong>GET POST HEAD PUT DELETE TRACE CONNECT OPTIONS </p>
+<ul>
+<li>GET     请求获取Request-URI所标识的资源</li>
+<li>POST    在Request-URI所标识的资源后附加新的数据</li>
+<li>HEAD    请求获取由Request-URI所标识的资源的响应消息报头</li>
+<li>PUT     请求服务器存储一个资源，并用Request-URI作为其标识</li>
+<li>DELETE  请求服务器删除Request-URI所标识的资源</li>
+<li>TRACE   请求服务器回送收到的请求信息，主要用于测试或诊断</li>
+<li>CONNECT 保留将来使用</li>
+<li>OPTIONS 请求查询服务器的性能，或者查询与资源相关的选项和需求</li>
+</ul>
+<p><strong>HTTP请求由三部分组成：</strong>请求行  http头  内容</p>
+<p>请求行内容如下：<code>GET www.cnblogs.com HTTP/1.1</code>请求行写法是固定的，由三部分组成，第一部分是请求方法，第二部分是请求网址，第三部分是HTTP版本。</p>
 <p>第二部分HTTP头在HTTP请求可以是3种HTTP头：1.请求头(request header)  2.普通头(general header)  3.实体头(entity header) 通常来说，由于Get请求往往不包含内容实体，因此也不会有实体头。</p>
 <p>第三部分内容只在POST请求中存在，因为GET请求并不包含任何实体。</p>
 <p>完整的http请求图如下：</p>
@@ -554,8 +556,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/07/amd、cmd、common和umd区别/" rel="prev" title="amd、cmd、common和umd区别">
-                amd、cmd、common和umd区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/07/javascript引擎的执行机制/" rel="prev" title="javascript引擎的执行机制">
+                javascript引擎的执行机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -633,7 +635,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -644,7 +646,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
