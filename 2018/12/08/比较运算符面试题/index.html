@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="对的你没看错，这是道很基础的面试题，昨天刚好面试到了，不好意思，没答出来。 []==’’返回？直接说答案吧，返回是true 为什么？如果你看《Javascript权威指南第6版》的话，从75-76页里面关于==的转换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="比较运算符面试题">
+<meta property="og:url" content="http://blog.xiaowuzi.info/2018/12/08/比较运算符面试题/index.html">
+<meta property="og:site_name" content="小武子博客">
+<meta property="og:description" content="对的你没看错，这是道很基础的面试题，昨天刚好面试到了，不好意思，没答出来。 []==’’返回？直接说答案吧，返回是true 为什么？如果你看《Javascript权威指南第6版》的话，从75-76页里面关于==的转换">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/js/01.png">
+<meta property="og:image" content="http://blog.xiaowuzi.info/images/js/02.png">
+<meta property="og:updated_time" content="2018-12-08T05:13:08.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="比较运算符面试题">
+<meta name="twitter:description" content="对的你没看错，这是道很基础的面试题，昨天刚好面试到了，不好意思，没答出来。 []==’’返回？直接说答案吧，返回是true 为什么？如果你看《Javascript权威指南第6版》的话，从75-76页里面关于==的转换">
+<meta name="twitter:image" content="http://blog.xiaowuzi.info/images/js/01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xiaowuzi.info/2018/12/08/比较运算符面试题/">
+
+
+
+
+
+  <title>比较运算符面试题 | 小武子博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小武子博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2018/12/08/比较运算符面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">比较运算符面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T11:16:30+08:00">
+                2018-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对的你没看错，这是道很基础的面试题，昨天刚好面试到了，不好意思，没答出来。</p>
+<h4 id="’’返回？"><a href="#’’返回？" class="headerlink" title="[]==’’返回？"></a>[]==’’返回？</h4><p>直接说答案吧，返回是<code>true</code></p>
+<h4 id="为什么？"><a href="#为什么？" class="headerlink" title="为什么？"></a>为什么？</h4><p>如果你看《Javascript权威指南第6版》的话，从75-76页里面关于==的转换</p>
+<p><img src="/images/js/01.png" alt="image"></p>
+<a id="more"></a>
+<p>上图的意思就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if (两个操作数的类型是相同)&#123;</span><br><span class="line">同严格相等的比较规则一样（以下文会解释严格相等的比较规则）</span><br><span class="line">&#125;</span><br><span class="line">else if(两个操作数的类型不相同)&#123;</span><br><span class="line">    if(null == undefined) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;else if(a是数字，b是字符串)&#123;</span><br><span class="line">        将字符串转换为数字，然后使用转换后的值进行比较。</span><br><span class="line">    &#125;else if(两个值中有一个是true的话)&#123;</span><br><span class="line">        将其转换为1再进行比较</span><br><span class="line">    &#125;else if(两个值中有一个是false的话)&#123;</span><br><span class="line">        将其转换为0再进行比较</span><br><span class="line">    &#125;else if(如果一个值是对象，另一个值是数字或字符串)&#123;</span><br><span class="line">        将对象转换为原始值，转换规则在《Javascript权威指南第6版》书52页已经说明，下文具体说到对象转换为原始值的步骤</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>综合上文所说，[]==’’ 属于最后一种情况.</p>
+<h4 id="对象转换为原始值步骤"><a href="#对象转换为原始值步骤" class="headerlink" title="对象转换为原始值步骤"></a>对象转换为原始值步骤</h4><ol>
+<li>对象转换到布尔值</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">直接将对象转成true</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>对象转换到字符串</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if(对象具有tostring()方法)&#123;</span><br><span class="line">    如果返回一个原始值，javascript将这个值转换为字符串，并返回这个字符串结果。</span><br><span class="line">&#125;else if(对象具有valueOf()方法)&#123;</span><br><span class="line">    会调用valueOf()方法.将其结果返回</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    抛出异常</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>对象转换到数字</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if(对象具有valueOf()方法)&#123;</span><br><span class="line">    会调用valueOf()方法.将其结果返回</span><br><span class="line">&#125;else if(对象具有tostring()方法)&#123;</span><br><span class="line">    如果返回一个原始值，javascript将这个值转换为字符串，并返回这个字符串结果。</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    抛出异常</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意对于空数组以及单个元素的数组会转换成一个数字。数组继承了默认的valueOf()方法，这个方法返回一个对象而不是一个原始值，因此数组到数字的转换则调用toString()方法。空数组转换成为空字符串，空字符串转换成为数字0.——来《javascript权威指南》第55页。</p>
+<h4 id="严格相等的比较规则"><a href="#严格相等的比较规则" class="headerlink" title="严格相等的比较规则"></a>严格相等的比较规则</h4><p><img src="/images/js/02.png" alt="image"></p>
+<p>上图的意思是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">if (两个值类型不相同)&#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line">else if(null/undefined/true/false)&#123;</span><br><span class="line">    return true</span><br><span class="line">&#125;else if(两个值其中之一为NaN)&#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;else if(两个值都为数值且值相等)&#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;else if(两个值都为字符串且值相等 )&#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;else if(两个值都指向同一个引用类型 )&#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="常见的-比较例子"><a href="#常见的-比较例子" class="headerlink" title="常见的==比较例子"></a>常见的==比较例子</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">123 == 123; //true</span><br><span class="line">&apos;123&apos; == 123; //true，&apos;123&apos;会转成成数值123</span><br><span class="line">false == 0; //true，false 转成数值就是0</span><br><span class="line">&apos;a&apos; == &apos;A&apos;; //false，转换后的编码不一样</span><br><span class="line">123 == &#123;&#125;; //false，valueOf()会改变</span><br><span class="line">123 == NaN; //false，只要有NaN，都是false</span><br><span class="line">&#123;&#125; == &#123;&#125;; //false，比较的是他们的地址，每个新创建对象的引用地址都不同</span><br><span class="line"></span><br><span class="line">null == undefined //true</span><br><span class="line">&apos;NaN&apos; == NaN //false</span><br><span class="line">123 == NaN //false</span><br><span class="line">NaN == NaN //false</span><br><span class="line">false == 0 //true</span><br><span class="line">true == 1 //true</span><br><span class="line">true == 2 //false</span><br><span class="line">undefined == 0 //false</span><br><span class="line">null == 0 //false</span><br><span class="line">&apos;123&apos; == 123 //true</span><br><span class="line">&apos;123&apos; === 123 //false</span><br></pre></td></tr></table></figure>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论:"></a>结论:</h4><h6 id="’’，首先操作的是将-转转换成空字符串，空字符串再转换成数字0，0再跟‘’比较，将’’转成0-所以最终返回的是true"><a href="#’’，首先操作的是将-转转换成空字符串，空字符串再转换成数字0，0再跟‘’比较，将’’转成0-所以最终返回的是true" class="headerlink" title="[]==’’，首先操作的是将[]转转换成空字符串，空字符串再转换成数字0，0再跟‘’比较，将’’转成0,所以最终返回的是true"></a>[]==’’，首先操作的是将[]转转换成空字符串，空字符串再转换成数字0，0再跟‘’比较，将’’转成0,所以最终返回的是true</h6><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p>《javascript权威指南》</p>
+<p><a href="https://segmentfault.com/a/1190000006672446" target="_blank" rel="noopener">温故js系列（9）-相等==&amp;严格相等===&amp;代码里的那些判断</a></p>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Tony 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Tony 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/07/前端常见算法/" rel="next" title="前端常见算法">
+                <i class="fa fa-chevron-left"></i> 前端常见算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tony</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#’’返回？"><span class="nav-number">1.</span> <span class="nav-text">[]==’’返回？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么？"><span class="nav-number">2.</span> <span class="nav-text">为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象转换为原始值步骤"><span class="nav-number">3.</span> <span class="nav-text">对象转换为原始值步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#严格相等的比较规则"><span class="nav-number">4.</span> <span class="nav-text">严格相等的比较规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的-比较例子"><span class="nav-number">5.</span> <span class="nav-text">常见的==比较例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">6.</span> <span class="nav-text">结论:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#’’，首先操作的是将-转转换成空字符串，空字符串再转换成数字0，0再跟‘’比较，将’’转成0-所以最终返回的是true"><span class="nav-number">6.0.1.</span> <span class="nav-text">[]==’’，首先操作的是将[]转转换成空字符串，空字符串再转换成数字0，0再跟‘’比较，将’’转成0,所以最终返回的是true</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
