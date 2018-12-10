@@ -296,6 +296,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/amd、cmd、common和umd区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tony">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小武子博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/07/amd、cmd、common和umd区别/" itemprop="url">amd、cmd、common和umd区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T20:51:07+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/模块化/" itemprop="url" rel="index">
+                    <span itemprop="name">模块化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>CommonJS是同步,服务器端模块的规范，Node.js采用了这个规范。</p>
+<p>根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的exports对象。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// foobar.js</span><br><span class="line">//私有变量</span><br><span class="line">var test = 123; </span><br><span class="line">//公有方法</span><br><span class="line">function foobar () &#123;</span><br><span class="line">    this.foo = function () &#123;</span><br><span class="line">        // do someing ...</span><br><span class="line">    &#125;</span><br><span class="line">    this.bar = function () &#123;</span><br><span class="line">        //do someing ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//exports对象上的方法和变量是公有的</span><br><span class="line">var foobar = new foobar();</span><br><span class="line">exports.foobar = foobar;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//require方法默认读取js文件，所以可以省略js后缀</span><br><span class="line">var test = require(&apos;./boobar&apos;).foobar;</span><br><span class="line">test.bar();</span><br></pre></td></tr></table></figure>
+<p>CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD CMD 解决方案。</p>
+<h2 id="AMD和RequireJS"><a href="#AMD和RequireJS" class="headerlink" title="AMD和RequireJS"></a>AMD和RequireJS</h2><p>AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”.</p>
+<p>AMD设计出一个简洁的写模块API：<br>define(id?, dependencies?, factory);<br>第一个参数 id 为字符串类型，表示了模块标识，为可选参数。若不存在则模块标识应该默认定义为在加载器中被请求脚本的标识。如果存在，那么模块标识必须为顶层的或者一个绝对的标识。<br>第二个参数，dependencies ，是一个当前模块依赖的，已被模块定义的模块标识的数组字面量。<br>第三个参数，factory，是一个需要进行实例化的函数或者一个对象。</p>
+<p>通过参数的排列组合，这个简单的API可以从容应对各种各样的应用场景，如下所述。</p>
+<p>定义无依赖的模块<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/07/amd、cmd、common和umd区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2016/04/07/javascript引擎的执行机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1591,167 +1746,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xiaowuzi.info/2015/04/08/前端性能(一)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小武子博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/04/08/前端性能(一)/" itemprop="url">前端性能(一)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-08T11:22:46+08:00">
-                2015-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/性能/" itemprop="url" rel="index">
-                    <span itemprop="name">性能</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><ul>
-<li>网页内容</li>
-<li>服务器</li>
-<li>Cookie</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>图片</li>
-</ul>
-<h3 id="网页内容"><a href="#网页内容" class="headerlink" title="网页内容"></a>网页内容</h3><h4 id="1-减少http请求次数"><a href="#1-减少http请求次数" class="headerlink" title="1. 减少http请求次数"></a>1. 减少http请求次数</h4><p>80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧。</p>
-<ul>
-<li>捆绑文件: 现在有很多现成的库可以帮你将多个脚本文件捆绑成一个文件，将多个样式表文件捆绑成一个文件，以此来减少文件的下载次数。</li>
-<li>CSS Sprites: 就是把多个图片拼成一副图片，然后通过CSS来控制在什么地方具体显示这整张图片的什么位置。</li>
-<li>Image Maps： 也是将多幅图拼在一起，然后通过坐标来控制显示导航.</li>
-<li>Inline images: 通过编码的字符串将图片内嵌到网页文本中。这个有点不好，增加了css文件体质的大小</li>
-</ul>
-<h4 id="2-减少DNS查询次数"><a href="#2-减少DNS查询次数" class="headerlink" title="2. 减少DNS查询次数"></a>2. 减少DNS查询次数</h4><p>DNS查询也消耗响应时间，如果我们的网页内容来自各个不同的domain (比如嵌入了开放广告，引用了外部图片或脚本)，那么客户端首次解析这些domain也需要消耗一定的时间。DNS查询结果缓存在本地系统和浏览器中一段时间，所以DNS查询一般是对首次访问响应速度有所影响。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/04/08/前端性能(一)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1802,7 +1796,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

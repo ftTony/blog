@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.xiaowuzi.info/2018/12/08/webpack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://blog.xiaowuzi.info/2018/12/10/BFC%E5%8E%9F%E7%90%86/</loc>
     
-    <lastmod>2018-12-09T07:07:50.908Z</lastmod>
+    <lastmod>2018-12-10T13:54:45.756Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
     
-    <lastmod>2018-12-08T05:32:16.258Z</lastmod>
+    <lastmod>2018-12-10T12:34:34.069Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xiaowuzi.info/2018/12/08/webpack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2018-12-09T07:07:50.908Z</lastmod>
     
   </url>
   
