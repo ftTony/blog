@@ -4,8 +4,44 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2018/12/08/webpack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-12-09T07:07:50.908Z</lastmod>
+    <data>
+        <display>
+        <title>webpack学习记录</title>
+        <pubTime>2018-12-08T05:30:11.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-12-08T05:32:16.258Z</lastmod>
+    <data>
+        <display>
+        <title>websocket学习</title>
+        <pubTime>2016-04-08T03:31:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2018/12/08/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    <lastmod>2018-12-08T05:13:08.769Z</lastmod>
+    <lastmod>2018-12-08T05:24:26.192Z</lastmod>
     <data>
         <display>
         <title>比较运算符面试题</title>
@@ -202,24 +238,6 @@
     </url>
 
     
-  <url>
-    <loc>http://blog.xiaowuzi.info/2016/04/08/websocket%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-22T09:00:37.233Z</lastmod>
-    <data>
-        <display>
-        <title>websocket学习</title>
-        <pubTime>2016-04-08T03:31:01.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://blog.xiaowuzi.info/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
   <url>
@@ -265,24 +283,6 @@
         <display>
         <title>vim使用</title>
         <pubTime>2015-04-19T08:52:27.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.xiaowuzi.info/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/19/bash%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-19T09:17:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>bash学习</title>
-        <pubTime>2015-04-19T08:52:48.000Z</pubTime>
         
          
            
@@ -843,48 +843,12 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2014/11/08/gulp%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:27:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>gulp学习</title>
-        <pubTime>2014-11-08T03:06:33.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/05/01/chrome%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-04-09T13:24:16.000Z</lastmod>
     <data>
         <display>
         <title>chrome开发者工具</title>
         <pubTime>2013-05-01T03:04:08.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="工具" url="http://blog.xiaowuzi.info/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2015/04/08/webpack%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:23:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>webpack学习</title>
-        <pubTime>2015-04-08T03:06:41.000Z</pubTime>
         
          
            
@@ -939,24 +903,6 @@
         <display>
         <title>javascript实现一个模板引擎</title>
         <pubTime>2014-08-08T03:15:02.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2014/05/08/canvas%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-04-09T13:16:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>canvas学习</title>
-        <pubTime>2014-05-08T03:16:06.000Z</pubTime>
         
          
            

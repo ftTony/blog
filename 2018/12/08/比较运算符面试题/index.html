@@ -126,7 +126,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/js/01.png">
 <meta property="og:image" content="http://blog.xiaowuzi.info/images/js/02.png">
-<meta property="og:updated_time" content="2018-12-08T05:13:08.769Z">
+<meta property="og:updated_time" content="2018-12-08T05:24:26.192Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="比较运算符面试题">
 <meta name="twitter:description" content="对的你没看错，这是道很基础的面试题，昨天刚好面试到了，不好意思，没答出来。 []==’’返回？直接说答案吧，返回是true 为什么？如果你看《Javascript权威指南第6版》的话，从75-76页里面关于==的转换">
@@ -412,7 +412,7 @@
 <li>对象转换到数字</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if(对象具有valueOf()方法)&#123;</span><br><span class="line">    会调用valueOf()方法.将其结果返回</span><br><span class="line">&#125;else if(对象具有tostring()方法)&#123;</span><br><span class="line">    如果返回一个原始值，javascript将这个值转换为字符串，并返回这个字符串结果。</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    抛出异常</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意对于空数组以及单个元素的数组会转换成一个数字。数组继承了默认的valueOf()方法，这个方法返回一个对象而不是一个原始值，因此数组到数字的转换则调用toString()方法。空数组转换成为空字符串，空字符串转换成为数字0.——来《javascript权威指南》第55页。</p>
+<p>注意对于空数组以及单个元素的数组会转换成一个数字。数组继承了默认的valueOf()方法，这个方法返回一个对象而不是一个原始值，因此数组到数字的转换则调用toString()方法。空数组转换成为空字符串，空字符串转换成为数字0.——来自《javascript权威指南》第55页。</p>
 <h4 id="严格相等的比较规则"><a href="#严格相等的比较规则" class="headerlink" title="严格相等的比较规则"></a>严格相等的比较规则</h4><p><img src="/images/js/02.png" alt="image"></p>
 <p>上图的意思是</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">if (两个值类型不相同)&#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line">else if(null/undefined/true/false)&#123;</span><br><span class="line">    return true</span><br><span class="line">&#125;else if(两个值其中之一为NaN)&#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;else if(两个值都为数值且值相等)&#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;else if(两个值都为字符串且值相等 )&#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;else if(两个值都指向同一个引用类型 )&#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -480,6 +480,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/08/webpack学习记录/" rel="prev" title="webpack学习记录">
+                webpack学习记录 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -556,7 +560,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
