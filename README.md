@@ -1,5 +1,7 @@
 ### 小武子前端学习知识库
 
+### [相关作品](https://github.com/ftTony/explame)
+
 #### javascript基础
 
 1. javascript执行上下文与作用域
@@ -66,12 +68,12 @@
 
 
 #### web安全
-1. XSS
+1. [XSS](https://github.com/ftTony/blog/issues/19)
 1. [CRSF](https://github.com/ftTony/blog/issues/8)
 
 #### 前端框架与库研究
 1. vue学习记录
-2. vue响应式原理及实现
+2. [vue响应式原理及实现](https://github.com/ftTony/blog/issues/18)
 1. vuex原理及源码分析
 2. [如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
 3. Diff算法
