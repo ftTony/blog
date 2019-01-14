@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2019/01/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2019-01-14T07:38:14.912Z</lastmod>
+    <data>
+        <display>
+        <title>浏览器渲染原理</title>
+        <pubTime>2019-01-14T07:35:51.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="浏览器" url="http://blog.xiaowuzi.info/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8B%E9%97%AD%E5%8C%85/</loc>
+    <lastmod>2018-12-31T05:46:18.121Z</lastmod>
+    <data>
+        <display>
+        <title>javascript之闭包</title>
+        <pubTime>2013-04-08T12:51:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2018/12/30/%E5%86%99%E5%9C%A8%E5%A4%B1%E4%B8%9A%E4%B8%A4%E4%B8%AA%E6%9C%88%EF%BC%8C2018%E5%B9%B4%E5%8D%B3%E5%B0%86%E8%BF%87%E5%8E%BB%E7%9A%84%E5%89%8D%E4%B8%A4%E5%A4%A9/</loc>
     <lastmod>2018-12-30T08:08:52.745Z</lastmod>
     <data>
@@ -753,24 +789,6 @@
 
     
   <url>
-    <loc>http://blog.xiaowuzi.info/2015/10/08/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2018-04-09T13:38:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>浏览器渲染原理</title>
-        <pubTime>2015-10-08T02:52:39.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="原理" url="http://blog.xiaowuzi.info/categories/%E5%8E%9F%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.xiaowuzi.info/2013/05/11/TCP%E4%B8%8EUDP/</loc>
     <lastmod>2018-04-09T13:37:05.000Z</lastmod>
     <data>
@@ -1000,42 +1018,6 @@
            
              
               <breadCrumb title="javascript" url="http://blog.xiaowuzi.info/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/04/08/javascript%E4%B9%8B%E9%97%AD%E5%8C%85/</loc>
-    <lastmod>2018-04-08T03:31:46.827Z</lastmod>
-    <data>
-        <display>
-        <title>javascript之s闭包</title>
-        <pubTime>2013-04-08T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/04/10/javascript%E4%B9%8B%E7%BB%A7%E6%89%BF/</loc>
-    <lastmod>2018-04-08T03:20:53.690Z</lastmod>
-    <data>
-        <display>
-        <title>javascript基础之继承</title>
-        <pubTime>2013-04-10T12:51:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>

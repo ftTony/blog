@@ -44,7 +44,7 @@
 1. [flex学习](https://github.com/ftTony/blog/issues/10)
 1. box-sizing学习
 1. [grid学习](https://www.zcfy.cc/article/learn-css-grid-a-guide-to-learning-css-grid-jonathan-suh)
-1. 响应式学习
+1. [响应式布局](https://github.com/ftTony/blog/issues/21)
 
 #### 网络基础
 
@@ -94,15 +94,14 @@
 
 1. [http缓存](https://github.com/ftTony/blog/issues/5)
 1. [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
-2. 浏览器渲染原理
+2. [浏览器渲染原理](https://github.com/ftTony/blog/issues/20)
 3. 跨域
 3. 性能
-4. 重绘跟回流
 
 #### 其它相关
 
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
-1. PWA学习
+1. [PWA入门](https://zhuanlan.zhihu.com/p/32601560)
 1. workSerice
 2. css3动画
 3. cavans动画
@@ -140,7 +139,8 @@
 1. [前端面经](https://yuchengkai.cn/docs/zh/frontend/)
 1. [总结了17年初到18年初百场前端面试的面试经验](https://juejin.im/post/5b44a485e51d4519945fb6b7)
 1. [百度阿里网易大疆等大小厂前端校招面筋](https://juejin.im/post/5bb470295188255c5e66f88f)
-
+1. [【面经】寒冬中的一年半前端跳槽](https://juejin.im/post/5c356f68f265da61483bca61)
+1. [从URL输入到页面展现到底发生什么](https://mp.weixin.qq.com/s/NHuyZGz7dn8H9kwgZgwUGA)
 #### 学习书籍
 1. 《javascript权威指南第六版》
 2. 《JavaScript高级程序设计（第3版）中文 高清 完整》
