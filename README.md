@@ -4,11 +4,11 @@
 
 #### javascript基础
 
-1. [javascript执行上下文与执行上下文栈](https://github.com/yygmind/blog/issues/12)
+1. [javascript执行上下文与执行上下文栈](https://github.com/ftTony/blog/issues/22)
 1. [javaScript变量对象](https://github.com/mqyqingfeng/Blog/issues/5)
+1. [javaScript作用域](https://juejin.im/post/5c3b7133e51d45520a76862c)
 1. [javascript原型与原型链](https://github.com/ftTony/blog/issues/15)
 3. [javascript闭包](https://github.com/ftTony/blog/issues/16)
-4. javascriptDOM事件
 5. [apply、call和bind理解](https://github.com/ftTony/blog/issues/14)
 5. [javascript模拟bind实现](https://github.com/mqyqingfeng/Blog/issues/12)
 6. javascript模拟apply和call
