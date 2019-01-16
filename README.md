@@ -4,9 +4,8 @@
 
 #### javascript基础
 
-1. javascript执行上下文与作用域
-1. javaScript执行上下文栈和变量对象
-2. javaScript变量对象
+1. [javascript执行上下文与执行上下文栈](https://github.com/yygmind/blog/issues/12)
+1. [javaScript变量对象](https://github.com/mqyqingfeng/Blog/issues/5)
 1. [javascript原型与原型链](https://github.com/ftTony/blog/issues/15)
 3. [javascript闭包](https://github.com/ftTony/blog/issues/16)
 4. javascriptDOM事件
@@ -44,7 +43,7 @@
 1. [flex学习](https://github.com/ftTony/blog/issues/10)
 1. box-sizing学习
 1. [grid学习](https://www.zcfy.cc/article/learn-css-grid-a-guide-to-learning-css-grid-jonathan-suh)
-1. [响应式布局](https://github.com/ftTony/blog/issues/21)
+1. [响应式布局](https://github.com/ljianshu/Blog/issues/38)
 
 #### 网络基础
 
@@ -78,7 +77,6 @@
 2. [如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
 3. Diff算法
 1. vue-router分析
-1. vue案例
 
 #### 前端工具
 
@@ -95,14 +93,13 @@
 1. [http缓存](https://github.com/ftTony/blog/issues/5)
 1. [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
 2. [浏览器渲染原理](https://github.com/ftTony/blog/issues/20)
-3. 跨域
+3. [跨域](https://github.com/ftTony/blog/issues/21)
 3. 性能
 
 #### 其它相关
 
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
 1. [PWA入门](https://zhuanlan.zhihu.com/p/32601560)
-1. workSerice
 2. css3动画
 3. cavans动画
 2. svg动画

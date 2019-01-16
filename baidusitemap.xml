@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://blog.xiaowuzi.info/2019/01/14/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2019-01-14T07:52:50.519Z</lastmod>
+    <data>
+        <display>
+        <title>响应式布局</title>
+        <pubTime>2019-01-14T07:52:50.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.xiaowuzi.info/2019/01/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2019-01-14T07:38:14.912Z</lastmod>
     <data>
@@ -818,24 +833,6 @@
            
              
               <breadCrumb title="javascript框架" url="http://blog.xiaowuzi.info/categories/javascript%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.xiaowuzi.info/2013/03/08/javascript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
-    <lastmod>2018-04-09T13:34:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>javascript执行上下文与作用域</title>
-        <pubTime>2013-03-08T02:56:38.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="javascript基础" url="http://blog.xiaowuzi.info/categories/javascript%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>
