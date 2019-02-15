@@ -15,9 +15,9 @@
 2. [javascript继承以及优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
 7. [javascript防抖与节流](https://github.com/ftTony/blog/issues/13)
 9. [javascript深浅拷贝](https://github.com/ftTony/blog/issues/12)
-10. [javascript柯里化](https://github.com/ftTony/blog/issues/23)
+10. [javascript柯里化](https://github.com/mqyqingfeng/Blog/issues/42)
 11. [this解析](https://github.com/ftTony/blog/issues/6)
-12. javascript去重
+12. [javascript去重](https://github.com/yygmind/blog/issues/29)
 
 #### 设计模式
 1. 观察者
