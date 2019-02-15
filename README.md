@@ -108,6 +108,9 @@
 
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
+1. [中高级前端大厂面试秘籍，为你保驾护航金三银四，直通大厂(上)](https://juejin.im/post/5c64d15d6fb9a049d37f9c20?utm_source=gold_browser_extension#heading-21)
+1. [前端面试总结（at, md）](https://juejin.im/post/5a3134bf6fb9a0452405d507)
+1. [从0到1，小白的前端摸索之路](https://juejin.im/post/5c555b2de51d457fa31e306d)
 
 #### 优质文章
 1. [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
