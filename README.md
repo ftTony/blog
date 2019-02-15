@@ -17,7 +17,7 @@
 9. [javascript深浅拷贝](https://github.com/ftTony/blog/issues/12)
 10. [javascript柯里化](https://github.com/mqyqingfeng/Blog/issues/42)
 11. [this解析](https://github.com/ftTony/blog/issues/6)
-12. [javascript去重](https://github.com/yygmind/blog/issues/29)
+12. [javascript去重](https://github.com/mqyqingfeng/Blog/issues/27)
 
 #### 设计模式
 1. 观察者
