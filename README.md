@@ -17,6 +17,7 @@
 9. [javascript深浅拷贝](https://github.com/ftTony/blog/issues/12)
 10. [javascript柯里化](https://github.com/ftTony/blog/issues/23)
 11. [this解析](https://github.com/ftTony/blog/issues/6)
+12. javascript去重
 
 #### 设计模式
 1. 观察者
@@ -71,7 +72,7 @@
 1. [CRSF](https://github.com/ftTony/blog/issues/8)
 
 #### 前端框架与库研究
-1. vue学习记录
+1. [Vue 项目里戳中你痛点的问题及解决办法](https://juejin.im/post/5b174de8f265da6e410e0b4e)
 2. [vue响应式原理及实现](https://github.com/ftTony/blog/issues/18)
 1. vuex原理及源码分析
 2. [如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
