@@ -94,7 +94,7 @@
 1. [http缓存](https://github.com/ftTony/blog/issues/5)
 1. [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
 2. [浏览器渲染原理](https://github.com/ftTony/blog/issues/20)
-3. [跨域](https://github.com/ftTony/blog/issues/21)
+3. [九种跨域方式](https://github.com/ftTony/blog/issues/21)
 3. 性能
 
 #### 其它相关
