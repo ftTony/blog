@@ -115,6 +115,7 @@
 1. [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 2. [前端进阶系列](https://github.com/yygmind/blog)
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
+1. [浪里行舟](https://github.com/ljianshu/Blog)
 
 #### 计算机学习资料
 
