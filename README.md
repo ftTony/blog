@@ -110,6 +110,8 @@
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
 #### 优质文章
+
+1. [从URL输入到页面展现到底发生什么](https://mp.weixin.qq.com/s/NHuyZGz7dn8H9kwgZgwUGA)
 1. [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 2. [前端进阶系列](https://github.com/yygmind/blog)
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
@@ -131,6 +133,7 @@
 15. [原创文章、外文翻译、技术总结和演示代码](https://github.com/zhaoqize/blog)
 16. [后端架构师技术图谱](https://github.com/xingshaocheng/architect-awesome)
 17. [最全前端资源汇集](https://segmentfault.com/a/1190000004978770)
+
 #### 面试
 
 1. [['']==''返回多少？为什么？==做了哪些操作？](https://github.com/ftTony/blog/issues/3)
@@ -138,11 +141,13 @@
 1. [总结了17年初到18年初百场前端面试的面试经验](https://juejin.im/post/5b44a485e51d4519945fb6b7)
 1. [百度阿里网易大疆等大小厂前端校招面筋](https://juejin.im/post/5bb470295188255c5e66f88f)
 1. [【面经】寒冬中的一年半前端跳槽](https://juejin.im/post/5c356f68f265da61483bca61)
-1. [从URL输入到页面展现到底发生什么](https://mp.weixin.qq.com/s/NHuyZGz7dn8H9kwgZgwUGA)
 1. [中高级前端大厂面试秘籍，为你保驾护航金三银四，直通大厂(上)](https://juejin.im/post/5c64d15d6fb9a049d37f9c20?utm_source=gold_browser_extension#heading-21)
 1. [前端面试总结（at, md）](https://juejin.im/post/5a3134bf6fb9a0452405d507)
 1. [从0到1，小白的前端摸索之路](https://juejin.im/post/5c555b2de51d457fa31e306d)
 1. [前端面试之道](https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5be04a8e6fb9a04a072fd2cd)
+1. [毕业一年左右的前端妹子面经总结](https://juejin.im/post/5af99678f265da0b8e7f881e)
+1. [2018前端面试总结，看完弄懂，工资少说加3K](https://juejin.im/post/5b94d8965188255c5a0cdc02)
+1. [百度阿里网易大疆等大小厂前端校招面筋](https://juejin.im/post/5bb470295188255c5e66f88f)
 
 #### 学习书籍
 1. 《javascript权威指南第六版》
