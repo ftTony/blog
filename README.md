@@ -76,7 +76,7 @@
 2. [vue响应式原理及实现](https://github.com/ftTony/blog/issues/18)
 1. vuex原理及源码分析
 2. [如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
-3. Diff算法
+3. [Diff算法](https://github.com/aooy/blog/issues/2)
 1. vue-router分析
 
 #### 前端工具
