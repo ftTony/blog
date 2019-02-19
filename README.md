@@ -32,7 +32,7 @@
 1. promise学习及注意事项
 2. Set、Map、WeakSet和WeakMap
 3. 迭代器与for of
-1. 手写promise
+1. [手写promise](https://github.com/xieranmaya/blog/issues/3)
 2. Generator学习
 2. Async学习
 3. 模块化之间区别
