@@ -42,7 +42,6 @@
 1. 盒子模型
 1. [BFC原理](https://github.com/ftTony/blog/issues/1)
 1. [flex学习](https://github.com/ftTony/blog/issues/10)
-1. box-sizing学习
 1. [grid学习](https://www.zcfy.cc/article/learn-css-grid-a-guide-to-learning-css-grid-jonathan-suh)
 1. [响应式布局](https://github.com/ljianshu/Blog/issues/38)
 
@@ -111,7 +110,6 @@
 
 #### 优质文章
 
-1. [从URL输入到页面展现到底发生什么](https://mp.weixin.qq.com/s/NHuyZGz7dn8H9kwgZgwUGA)
 1. [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 2. [前端进阶系列](https://github.com/yygmind/blog)
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
