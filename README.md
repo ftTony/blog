@@ -107,6 +107,7 @@
 1. [前端工程](https://www.zhihu.com/question/24558375)
 1. [前端工程与模块化框架](https://github.com/fouber/blog/issues/4)
 1. [前端工程——基础篇](https://github.com/fouber/blog/issues/10)
+1. [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
 
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
