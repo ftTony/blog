@@ -109,6 +109,8 @@
 1. [前端工程——基础篇](https://github.com/fouber/blog/issues/10)
 1. [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
 1. [移动端常见bug汇总](https://juejin.im/post/5af918636fb9a07ac5603ecb)
+1. [自建ss服务器教程](https://github.com/Alvin9999/new-pac/wiki/%E8%87%AA%E5%BB%BAss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B)
+
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
