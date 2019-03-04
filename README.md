@@ -12,7 +12,7 @@
 5. [apply、call和bind理解](https://github.com/ftTony/blog/issues/14)
 5. [javascript模拟bind实现](https://github.com/mqyqingfeng/Blog/issues/12)
 6. [javascript模拟new实现](https://github.com/mqyqingfeng/Blog/issues/13)
-2. [javascript继承以及优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
+2. [javascript继承以及优缺点](https://github.com/yygmind/blog/issues/7)
 7. [javascript防抖与节流](https://github.com/ftTony/blog/issues/13)
 9. [javascript深浅拷贝](https://github.com/ftTony/blog/issues/12)
 10. [javascript柯里化](https://github.com/mqyqingfeng/Blog/issues/42)
