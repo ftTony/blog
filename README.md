@@ -30,7 +30,7 @@
 1. 箭头函数
 1. 模块加载方案模块之间的区别
 1. promise学习及注意事项
-2. Set、Map、WeakSet和WeakMap
+2. [Set、Map、WeakSet和WeakMap](https://github.com/sisterAn/blog/issues/24)
 3. 迭代器与for of
 1. [手写promise](https://github.com/xieranmaya/blog/issues/3)
 2. Generator学习
