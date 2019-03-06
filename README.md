@@ -73,7 +73,8 @@
 #### 前端框架与库研究
 1. [Vue 项目里戳中你痛点的问题及解决办法](https://juejin.im/post/5b174de8f265da6e410e0b4e)
 2. [vue响应式原理及实现](https://github.com/ftTony/blog/issues/18)
-1. [vuex原理及源码分析](https://github.com/muwoo/blogs)
+1. [vue源码分析](https://github.com/muwoo/blogs)
+1. [vuex原理及源码分析](https://github.com/dwqs/blog/issues/58)
 2. [如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
 3. [Diff算法](https://github.com/aooy/blog/issues/2)
 1. [Vue技术内幕](http://hcysun.me/vue-design/art/)
