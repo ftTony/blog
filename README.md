@@ -78,6 +78,7 @@
 3. [Diff算法](https://github.com/aooy/blog/issues/2)
 1. [Vue技术内幕](http://hcysun.me/vue-design/art/)
 1. [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
+1. [Vue.js 源码解析](https://github.com/answershuto/learnVue)
 
 #### 前端工具
 
