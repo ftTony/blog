@@ -28,7 +28,6 @@
 1. let、var和const的区别
 2. 模板字符串
 1. 箭头函数
-1. 模块加载方案模块之间的区别
 1. promise学习及注意事项
 2. [Set、Map、WeakSet和WeakMap](https://github.com/sisterAn/blog/issues/24)
 3. 迭代器与for of
