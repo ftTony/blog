@@ -25,7 +25,7 @@
 3. 策略模式
 
 #### es6学习
-1. let、var和const的区别
+1. [let、var和const的区别](https://github.com/mqyqingfeng/Blog/issues/82)
 2. 模板字符串
 1. 箭头函数
 1. promise学习及注意事项
@@ -103,8 +103,7 @@
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
 1. [PWA入门](https://zhuanlan.zhihu.com/p/32601560)
 2. css3动画
-3. cavans动画
-2. svg动画
+3. cavans学习
 3. [前端监控](https://juejin.im/post/5b5dcfb46fb9a04f8f37afbb)
 1. [前端工程](https://www.zhihu.com/question/24558375)
 1. [前端工程与模块化框架](https://github.com/fouber/blog/issues/4)
