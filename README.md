@@ -97,6 +97,7 @@
 2. [浏览器渲染原理](https://github.com/ftTony/blog/issues/20)
 3. [九种跨域方式](https://github.com/ftTony/blog/issues/21)
 3. 性能
+1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)
 
 #### 其它相关
 
