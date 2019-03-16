@@ -23,6 +23,7 @@
 1. 观察者
 2. 代理
 3. 策略模式
+1. [谈谈观察者模式和发布订阅模式](https://juejin.im/post/5bb1bb616fb9a05d2b6dccfa)
 
 #### es6学习
 1. [let、var和const的区别](https://github.com/mqyqingfeng/Blog/issues/82)
