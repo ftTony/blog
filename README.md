@@ -64,7 +64,7 @@
 1. 动态规划
 1. 贪心算法
 2. js常见算法
-
+1. [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 
 #### web安全
 1. [XSS](https://github.com/ftTony/blog/issues/19)
@@ -80,6 +80,7 @@
 1. [Vue技术内幕](http://hcysun.me/vue-design/art/)
 1. [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
 1. [Vue.js 源码解析](https://github.com/answershuto/learnVue)
+1. [VUE组件汇总](https://juejin.im/post/5af16a2cf265da0b8636353b)
 
 #### 前端工具
 
@@ -115,6 +116,8 @@
 1. [自建ss服务器教程](https://github.com/Alvin9999/new-pac/wiki/%E8%87%AA%E5%BB%BAss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B)
 1. [electron中文教程](https://wizardforcel.gitbooks.io/electron-doc/)
 1. [进阶必备的网络基础](https://juejin.im/post/5c591fda6fb9a049dc02b1cc)
+1. [教你从零开始搭建一款前端脚手架工具](https://juejin.im/post/5c237d1a5188256b9e0f21e1)
+1. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
 
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
