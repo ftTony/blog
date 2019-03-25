@@ -119,6 +119,8 @@
 1. [教你从零开始搭建一款前端脚手架工具](https://juejin.im/post/5c237d1a5188256b9e0f21e1)
 1. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
 1. [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
+1. [函数式编辑](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
+
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
