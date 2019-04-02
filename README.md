@@ -121,6 +121,7 @@
 1. [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
 1. [Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
 1. [函数式编辑](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
+1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
 
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
