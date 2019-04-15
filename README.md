@@ -87,6 +87,7 @@
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
 1. [深入Babel，这一篇就够了](https://juejin.im/post/5c21b584e51d4548ac6f6c99)
 2. [git学习](https://github.com/geeeeeeeeek/git-recipes)
+3. [gulp学习](https://www.gulpjs.com.cn/)
 
 #### node学习
 
