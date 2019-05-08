@@ -153,3 +153,4 @@
 16. [后端架构师技术图谱](https://github.com/xingshaocheng/architect-awesome)
 17. [最全前端资源汇集](https://segmentfault.com/a/1190000004978770)
 18. [计算机技术类书籍 PDF](https://github.com/huihut/CS-Books)
+19. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)
