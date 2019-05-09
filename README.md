@@ -155,3 +155,4 @@
 18. [计算机技术类书籍 PDF](https://github.com/huihut/CS-Books)
 19. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)
 20. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
+21. [计算机学习资料列表](https://github.com/NGLSL/learning-material-list)
