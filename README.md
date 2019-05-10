@@ -156,3 +156,5 @@
 19. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)
 20. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
 21. [计算机学习资料列表](https://github.com/NGLSL/learning-material-list)
+22. [Web前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)
+22. [awesome-bookmarks](https://github.com/PanJiaChen/awesome-bookmarks)
