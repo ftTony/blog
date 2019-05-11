@@ -125,6 +125,7 @@
 1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
 1. [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
 1. [【面试】迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的这么清楚的好文章（快快珍藏）](https://www.cnblogs.com/lixinjie/p/a-post-about-io-clearly.html)
+1. [中高级前端」窥探数据结构的世界- ES6版](https://juejin.im/post/5cd1ab3df265da03587c142a?utm_source=gold_browser_extension)
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
