@@ -64,6 +64,8 @@
 1. 动态规划
 1. 贪心算法
 2. js常见算法
+1. [「中高级前端」窥探数据结构的世界](https://juejin.im/post/5cd1ab3df265da03587c142a)
+1. [LeetCode](https://github.com/azl397985856/leetcode)
 1. [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 
 #### web安全
