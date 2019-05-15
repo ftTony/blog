@@ -46,7 +46,6 @@
 1. [响应式布局](https://github.com/ljianshu/Blog/issues/38)
 
 #### 网络基础
-
 1. [http详解](https://github.com/ftTony/blog/issues/11)
 1. [https详解](https://github.com/ftTony/blog/issues/7)
 1. [http2](https://github.com/ftTony/blog/issues/9)
@@ -54,7 +53,6 @@
 3. websocket
 
 #### 算法
-
 1. 常见数据结构
 1. 时间复杂度与空间复杂度
 1. 基本排序
@@ -147,6 +145,7 @@
 2. [前端进阶系列](https://github.com/yygmind/blog)
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
 1. [浪里行舟](https://github.com/ljianshu/Blog)
+1. [梁少峰的个人博客](https://github.com/youngwind/blog)
 
 #### 计算机学习资料
 
