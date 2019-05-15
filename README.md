@@ -85,14 +85,17 @@
 1. [VUE组件汇总](https://juejin.im/post/5af16a2cf265da0b8636353b)
 
 #### 前端工具
-
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
 1. [深入Babel，这一篇就够了](https://juejin.im/post/5c21b584e51d4548ac6f6c99)
 2. [git学习](https://github.com/geeeeeeeeek/git-recipes)
 3. [gulp学习](https://www.gulpjs.com.cn/)
 
-#### node学习
+#### 收集的优秀作品
+1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
+1. [Chrome插件](https://github.com/zhaoolee/ChromeAppHeroes)
+1. [社交聊天系统](https://github.com/wuyawei/Vchat)
 
+#### node学习
 1. [如何正确的学习Node.js](https://github.com/i5ting/How-to-learn-node-correctly)
 
 #### 浏览器相关
@@ -133,6 +136,7 @@
 1. [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
 1. [【面试】迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的这么清楚的好文章（快快珍藏）](https://www.cnblogs.com/lixinjie/p/a-post-about-io-clearly.html)
 1. [中高级前端」窥探数据结构的世界- ES6版](https://juejin.im/post/5cd1ab3df265da03587c142a?utm_source=gold_browser_extension)
+
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
