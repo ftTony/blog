@@ -90,7 +90,7 @@
 2. [git学习](https://github.com/geeeeeeeeek/git-recipes)
 3. [gulp学习](https://www.gulpjs.com.cn/)
 1. [前端库](https://github.com/sorrycc/awesome-f2e-libs)
-1. [免费英文书籍](http://web.archive.org/)
+1. [免费英文书籍](http://web.archive.org/web/20160428030320/https://github.com/vhf/free-programming-books)
 #### 收集的优秀作品
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
 1. [Chrome插件](https://github.com/zhaoolee/ChromeAppHeroes)
@@ -172,4 +172,3 @@
 20. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
 21. [计算机学习资料列表](https://github.com/NGLSL/learning-material-list)
 22. [Web前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)
-22. [awesome-bookmarks](https://github.com/PanJiaChen/awesome-bookmarks)
