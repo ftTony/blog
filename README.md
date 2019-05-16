@@ -150,6 +150,7 @@
 1. [梁少峰的个人博客](https://github.com/youngwind/blog)
 
 #### 计算机学习资料
+1. [awesome-bookmarks](https://github.com/PanJiaChen/awesome-bookmarks)
 1. [互联网公司技术架构](https://github.com/davideuler/architecture.of.internet-product)
 2. [CS-Notes](https://github.com/CyC2018/CS-Notes)
 3. [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
