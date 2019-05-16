@@ -90,7 +90,7 @@
 2. [git学习](https://github.com/geeeeeeeeek/git-recipes)
 3. [gulp学习](https://www.gulpjs.com.cn/)
 1. [前端库](https://github.com/sorrycc/awesome-f2e-libs)
-
+1. [免费英文书籍](http://web.archive.org/)
 #### 收集的优秀作品
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
 1. [Chrome插件](https://github.com/zhaoolee/ChromeAppHeroes)
