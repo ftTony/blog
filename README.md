@@ -163,6 +163,7 @@
 10. [java学习清单](https://github.com/crossoverJie/JCSprout)
 11. [前端入门和进阶学习笔记](https://github.com/suihailiang/Web)
 12. [大前端工具集](https://github.com/nieweidong/fetool)
+13. [开发效率提升之工具篇](https://github.com/Louiszhai/tool)
 13. [前端个人博客](https://github.com/fouber/blog)
 14. [微信小程序开发资源汇总](https://github.com/justjavac/awesome-wechat-weapp)
 15. [原创文章、外文翻译、技术总结和演示代码](https://github.com/zhaoqize/blog)
