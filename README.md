@@ -44,6 +44,7 @@
 1. [flex学习](https://github.com/ftTony/blog/issues/10)
 1. [grid学习](https://www.zcfy.cc/article/learn-css-grid-a-guide-to-learning-css-grid-jonathan-suh)
 1. [响应式布局](https://github.com/ljianshu/Blog/issues/38)
+1. [16种方法实现水平居中垂直居中](https://juejin.im/post/58f818bbb123db006233ab2a)
 
 #### 网络基础
 1. [http详解](https://github.com/ftTony/blog/issues/11)
