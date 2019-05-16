@@ -18,7 +18,7 @@
 10. [javascript柯里化](https://github.com/mqyqingfeng/Blog/issues/42)
 11. [this解析](https://github.com/ftTony/blog/issues/6)
 12. [javascript去重](https://github.com/mqyqingfeng/Blog/issues/27)
-
+13. [TypeScript 入门教程](https://github.com/xcatliu/typescript-tutorial)
 #### 设计模式
 1. 观察者
 2. 代理
