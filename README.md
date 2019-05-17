@@ -175,3 +175,4 @@
 21. [计算机学习资料列表](https://github.com/NGLSL/learning-material-list)
 22. [Web前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)
 23. [伯乐在线](https://github.com/jobbole/)
+24. [稀土](https://github.com/xitu)
