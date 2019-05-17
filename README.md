@@ -149,7 +149,7 @@
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
 1. [浪里行舟](https://github.com/ljianshu/Blog)
 1. [梁少峰的个人博客](https://github.com/youngwind/blog)
-
+1. [Front-end Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)
 #### 计算机学习资料
 1. [awesome-bookmarks](https://github.com/PanJiaChen/awesome-bookmarks)
 1. [互联网公司技术架构](https://github.com/davideuler/architecture.of.internet-product)
