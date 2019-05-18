@@ -19,6 +19,7 @@
 11. [this解析](https://github.com/ftTony/blog/issues/6)
 12. [javascript去重](https://github.com/mqyqingfeng/Blog/issues/27)
 13. [TypeScript 入门教程](https://github.com/xcatliu/typescript-tutorial)
+
 #### 设计模式
 1. 观察者
 2. 代理
@@ -45,6 +46,7 @@
 1. [grid学习](https://www.zcfy.cc/article/learn-css-grid-a-guide-to-learning-css-grid-jonathan-suh)
 1. [响应式布局](https://github.com/ljianshu/Blog/issues/38)
 1. [16种方法实现水平居中垂直居中](https://juejin.im/post/58f818bbb123db006233ab2a)
+1. [关于移动端适配，你必须要知道的](https://juejin.im/post/5cddf289f265da038f77696c)
 
 #### 网络基础
 1. [http详解](https://github.com/ftTony/blog/issues/11)
