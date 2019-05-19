@@ -116,6 +116,8 @@
 1. [你不知道，我们为什么需要PRD](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483694&idx=1&sn=372a20555dbcfee5d8128557839e4aba&chksm=fd5363d2ca24eac4ce375de9be00b4c14f27f27e306320f690b49b2c43eb8680b86dee71c72d&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229289&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
 1. [如何写好PRD？检验标准是？](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483714&idx=1&sn=92244821523aa9071879a9a09d5c0233&chksm=fd5363beca24eaa858d0f4672c46fc7a7ceaba28e7d8e82faa353bb929f6aaaa1dae97f5dbbb&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229321&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
 1. [产品经理到底是什么样的角色](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483766&idx=1&sn=0b5a91178c254366b7fb954a3f563655&chksm=fd53638aca24ea9cdb462c5b6176358bca929cf909a4139a97aa0eff7e25c8b59f6b653dad73&xtrack=1&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229342&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
+1. [画流程图的诀窍，ryan告诉你](https://mp.weixin.qq.com/s/Wl9g7yLPuQHTXBt6Q63yug)
+1. [超越[流程图]，产品狗必备技能](https://mp.weixin.qq.com/s/hIMDfCx4CNFKcwD49hv82w)
 
 #### 其它相关
 
