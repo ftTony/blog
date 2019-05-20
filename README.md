@@ -94,6 +94,7 @@
 3. [gulp学习](https://www.gulpjs.com.cn/)
 1. [前端库](https://github.com/sorrycc/awesome-f2e-libs)
 1. [免费英文书籍](http://web.archive.org/web/20160428030320/https://github.com/vhf/free-programming-books)
+
 #### 收集的优秀作品
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
 1. [Chrome插件](https://github.com/zhaoolee/ChromeAppHeroes)
@@ -104,7 +105,6 @@
 1. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
 
 #### 浏览器相关
-
 1. [http缓存](https://github.com/ftTony/blog/issues/5)
 1. [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
 2. [浏览器渲染原理](https://github.com/ftTony/blog/issues/20)
@@ -114,6 +114,7 @@
 1. [每个前端工程师都应该了解的图片知识(长文建议收藏)](https://mp.weixin.qq.com/s/O1n7_t4izdmpvn2mFrB-kg)
 
 #### 产品相关
+1.[什么是产品设计?](https://juejin.im/entry/570b6a6a75c4cd3c3b917bd0?utm_source=gold-miner&utm_medium=readme&utm_campaign=github)
 1. [你不知道，我们为什么需要PRD](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483694&idx=1&sn=372a20555dbcfee5d8128557839e4aba&chksm=fd5363d2ca24eac4ce375de9be00b4c14f27f27e306320f690b49b2c43eb8680b86dee71c72d&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229289&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
 1. [如何写好PRD？检验标准是？](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483714&idx=1&sn=92244821523aa9071879a9a09d5c0233&chksm=fd5363beca24eaa858d0f4672c46fc7a7ceaba28e7d8e82faa353bb929f6aaaa1dae97f5dbbb&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229321&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
 1. [产品经理到底是什么样的角色](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483766&idx=1&sn=0b5a91178c254366b7fb954a3f563655&chksm=fd53638aca24ea9cdb462c5b6176358bca929cf909a4139a97aa0eff7e25c8b59f6b653dad73&xtrack=1&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229342&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
