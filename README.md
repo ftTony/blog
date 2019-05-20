@@ -111,6 +111,7 @@
 3. [九种跨域方式](https://github.com/ftTony/blog/issues/21)
 3. 性能
 1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)
+1. [每个前端工程师都应该了解的图片知识(长文建议收藏)](https://mp.weixin.qq.com/s/O1n7_t4izdmpvn2mFrB-kg)
 
 #### 产品相关
 1. [你不知道，我们为什么需要PRD](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483694&idx=1&sn=372a20555dbcfee5d8128557839e4aba&chksm=fd5363d2ca24eac4ce375de9be00b4c14f27f27e306320f690b49b2c43eb8680b86dee71c72d&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229289&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
@@ -138,11 +139,11 @@
 1. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
 1. [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
 1. [Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
-1. [函数式编辑](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
+1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
-1. [【面试】迄今为止把同步/异步/阻塞/非阻塞/BIO/NIO/AIO讲的这么清楚的好文章（快快珍藏）](https://www.cnblogs.com/lixinjie/p/a-post-about-io-clearly.html)
 1. [英语进阶指南](https://github.com/ftTony/English-level-up-tips-for-Chinese)
 1. [房产信息](https://github.com/fairyly/you-need-know-house_knowledge)
+
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
