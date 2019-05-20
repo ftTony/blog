@@ -182,3 +182,4 @@
 23. [伯乐在线](https://github.com/jobbole/)
 24. [稀土](https://github.com/xitu)
 25. [贵校课程资料民间整理](https://github.com/lib-pku/libpku)
+26. [https://github.com/dt-fe/weekly](https://github.com/dt-fe/weekly)
