@@ -137,6 +137,8 @@
 1. [揭开JS无埋点技术的神秘面纱](http://unclechen.github.io/2018/06/24/%E6%8F%AD%E5%BC%80JS%E6%97%A0%E5%9F%8B%E7%82%B9%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1/)
 1. [把前端监控做到极致](https://zhuanlan.zhihu.com/p/32262716)
 1. [2017前端监控系统探索总结](https://juejin.im/post/5a3e121451882533f01ec66d)
+1. [分分钟拯救监控知识体系](https://mp.weixin.qq.com/s/6sxfAG1Ngr6s8Zz4zE-ncQ)
+
 
 #### 其它相关
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
