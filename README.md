@@ -131,6 +131,12 @@
 #### 前端监控
 1. [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
 3. [前端监控](https://juejin.im/post/5b5dcfb46fb9a04f8f37afbb)
+1. [前端异常监控解决方案研究](https://cdc.tencent.com/2018/09/13/frontend-exception-monitor-research/)
+1. [监控平台前端SDK开发实践](https://tech.meituan.com/2017/09/07/hunt-sdk-practice.html)
+1. [如何精确统计页面停留时长](https://techblog.toutiao.com/2018/06/05/ru-he-jing-que-tong-ji-ye-mian-ting-liu-shi-chang/)
+1. [揭开JS无埋点技术的神秘面纱](http://unclechen.github.io/2018/06/24/%E6%8F%AD%E5%BC%80JS%E6%97%A0%E5%9F%8B%E7%82%B9%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1/)
+1. [把前端监控做到极致](https://zhuanlan.zhihu.com/p/32262716)
+1. [2017前端监控系统探索总结](https://juejin.im/post/5a3e121451882533f01ec66d)
 
 #### 其它相关
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
