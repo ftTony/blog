@@ -47,6 +47,7 @@
 1. [响应式布局](https://github.com/ljianshu/Blog/issues/38)
 1. [16种方法实现水平居中垂直居中](https://juejin.im/post/58f818bbb123db006233ab2a)
 1. [关于移动端适配，你必须要知道的](https://juejin.im/post/5cddf289f265da038f77696c)
+1. [移动端常见bug汇总](https://juejin.im/post/5af918636fb9a07ac5603ecb)
 
 #### 网络基础
 1. [http详解](https://github.com/ftTony/blog/issues/11)
@@ -121,25 +122,27 @@
 1. [画流程图的诀窍，ryan告诉你](https://mp.weixin.qq.com/s/Wl9g7yLPuQHTXBt6Q63yug)
 1. [超越[流程图]，产品狗必备技能](https://mp.weixin.qq.com/s/hIMDfCx4CNFKcwD49hv82w)
 
-#### 其它相关
+#### 前端部署与构建
+1. [持续集成 vs 持续交付 vs 持续部署](https://mp.weixin.qq.com/s/Y09_FYS2IWae24geE7tK-Q)
+1. [教你从零开始搭建一款前端脚手架工具](https://juejin.im/post/5c237d1a5188256b9e0f21e1)
+1. [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
+1. [Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
 
+#### 前端监控
+1. [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
+3. [前端监控](https://juejin.im/post/5b5dcfb46fb9a04f8f37afbb)
+
+#### 其它相关
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
 1. [PWA入门](https://zhuanlan.zhihu.com/p/32601560)
 2. css3动画
 3. cavans学习
-3. [前端监控](https://juejin.im/post/5b5dcfb46fb9a04f8f37afbb)
 1. [前端工程](https://www.zhihu.com/question/24558375)
 1. [前端工程与模块化框架](https://github.com/fouber/blog/issues/4)
 1. [前端工程——基础篇](https://github.com/fouber/blog/issues/10)
-1. [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
-1. [移动端常见bug汇总](https://juejin.im/post/5af918636fb9a07ac5603ecb)
 1. [自建ss服务器教程](https://github.com/Alvin9999/new-pac/wiki/%E8%87%AA%E5%BB%BAss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B)
 1. [electron中文教程](https://wizardforcel.gitbooks.io/electron-doc/)
 1. [进阶必备的网络基础](https://juejin.im/post/5c591fda6fb9a049dc02b1cc)
-1. [教你从零开始搭建一款前端脚手架工具](https://juejin.im/post/5c237d1a5188256b9e0f21e1)
-1. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
-1. [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
-1. [Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
 1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
 1. [英语进阶指南](https://github.com/ftTony/English-level-up-tips-for-Chinese)
@@ -184,3 +187,4 @@
 24. [稀土](https://github.com/xitu)
 25. [贵校课程资料民间整理](https://github.com/lib-pku/libpku)
 26. [前端精读周刊](https://github.com/dt-fe/weekly)
+27. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
