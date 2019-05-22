@@ -113,7 +113,7 @@
 3. 性能
 1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)
 1. [每个前端工程师都应该了解的图片知识(长文建议收藏)](https://mp.weixin.qq.com/s/O1n7_t4izdmpvn2mFrB-kg)
-
+1. [Web性能优化：图片优化](http://www.cnblogs.com/wizcabbit/p/web-image-optimization.html)
 #### 产品相关
 1.[什么是产品设计?](https://juejin.im/entry/570b6a6a75c4cd3c3b917bd0?utm_source=gold-miner&utm_medium=readme&utm_campaign=github)
 1. [你不知道，我们为什么需要PRD](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483694&idx=1&sn=372a20555dbcfee5d8128557839e4aba&chksm=fd5363d2ca24eac4ce375de9be00b4c14f27f27e306320f690b49b2c43eb8680b86dee71c72d&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229289&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
