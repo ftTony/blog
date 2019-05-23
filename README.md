@@ -197,3 +197,4 @@
 26. [前端精读周刊](https://github.com/dt-fe/weekly)
 27. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
 28. [前端开发知识结构](https://github.com/JacksonTian/fks)
+29. [前端收集](https://github.com/foru17/front-end-collect)
