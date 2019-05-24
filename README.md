@@ -138,7 +138,7 @@
 1. [把前端监控做到极致](https://zhuanlan.zhihu.com/p/32262716)
 1. [2017前端监控系统探索总结](https://juejin.im/post/5a3e121451882533f01ec66d)
 1. [分分钟拯救监控知识体系](https://mp.weixin.qq.com/s/6sxfAG1Ngr6s8Zz4zE-ncQ)
-
+1. [深入理解前端性能监控](https://juejin.im/post/5caaacc0e51d452b45296487)
 
 #### 其它相关
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
