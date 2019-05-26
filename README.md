@@ -88,6 +88,7 @@
 1. [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
 1. [Vue.js 源码解析](https://github.com/answershuto/learnVue)
 1. [VUE组件汇总](https://juejin.im/post/5af16a2cf265da0b8636353b)
+1. [vue组件间通信六种方式（完整版）](https://juejin.im/post/5cde0b43f265da03867e78d3)
 
 #### 前端工具
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
