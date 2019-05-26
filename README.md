@@ -201,3 +201,4 @@
 28. [前端开发知识结构](https://github.com/JacksonTian/fks)
 29. [前端收集](https://github.com/foru17/front-end-collect)
 30. [各种编程学习资料](https://github.com/FangWW/Document)
+31. [前端技术日报](https://github.com/kujian/frontendDaily)
