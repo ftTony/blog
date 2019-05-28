@@ -25,7 +25,7 @@
 2. 代理
 3. 策略模式
 1. [谈谈观察者模式和发布订阅模式](https://juejin.im/post/5bb1bb616fb9a05d2b6dccfa)
-
+1. [《JavaScript设计模式与开发实践》最全知识点汇总大全](https://juejin.im/post/5c2e10a76fb9a049c0432697)
 #### es6学习
 1. [let、var和const的区别](https://github.com/mqyqingfeng/Blog/issues/82)
 2. 模板字符串
