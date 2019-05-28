@@ -162,10 +162,12 @@
 1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
 1. [英语进阶指南](https://github.com/ftTony/English-level-up-tips-for-Chinese)
+1. [暴力英语学习法 + 严格的目标管理 = 成功快速靠谱的学好英语](https://www.cnblogs.com/jesse2013/p/how-to-learn-english.html)
 1. [房产信息](https://github.com/fairyly/you-need-know-house_knowledge)
 1. [笔记/搜集/摘录/实践](https://github.com/jaywcjlove/handbook)
 1. [Web前端开发的后端指南](https://mp.weixin.qq.com/s/tbJ-X3_zKi4vR_1ST5maTQ)
 1. [大型项目前端架构浅谈](https://juejin.im/post/5cea1f705188250640005472)
+
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
