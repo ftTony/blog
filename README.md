@@ -136,6 +136,8 @@
 1. [教你从零开始搭建一款前端脚手架工具](https://juejin.im/post/5c237d1a5188256b9e0f21e1)
 1. [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
 1. [Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
+1. [Nginx配置详解](https://www.cnblogs.com/knowledgesea/p/5175711.html)
+1. [Nginx代理功能与负载均衡详解](https://www.cnblogs.com/knowledgesea/p/5199046.html)
 
 #### 前端监控
 1. [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
