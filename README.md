@@ -53,6 +53,8 @@
 #### 网络基础
 1. [http详解](https://github.com/ftTony/blog/issues/11)
 1. [https详解](https://github.com/ftTony/blog/issues/7)
+1. [HTTPS从认识到线上实战全记录](https://www.cnblogs.com/liuxianan/p/https.html)
+1. [https原理及实践](https://www.cnblogs.com/lyq863987322/p/8424253.html)
 1. [http2](https://github.com/ftTony/blog/issues/9)
 2. TCP与UDP
 3. websocket
