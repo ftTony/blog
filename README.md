@@ -167,7 +167,7 @@
 1. [笔记/搜集/摘录/实践](https://github.com/jaywcjlove/handbook)
 1. [Web前端开发的后端指南](https://mp.weixin.qq.com/s/tbJ-X3_zKi4vR_1ST5maTQ)
 1. [大型项目前端架构浅谈](https://juejin.im/post/5cea1f705188250640005472)
-
+1. [细数国内外的前端大牛](https://juejin.im/post/5a9224c6f265da4e710f7786)
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
