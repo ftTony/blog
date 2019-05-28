@@ -55,6 +55,7 @@
 1. [https详解](https://github.com/ftTony/blog/issues/7)
 1. [HTTPS从认识到线上实战全记录](https://www.cnblogs.com/liuxianan/p/https.html)
 1. [https原理及实践](https://www.cnblogs.com/lyq863987322/p/8424253.html)
+1. [HTTPS科普扫盲帖](https://www.cnblogs.com/chyingp/p/https-introduction.html)
 1. [http2](https://github.com/ftTony/blog/issues/9)
 2. TCP与UDP
 1. [计算机网络基础知识总结](https://www.cnblogs.com/maybe2030/p/4781555.html)
