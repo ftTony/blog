@@ -157,6 +157,7 @@
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
 1. [PWA入门](https://zhuanlan.zhihu.com/p/32601560)
 1. [【PWA学习与实践】(1) 2018，开始你的PWA学习之旅](https://github.com/alienzhou/blog/issues/2)
+1. [【PWA学习与实践】(2) 使用Manifest，让你的WebApp更“Native”](https://github.com/alienzhou/blog/issues/3)
 2. css3动画
 3. cavans学习
 1. [前端工程](https://www.zhihu.com/question/24558375)
