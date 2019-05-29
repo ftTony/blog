@@ -62,7 +62,7 @@
 1. [TCP/IP详解学习笔记](https://www.cnblogs.com/zhehan54/p/6204767.html)
 1. [计算机网络基础知识总结](https://www.cnblogs.com/maybe2030/p/4781555.html)
 3. websocket
-
+1. [全面分析前端的网络请求](https://mp.weixin.qq.com/s/8mBJuv-1nHIo-2BU1X4MhA)
 #### 算法
 1. 常见数据结构
 1. 时间复杂度与空间复杂度
