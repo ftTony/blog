@@ -63,6 +63,7 @@
 1. [计算机网络基础知识总结](https://www.cnblogs.com/maybe2030/p/4781555.html)
 3. websocket
 1. [全面分析前端的网络请求](https://mp.weixin.qq.com/s/8mBJuv-1nHIo-2BU1X4MhA)
+
 #### 算法
 1. 常见数据结构
 1. 时间复杂度与空间复杂度
@@ -175,7 +176,9 @@
 1. [Web前端开发的后端指南](https://mp.weixin.qq.com/s/tbJ-X3_zKi4vR_1ST5maTQ)
 1. [大型项目前端架构浅谈](https://juejin.im/post/5cea1f705188250640005472)
 1. [细数国内外的前端大牛](https://juejin.im/post/5a9224c6f265da4e710f7786)
-1. [AST in JS](https://juejin.im/post/5c2714fb51882575f560503c)
+1. [45分钟带你入门Linux](https://www.cnblogs.com/liumt/p/6117168.html)
+1. [Linux和Shell回炉复习系列文章总目录](https://www.cnblogs.com/f-ck-need-u/p/7048359.html)
+
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
