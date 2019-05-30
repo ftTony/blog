@@ -85,6 +85,7 @@
 #### web安全
 1. [XSS](https://github.com/ftTony/blog/issues/19)
 1. [前端安全系列（一）：如何防止XSS攻击？](https://juejin.im/post/5bad9140e51d450e935c6d64)
+1. [前端安全系列之二：如何防止CSRF攻击？](https://juejin.im/post/5bc009996fb9a05d0a055192)
 1. [CRSF](https://github.com/ftTony/blog/issues/8)
 
 #### 前端框架与库研究
