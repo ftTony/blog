@@ -115,6 +115,7 @@
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
 1. [Chrome插件](https://github.com/zhaoolee/ChromeAppHeroes)
 1. [社交聊天系统](https://github.com/wuyawei/Vchat)
+1. [frontend-memo-game](https://github.com/zerosoul/frontend-memo-game)
 
 #### node学习
 1. [如何正确的学习Node.js](https://github.com/i5ting/How-to-learn-node-correctly)
