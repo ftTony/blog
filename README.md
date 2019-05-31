@@ -158,6 +158,7 @@
 1. [分分钟拯救监控知识体系](https://mp.weixin.qq.com/s/6sxfAG1Ngr6s8Zz4zE-ncQ)
 1. [深入理解前端性能监控](https://juejin.im/post/5caaacc0e51d452b45296487)
 1. [前端黑科技：美团网页首帧优化实践](https://juejin.im/post/5bee7dd4e51d451f5b54cbb4)
+
 #### 其它相关
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
 1. [PWA入门](https://zhuanlan.zhihu.com/p/32601560)
@@ -206,6 +207,7 @@
 8. [全栈方向系列文章](https://github.com/pkwenda/Blog)
 9. [前端技术清单](https://github.com/alienzhou/frontend-tech-list)
 10. [java学习清单](https://github.com/crossoverJie/JCSprout)
+10. [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days)
 11. [前端入门和进阶学习笔记](https://github.com/suihailiang/Web)
 12. [大前端工具集](https://github.com/nieweidong/fetool)
 13. [开发效率提升之工具篇](https://github.com/Louiszhai/tool)
