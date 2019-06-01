@@ -187,6 +187,7 @@
 #### 操作系统
 1. [45分钟带你入门Linux](https://www.cnblogs.com/liumt/p/6117168.html)
 1. [Linux和Shell回炉复习系列文章总目录](https://www.cnblogs.com/f-ck-need-u/p/7048359.html)
+1. [每天一个linux命令目录](https://www.cnblogs.com/peida/archive/2012/12/05/2803591.html)
 
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
