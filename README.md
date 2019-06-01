@@ -81,6 +81,7 @@
 1. [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 1. [中高级前端」窥探数据结构的世界- ES6版](https://juejin.im/post/5cd1ab3df265da03587c142a?utm_source=gold_browser_extension)
 1. [刷题训练指南](https://github.com/apachecn/awesome-algorithm)
+1. [从头开始复习算法之让你彻底搞清楚BFS和DFS](https://mp.weixin.qq.com/s/AAsbpVevRRGEMrT7SdH60Q)
 
 #### web安全
 1. [XSS](https://github.com/ftTony/blog/issues/19)
