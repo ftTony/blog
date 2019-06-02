@@ -27,6 +27,7 @@
 1. [javascript设计模式系列](https://www.cnblogs.com/webFrontDev/p/3553402.html)
 1. [谈谈观察者模式和发布订阅模式](https://juejin.im/post/5bb1bb616fb9a05d2b6dccfa)
 1. [《JavaScript设计模式与开发实践》最全知识点汇总大全](https://juejin.im/post/5c2e10a76fb9a049c0432697)
+
 #### es6学习
 1. [let、var和const的区别](https://github.com/mqyqingfeng/Blog/issues/82)
 2. 模板字符串
@@ -190,6 +191,7 @@
 1. [Linux和Shell回炉复习系列文章总目录](https://www.cnblogs.com/f-ck-need-u/p/7048359.html)
 1. [每天一个linux命令目录](https://www.cnblogs.com/peida/archive/2012/12/05/2803591.html)
 1. [Linux常用文本操作命令整理](https://www.cnblogs.com/maybe2030/p/5325530.html)
+1. [树莓派开始，玩转Linux](https://www.cnblogs.com/vamei/archive/2012/10/10/2718229.html)
 
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
