@@ -186,7 +186,7 @@
 1. [Web前端开发的后端指南](https://mp.weixin.qq.com/s/tbJ-X3_zKi4vR_1ST5maTQ)
 1. [大型项目前端架构浅谈](https://juejin.im/post/5cea1f705188250640005472)
 1. [细数国内外的前端大牛](https://juejin.im/post/5a9224c6f265da4e710f7786)
-1. [一个合格的中级前端工程师必须要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516)
+1. [程序员需要懂得的中医养生](https://github.com/fairyly/you-need-traditional-Chinese-medical)
 
 #### 操作系统
 1. [45分钟带你入门Linux](https://www.cnblogs.com/liumt/p/6117168.html)
