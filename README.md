@@ -166,6 +166,7 @@
 1. [分分钟拯救监控知识体系](https://mp.weixin.qq.com/s/6sxfAG1Ngr6s8Zz4zE-ncQ)
 1. [深入理解前端性能监控](https://juejin.im/post/5caaacc0e51d452b45296487)
 1. [前端黑科技：美团网页首帧优化实践](https://juejin.im/post/5bee7dd4e51d451f5b54cbb4)
+1. [2018 前端性能优化清单](https://juejin.im/post/5a966bd16fb9a0635172a50a)
 
 #### 其它相关
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
