@@ -41,6 +41,7 @@
 2. Async学习
 3. 模块化之间区别
 1. [Promise A+ 规范](https://malcolmyu.github.io/2015/06/12/Promises-A-Plus/)
+1. [JavaScript Promise迷你书](http://liubin.org/promises-book/)
 1. [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
 1. [ES6、ES7、ES8特性一锅炖(ES6、ES7、ES8学习指南)](https://juejin.im/post/5b9cb3336fb9a05d290ee47e)
 
