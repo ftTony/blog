@@ -117,6 +117,7 @@
 3. [gulp学习](https://www.gulpjs.com.cn/)
 1. [前端库](https://github.com/sorrycc/awesome-f2e-libs)
 1. [搜罗一切webpack的好文章好工具](https://github.com/webpack-china/awesome-webpack-cn)
+1. [【webpack进阶】你真的掌握了loader么？- loader十问](https://github.com/alienzhou/blog/issues/21)
 
 #### 收集的优秀作品
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
