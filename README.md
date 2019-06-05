@@ -131,6 +131,7 @@
 #### node学习
 1. [如何正确的学习Node.js](https://github.com/i5ting/How-to-learn-node-correctly)
 1. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
+1. [Node.js 调试指南](https://github.com/nswbmw/node-in-debugging)
 
 #### 浏览器相关
 1. [http缓存](https://github.com/ftTony/blog/issues/5)
