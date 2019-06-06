@@ -203,6 +203,7 @@
 1. [细数国内外的前端大牛](https://juejin.im/post/5a9224c6f265da4e710f7786)
 1. [程序员需要懂得的中医养生](https://github.com/fairyly/you-need-traditional-Chinese-medical)
 1. [JavaScript 复杂判断的更优雅写法](https://juejin.im/post/5bdfef86e51d453bf8051bf8)
+1. [前端代码质量管理（一）](https://juejin.im/post/5cb5c3445188256c83279255)
 
 #### 操作系统
 1. [45分钟带你入门Linux](https://www.cnblogs.com/liumt/p/6117168.html)
