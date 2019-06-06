@@ -49,6 +49,7 @@
 #### css基础
 1. 盒子模型
 1. [【CSS模块化之路1】使用BEM与命名空间来规范CSS](https://github.com/alienzhou/blog/issues/14)
+1. [【CSS模块化之路2】webpack中的Local Scope](https://github.com/alienzhou/blog/issues/15)
 1. [BFC原理](https://github.com/ftTony/blog/issues/1)
 1. [flex学习](https://github.com/ftTony/blog/issues/10)
 1. [grid学习](https://www.zcfy.cc/article/learn-css-grid-a-guide-to-learning-css-grid-jonathan-suh)
