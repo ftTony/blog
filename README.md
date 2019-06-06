@@ -217,7 +217,7 @@
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
 
 #### 优质文章
-
+1. [前端小密圈](https://github.com/jawil/blog)
 1. [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 2. [前端进阶系列](https://github.com/yygmind/blog)
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
