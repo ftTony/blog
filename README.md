@@ -128,6 +128,7 @@
 1. [frontend-memo-game](https://github.com/zerosoul/frontend-memo-game)
 1. [Chrome插件开发全攻略](https://github.com/sxei/chrome-plugin-demo)
 1. [2018 年最值得关注的 30 个 Vue 开源项目](https://blog.fundebug.com/2018/05/29/30-amazing-vuejs-open-source/)
+1. [VSCode插件开发全攻略](https://github.com/sxei/vscode-plugin-demo)
 
 #### node学习
 1. [如何正确的学习Node.js](https://github.com/i5ting/How-to-learn-node-correctly)
