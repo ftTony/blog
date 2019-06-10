@@ -122,6 +122,7 @@
 1. [前端库](https://github.com/sorrycc/awesome-f2e-libs)
 1. [搜罗一切webpack的好文章好工具](https://github.com/webpack-china/awesome-webpack-cn)
 1. [【webpack进阶】你真的掌握了loader么？- loader十问](https://github.com/alienzhou/blog/issues/21)
+1. [[webpack]源码解读：命令行输入webpack的时候都发生了什么？](https://github.com/DDFE/DDFE-blog/issues/12)
 
 #### 收集的优秀作品
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
