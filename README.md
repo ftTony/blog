@@ -102,6 +102,7 @@
 1. [常见 Web 安全攻防总结](https://zoumiaojiang.com/article/common-web-security/)
 
 #### 前端框架与库研究
+1. [前端组件设计原则](https://mp.weixin.qq.com/s/ofmfQFAVlTCvKFnZ6A-0_Q)
 1. [Vue 项目里戳中你痛点的问题及解决办法](https://juejin.im/post/5b174de8f265da6e410e0b4e)
 2. [vue响应式原理及实现](https://github.com/ftTony/blog/issues/18)
 1. [vue源码分析](https://github.com/muwoo/blogs)
