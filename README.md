@@ -193,6 +193,7 @@
 1. [前端工程与模块化框架](https://github.com/fouber/blog/issues/4)
 1. [前端工程——基础篇](https://github.com/fouber/blog/issues/10)
 1. [自建ss服务器教程](https://github.com/Alvin9999/new-pac/wiki/%E8%87%AA%E5%BB%BAss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B)
+1. [用JS开发跨平台桌面应用，从原理到实践](https://mp.weixin.qq.com/s/owtLBHgpzXqbJs3P1mjmLA)
 1. [electron中文教程](https://wizardforcel.gitbooks.io/electron-doc/)
 1. [进阶必备的网络基础](https://juejin.im/post/5c591fda6fb9a049dc02b1cc)
 1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
