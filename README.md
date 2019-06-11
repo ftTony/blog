@@ -114,6 +114,7 @@
 1. [VUE组件汇总](https://juejin.im/post/5af16a2cf265da0b8636353b)
 1. [vue组件间通信六种方式（完整版）](https://juejin.im/post/5cde0b43f265da03867e78d3)
 1. [学习 Vue 源码的必要知识储备](https://juejin.im/post/5ce5565d6fb9a07ed2244513)
+1. [vue组件通信全揭秘(共7章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 
 #### 前端工具
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
@@ -153,6 +154,7 @@
 1. [每个前端工程师都应该了解的图片知识(长文建议收藏)](https://mp.weixin.qq.com/s/O1n7_t4izdmpvn2mFrB-kg)
 1. [Web性能优化：图片优化](http://www.cnblogs.com/wizcabbit/p/web-image-optimization.html)
 1. [深入理解现代浏览器](https://mp.weixin.qq.com/s/LkKNjrkx1V32lCjv92Cuuw)
+
 #### 产品相关
 1. [什么是产品设计?](https://juejin.im/entry/570b6a6a75c4cd3c3b917bd0?utm_source=gold-miner&utm_medium=readme&utm_campaign=github)
 1. [你不知道，我们为什么需要PRD](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483694&idx=1&sn=372a20555dbcfee5d8128557839e4aba&chksm=fd5363d2ca24eac4ce375de9be00b4c14f27f27e306320f690b49b2c43eb8680b86dee71c72d&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229289&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
