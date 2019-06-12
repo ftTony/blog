@@ -127,6 +127,7 @@
 1. [【webpack进阶】你真的掌握了loader么？- loader十问](https://github.com/alienzhou/blog/issues/21)
 1. [[webpack]源码解读：命令行输入webpack的时候都发生了什么？](https://github.com/DDFE/DDFE-blog/issues/12)
 1. [Webpack 源码解析](https://github.com/lihongxun945/diving-into-webpack)
+1. [在线电子书转换器](http://cn.epubee.com/)
 
 #### 收集的优秀作品
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
