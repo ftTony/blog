@@ -20,7 +20,7 @@
 12. [javascript去重](https://github.com/mqyqingfeng/Blog/issues/27)
 13. [TypeScript 入门教程](https://github.com/xcatliu/typescript-tutorial)
 14. [30 seconds of code](https://github.com/kujian/30-seconds-of-code)
-
+15. [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
 #### 设计模式
 1. 观察者
 2. 代理
