@@ -189,6 +189,8 @@
 1. [前端黑科技：美团网页首帧优化实践](https://juejin.im/post/5bee7dd4e51d451f5b54cbb4)
 1. [2018 前端性能优化清单](https://juejin.im/post/5a966bd16fb9a0635172a50a)
 1. [前端性能清单](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
+1. [生产环境报错如何定位源码位置](https://mp.weixin.qq.com/s/ICfqj2SgTD_QEC0KH8G9vg)
+
 #### 其它相关
 1. [直播学习与实践](https://github.com/ftTony/blog/issues/4)
 1. [PWA入门](https://zhuanlan.zhihu.com/p/32601560)
