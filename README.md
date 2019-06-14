@@ -179,6 +179,7 @@
 1. [Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
 1. [Nginx配置详解](https://www.cnblogs.com/knowledgesea/p/5175711.html)
 1. [Nginx代理功能与负载均衡详解](https://www.cnblogs.com/knowledgesea/p/5199046.html)
+1. [Node+GitLab实现小程序CI系统](https://mp.weixin.qq.com/s/5NsY5cj0n1AuU0-zT1VrEQ)
 
 #### 前端监控
 1. [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
