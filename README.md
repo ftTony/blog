@@ -77,6 +77,7 @@
 1. [计算机网络基础知识总结](https://www.cnblogs.com/maybe2030/p/4781555.html)
 3. websocket
 1. [全面分析前端的网络请求](https://mp.weixin.qq.com/s/8mBJuv-1nHIo-2BU1X4MhA)
+1. [进阶必备的网络基础](https://juejin.im/post/5c591fda6fb9a049dc02b1cc)
 
 #### 算法
 1. 常见数据结构
@@ -209,7 +210,7 @@
 1. [用JS开发跨平台桌面应用，从原理到实践](https://mp.weixin.qq.com/s/owtLBHgpzXqbJs3P1mjmLA)
 1. [Electron构建跨平台应用Mac/Windows/Linux](https://juejin.im/post/5c46ab47e51d45522b4f55b1)
 1. [electron中文教程](https://wizardforcel.gitbooks.io/electron-doc/)
-1. [进阶必备的网络基础](https://juejin.im/post/5c591fda6fb9a049dc02b1cc)
+1. [Flutter完整开发实战详解系列](https://github.com/CarGuo/GSYFlutterBook)
 1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
 1. [英语进阶指南](https://github.com/ftTony/English-level-up-tips-for-Chinese)
