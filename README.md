@@ -22,6 +22,7 @@
 14. [30 seconds of code](https://github.com/kujian/30-seconds-of-code)
 15. [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
 16. [JavaScript是如何工作的系列](https://github.com/qq449245884/xiaozhi)
+17. [你不懂JS（系列丛书）](https://github.com/getify/You-Dont-Know-JS/tree/1ed-zh-CN)
 
 #### 设计模式
 1. 观察者
