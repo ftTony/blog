@@ -171,6 +171,8 @@
 1. [画流程图的诀窍，ryan告诉你](https://mp.weixin.qq.com/s/Wl9g7yLPuQHTXBt6Q63yug)
 1. [超越[流程图]，产品狗必备技能](https://mp.weixin.qq.com/s/hIMDfCx4CNFKcwD49hv82w)
 1. [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+1. [提升结构化思考力](https://mp.weixin.qq.com/s/VQp9IcyZEt7dSyD_giJ_kQ)
+1. [提升结构化思考力（2）](https://mp.weixin.qq.com/s/iuu6Bl-J1l5dLHSWLQ7hfw)
 
 #### 前端部署与构建
 1. [持续集成 vs 持续交付 vs 持续部署](https://mp.weixin.qq.com/s/Y09_FYS2IWae24geE7tK-Q)
