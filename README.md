@@ -64,6 +64,7 @@
 1. [移动Web前端知识库](https://github.com/AlloyTeam/Mars)
 1. [用vw、vh＋媒体查询打造最完美的移动端适配方案](https://juejin.im/post/5cf0d8fb6fb9a07ee9585681)
 1. [如何学习 CSS](https://mp.weixin.qq.com/s/ZM3WPlQkvNr7OIJvDfjQ3A)
+1. [30 Seconds of CSS 中文版](https://github.com/kujian/30-seconds-of-css)
 
 #### 网络基础
 1. [http详解](https://github.com/ftTony/blog/issues/11)
