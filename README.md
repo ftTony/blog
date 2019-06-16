@@ -77,7 +77,7 @@
 1. [http2](https://github.com/ftTony/blog/issues/9)
 1. [TCP/IP详解学习笔记](https://www.cnblogs.com/zhehan54/p/6204767.html)
 1. [计算机网络基础知识总结](https://www.cnblogs.com/maybe2030/p/4781555.html)
-3. websocket
+3. [websocket学习](https://github.com/ftTony/blog/issues/26)
 1. [全面分析前端的网络请求](https://mp.weixin.qq.com/s/8mBJuv-1nHIo-2BU1X4MhA)
 1. [进阶必备的网络基础](https://juejin.im/post/5c591fda6fb9a049dc02b1cc)
 1. [「多图警告」重学 TCP/IP 协议](https://mp.weixin.qq.com/s/pFlJglicKZVh31EOMe83Hw)
@@ -85,8 +85,7 @@
 #### 算法
 1. 常见数据结构
 1. 时间复杂度与空间复杂度
-1. 基本排序
-1. 复杂排序
+1. [排序算法](https://github.com/ftTony/blog/issues/30)
 1. 树及二叉树搜索
 1. 红黑叉树
 1. 动态规划
@@ -131,6 +130,8 @@
 1. [Web性能优化：图片优化](http://www.cnblogs.com/wizcabbit/p/web-image-optimization.html)
 1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)
 1. [2018 前端性能优化清单](https://juejin.im/post/5a966bd16fb9a0635172a50a)
+1. [前端性能(一)](https://github.com/ftTony/blog/issues/28)
+1. [前端性能(二)](https://github.com/ftTony/blog/issues/29)
 
 #### 前端工具
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
@@ -143,6 +144,7 @@
 1. [[webpack]源码解读：命令行输入webpack的时候都发生了什么？](https://github.com/DDFE/DDFE-blog/issues/12)
 1. [Webpack 源码解析](https://github.com/lihongxun945/diving-into-webpack)
 1. [在线电子书转换器](http://cn.epubee.com/)
+1. [git常用命令](https://github.com/ftTony/blog/issues/27)
 
 #### 收集的优秀作品
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
@@ -241,6 +243,7 @@
 1. [Linux常用文本操作命令整理](https://www.cnblogs.com/maybe2030/p/5325530.html)
 1. [树莓派开始，玩转Linux](https://www.cnblogs.com/vamei/archive/2012/10/10/2718229.html)
 1. [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)
+1. [linux基本命令](https://github.com/ftTony/blog/issues/31)
 
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
