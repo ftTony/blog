@@ -123,6 +123,7 @@
 1. [vue组件间通信六种方式（完整版）](https://juejin.im/post/5cde0b43f265da03867e78d3)
 1. [学习 Vue 源码的必要知识储备](https://juejin.im/post/5ce5565d6fb9a07ed2244513)
 1. [vue组件通信全揭秘(共7章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
+1. [Vue2.x源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
 
 #### 前端工具
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
