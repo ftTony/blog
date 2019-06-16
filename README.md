@@ -126,6 +126,9 @@
 1. [vue组件通信全揭秘(共7章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 1. [Vue2.x源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
 
+#### 性能
+1. [前端性能清单](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
+
 #### 前端工具
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
 1. [深入Babel，这一篇就够了](https://juejin.im/post/5c21b584e51d4548ac6f6c99)
