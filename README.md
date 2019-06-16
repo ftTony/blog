@@ -126,8 +126,11 @@
 1. [vue组件通信全揭秘(共7章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 1. [Vue2.x源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
 
-#### 性能
+#### 
 1. [前端性能清单](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
+1. [Web性能优化：图片优化](http://www.cnblogs.com/wizcabbit/p/web-image-optimization.html)
+1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)
+1. [2018 前端性能优化清单](https://juejin.im/post/5a966bd16fb9a0635172a50a)
 
 #### 前端工具
 1. [webpack学习记录](https://github.com/ftTony/blog/issues/2)
@@ -164,10 +167,7 @@
 1. [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
 2. [浏览器渲染原理](https://github.com/ftTony/blog/issues/20)
 3. [九种跨域方式](https://github.com/ftTony/blog/issues/21)
-3. 性能
-1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)
 1. [每个前端工程师都应该了解的图片知识(长文建议收藏)](https://mp.weixin.qq.com/s/O1n7_t4izdmpvn2mFrB-kg)
-1. [Web性能优化：图片优化](http://www.cnblogs.com/wizcabbit/p/web-image-optimization.html)
 1. [深入理解现代浏览器](https://mp.weixin.qq.com/s/LkKNjrkx1V32lCjv92Cuuw)
 
 #### 产品相关
@@ -203,8 +203,6 @@
 1. [分分钟拯救监控知识体系](https://mp.weixin.qq.com/s/6sxfAG1Ngr6s8Zz4zE-ncQ)
 1. [深入理解前端性能监控](https://juejin.im/post/5caaacc0e51d452b45296487)
 1. [前端黑科技：美团网页首帧优化实践](https://juejin.im/post/5bee7dd4e51d451f5b54cbb4)
-1. [2018 前端性能优化清单](https://juejin.im/post/5a966bd16fb9a0635172a50a)
-1. [前端性能清单](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
 1. [生产环境报错如何定位源码位置](https://mp.weixin.qq.com/s/ICfqj2SgTD_QEC0KH8G9vg)
 
 #### 其它相关
