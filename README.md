@@ -91,7 +91,7 @@
 1. 红黑叉树
 1. 动态规划
 1. 贪心算法
-2. js常见算法
+2. [前端常见算法](https://github.com/ftTony/blog/issues/24)
 1. [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
 1. [「中高级前端」窥探数据结构的世界](https://juejin.im/post/5cd1ab3df265da03587c142a)
 1. [LeetCode-1](https://github.com/azl397985856/leetcode)
