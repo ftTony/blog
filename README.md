@@ -20,6 +20,6 @@
 1. #### [前端监控](https://github.com/ftTony/blog/tree/master/%E6%80%A7%E8%83%BD)
 1. #### [其它相关](https://github.com/ftTony/blog/tree/master/%E5%85%B6%E5%AE%83)
 1. #### [操作系统](https://github.com/ftTony/blog/tree/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F)
-
+1. #### [书籍](https://github.com/ftTony/blog/tree/master/%E4%B9%A6%E7%B1%8D)
 #### 总结
 1. [写在失业两个月，2018年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
