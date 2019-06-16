@@ -1,0 +1,7 @@
+1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
+1. [Chrome插件](https://github.com/zhaoolee/ChromeAppHeroes)
+1. [社交聊天系统](https://github.com/wuyawei/Vchat)
+1. [frontend-memo-game](https://github.com/zerosoul/frontend-memo-game)
+1. [Chrome插件开发全攻略](https://github.com/sxei/chrome-plugin-demo)
+1. [2018 年最值得关注的 30 个 Vue 开源项目](https://blog.fundebug.com/2018/05/29/30-amazing-vuejs-open-source/)
+1. [VSCode插件开发全攻略](https://github.com/sxei/vscode-plugin-demo)
