@@ -125,7 +125,7 @@
 1. [vue组件通信全揭秘(共7章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 1. [Vue2.x源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
 
-#### 
+#### 性能
 1. [前端性能清单](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
 1. [Web性能优化：图片优化](http://www.cnblogs.com/wizcabbit/p/web-image-optimization.html)
 1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)

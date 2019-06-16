@@ -1,0 +1,8 @@
+1. [持续集成 vs 持续交付 vs 持续部署](https://mp.weixin.qq.com/s/Y09_FYS2IWae24geE7tK-Q)
+1. [教你从零开始搭建一款前端脚手架工具](https://juejin.im/post/5c237d1a5188256b9e0f21e1)
+1. [如何快速开发一个自己的项目脚手架？](https://github.com/alienzhou/blog/issues/29)
+1. [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
+1. [Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
+1. [Nginx配置详解](https://www.cnblogs.com/knowledgesea/p/5175711.html)
+1. [Nginx代理功能与负载均衡详解](https://www.cnblogs.com/knowledgesea/p/5199046.html)
+1. [Node+GitLab实现小程序CI系统](https://mp.weixin.qq.com/s/5NsY5cj0n1AuU0-zT1VrEQ)

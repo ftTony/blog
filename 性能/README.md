@@ -1,0 +1,6 @@
+1. [前端性能清单](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
+1. [Web性能优化：图片优化](http://www.cnblogs.com/wizcabbit/p/web-image-optimization.html)
+1. [嗨，送你一张Web性能优化地图](https://mp.weixin.qq.com/s?__biz=MzUxMTcwOTM4Mg==&mid=2247483962&idx=1&sn=f9337ad983c6303811eb43d07d9f23d5&chksm=f96edb93ce195285943211e645cc683989826abdaaa8ab0b073a20761369ed04843c835c50b7#rd)
+1. [2018 前端性能优化清单](https://juejin.im/post/5a966bd16fb9a0635172a50a)
+1. [前端性能(一)](https://github.com/ftTony/blog/issues/28)
+1. [前端性能(二)](https://github.com/ftTony/blog/issues/29)

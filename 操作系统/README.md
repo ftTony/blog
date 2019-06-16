@@ -1,0 +1,7 @@
+1. [45分钟带你入门Linux](https://www.cnblogs.com/liumt/p/6117168.html)
+1. [Linux和Shell回炉复习系列文章总目录](https://www.cnblogs.com/f-ck-need-u/p/7048359.html)
+1. [每天一个linux命令目录](https://www.cnblogs.com/peida/archive/2012/12/05/2803591.html)
+1. [Linux常用文本操作命令整理](https://www.cnblogs.com/maybe2030/p/5325530.html)
+1. [树莓派开始，玩转Linux](https://www.cnblogs.com/vamei/archive/2012/10/10/2718229.html)
+1. [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)
+1. [linux基本命令](https://github.com/ftTony/blog/issues/31)

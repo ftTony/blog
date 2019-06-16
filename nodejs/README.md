@@ -1,0 +1,7 @@
+1. [如何正确的学习Node.js](https://github.com/i5ting/How-to-learn-node-correctly)
+1. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
+1. [Node.js 调试指南](https://github.com/nswbmw/node-in-debugging)
+1. [一起学 Node.js](https://github.com/nswbmw/N-blog)
+1. [Koa.js 设计模式-学习笔记](https://github.com/chenshenhai/koajs-design-note)
+1. [Koa2进阶学习笔记](https://github.com/chenshenhai/koa2-note)
+1. [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
