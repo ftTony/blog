@@ -6,3 +6,4 @@
 1. [梁少峰的个人博客](https://github.com/youngwind/blog)
 1. [Front-end Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)
 1. [高质量的 Github Issue 博客列表 ](https://github.com/paddingme/github-issue-blog-list)
+1. [从程序员到CTO](https://github.com/0voice/from_coder_to_expert)
