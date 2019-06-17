@@ -66,6 +66,7 @@
 
 ### 优化的学习方法及建议
 1. [三年前端，面试思考（二）](https://juejin.im/post/5bdeb7c75188251709244c2b)
+1. [从0到1，小白的前端摸索之路](https://juejin.im/post/5c555b2de51d457fa31e306d)
 1. [入门前端一周年总结-我是如何快速入门前端的知识分享](https://juejin.im/post/5c2c18116fb9a049fb43c32c)
 1. [一位前端 2018 绝地求生记](https://juejin.im/post/5c36fe50518825253b5e94f4)
 1. [写技术博客那点事](https://juejin.im/post/5c4d3585e51d4539f51d9d44)
