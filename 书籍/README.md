@@ -53,6 +53,7 @@
 1. [学习笔记](https://github.com/yanlele/node-index)
 1. [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
 1. [程序员应该访问的最佳网站中文版](https://github.com/tuteng/Best-websites-a-programmer-should-visit-zh/blob/master/README.md)
+1. [计算机科学速成课](https://github.com/1c7/crash-course-computer-science-chinese)
 1. 《CSS权威指南》
 1. 《CSS揭秘》
 1. 《CSS世界》
