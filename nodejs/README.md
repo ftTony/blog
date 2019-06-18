@@ -5,3 +5,4 @@
 1. [Koa.js 设计模式-学习笔记](https://github.com/chenshenhai/koajs-design-note)
 1. [Koa2进阶学习笔记](https://github.com/chenshenhai/koa2-note)
 1. [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
+1. [node爬虫](https://github.com/yanlele/node-spider)
