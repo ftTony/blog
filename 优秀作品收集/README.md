@@ -9,3 +9,4 @@
 1. [网易云音乐播放器](https://github.com/IFmiss/vue-music)
 1. [高仿小米商城（手机版）的Vue项目](https://github.com/beautifulBoys/vue-XiaoMi-Shop)
 1. [基于Vue+Vuex+iView的电子商城网站](https://github.com/PowerDos/Mall-Vue)
+1. [VUE开源项目汇总](https://github.com/yanlele/node-index/blob/master/18%E5%B9%B4/3%E6%9C%88/07%E3%80%81VUE%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%80%BB/README.md)
