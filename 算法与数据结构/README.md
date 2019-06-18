@@ -6,6 +6,7 @@
 1. 红黑叉树
 1. 动态规划
 1. 贪心算法
+1. [初识加密算法](https://mp.weixin.qq.com/s/8iBZ3_CIzw3kWjmPYACDrw)
 2. [前端常见算法](https://github.com/ftTony/blog/issues/24)
 1. [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
 1. [「中高级前端」窥探数据结构的世界](https://juejin.im/post/5cd1ab3df265da03587c142a)
