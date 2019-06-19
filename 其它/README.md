@@ -21,6 +21,7 @@
 1. [笔记/搜集/摘录/实践](https://github.com/jaywcjlove/handbook)
 1. [Web前端开发的后端指南](https://mp.weixin.qq.com/s/tbJ-X3_zKi4vR_1ST5maTQ)
 1. [大型项目前端架构浅谈](https://juejin.im/post/5cea1f705188250640005472)
+1. [8年前端开发的知识点沉淀](https://juejin.im/post/5d0878aaf265da1b83338f74)
 1. [细数国内外的前端大牛](https://juejin.im/post/5a9224c6f265da4e710f7786)
 1. [程序员需要懂得的中医养生](https://github.com/fairyly/you-need-traditional-Chinese-medical)
 1. [JavaScript 复杂判断的更优雅写法](https://juejin.im/post/5bdfef86e51d453bf8051bf8)
