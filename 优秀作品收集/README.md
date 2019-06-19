@@ -1,4 +1,5 @@
 1. [vue 后台管理](https://github.com/PanJiaChen/vue-element-admin/blob/master/README.zh-CN.md)
+1. [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
 1. [Chrome插件](https://github.com/zhaoolee/ChromeAppHeroes)
 1. [社交聊天系统](https://github.com/wuyawei/Vchat)
 1. [frontend-memo-game](https://github.com/zerosoul/frontend-memo-game)
