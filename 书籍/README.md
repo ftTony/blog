@@ -90,3 +90,4 @@
 1. [个人建议-怎样写出一篇好文章](https://juejin.im/post/5a649f6af265da3e553802ee)
 1. [我在阿里云做前端](https://mp.weixin.qq.com/s/aJd9CEArS2-wsyE_pQsRAw)
 1. [你是怎么变自律的？](https://www.zhihu.com/question/284206141)
+1. [如何才能跨过前端的高级级别，譬如腾讯的t3-1,或者是阿里的p7。平时的前端知识并不足够跨过这个门槛?](https://www.zhihu.com/question/59747367/answer/169706200)
