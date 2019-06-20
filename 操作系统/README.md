@@ -5,3 +5,4 @@
 1. [树莓派开始，玩转Linux](https://www.cnblogs.com/vamei/archive/2012/10/10/2718229.html)
 1. [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)
 1. [linux基本命令](https://github.com/ftTony/blog/issues/31)
+1. [Linux工具快速教程](https://linuxtools-rst.readthedocs.io/zh_CN/latest/)
