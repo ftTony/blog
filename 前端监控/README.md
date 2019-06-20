@@ -11,3 +11,4 @@
 1. [深入理解前端性能监控](https://juejin.im/post/5caaacc0e51d452b45296487)
 1. [前端黑科技：美团网页首帧优化实践](https://juejin.im/post/5bee7dd4e51d451f5b54cbb4)
 1. [生产环境报错如何定位源码位置](https://mp.weixin.qq.com/s/ICfqj2SgTD_QEC0KH8G9vg)
+1. [前端日志监控](https://github.com/a597873885/webfunny_monitor)
