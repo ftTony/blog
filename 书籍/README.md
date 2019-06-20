@@ -78,6 +78,7 @@
 1. [程序员也需要工匠精神](https://www.cnblogs.com/strick/p/6388058.html)
 1. [努力的孩子运气不会太差，跌宕的人生定当更加精彩](https://www.cnblogs.com/ECJTUACM-873284962/p/9052871.html)
 1. [我的七条人生哲理以及个人学习方法总结](https://www.cnblogs.com/ECJTUACM-873284962/p/8697647.html)
+1. [你为什么有那么多时间写博客？](https://www.cnblogs.com/ityouknow/p/11056637.html)
 1. [前端核心能力进阶指南](https://juejin.im/book/5cb56b7be51d456e3267e400)
 1. [被实现的牛皮：和我生小孩吧，我能把他培养为天才](https://mp.weixin.qq.com/s/TexfUmLF3CC9WJjHPPPZ5Q)
 1. [写了300多篇文章了，说说我为什么坚持写博客](https://www.cnblogs.com/f-ck-need-u/p/9315728.html)
