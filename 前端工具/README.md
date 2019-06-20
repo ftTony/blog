@@ -9,3 +9,4 @@
 1. [Webpack 源码解析](https://github.com/lihongxun945/diving-into-webpack)
 1. [在线电子书转换器](http://cn.epubee.com/)
 1. [git常用命令](https://github.com/ftTony/blog/issues/27)
+1. [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
