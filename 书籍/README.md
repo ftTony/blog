@@ -89,3 +89,4 @@
 1. [写博客的这几个月，获益良多](https://juejin.im/post/5a67710b51882573443cd81d)
 1. [个人建议-怎样写出一篇好文章](https://juejin.im/post/5a649f6af265da3e553802ee)
 1. [我在阿里云做前端](https://mp.weixin.qq.com/s/aJd9CEArS2-wsyE_pQsRAw)
+1. [你是怎么变自律的？](https://www.zhihu.com/question/284206141)
