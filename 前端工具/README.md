@@ -10,3 +10,5 @@
 1. [在线电子书转换器](http://cn.epubee.com/)
 1. [git常用命令](https://github.com/ftTony/blog/issues/27)
 1. [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
+1. [git-tips](https://github.com/jaywcjlove/git-tips)
+1. [vim-web](https://github.com/jaywcjlove/vim-web)
