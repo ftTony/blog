@@ -15,3 +15,4 @@
 1. [超多经典 canvas 实例，动态离子背景、移动炫彩小球、贪吃蛇、坦克大战、是男人就下100层、心形文字等等等](https://github.com/bxm0927/canvas-special)
 1. [datetime 时间转化](https://github.com/hustcc/timeago.js/blob/master/README_zh.md)
 1. [VSCode插件开发全攻略](https://github.com/sxei/vscode-plugin-demo)
+1. [D2Admin](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md)
