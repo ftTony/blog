@@ -4,6 +4,5 @@
 1. [产品经理到底是什么样的角色](https://mp.weixin.qq.com/s?__biz=MzU4MDc0NTEwNw==&mid=2247483766&idx=1&sn=0b5a91178c254366b7fb954a3f563655&chksm=fd53638aca24ea9cdb462c5b6176358bca929cf909a4139a97aa0eff7e25c8b59f6b653dad73&xtrack=1&scene=0&subscene=10000&sessionid=1557229236&clicktime=1557229342&ascene=7&devicetype=android-27&version=2700043a&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4Av5keANyZHgDimR4A%2BJkeAAAA&lang=zh_CN&pass_ticket=VVHPAaBNOsaOqH%2F6vgVqkhxHIzYGI3dhF2Ziq%2Fm5Vx%2FAgs%2FaQ%2F%2FPX3mfwVQi%2F9Ny&wx_header=1)
 1. [画流程图的诀窍，ryan告诉你](https://mp.weixin.qq.com/s/Wl9g7yLPuQHTXBt6Q63yug)
 1. [超越[流程图]，产品狗必备技能](https://mp.weixin.qq.com/s/hIMDfCx4CNFKcwD49hv82w)
-1. [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
 1. [提升结构化思考力](https://mp.weixin.qq.com/s/VQp9IcyZEt7dSyD_giJ_kQ)
 1. [提升结构化思考力（2）](https://mp.weixin.qq.com/s/iuu6Bl-J1l5dLHSWLQ7hfw)
