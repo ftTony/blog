@@ -26,3 +26,4 @@
 1. [如何才能跨过前端的高级级别，譬如腾讯的t3-1,或者是阿里的p7。平时的前端知识并不足够跨过这个门槛?](https://www.zhihu.com/question/59747367/answer/169706200)
 1. [How to be a Programmer 中文版](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
 1. [前端核心能力进阶指南](https://juejin.im/book/5cb56b7be51d456e3267e400/section/5cb7351de51d456e770bdcbd)
+1. [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
