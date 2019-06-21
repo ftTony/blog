@@ -20,6 +20,7 @@
 13. [Spring Boot 学习示例](https://github.com/ityouknow/spring-boot-examples)
 10. [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days)
 11. [100天机械学习中文版](https://github.com/MLEveryday/100-Days-Of-ML-Code)
+11. [算法/深度学习/NLP面试笔记](https://github.com/imhuay/Algorithm_Interview_Notes-Chinese)
 12. [大前端工具集](https://github.com/nieweidong/fetool)
 13. [开发效率提升之工具篇](https://github.com/Louiszhai/tool)
 13. [前端个人博客](https://github.com/fouber/blog)
