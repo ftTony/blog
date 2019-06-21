@@ -16,3 +16,4 @@
 1. [datetime 时间转化](https://github.com/hustcc/timeago.js/blob/master/README_zh.md)
 1. [VSCode插件开发全攻略](https://github.com/sxei/vscode-plugin-demo)
 1. [D2Admin](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md)
+1. [客户端环境识别模块](https://github.com/hotoo/detector)
