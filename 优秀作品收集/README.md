@@ -17,3 +17,4 @@
 1. [VSCode插件开发全攻略](https://github.com/sxei/vscode-plugin-demo)
 1. [D2Admin](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md)
 1. [客户端环境识别模块](https://github.com/hotoo/detector)
+1. [网易云音乐桌面客户端](https://github.com/trazyn/ieaseMusic)
