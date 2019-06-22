@@ -20,3 +20,8 @@
 ### 成长书籍
 
 <img src="./img/20.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/21.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/22.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/25.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/26.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/27.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/39.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/42.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/43.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/45.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/46.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/47.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/48.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/49.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/50.jpg" width="150" height="200" />
+
+### 下载链接
+
+- 链接:`https://pan.baidu.com/s/1DhORmwbHckAerWKXGSYQNQ`
+- 密码:`jhxe`
