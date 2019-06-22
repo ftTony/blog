@@ -1,68 +1,29 @@
-1. [前端免费高清电子书(史上最全)](https://juejin.im/post/5c0098f66fb9a049dd80019e)
-1. [常用书籍](https://github.com/mymmsc/books)
-1. [计算机电子书pdf整理及下载链接](https://github.com/fuhmmin/it-ebooks-cn)
-1. [编程书籍的整理和收集](https://github.com/KeKe-Li/book)
-1. [免费的计算机编程类中文书籍](https://github.com/justjavac/free-programming-books-zh_CN)
-1. [Web前端导航](http://www.alloyteam.com/nav/)
-1. [计算机经典书籍推荐](https://github.com/woai3c/recommended-books)
-1. [awesome-bookmarks](https://github.com/PanJiaChen/awesome-bookmarks)
-1. [互联网公司技术架构](https://github.com/davideuler/architecture.of.internet-product)
-2. [CS-Notes](https://github.com/CyC2018/CS-Notes)
-3. [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
-4. [前端教程&开发模块化/规范化/工程化/优化&工具/调试&值得关注的博客/Git&面试-前端资源汇总](https://github.com/xiaohuazheng/-/issues/1)
-5. [前端回忆录](https://github.com/windiest/Front-end-tutorial)
-6. [学习资源](https://github.com/webproblem/learning-article)
-8. [全栈方向系列文章](https://github.com/pkwenda/Blog)
-9. [前端技术清单](https://github.com/alienzhou/frontend-tech-list)
-10. [java学习清单](https://github.com/crossoverJie/JCSprout)
-11. [java相关框架源码研究](https://github.com/YunaiV/Blog)
-12. [互联网 Java 工程师进阶知识完全扫盲](https://github.com/doocs/advanced-java)
-13. [Spring Boot 学习示例](https://github.com/ityouknow/spring-boot-examples)
-10. [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days)
-11. [100天机械学习中文版](https://github.com/MLEveryday/100-Days-Of-ML-Code)
-11. [算法/深度学习/NLP面试笔记](https://github.com/imhuay/Algorithm_Interview_Notes-Chinese)
-12. [大前端工具集](https://github.com/nieweidong/fetool)
-13. [开发效率提升之工具篇](https://github.com/Louiszhai/tool)
-13. [前端个人博客](https://github.com/fouber/blog)
-14. [微信小程序开发资源汇总](https://github.com/justjavac/awesome-wechat-weapp)
-15. [原创文章、外文翻译、技术总结和演示代码](https://github.com/zhaoqize/blog)
-16. [后端架构师技术图谱](https://github.com/xingshaocheng/architect-awesome)
-17. [最全前端资源汇集](https://segmentfault.com/a/1190000004978770)
-18. [计算机技术类书籍 PDF](https://github.com/huihut/CS-Books)
-19. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)
-20. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
-21. [计算机学习资料列表](https://github.com/NGLSL/learning-material-list)
-22. [Web前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)
-23. [伯乐在线](https://github.com/jobbole/)
-24. [稀土](https://github.com/xitu)
-25. [贵校课程资料民间整理](https://github.com/lib-pku/libpku)
-26. [前端精读周刊](https://github.com/dt-fe/weekly)
-28. [前端开发知识结构](https://github.com/JacksonTian/fks)
-29. [前端收集](https://github.com/foru17/front-end-collect)
-30. [各种编程学习资料](https://github.com/FangWW/Document)
-31. [前端技术日报](https://github.com/kujian/frontendDaily)
-32. [D2 日报](https://daily.fairyever.com/)
-1. [个人分享--web前端学习资源分享](https://juejin.im/post/5a0c1956f265da430a501f51)
-1. [免费英文书籍](http://web.archive.org/web/20160428030320/https://github.com/vhf/free-programming-books)
-1. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
-1. [原创和翻译](https://github.com/ikcamp)
-1. [前端技术书籍、前端热门技术、前端发展](https://github.com/zhaoqize/FE-Guide)
-1. [前端山泉](https://github.com/STPace/fe-spring)
-1. [文档库](https://github.com/LiangJunrong/document-library)
-1. [DDFE-blog](https://github.com/DDFE/DDFE-blog)
-1. [电子书下载网站](http://www.ireadweek.com)
-1. [前端文档库](https://github.com/wuxiaobin1995/Frontend-Doc)
-1. [学习笔记](https://github.com/yanlele/node-index)
-1. [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
-1. [程序员应该访问的最佳网站中文版](https://github.com/tuteng/Best-websites-a-programmer-should-visit-zh/blob/master/README.md)
-1. [计算机科学速成课](https://github.com/1c7/crash-course-computer-science-chinese)
-1. 《CSS权威指南》
-1. 《CSS揭秘》
-1. 《CSS世界》
+### javascript书籍
 2. 《JavaScript高级程序设计（第3版）中文 高清 完整》
 1. 《你不知道的JavaScript（上卷）》
 1. 《你不知道的JavaScript（中卷）》
 1. 《你不知道的JavaScript（下卷）》
-1. 《深入浅出Webpack》
-1. 《数据结构与算法JavaScript描述》
 
+### nodejs 书籍
+
+### css书籍
+
+1. 《CSS权威指南》
+1. 《CSS权威指南》
+1. 《CSS揭秘》
+1. 《CSS世界》
+
+### 算法书籍
+
+1. 《数据结构与算法JavaScript描述1》
+1. 《数据结构与算法JavaScript描述2》
+
+### 网络书籍
+
+### 操作系统
+
+### 工具类书籍
+
+1. 《深入浅出Webpack》
+
+### 成长书籍
