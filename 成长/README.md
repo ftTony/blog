@@ -27,3 +27,4 @@
 1. [How to be a Programmer 中文版](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
 1. [前端核心能力进阶指南](https://juejin.im/book/5cb56b7be51d456e3267e400/section/5cb7351de51d456e770bdcbd)
 1. [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+1. [工作10年，我在前端专业成长路上的探索](https://mp.weixin.qq.com/s/mjzhU4K-RS6IbhBiiL0sgw)
