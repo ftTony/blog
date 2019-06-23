@@ -6,6 +6,7 @@
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
 1. [浪里行舟](https://github.com/ljianshu/Blog)
 1. [梁少峰的个人博客](https://github.com/youngwind/blog)
+1. [LGC](https://github.com/amandakelake/blog)
 1. [Front-end Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)
 1. [高质量的 Github Issue 博客列表 ](https://github.com/paddingme/github-issue-blog-list)
 
