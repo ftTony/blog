@@ -12,7 +12,7 @@
 1. #### [性能](https://github.com/ftTony/blog/tree/master/%E6%80%A7%E8%83%BD)
 1. #### [前端工具](https://github.com/ftTony/blog/tree/master/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7)
 1. #### [优秀作品收集](https://github.com/ftTony/blog/tree/master/%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E9%9B%86)
-1. #### [优质文章收集](https://github.com/ftTony/blog/tree/master/%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E9%9B%86)
+1. #### [优质资料收集](https://github.com/ftTony/blog/tree/master/%E4%BC%98%E8%B4%A8%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86)
 1. #### [node学习](https://github.com/ftTony/blog/tree/master/nodejs)
 1. #### [浏览器相关](https://github.com/ftTony/blog/tree/master/%E6%B5%8F%E8%A7%88%E5%99%A8)
 1. #### [产品相关](https://github.com/ftTony/blog/tree/master/%E4%BA%A7%E5%93%81%E7%9B%B8%E5%85%B3)
