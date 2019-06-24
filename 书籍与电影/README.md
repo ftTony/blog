@@ -15,6 +15,7 @@
 <img src="./img/28.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/35.jpg" width="150" height="200" />
 
 ### 工具类书籍
+
 <img src="./img/36.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/37.jpg" width="150" height="200" />
 
 ### 成长书籍
@@ -25,3 +26,17 @@
 
 - 链接:`https://pan.baidu.com/s/1DhORmwbHckAerWKXGSYQNQ`
 - 密码:`jhxe`
+
+### 电影相关
+
+#### 1. 励志片
+
+《当幸福来敲门》、《肖邦克的救赎》、《激战》、《嗝嗝老师》、《印度合伙人》、《三傻大闹宝莱坞》、《摔跤吧，爸爸》、《神秘巨星》、《中国合伙人》
+
+#### 2. 金融片
+
+《华尔街》、《在空头》、《华尔街之狼》、《美国狂魔》、《商海通牒》
+
+#### 3. 动作片
+
+《终节者》系列、《无间道》系列、《机械师》系列、《极限特工》系列、《速度与激情》系列
