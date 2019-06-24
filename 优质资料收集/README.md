@@ -76,5 +76,5 @@
 27. [2018上半年掘金微信群日报优质文章合集：前端篇](https://juejin.im/post/5b3adfe2e51d4555b17e85df)
 1. [Hello GitHub](https://github.com/521xueweihan/HelloGitHub)
 1. [GitHub 漫游指南](https://github.com/phodal/github)
-
+1. [定律、理论、原则和模式](https://github.com/nusr/hacker-laws-zh)
 
