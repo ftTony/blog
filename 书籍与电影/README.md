@@ -31,12 +31,12 @@
 
 #### 1. 励志片
 
-《当幸福来敲门》、《肖邦克的救赎》、《激战》、《嗝嗝老师》、《印度合伙人》、《三傻大闹宝莱坞》、《摔跤吧，爸爸》、《神秘巨星》、《教父》、《中国合伙人》
+<img src="./img/m_1.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_2.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_3.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_4.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_5.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_6.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_7.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_8.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_9.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_10.jpg" width="150" height="200" />
 
 #### 2. 金融片
 
-《华尔街》、《大空头》、《华尔街之狼》、《美国狂魔》、《商海通牒》
+<img src="./img/m_11.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_12.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_13.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_14.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_15.jpg" width="150" height="200" />
 
 #### 3. 动作片
 
-《终结者》系列、《无间道》系列、《机械师》系列、《极限特工》系列、《速度与激情》系列
+<img src="./img/m_16.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_17.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_18.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_19.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_20.jpg" width="150" height="200" />
