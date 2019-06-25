@@ -13,3 +13,4 @@
 1. [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
 1. [高质量的Git中文教程](https://github.com/geeeeeeeeek/git-recipes)
 1. [vim-web](https://github.com/jaywcjlove/vim-web)
+1. [Git Community Book 中文版](http://gitbook.liuhui998.com/index.html)
