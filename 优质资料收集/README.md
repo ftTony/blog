@@ -14,6 +14,9 @@
 1. [言川的博客-前端精华博客](https://github.com/lihongxun945/myblog)
 1. [Front-end Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)
 1. [高质量的 Github Issue 博客列表 ](https://github.com/paddingme/github-issue-blog-list)
+1. [大史住在大前端](https://github.com/dashnowords/blogs)
+1. [SHERlocked93 个人博客](https://github.com/SHERlocked93/blog)
+
 
 ### 优秀学习资源
 
