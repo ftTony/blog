@@ -15,6 +15,7 @@
 1. [Front-end Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)
 1. [高质量的 Github Issue 博客列表 ](https://github.com/paddingme/github-issue-blog-list)
 1. [大史住在大前端](https://github.com/dashnowords/blogs)
+1. [前端何时是个头](https://github.com/Aaaaaaaty/blog)
 1. [SHERlocked93 个人博客](https://github.com/SHERlocked93/blog)
 
 
