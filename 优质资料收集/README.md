@@ -10,6 +10,7 @@
 1. [zhaoqize](https://github.com/zhaoqize/blog)
 1. [前端文档库](https://github.com/wuxiaobin1995/Frontend-Doc)
 1. [学习笔记](https://github.com/yanlele/node-index)
+1. [前端开发学习记录](https://github.com/cody1991/learn)
 1. [言川的博客-前端精华博客](https://github.com/lihongxun945/myblog)
 1. [Front-end Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)
 1. [高质量的 Github Issue 博客列表 ](https://github.com/paddingme/github-issue-blog-list)
