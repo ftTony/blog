@@ -14,3 +14,4 @@
 1. [HTTP/3 要点](https://mp.weixin.qq.com/s/qBD90RdofvYDNX2sSJWgNA)
 1. [DNS劫持详解](https://mp.weixin.qq.com/s/vFMEJFHBV5ws268oOkDReg)
 1. [安全思维导图集合](https://github.com/SecWiki/sec-chart)
+1. [【性能优化】DNS 预解析](https://github.com/amandakelake/blog/issues/50)
