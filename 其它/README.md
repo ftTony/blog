@@ -28,3 +28,4 @@
 1. [前端代码质量管理（一）](https://juejin.im/post/5cb5c3445188256c83279255)
 1. [页面可视化搭建工具技术要点](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651556329&idx=1&sn=08c15ed33a14026185184a0e422b0672&chksm=80255e28b752d73e45b1d99156fa51af28bc34756b2f5f7736b8bce742c5f5f636ef8814cbe9&scene=21#wechat_redirect)
 1. [文件 package.json 的说明文档](https://github.com/jaywcjlove/package.json)
+1. [各种真机远程调试方法汇总](https://github.com/jieyou/remote_inspect_web_on_real_device)
