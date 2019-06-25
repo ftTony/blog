@@ -2,6 +2,7 @@
 1. [深入Babel，这一篇就够了](https://juejin.im/post/5c21b584e51d4548ac6f6c99)
 2. [git学习](https://github.com/geeeeeeeeek/git-recipes)
 3. [gulp学习](https://www.gulpjs.com.cn/)
+1. [由浅入深Webpack](https://github.com/yanlele/node-index/blob/master/book/11、深入webpack工程化/01、由浅入深Webpack/README.md)
 1. [前端库](https://github.com/sorrycc/awesome-f2e-libs)
 1. [搜罗一切webpack的好文章好工具](https://github.com/webpack-china/awesome-webpack-cn)
 1. [【webpack进阶】你真的掌握了loader么？- loader十问](https://github.com/alienzhou/blog/issues/21)
