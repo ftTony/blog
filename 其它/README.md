@@ -24,7 +24,6 @@
 1. [8年前端开发的知识点沉淀](https://juejin.im/post/5d0878aaf265da1b83338f74)
 1. [细数国内外的前端大牛](https://juejin.im/post/5a9224c6f265da4e710f7786)
 1. [程序员需要懂得的中医养生](https://github.com/fairyly/you-need-traditional-Chinese-medical)
-1. [JavaScript 复杂判断的更优雅写法](https://juejin.im/post/5bdfef86e51d453bf8051bf8)
 1. [前端代码质量管理（一）](https://juejin.im/post/5cb5c3445188256c83279255)
 1. [页面可视化搭建工具技术要点](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651556329&idx=1&sn=08c15ed33a14026185184a0e422b0672&chksm=80255e28b752d73e45b1d99156fa51af28bc34756b2f5f7736b8bce742c5f5f636ef8814cbe9&scene=21#wechat_redirect)
 1. [文件 package.json 的说明文档](https://github.com/jaywcjlove/package.json)
