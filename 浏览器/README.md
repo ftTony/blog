@@ -2,6 +2,7 @@
 1. [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
 2. [浏览器渲染原理](https://github.com/ftTony/blog/issues/20)
 3. [九种跨域方式](https://github.com/ftTony/blog/issues/21)
+1. [深度解析 CORS 跨域原理及 @koa/cors 源码](https://mp.weixin.qq.com/s/S9NYjMAXq31zbieYBRG-rg)
 1. [每个前端工程师都应该了解的图片知识(长文建议收藏)](https://mp.weixin.qq.com/s/O1n7_t4izdmpvn2mFrB-kg)
 1. [深入理解现代浏览器](https://mp.weixin.qq.com/s/LkKNjrkx1V32lCjv92Cuuw)
 1. [V8引擎初步介绍](https://github.com/yanlele/node-index/tree/master/18%E5%B9%B4/12%E6%9C%88/03%E3%80%81V8%E5%BC%95%E6%93%8E%E5%88%9D%E6%AD%A5%E4%BB%8B%E7%BB%8D#%E6%B8%B2%E6%9F%93%E5%BC%95%E6%93%8E%E4%B8%8E%E7%BD%91%E9%A1%B5%E6%B8%B2%E6%9F%93)
