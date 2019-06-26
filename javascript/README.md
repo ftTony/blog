@@ -21,4 +21,5 @@
 17. [你不懂JS（系列丛书）](https://github.com/getify/You-Dont-Know-JS/tree/1ed-zh-CN)
 18. [[译]送你43道JavaScript面试题](https://github.com/lydiahallie/javascript-questions/blob/master/README-zh_CN.md)
 19. [一个合格的中级前端工程师必须要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516)
+21. [JavaScript手写代码无敌秘籍](https://mp.weixin.qq.com/s/4uzNKQcKB5YJbtXF4NQyWg)
 20. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
