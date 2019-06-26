@@ -23,3 +23,4 @@
 19. [一个合格的中级前端工程师必须要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516)
 21. [JavaScript手写代码无敌秘籍](https://mp.weixin.qq.com/s/4uzNKQcKB5YJbtXF4NQyWg)
 20. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
+1. [JavaScript 复杂判断的更优雅写法](https://juejin.im/post/5bdfef86e51d453bf8051bf8)
