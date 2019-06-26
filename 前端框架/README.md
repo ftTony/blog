@@ -5,6 +5,7 @@
 1. [vuex原理及源码分析](https://github.com/dwqs/blog/issues/58)
 2. [如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
 3. [Diff算法](https://github.com/aooy/blog/issues/2)
+1. [揭秘Vue中的Virtual Dom](https://mp.weixin.qq.com/s/EeN7E8uQS4R_JJloPX8fCQ)
 1. [Vue技术内幕](http://hcysun.me/vue-design/art/)
 1. [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
 1. [Vue.js 源码解析](https://github.com/answershuto/learnVue)
