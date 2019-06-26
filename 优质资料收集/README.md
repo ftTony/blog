@@ -17,7 +17,7 @@
 1. [大史住在大前端](https://github.com/dashnowords/blogs)
 1. [前端何时是个头](https://github.com/Aaaaaaaty/blog)
 1. [SHERlocked93 个人博客](https://github.com/SHERlocked93/blog)
-
+29. [前端博客汇总](https://github.com/foru17/front-end-collect)
 
 ### 优秀学习资源
 
@@ -60,7 +60,6 @@
 25. [贵校课程资料民间整理](https://github.com/lib-pku/libpku)
 26. [前端精读周刊](https://github.com/dt-fe/weekly)
 28. [前端开发知识结构](https://github.com/JacksonTian/fks)
-29. [前端收集](https://github.com/foru17/front-end-collect)
 30. [各种编程学习资料](https://github.com/FangWW/Document)
 31. [前端技术日报](https://github.com/kujian/frontendDaily)
 32. [D2 日报](https://daily.fairyever.com/)
