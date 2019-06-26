@@ -25,3 +25,4 @@
 20. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
 1. [JavaScript 复杂判断的更优雅写法](https://juejin.im/post/5bdfef86e51d453bf8051bf8)
 1. [深入理解JavaScript系列](https://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
+1. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog/issues/17)
