@@ -29,3 +29,4 @@
 1. [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
 1. [工作10年，我在前端专业成长路上的探索](https://mp.weixin.qq.com/s/mjzhU4K-RS6IbhBiiL0sgw)
 1. [出身湖南山村，我用10年，从深圳流水线走到纽约谷歌办公室](https://mp.weixin.qq.com/s/XydI2aN25WOaPQQ3kg9UlA)
+1. [25 岁，毕业写前端的这三年](https://juejin.im/post/5cd8c361f265da03a33c5521)
