@@ -14,3 +14,4 @@
 1. [高质量的Git中文教程](https://github.com/geeeeeeeeek/git-recipes)
 1. [vim-web](https://github.com/jaywcjlove/vim-web)
 1. [Git Community Book 中文版](http://gitbook.liuhui998.com/index.html)
+1. [面试必备！webpack 中那些最易混淆的 5 个知识点](https://juejin.im/post/5cede821f265da1bbd4b5630)
