@@ -84,3 +84,4 @@
 1. [定律、理论、原则和模式](https://github.com/nusr/hacker-laws-zh)
 1. [上不了名校？可以在 GitHub 上读他们的课程](https://www.cnblogs.com/xueweihan/p/11075694.html)
 1. [如何做好一枚程序员](https://github.com/ahangchen/How-to-Be-A-Programmer-CN)
+1. [前端学习、开发资源、求职面试](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
