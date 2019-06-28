@@ -31,3 +31,4 @@
 1. [出身湖南山村，我用10年，从深圳流水线走到纽约谷歌办公室](https://mp.weixin.qq.com/s/XydI2aN25WOaPQQ3kg9UlA)
 1. [25 岁，毕业写前端的这三年](https://juejin.im/post/5cd8c361f265da03a33c5521)
 1. [这个前端写的免费 Web 版 PS，让他三十岁前财务自由](https://juejin.im/post/5d1178c3e51d45108223fc92)
+1. [好好说话，别伤人](https://mp.weixin.qq.com/s/1I_FUpCCkbILrzmBmcmS8Q)
