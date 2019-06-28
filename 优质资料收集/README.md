@@ -8,6 +8,7 @@
 1. [梁少峰的个人博客](https://github.com/youngwind/blog)
 1. [LGC](https://github.com/amandakelake/blog)
 1. [zhaoqize](https://github.com/zhaoqize/blog)
+1. [兮诀](https://github.com/Aaaaaaaty/blog)
 1. [前端文档库](https://github.com/wuxiaobin1995/Frontend-Doc)
 1. [学习笔记](https://github.com/yanlele/node-index)
 1. [前端开发学习记录](https://github.com/cody1991/learn)
