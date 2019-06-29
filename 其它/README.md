@@ -15,6 +15,7 @@
 1. [Flutter完整开发实战详解系列](https://github.com/CarGuo/GSYFlutterBook)
 1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
+1. [英语学习指南](https://github.com/yujiangshui/A-Programmers-Guide-to-English)
 1. [英语进阶指南](https://github.com/ftTony/English-level-up-tips-for-Chinese)
 1. [暴力英语学习法 + 严格的目标管理 = 成功快速靠谱的学好英语](https://www.cnblogs.com/jesse2013/p/how-to-learn-english.html)
 1. [房产信息](https://github.com/fairyly/you-need-know-house_knowledge)
