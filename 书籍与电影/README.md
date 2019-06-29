@@ -43,4 +43,8 @@
 
 #### 3. 动作片
 
-<img src="./img/m_16.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_17.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_18.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_19.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_20.jpg" width="150" height="200" />
+<img src="./img/m_17.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_18.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_19.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_20.jpg" width="150" height="200" />
+
+#### 4.科幻片
+
+<img src="./img/m_16.jpg" width="150" height="200" />&nbsp;&nbsp;&nbsp;<img src="./img/m_21.jpg" width="150" height="200" />
