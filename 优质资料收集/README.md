@@ -88,3 +88,4 @@
 1. [如何做好一枚程序员](https://github.com/ahangchen/How-to-Be-A-Programmer-CN)
 1. [前端学习、开发资源、求职面试](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
 1. [现代 Web 开发](https://github.com/wx-chevalier/Web-Series)
+1. [区块链(BlockChain)技术开发](https://github.com/chaozh/awesome-blockchain-cn)
