@@ -7,3 +7,4 @@
 1. [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
 1. [node爬虫](https://github.com/yanlele/node-spider)
 1. [Node.js面试题](https://github.com/jimuyouyou/node-interview-questions)
+1. [Node.js 包教不包会](https://github.com/alsotang/node-lessons)
