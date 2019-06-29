@@ -4,3 +4,4 @@
 1. [2018 前端性能优化清单](https://juejin.im/post/5a966bd16fb9a0635172a50a)
 1. [前端性能(一)](https://github.com/ftTony/blog/issues/28)
 1. [前端性能(二)](https://github.com/ftTony/blog/issues/29)
+1. [性能优化三部曲之一——构建篇](https://github.com/lcxfs1991/blog/issues/4)
