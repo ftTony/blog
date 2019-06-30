@@ -8,3 +8,4 @@
 1. [node爬虫](https://github.com/yanlele/node-spider)
 1. [Node.js面试题](https://github.com/jimuyouyou/node-interview-questions)
 1. [Node.js 包教不包会](https://github.com/alsotang/node-lessons)
+1. [Node.js 应用故障排查手册](https://github.com/aliyun-node/Node.js-Troubleshooting-Guide)
