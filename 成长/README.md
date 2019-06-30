@@ -25,6 +25,7 @@
 1. [玉伯：从前端到体验，如何把格局做大](https://mp.weixin.qq.com/s/JXifreRbTQcFiLqSLTNtag)
 1. [阿里圆心：前端路上的思考](https://mp.weixin.qq.com/s/cg6_0qSy-nd7YZUsF6gWZw)
 1. [独家解读：淘宝TypeScript多场景开发和实践](https://mp.weixin.qq.com/s/N6Jmrbi-3AY_uo_lc-dBiw)
+1. [哪些技术会决定前端开发者的未来发展？](https://mp.weixin.qq.com/s/0IEqfnZULXgmvE52ho-nmg)
 1. [干货分享：蚂蚁金服前端框架和工程化实践](https://mp.weixin.qq.com/s/6-yjR_CsHaWUI8YqLK25rA)
 1. [你是怎么变自律的？](https://www.zhihu.com/question/284206141)
 1. [如何才能跨过前端的高级级别，譬如腾讯的t3-1,或者是阿里的p7。平时的前端知识并不足够跨过这个门槛?](https://www.zhihu.com/question/59747367/answer/169706200)
