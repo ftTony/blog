@@ -25,6 +25,7 @@
 1. [dwqs博客——吓皮](https://github.com/dwqs/blog)
 1. [一个前端的博客——阿里](https://github.com/muwoo/blogs)
 1. [前端开发中的技巧以及算法知识](https://github.com/louzhedong/blog)
+1. [web全栈书签](https://github.com/OXOYO/F2E-Tutorial-Collect)
 29. [前端博客汇总](https://github.com/foru17/front-end-collect)
 
 ### 优秀学习资源
