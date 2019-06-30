@@ -19,3 +19,4 @@
 1. [客户端环境识别模块](https://github.com/hotoo/detector)
 1. [网易云音乐桌面客户端](https://github.com/trazyn/ieaseMusic)
 1. [技术图标连连看](https://github.com/zerosoul/frontend-memo-game/blob/master/README.zh.md)
+1. [happy canvas](https://github.com/whxaxes/canvas-test)
