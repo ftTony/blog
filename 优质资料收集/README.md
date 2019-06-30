@@ -27,6 +27,8 @@
 1. [前端开发中的技巧以及算法知识](https://github.com/louzhedong/blog)
 1. [web全栈书签](https://github.com/OXOYO/F2E-Tutorial-Collect)
 1. [前端知识月刊](https://github.com/jsfront/month)
+31. [前端技术日报](https://github.com/kujian/frontendDaily)
+32. [D2 日报](https://daily.fairyever.com/)
 29. [前端博客汇总](https://github.com/foru17/front-end-collect)
 
 ### 优秀学习资源
@@ -71,8 +73,6 @@
 26. [前端精读周刊](https://github.com/dt-fe/weekly)
 28. [前端开发知识结构](https://github.com/JacksonTian/fks)
 30. [各种编程学习资料](https://github.com/FangWW/Document)
-31. [前端技术日报](https://github.com/kujian/frontendDaily)
-32. [D2 日报](https://daily.fairyever.com/)
 1. [个人分享--web前端学习资源分享](https://juejin.im/post/5a0c1956f265da430a501f51)
 1. [免费英文书籍](http://web.archive.org/web/20160428030320/https://github.com/vhf/free-programming-books)
 1. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
