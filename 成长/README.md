@@ -20,6 +20,7 @@
 1. [【人物志】技术十年：美团第一位前端工程师潘魏增](https://juejin.im/post/5c0a110df265da61407eb67e)
 1. [前端核心能力进阶指南](https://juejin.im/book/5cb56b7be51d456e3267e400/section/5cb7351de51d456e770bdcbd)
 1. [写博客的这几个月，获益良多](https://juejin.im/post/5a67710b51882573443cd81d)
+1. [写博客一周年纪——横空出世](https://www.cnblogs.com/andy-songwei/p/11107313.html)
 1. [个人建议-怎样写出一篇好文章](https://juejin.im/post/5a649f6af265da3e553802ee)
 1. [我在阿里云做前端](https://mp.weixin.qq.com/s/aJd9CEArS2-wsyE_pQsRAw)
 1. [玉伯：从前端到体验，如何把格局做大](https://mp.weixin.qq.com/s/JXifreRbTQcFiLqSLTNtag)
