@@ -20,6 +20,8 @@
 1. [SHERlocked93 个人博客](https://github.com/SHERlocked93/blog)
 1. [泽鹿博客](https://github.com/panyifei/Front-end-learning)
 1. [Aaaaaaaty博客](https://github.com/Aaaaaaaty/blog)
+1. [MuYunyun——拼多多](https://github.com/MuYunyun/blog)
+1. [Joony的博客——吓皮](https://github.com/forthealllight/blog)
 1. [前端开发中的技巧以及算法知识](https://github.com/louzhedong/blog)
 29. [前端博客汇总](https://github.com/foru17/front-end-collect)
 
