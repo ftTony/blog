@@ -21,3 +21,4 @@
 1. [ Electron + React 开发的音乐客户端](https://github.com/caijinyc/Here)
 1. [技术图标连连看](https://github.com/zerosoul/frontend-memo-game/blob/master/README.zh.md)
 1. [happy canvas](https://github.com/whxaxes/canvas-test)
+1. [python game](https://github.com/CharlesPikachu/Games)
