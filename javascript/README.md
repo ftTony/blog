@@ -27,3 +27,5 @@
 1. [深入理解JavaScript系列](https://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
 1. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog/issues/17)
 1. [JS 中可以提升幸福度的小技巧](https://mp.weixin.qq.com/s/pu2NmyWCQM7oN8H_WRKheA)
+1. [JavaScript 教程](https://wangdoc.com/javascript/)
+1. [【译】JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
