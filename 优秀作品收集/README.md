@@ -22,3 +22,4 @@
 1. [技术图标连连看](https://github.com/zerosoul/frontend-memo-game/blob/master/README.zh.md)
 1. [happy canvas](https://github.com/whxaxes/canvas-test)
 1. [python game](https://github.com/CharlesPikachu/Games)
+1. [微信小游戏辅助合集](https://github.com/game-helper/weixin)
