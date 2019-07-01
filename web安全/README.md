@@ -4,4 +4,5 @@
 1. [CRSF](https://github.com/ftTony/blog/issues/8)
 1. [常见 Web 安全攻防总结](https://zoumiaojiang.com/article/common-web-security/)
 1. [网络安全](https://github.com/frank-lam/fullstack-tutorial/blob/master/notes/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8.md)
-1. [安全思维导图集合](https://github.com/phith0n/Mind-Map)
+1. [安全思维导图集合](https://github.com/SecWiki/sec-chart)
+1. [各种安全相关思维导图整理收集](https://github.com/phith0n/Mind-Map)
