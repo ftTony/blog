@@ -13,7 +13,6 @@
 1. [Electron构建跨平台应用Mac/Windows/Linux](https://juejin.im/post/5c46ab47e51d45522b4f55b1)
 1. [electron中文教程](https://wizardforcel.gitbooks.io/electron-doc/)
 1. [Flutter完整开发实战详解系列](https://github.com/CarGuo/GSYFlutterBook)
-1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 1. [前端开发规范：命名规范、html规范、css规范、js规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)
 1. [英语学习指南](https://github.com/yujiangshui/A-Programmers-Guide-to-English)
 1. [英语进阶指南](https://github.com/ftTony/English-level-up-tips-for-Chinese)
