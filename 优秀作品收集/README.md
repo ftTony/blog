@@ -23,3 +23,4 @@
 1. [happy canvas](https://github.com/whxaxes/canvas-test)
 1. [python game](https://github.com/CharlesPikachu/Games)
 1. [微信小游戏辅助合集](https://github.com/game-helper/weixin)
+1. [webpack的多页应用脚手架](https://github.com/Array-Huang/webpack-seed)
