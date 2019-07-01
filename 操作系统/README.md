@@ -6,3 +6,4 @@
 1. [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)
 1. [linux基本命令](https://github.com/ftTony/blog/issues/31)
 1. [Linux工具快速教程](https://linuxtools-rst.readthedocs.io/zh_CN/latest/)
+1. [操作系统](https://github.com/frank-lam/fullstack-tutorial/blob/master/notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md)
