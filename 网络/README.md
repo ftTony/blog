@@ -16,3 +16,4 @@
 1. [安全思维导图集合](https://github.com/SecWiki/sec-chart)
 1. [【性能优化】DNS 预解析](https://github.com/amandakelake/blog/issues/50)
 1. [计算机网络](https://github.com/frank-lam/fullstack-tutorial/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md)
+1. [RESTful 架构详解](https://github.com/frank-lam/fullstack-tutorial/blob/master/notes/RESTful%20API.md)
