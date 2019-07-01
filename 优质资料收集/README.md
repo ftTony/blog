@@ -30,7 +30,8 @@
 1. [前端知识月刊](https://github.com/jsfront/month)
 31. [前端技术日报](https://github.com/kujian/frontendDaily)
 32. [D2 日报](https://daily.fairyever.com/)
-29. [前端博客汇总](https://github.com/foru17/front-end-collect)
+33. [前端精读周刊](https://github.com/dt-fe/weekly)
+34. [前端博客汇总](https://github.com/foru17/front-end-collect)
 
 ### 优秀学习资源
 
@@ -69,7 +70,6 @@
 23. [伯乐在线](https://github.com/jobbole/)
 24. [稀土](https://github.com/xitu)
 25. [贵校课程资料民间整理](https://github.com/lib-pku/libpku)
-26. [前端精读周刊](https://github.com/dt-fe/weekly)
 28. [前端开发知识结构](https://github.com/JacksonTian/fks)
 30. [各种编程学习资料](https://github.com/FangWW/Document)
 1. [个人分享--web前端学习资源分享](https://juejin.im/post/5a0c1956f265da430a501f51)
