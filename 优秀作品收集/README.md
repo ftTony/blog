@@ -25,3 +25,4 @@
 1. [微信小游戏辅助合集](https://github.com/game-helper/weixin)
 1. [webpack的多页应用脚手架](https://github.com/Array-Huang/webpack-seed)
 1. [利用webpack搭建脚手架一套完整流程](https://mp.weixin.qq.com/s/23f64lu-qAEAK76lFYyzow)
+1. [canvas案例](https://github.com/Array-Huang/canvas-learning)
