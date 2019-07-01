@@ -24,6 +24,7 @@
 1. [Joony的博客——吓皮](https://github.com/forthealllight/blog)
 1. [dwqs博客——吓皮](https://github.com/dwqs/blog)
 1. [一个前端的博客——阿里](https://github.com/muwoo/blogs)
+1. [刘博文博客——360](https://github.com/berwin/Blog)
 1. [前端开发中的技巧以及算法知识](https://github.com/louzhedong/blog)
 1. [web全栈书签](https://github.com/OXOYO/F2E-Tutorial-Collect)
 1. [前端知识月刊](https://github.com/jsfront/month)
