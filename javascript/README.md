@@ -30,3 +30,4 @@
 1. [JavaScript 教程](https://wangdoc.com/javascript/)
 1. [【译】JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
 1. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
+1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
