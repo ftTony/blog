@@ -27,3 +27,4 @@
 1. [利用webpack搭建脚手架一套完整流程](https://mp.weixin.qq.com/s/23f64lu-qAEAK76lFYyzow)
 1. [canvas案例](https://github.com/Array-Huang/canvas-learning)
 1. [开源微信公众号商城](https://github.com/crmeb/CRMEB)
+1. [一个集成了 webpack + vue-loader + vuex + axios 的自定义 vue-cli 模板](https://github.com/Brickies/vue-template)
