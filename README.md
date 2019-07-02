@@ -6,6 +6,7 @@
 1. #### [css 基础](https://github.com/overnewfe/css)
 1. #### [算法](https://github.com/overnewfe/algorithm)
 1. #### [前端工程](https://github.com/overnewfe/engineering-practice)
+1. #### [个人成长](https://github.com/overnewfe/growing-up)
 1. #### [性能](https://github.com/ftTony/blog/tree/master/%E6%80%A7%E8%83%BD)
 1. #### [优秀作品收集](https://github.com/ftTony/blog/tree/master/%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E9%9B%86)
 1. #### [优质资料收集](https://github.com/overnewfe/learning-materials)
