@@ -15,3 +15,5 @@
 1. [学习 Vue 源码的必要知识储备](https://juejin.im/post/5ce5565d6fb9a07ed2244513)
 1. [vue组件通信全揭秘(共7章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 1. [Vue2.x源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
+2. [jQuery源码分析](https://github.com/JsAaron/jQuery)
+3. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)

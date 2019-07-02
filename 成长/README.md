@@ -39,3 +39,4 @@
 1. [这个前端写的免费 Web 版 PS，让他三十岁前财务自由](https://juejin.im/post/5d1178c3e51d45108223fc92)
 1. [好好说话，别伤人](https://mp.weixin.qq.com/s/1I_FUpCCkbILrzmBmcmS8Q)
 1. [28岁裸辞转行前端是怎样的一种体验](https://juejin.im/post/5cd216d5e51d453b5854b884)
+1. [如何有效地记忆与学习](http://mindhacks.cn/2009/03/28/effective-learning-and-memorization/)

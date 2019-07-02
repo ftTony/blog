@@ -29,5 +29,6 @@
 1. [JS 中可以提升幸福度的小技巧](https://mp.weixin.qq.com/s/pu2NmyWCQM7oN8H_WRKheA)
 1. [JavaScript 教程](https://wangdoc.com/javascript/)
 1. [【译】JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
-1. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
-1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
+2. [重新介绍 JavaScript（JS 教程）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+3. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
+4. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
