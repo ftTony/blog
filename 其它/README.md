@@ -4,6 +4,7 @@
 1. [【PWA学习与实践】(2) 使用Manifest，让你的WebApp更“Native”](https://github.com/alienzhou/blog/issues/3)
 2. css3动画
 3. cavans学习
+1. [Web 研发模式演变](https://github.com/lifesinger/blog/issues/184)
 1. [前端工程](https://www.zhihu.com/question/24558375)
 1. [前端工程与模块化框架](https://github.com/fouber/blog/issues/4)
 1. [前端工程——基础篇](https://github.com/fouber/blog/issues/10)
