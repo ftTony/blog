@@ -4,7 +4,7 @@
 1. [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 2. [前端进阶系列](https://github.com/yygmind/blog)
 3. [JavaScript深入系列](https://github.com/mqyqingfeng/Blog)
-1. [浪里行舟](https://github.com/ljianshu/Blog)
+1. [前端工匠博客](https://github.com/ljianshu/Blog)
 1. [梁少峰的个人博客](https://github.com/youngwind/blog)
 1. [LGC](https://github.com/amandakelake/blog)
 1. [zhaoqize](https://github.com/zhaoqize/blog)
