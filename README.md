@@ -6,27 +6,67 @@
 </div>
 <br>
 
-|                 I                 |              II              |           III            |            IV             |             V              |                VI                |               VII               |             VIII             |               IX                |               X               |             XI              |          XII           |
-| :-------------------------------: | :--------------------------: | :----------------------: | :-----------------------: | :------------------------: | :------------------------------: | :-----------------------------: | :--------------------------: | :-----------------------------: | :---------------------------: | :-------------------------: | :--------------------: |
-| 算法<br />[📝](#一数据结构与算法) | javascript<br/>[☕️](#二java) | css<br />[🐍](#三python) | 工程化<br />[🔗](#四前端) | 面试题<br/>[💾](#五数据库) | 计算机基础<br/>[💻](#六操作系统) | 书籍&电影<br/>[☁️](#七网络通信) | 学习资料<br/>[📃](#八分布式) | 机器学习<br/> [🔍](#九机器学习) | 成长<br />[💡](#talking-bulb) | 学习资料<br />[📖](#learn-) | 其它<br/>[🔨](#十工具) |
+|                      I                      |              II              |           III            |            IV             |             V              |                VI                |           VII           |              VIII               |               IX                |              X               |              XI               |          XII           |
+| :-----------------------------------------: | :--------------------------: | :----------------------: | :-----------------------: | :------------------------: | :------------------------------: | :---------------------: | :-----------------------------: | :-----------------------------: | :--------------------------: | :---------------------------: | :--------------------: |
+| 数据结构与算法<br />[📝](#一数据结构与算法) | javascript<br/>[☕️](#二java) | css<br />[🐍](#三python) | 工程化<br />[🔗](#四前端) | 面试题<br/>[💾](#五数据库) | 计算机基础<br/>[💻](#六操作系统) | 后端<br />[📖](#learn-) | 机器学习<br/> [🔍](#九机器学习) | 书籍&电影<br/>[☁️](#七网络通信) | 学习资料<br/>[📃](#八分布式) | 成长<br />[💡](#talking-bulb) | 其它<br/>[🔨](#十工具) |
 
+## 前言
 
-### 博客目录
+## 一、数据结构与算法
 
-1. ### [相关作品](https://github.com/ftTony/explame)
-1. #### [javascript 基础](https://github.com/overnewfe/javascript)
-1. #### [计算机基础](https://github.com/overnewfe/cs)
-1. #### [css 基础](https://github.com/overnewfe/css)
-1. #### [算法与数据结构](https://github.com/overnewfe/algorithm)
-1. #### [AI](https://github.com/overnewfe/AI)
-1. #### [前端工程](https://github.com/overnewfe/engineering-practice)
-2. #### [个人成长](https://github.com/overnewfe/growing-up)
-3. #### [优秀作品收集](https://github.com/ftTony/blog/tree/master/%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E9%9B%86)
-4. #### [优质资料收集](https://github.com/overnewfe/learning-materials)
-5. #### [产品相关](https://github.com/ftTony/blog/tree/master/%E4%BA%A7%E5%93%81%E7%9B%B8%E5%85%B3)
-6. #### [其它相关](https://github.com/overnewfe/other)
-7. #### [书籍与电影](https://github.com/overnewfe/book)
+[算法与数据结构](https://github.com/overnewfe/algorithm)
 
-#### 总结
+## 二、JavaScript
 
-1. [写在失业两个月，2018 年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
+[javascript 基础](https://github.com/overnewfe/javascript)
+
+## 三、CSS
+
+[css 基础](https://github.com/overnewfe/css)
+
+## 四、工程化
+
+[前端工程](https://github.com/overnewfe/engineering-practice)
+
+## 五、面试题
+
+[书籍与电影](https://github.com/overnewfe/book)
+
+## 六、计算机基础
+
+[计算机基础](https://github.com/overnewfe/cs)
+
+## 七、后端
+
+[后端](https://github.com/overnewfe/book)
+
+## 八、机器学习
+
+[机器学习](https://github.com/overnewfe/AI)
+
+## 九、学习资料
+
+[学习资料](https://github.com/overnewfe/learning-materials)
+
+## 十、成长
+
+[成长](https://github.com/overnewfe/growing-up)
+
+## 十一、其它
+
+[其它](https://github.com/overnewfe/other)
+
+## 十一、联系作者
+
+<div align="center">
+    <p>
+        在颠覆世界的同时，也要好好关照自己。
+    </p>
+    <img src="./img/webchat.jpg" />
+</div>
+
+## 总结
+
+1.  [产品相关](https://github.com/ftTony/blog/tree/master/%E4%BA%A7%E5%93%81%E7%9B%B8%E5%85%B3)
+2. [优秀作品收集](https://github.com/ftTony/blog/tree/master/%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E9%9B%86)
+3. [写在失业两个月，2018 年即将过去的前两天](https://github.com/ftTony/blog/issues/17)
