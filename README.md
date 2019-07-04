@@ -1,14 +1,9 @@
 ![image](./img/timg.jpg)
-<div align="center">
-    <a href="https://wangchujiang.com/github-rank/"> <img src="https://badgen.net/badge/Rank/22?icon=github&color=4ab8a1"></a>
-    <a href="assets/download.md"> <img src="https://badgen.net/badge/OvO/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD?icon=telegram&color=4ab8a1"></a>
-    <a href="#微信订阅号"> <img src="https://badgen.net/badge/%e5%85%ac%e4%bc%97%e5%8f%b7/CyC2018?icon=rss&color=4ab8a1"></a>
-</div>
 <br>
 
 |                      I                      |              II              |           III            |            IV             |             V              |                VI                |           VII           |              VIII               |               IX                |              X               |              XI               |          XII           |
 | :-----------------------------------------: | :--------------------------: | :----------------------: | :-----------------------: | :------------------------: | :------------------------------: | :---------------------: | :-----------------------------: | :-----------------------------: | :--------------------------: | :---------------------------: | :--------------------: |
-| 数据结构与算法<br />[📝](#一数据结构与算法) | javascript<br/>[☕️](#二JavaScript) | css<br />[🐍](#三python) | 工程化<br />[🔗](#四前端) | 面试题<br/>[💾](#五数据库) | 计算机基础<br/>[💻](#六操作系统) | 后端<br />[📖](#learn-) | 机器学习<br/> [🔍](#九机器学习) | 书籍&电影<br/>[☁️](#七网络通信) | 学习资料<br/>[📃](#八分布式) | 成长<br />[💡](#talking-bulb) | 其它<br/>[🔨](#十工具) |
+| 数据结构与算法<br />[📝](#一数据结构与算法) | javascript<br/>[☕️](#二JavaScript) | css<br />[🐍](#三css) | 工程化<br />[🔗](#四工程化) | 面试<br/>[💾](#五面试题) | 计算机基础<br/>[💻](#六计算机基础) | 后端<br />[📖](#七后端) | 机器学习<br/> [🔍](#八机器学习) | 书籍&电影<br/>[☁️](#九书籍&电影) | 学习资料<br/>[📃](#十学习资料) | 成长<br />[💡](#十一成长) | 其它<br/>[🔨](#十二其它) |
 
 ## 前言
 
@@ -26,11 +21,11 @@
 
 ## 四、工程化
 
-[前端工程](https://github.com/overnewfe/engineering-practice)
+[工程化](https://github.com/overnewfe/engineering-practice)
 
-## 五、面试题
+## 五、面试
 
-[书籍与电影](https://github.com/overnewfe/book)
+[面试](https://github.com/cs-learning-record/interview-question)
 
 ## 六、计算机基础
 
@@ -38,21 +33,25 @@
 
 ## 七、后端
 
-[后端](https://github.com/overnewfe/book)
+[后端](https://github.com/cs-learning-record/backend)
 
 ## 八、机器学习
 
 [机器学习](https://github.com/overnewfe/AI)
 
-## 九、学习资料
+## 九、书籍&电影
+
+[书籍&电影](https://github.com/overnewfe/book)
+
+## 十、学习资料
 
 [学习资料](https://github.com/overnewfe/learning-materials)
 
-## 十、成长
+## 十一、成长
 
 [成长](https://github.com/overnewfe/growing-up)
 
-## 十一、其它
+## 十二、其它
 
 [其它](https://github.com/overnewfe/other)
 
