@@ -9,9 +9,25 @@
 
 ## 一、数据结构与算法
 
-[算法与数据结构](https://github.com/overnewfe/algorithm)
+- [数据结构](https://github.com/cs-learning-record/algorithm)
+
+    数组(Array)、队列(Queue)、堆栈(Stack)、链表(Linked Lists)、树(Trees)、图(Graphs)、字典树(Trie)、散列表(Hash Tables)
+    
+- [算法](https://github.com/cs-learning-record/algorithm)
+
+    简单排序、高级排序、动态规划、贪心算法、递归、分治法等
+
 
 ## 二、JavaScript
+
+- javascript基础
+
+    执行上下文、闭包、原型链、继承
+
+- es6
+
+- nodejs
+
 
 [javascript 基础](https://github.com/overnewfe/javascript)
 
