@@ -7,7 +7,7 @@
 
 ## 前言
 
-本人平时学习及收集内容，欢迎一起参加讨论。
+本人平时学习及收集内容，欢迎参入一起讨论。
 
 ## 一、数据结构与算法
 
@@ -21,27 +21,29 @@
 
 ## 二、JavaScript
 
-- javascript 基础
+- [javascript 基础](https://github.com/cs-learning-record/javascript/blob/master/javascript.md)
 
   数据类型转换、执行上下文、闭包、原型链、继承、this 理解等
 
-- es6
+- [es6](https://github.com/cs-learning-record/javascript/blob/master/es6.md)
 
   let 和 const 理解、字符串和正则表达式、函数、扩展对象、数组、解构、Set 集合与 Map 集合、迭代器和生成器、类、Promise 与异步编程、代理（Proxy）和反射（Reflaction）API、模块化
 
-- nodejs
+- [nodejs](https://github.com/cs-learning-record/javascript/blob/master/nodejs.md)
 
   net 网络、process 进程、stream 流、fs 文件系统、http、https、path 路径、express 框架、koa 框架等
 
-- canvas
+- [canvas 学习](https://github.com/cs-learning-record/javascript/blob/master/canvas.md)
 
-- 框架、库及源码分析
+  基本用法、绘制形状、添加样式和颜色、绘制文本、使用图片、变形、合成和裁剪、动画、像素操作、案例
+
+- [框架、库及源码分析](https://github.com/cs-learning-record/javascript/blob/master/vue.md)
 
 vue 双向数据绑定原理、vuex 原理、vue-router 原理、vue 源码分析、undescore 分析、Jquery 源码分析
 
-[javascript 基础](https://github.com/overnewfe/javascript)
-
 ## 三、CSS
+
+CSS 选择器、BFC、CSS3、动画
 
 [css 基础](https://github.com/overnewfe/css)
 
