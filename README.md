@@ -7,6 +7,8 @@
 
 ## 前言
 
+本人平时学习及收集内容，欢迎一起参加讨论。
+
 ## 一、数据结构与算法
 
 - [数据结构](https://github.com/cs-learning-record/algorithm)
