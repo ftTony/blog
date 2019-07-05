@@ -23,7 +23,7 @@
 
 - [javascript 基础](https://github.com/cs-learning-record/javascript/blob/master/javascript.md)
 
-  数据类型转换、执行上下文、闭包、原型链、继承、this 理解等
+  数据类型转换、执行上下文、闭包、原型链、继承、this 理解、DOM 对象、BOM 对象等
 
 - [es6](https://github.com/cs-learning-record/javascript/blob/master/es6.md)
 
@@ -90,6 +90,7 @@ CSS 选择器、BFC、CSS3、动画
         在颠覆世界的同时，也要好好关照自己。
     </p>
     <img src="./img/webchat.jpg" />
+    <img src="./img/subscription.jpg" />
 </div>
 
 ## 总结
