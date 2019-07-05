@@ -39,7 +39,7 @@
 
 - [框架、库及源码分析](https://github.com/cs-learning-record/javascript/blob/master/vue.md)
 
-vue 双向数据绑定原理、vuex 原理、vue-router 原理、vue 源码分析、undescore 分析、Jquery 源码分析
+  vue 双向数据绑定原理、vuex 原理、vue-router 原理、vue 源码分析、undescore 分析、Jquery 源码分析
 
 ## 三、CSS
 
