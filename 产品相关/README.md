@@ -7,3 +7,4 @@
 1. [提升结构化思考力](https://mp.weixin.qq.com/s/VQp9IcyZEt7dSyD_giJ_kQ)
 1. [提升结构化思考力（2）](https://mp.weixin.qq.com/s/iuu6Bl-J1l5dLHSWLQ7hfw)
 2. [关于创业，关于如何做好产品](https://github.com/voff12/awesome-product-thought)
+1. [产品迷思](https://github.com/wx-chevalier/Product-Series)
