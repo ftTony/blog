@@ -30,3 +30,4 @@
 1. [一个集成了 webpack + vue-loader + vuex + axios 的自定义 vue-cli 模板](https://github.com/Brickies/vue-template)
 2. [用Vue写几个小游戏玩玩](https://juejin.im/post/5d22b3ade51d4577770e73f1)
 1. [中国表情包大集合](https://github.com/zhaoolee/ChineseBQB)
+1. [Github表情包大全](https://github.com/windiest/github-emoji)
