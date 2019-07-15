@@ -3,7 +3,7 @@
 
 | 周一           | 周二       | 周三           | 周四     | 周五 | 周六 | 周日 |
 | -------------- | ---------- | -------------- | -------- | ---- | ---- | ---- |
-| [数据类型及转换](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BD%AC%E6%8D%A2.md) | 执行上下文 | 表达式与运算符 | this理解 | 语句 | 对象 | 数组 |
+| [数据类型及转换](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BD%AC%E6%8D%A2.md) | [执行上下文](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.md) | 表达式与运算符 | this理解 | 语句 | 对象 | 数组 |
 
 ### 第二周 javascript基础
 
