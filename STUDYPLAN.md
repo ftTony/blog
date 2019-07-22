@@ -3,7 +3,7 @@
 
 | 周一           | 周二       | 周三           | 周四     | 周五 | 周六 | 周日 |
 | -------------- | ---------- | -------------- | -------- | ---- | ---- | ---- |
-| [数据类型及转换](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BD%AC%E6%8D%A2.md) | [执行上下文与执行栈](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.md) | [表达式与运算符](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6.md) | [this理解](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/this%E7%90%86%E8%A7%A3.md) | [原型于原型链](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE.md) | 对象 | 数组 |
+| [数据类型及转换](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BD%AC%E6%8D%A2.md) | [执行上下文与执行栈](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.md) | [表达式与运算符](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6.md) | [this理解](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/this%E7%90%86%E8%A7%A3.md) | [原型于原型链](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE.md) | [对象](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%AF%B9%E8%B1%A1.md) | 数组 |
 
 ### 第二周 javascript基础
 
