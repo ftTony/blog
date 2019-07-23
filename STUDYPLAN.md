@@ -9,7 +9,7 @@
 
 | 周一         | 周二       | 周三 | 周四       | 周五     | 周六 | 周日 |
 | ------------ | ---------- | ---- | ---------- | -------- | ---- | ---- |
-| [作用域与作用域链](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F.md) | [函数](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%87%BD%E6%95%B0.md) | 继承 | 正则表达式 | apply&bind&call | BOM  | DOM  |
+| [作用域与作用域链](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE.md) | [函数](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%87%BD%E6%95%B0.md) | 继承 | 正则表达式 | apply&bind&call | BOM  | DOM  |
 
 ### 第三周 
 
