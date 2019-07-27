@@ -9,7 +9,7 @@
 
 | 周一         | 周二       | 周三 | 周四       | 周五     | 周六 | 周日 |
 | ------------ | ---------- | ---- | ---------- | -------- | ---- | ---- |
-| [作用域与作用域链](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE.md) | [函数](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%87%BD%E6%95%B0.md) | [继承](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E7%BB%A7%E6%89%BF.md) | [数组](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%95%B0%E7%BB%84.md) | [apply&bind&call](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/apply%26bind%26call.md) | BOM  | DOM  |
+| [作用域与作用域链](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE.md) | [函数](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%87%BD%E6%95%B0.md) | [继承](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E7%BB%A7%E6%89%BF.md) | [数组](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%95%B0%E7%BB%84.md) | [apply&bind&call](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/apply%26bind%26call.md) | [apply&bind&call模拟实现]  |  DOM与BOM |
 
 ### 第三周 
 
