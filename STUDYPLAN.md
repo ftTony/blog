@@ -15,7 +15,7 @@
 
 | 周一 | 周二      | 周三       | 周四           | 周五               | 周六    | 周日 |
 | ---- | --------- | ---------- | -------------- | ------------------ | ------- | ---- |
-| 事件 | html5 api | 客户端存储 | let和const理解 | 字符串和正则表达式 | es6函数 | 解构 |
+| [事件](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E4%BA%8B%E4%BB%B6.md) | html5 api | 客户端存储 | let和const理解 | 字符串和正则表达式 | es6函数 | 解构 |
 
 ### 第四周
 
