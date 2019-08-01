@@ -21,7 +21,7 @@
 
 | 周一             | 周二           | 周三 | 周四              | 周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- | ---------- | ------ | ---------- |
-|EventLoop|js如何工作的|[js内存管理与垃圾回收](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)|let和const理解 |  es6函数 | 解构 | Set集合与Map集合 |
+|[EventLoop](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E7%90%86%E8%A7%A3EventLoop.md)|[js如何工作的](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/js%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.md)|[js内存管理与垃圾回收](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)|let和const理解 |  es6函数 | 解构 | Set集合与Map集合 |
 
 ### 第五周
 
