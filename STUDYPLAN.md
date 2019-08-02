@@ -15,7 +15,7 @@
 
 | 周一 | 周二      | 周三       | 周四           | 周五               | 周六    | 周日 |
 | ---- | --------- | ---------- | -------------- | ------------------ | ------- | ---- |
-| [事件](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E4%BA%8B%E4%BB%B6.md) | [html5 api](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/html5api.md) | [客户端存储](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8.md) | [正则表达式](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)|new模拟实现|函数柯理化|深拷贝|
+| [事件](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E4%BA%8B%E4%BB%B6.md) | [html5 api](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/html5api.md) | [客户端存储](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8.md) | [正则表达式](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)|[new模拟实现](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/new%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0.md)|函数柯理化|深拷贝|
 
 ### 第四周
 
