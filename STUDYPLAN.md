@@ -21,11 +21,11 @@
 
 | 周一             | 周二           | 周三 | 周四              | 周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- | ---------- | ------ | ---------- |
-| [防抖动与节流](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E9%98%B2%E6%8A%96%E5%8A%A8%E4%B8%8E%E8%8A%82%E6%B5%81.md) | 常见页面题|手写代码|事件循环和异步编程的崛起|V8引擎&编写优化代码的5个技巧|[理解EventLoop](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E7%90%86%E8%A7%A3EventLoop.md)|[js如何工作的](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/js%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.md)|
+| [防抖动与节流](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E9%98%B2%E6%8A%96%E5%8A%A8%E4%B8%8E%E8%8A%82%E6%B5%81.md) | [理解EventLoop](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E7%90%86%E8%A7%A3EventLoop.md)|[js内存管理与垃圾回收](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)|[js如何工作的](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/js%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.md)|事件循环和异步编程的崛起|V8引擎&编写优化代码的5个技巧|手写代码|
 
 | 周一             | 周二           | 周三 | 周四              | 周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- | ---------- | ------ | ---------- |
-|[js内存管理与垃圾回收](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)|let和const理解 |  es6函数 | 解构 | Set集合与Map集合 |||
+|常见页面题|let和const理解 |  es6函数 | 解构 | Set集合与Map集合 |||
 
 
 
