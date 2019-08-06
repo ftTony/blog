@@ -72,7 +72,13 @@
 
 - [es6](https://github.com/cs-learning-record/javascript/blob/master/es6.md)
 
-  let 和 const 理解、字符串和正则表达式、函数、扩展对象、数组、解构、Set 集合与 Map 集合、迭代器和生成器、类、Promise 与异步编程、代理（Proxy）和反射（Reflaction）API、模块化
+  |         I         |       II       |     III      |     IV     |     V      |     VI     |    VII     |  VIII  |         IX          |        X         |      XI      |            XII            |
+| :---------------: | :------------: | :----------: | :--------: | :--------: | :--------: | :--------: | :----: | :-----------------: | :--------------: | :----------: | :-----------------------: |
+| let 和 const 命令 | 变量的解构赋值 | 字符串的扩展 | 正则的扩展 | 数值的扩展 | 数组的扩展 | 对象的扩展 | Symbol | Set 和 Map 数据结构 | Proxy 和 Reflect | Promise 对象 | Iterator 和 for...of 循环 |
+
+|          I           |            II            |    III     |        IV        |      V       |   VI   |      VII      |       VIII        |     IX      |
+| :------------------: | :----------------------: | :--------: | :--------------: | :----------: | :----: | :-----------: | :---------------: | :---------: |
+| Generator 函数的语法 | Generator 函数的异步应用 | async 函数 | Class 的基本语法 | Class 的继承 | 修饰器 | Module 的语法 | Module 的加载实现 | ArrayBuffer |
 
 - [nodejs](https://github.com/cs-learning-record/javascript/blob/master/nodejs.md)
 
