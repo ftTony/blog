@@ -96,7 +96,9 @@
 
 - [canvas 学习](https://github.com/cs-learning-record/javascript/blob/master/canvas.md)
 
-  基本用法、绘制形状、添加样式和颜色、绘制文本、使用图片、变形、合成和裁剪、动画、像素操作、案例
+|    I     |    II    |      III       |    IV    |    V     |  VI   |    VII     | VIII  |    IX    |   X   |
+| :------: | :------: | :------------: | :------: | :------: | :---: | :--------: | :---: | :------: | :---: |
+| 基本用法 | 绘制形状 | 添加样式和颜色 | 绘制文本 | 使用图片 | 变形  | 合成和裁剪 | 动画  | 像素操作 | 案例  |
 
 - [框架、库及源码分析](https://github.com/cs-learning-record/javascript/blob/master/vue.md)
 
