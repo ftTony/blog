@@ -27,7 +27,7 @@
 
 | 周一             | 周二           | 周三 | 周四              | 周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- | ---------- | ------ | ---------- |
-|js中的位运算|为什么 0.1 + 0.2 != 0.3|[常见页面题](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%B8%B8%E8%A7%81%E9%A1%B5%E9%9D%A2%E9%A2%98.md)|let和const理解 |  es6函数 | 解构 | Set集合与Map集合 |
+|js中的位运算|为什么 0.1 + 0.2 != 0.3|[常见面试题](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E5%B8%B8%E8%A7%81%E9%A1%B5%E9%9D%A2%E9%A2%98.md)|let和const理解 |  es6函数 | 解构 | Set集合与Map集合 |
 
 
 ### 第六周
