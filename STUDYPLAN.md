@@ -95,7 +95,7 @@
 
 | 周一     | 周二     | 周三 | 周四  | 周五        | 周六     | 周日     |
 | -------- | -------- | ---- | ----- | ----------- | -------- | -------- |
-| 回溯算法 | 网络结构 | http | https | http2&http3 | 简单工厂 | 工厂方法 |
+| 回溯算法 | 网络结构 | http | [https协议](https://github.com/cs-learning-record/cs/blob/master/https%E5%8D%8F%E8%AE%AE.md) | http2&http3 | 简单工厂 | 工厂方法 |
 
 ### 第十六周
 
