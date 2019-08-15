@@ -131,7 +131,7 @@
 
 |     I     |   II    |   III    |        IV        |      V      |   VI    |  
 | :-------: | :-----: | :------: | :--------------: | :---------: | :-----: | 
-| Linux常用命令 | Docker学习 | os基本概念 | 计算网络 | http协议 | https协议 | http2协议 |
+| Linux常用命令 | Docker学习 | [os基本概念](https://github.com/cs-learning-record/cs/blob/master/os%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.md) | 计算网络 | http协议 | [https协议](https://github.com/cs-learning-record/cs/blob/master/https%E5%8D%8F%E8%AE%AE.md) | http2协议 |
 
 |     I     |   II    |   III    |        IV        |      V      |   VI    |  VII     |      VIII     |
 |:---------: | :----------: | :---------: | :-------: | :--------------: | :----------: |:------: | :----------: |
