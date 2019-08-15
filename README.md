@@ -127,9 +127,15 @@
 
 [面试](https://github.com/cs-learning-record/interview-question)
 
-## 六、计算机基础
+## 六、[计算机基础](https://github.com/overnewfe/cs)
 
-[计算机基础](https://github.com/overnewfe/cs)
+|     I     |   II    |   III    |        IV        |      V      |   VI    |  
+| :-------: | :-----: | :------: | :--------------: | :---------: | :-----: | 
+| Linux常用命令 | Docker学习 | os基本概念 | 计算网络 | http协议 | https协议 | http2协议 |
+
+|     I     |   II    |   III    |        IV        |      V      |   VI    |  VII     |      VIII     |
+|:---------: | :----------: | :---------: | :-------: | :--------------: | :----------: |:------: | :----------: |
+| websocke|TCP/IP协议 | XSS攻击 |CRSF攻击 | 流量劫持 | SQL注入 | 密码安全 | web登录鉴权 |
 
 ## 七、后端
 
