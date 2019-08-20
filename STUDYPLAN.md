@@ -35,7 +35,7 @@
 
 | 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
-|字符串的扩展   | 正则的扩展 |数值的扩展|[数组的扩展](https://github.com/cs-learning-record/javascript-series/blob/master/es6/%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95.md)|对象的扩展 | Symbol | 数组/对象 | Iterator 和 for...of 循环| 
+|字符串的扩展   | 正则的扩展 |数值的扩展|[数组的扩展](https://github.com/cs-learning-record/javascript-series/blob/master/es6/%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95.md)|[对象的扩展](https://github.com/cs-learning-record/javascript-series/blob/master/es6/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95.md) | Symbol | 数组/对象 | Iterator 和 for...of 循环| 
 
 | 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
