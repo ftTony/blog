@@ -80,9 +80,9 @@
 | :---------------: | :------------: | :----------: | :--------: | :--------: | :--------: | :--------: | :----: | :-----------------: | :--------------: | :----------: | :-----------------------: |
 | [let 和 const 命令](https://github.com/cs-learning-record/javascript-series/blob/master/es6/let%E5%92%8Cconst%E5%91%BD%E4%BB%A4.md) | [变量的解构赋值](https://github.com/cs-learning-record/javascript-series/blob/master/es6/%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC.md) | 字符串的扩展 | 正则的扩展 | 数值的扩展 | [数组的扩展](https://github.com/cs-learning-record/javascript-series/blob/master/es6/%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95.md) | [对象的扩展](https://github.com/cs-learning-record/javascript-series/blob/master/es6/%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95.md) | Symbol | Set 和 Map 数据结构 | Proxy 和 Reflect | Promise 对象 | Iterator 和 for...of 循环 |
 
-|          I           |            II            |    III     |        IV        |      V       |   VI   |      VII      |       VIII        |     IX      |
-| :------------------: | :----------------------: | :--------: | :--------------: | :----------: | :----: | :-----------: | :---------------: | :---------: |
-| Generator 函数的语法 | Generator 函数的异步应用 | async 函数 | Class 的基本语法 | Class 的继承 | 修饰器 | Module 的语法 | Module 的加载实现 | ArrayBuffer |
+|          I           |            II            |    III     |        IV        |      V       |   VI   |      VII      |       VIII        |     IX      |       X         |
+| :------------------: | :----------------------: | :--------: | :--------------: | :----------: | :----: | :-----------: | :---------------: | :---------: |:---------: |
+| Generator 函数的语法 | Generator 函数的异步应用 | async 函数 | Class 的基本语法 | Class 的继承 | 修饰器 | Module 的语法 | Module 的加载实现 | ArrayBuffer |[函数扩展](https://github.com/cs-learning-record/javascript-series/tree/master/es6) |
 
 - [nodejs](https://github.com/cs-learning-record/javascript/blob/master/nodejs.md)
 
