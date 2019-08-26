@@ -82,7 +82,7 @@
 
 |          I           |            II            |    III     |        IV        |      V       |   VI   |      VII      |       VIII        |     IX      |       X         |
 | :------------------: | :----------------------: | :--------: | :--------------: | :----------: | :----: | :-----------: | :---------------: | :---------: |:---------: |
-| Generator 函数的语法 | Generator 函数的异步应用 | async 函数 | Class 的基本语法 | Class 的继承 | 修饰器 | Module 的语法 | Module 的加载实现 | ArrayBuffer |[函数扩展](https://github.com/cs-learning-record/javascript-series/tree/master/es6) |
+| [Generator 函数的语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95.md) | Generator 函数的异步应用 | async 函数 | Class 的基本语法 | Class 的继承 | 修饰器 | Module 的语法 | Module 的加载实现 | ArrayBuffer |[函数扩展](https://github.com/cs-learning-record/javascript-series/tree/master/es6) |
 
 - [nodejs](https://github.com/cs-learning-record/javascript/blob/master/nodejs.md)
 
