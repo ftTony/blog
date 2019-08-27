@@ -39,8 +39,11 @@
 
 | 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
-|Class 的基本语法   | [Promise对象](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Promise%E5%AF%B9%E8%B1%A1.md) |Generator|async|Proxy 和 Reflect | 模块化 | ArrayBuffer | 修饰器 | 
+|[Class 的基本语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95.md)   | [Promise对象](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Promise%E5%AF%B9%E8%B1%A1.md) |Generator 函数的语法|async|Proxy  | Module 的语法 | ArrayBuffer | 修饰器 | 
 
+| 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
+| ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
+| Reflect  | Class 的继承|Generator 函数的异步应用|Module 的加载实现| 修饰器 | 模块化 |  |  | 
 
 
 ### 第七周
