@@ -43,7 +43,7 @@
 
 | 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
-| Reflect  | Class 的继承|Generator 函数的异步应用|Module 的加载实现| 修饰器 | 模块化 |  |  | 
+| Reflect  | [Class 的继承](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E7%BB%A7%E6%89%BF.md)|Generator 函数的异步应用|Module 的加载实现| 修饰器 | 模块化 |  |  | 
 
 
 ### 第七周
