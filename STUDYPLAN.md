@@ -39,11 +39,11 @@
 
 | 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
-|[Class 的基本语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95.md)   | [Promise对象](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Promise%E5%AF%B9%E8%B1%A1.md) |[Generator 函数的语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95.md)|[async函数](https://github.com/cs-learning-record/javascript-series/blob/master/es6/async%20%E5%87%BD%E6%95%B0.md)|Proxy  | [Module 的语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Module%20%E7%9A%84%E8%AF%AD%E6%B3%95.md) | ArrayBuffer | 修饰器 | 
+|[Class 的基本语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95.md)   | [Promise对象](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Promise%E5%AF%B9%E8%B1%A1.md) |[Generator 函数的语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95.md)|[async函数](https://github.com/cs-learning-record/javascript-series/blob/master/es6/async%20%E5%87%BD%E6%95%B0.md)|[Proxy和Reflect](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Proxy%E5%92%8CReflect.md)  | [Module 的语法](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Module%20%E7%9A%84%E8%AF%AD%E6%B3%95.md) | ArrayBuffer | 修饰器 | 
 
 | 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
-| Reflect  | [Class 的继承](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E7%BB%A7%E6%89%BF.md)|[Generator 函数的异步应用](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E6%AD%A5%E5%BA%94%E7%94%A8.md)|Module 的加载实现| 修饰器 | 模块化 |  |  | 
+|   | [Class 的继承](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E7%BB%A7%E6%89%BF.md)|[Generator 函数的异步应用](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E6%AD%A5%E5%BA%94%E7%94%A8.md)|Module 的加载实现| 修饰器 | 模块化 |  |  | 
 
 
 ### 第七周
