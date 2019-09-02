@@ -43,7 +43,7 @@
 
 | 周一             | 周二           | 周三 | 周四              |周五       | 周六   | 周日       |
 | ---------------- | -------------- | ---- | ----------------- |---------- | ------ | ---------- |
-|   | [Class 的继承](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E7%BB%A7%E6%89%BF.md)|[Generator 函数的异步应用](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E6%AD%A5%E5%BA%94%E7%94%A8.md)|Module 的加载实现| 修饰器 | 模块化 |  |  | 
+|  [Module 的加载实现](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Module%20的加载实现.md) | [Class 的继承](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Class%20%E7%9A%84%E7%BB%A7%E6%89%BF.md)|[Generator 函数的异步应用](https://github.com/cs-learning-record/javascript-series/blob/master/es6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E6%AD%A5%E5%BA%94%E7%94%A8.md)|| 修饰器 |  |  |  | 
 
 
 ### 第七周
