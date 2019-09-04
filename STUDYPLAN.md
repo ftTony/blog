@@ -54,7 +54,7 @@
 
 | 周一     | 周二    | 周三    | 周四            | 周五       | 周六   | 周日       |
 | -------- | ------- | ------- | --------------- | ---------- | ------ | ---------- |
-| http模块 | net模块 | url模块 | querystring模块 | events模块 | fs模块 | stream模块 |
+| [http模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/http%E6%A8%A1%E5%9D%97.md) | net模块 | url模块 | querystring模块 | events模块 | fs模块 | stream模块 |
 
 ### 第十周
 
