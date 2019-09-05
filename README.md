@@ -86,12 +86,12 @@
 
 - [nodejs](https://github.com/cs-learning-record/javascript/blob/master/nodejs.md)
 
-|     I     |   II    |   III    |        IV        |      V      |   VI    |     VII     |     VIII     |     IX      |     X     |        XI        |     XII      |
-| :-------: | :-----: | :------: | :--------------: | :---------: | :-----: | :---------: | :----------: | :---------: | :-------: | :--------------: | :----------: |
-|[nodejs介绍](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/node%E4%BB%8B%E7%BB%8D.md)| [http 模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/http%E6%A8%A1%E5%9D%97.md) | fs 模块 | url 模块 | querystring 模块 | events 模块 | fs 模块 | stream 模块 | process 进程 | cheeio 模块 | http 爬虫 | express 基础应用 |
+|                                                         I                                                          |                                                        II                                                         |   III   |    IV    |        V         |     VI      |   VII   |    VIII     |      IX      |      X      |    XI     |       XII        |
+| :----------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: | :-----: | :------: | :--------------: | :---------: | :-----: | :---------: | :----------: | :---------: | :-------: | :--------------: |
+| [nodejs介绍](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/node%E4%BB%8B%E7%BB%8D.md) | [http 模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/http%E6%A8%A1%E5%9D%97.md) | fs 模块 | url 模块 | querystring 模块 | events 模块 | fs 模块 | stream 模块 | process 进程 | cheeio 模块 | http 爬虫 | express 基础应用 |
 
-|      I       |        II         |       III       |      IV      |      V      |
-| :----------: | :---------------: | :-------------: | :----------: |:----------: |
+|      I       |        II         |       III       |      IV      |      V       |
+| :----------: | :---------------: | :-------------: | :----------: | :----------: |
 | egg 基础应用 | nodejs 操作数据库 | nodejs 部分源码 | koa 源码分析 | koa 基础应用 |
 
 - [canvas 学习](https://github.com/cs-learning-record/javascript/blob/master/canvas.md)
@@ -102,7 +102,13 @@
 
 - [框架、库及源码分析](https://github.com/cs-learning-record/javascript/blob/master/vue.md)
 
-  vue 双向数据绑定原理、vuex 原理、vue-router 原理、vue 源码分析、undescore 分析、Jquery 源码分析
+|          I           |  II   |  III  |     IV     |   V   |      VI      |      VII       |      VIII       |  IX   |    X     |
+| :------------------: | :---: | :---: | :--------: | :---: | :----------: | :------------: | :-------------: | :---: | :------: |
+| vue 双向数据绑定原理 | vuex  | 原理  | vue-router | 原理  | vue 源码分析 | undescore 分析 | Jquery 源码分析 | mvvm  | diff算法 |  |
+
+- 设计模式
+
+
 
 ## 三、[CSS基础](https://github.com/overnewfe/css)
 
