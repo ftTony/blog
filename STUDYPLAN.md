@@ -54,7 +54,7 @@
 
 | 周一                                                                                                             | 周二    | 周三    | 周四            | 周五       | 周六   | 周日       |
 | ---------------------------------------------------------------------------------------------------------------- | ------- | ------- | --------------- | ---------- | ------ | ---------- |
-| [http模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/http%E6%A8%A1%E5%9D%97.md) | [net模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/net%E6%A8%A1%E5%9D%97.md) | [url模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/url%E6%A8%A1%E5%9D%97.md) | [querystring模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/querystring%E6%A8%A1%E5%9D%97.md) | [events模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/events%E6%A8%A1%E5%9D%97.md) | fs模块 | stream模块 |
+| [http模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/http%E6%A8%A1%E5%9D%97.md) | [net模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/net%E6%A8%A1%E5%9D%97.md) | [url模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/url%E6%A8%A1%E5%9D%97.md) | [querystring模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/querystring%E6%A8%A1%E5%9D%97.md) | [events模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/events%E6%A8%A1%E5%9D%97.md) | [fs模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/fs%E6%A8%A1%E5%9D%97.md) | stream模块 |
 
 ### 第十周
 
