@@ -92,7 +92,7 @@
 
 |      I       |        II         |       III       |      IV      |      V       |     VI      |
 | :----------: | :---------------: | :-------------: | :----------: | :----------: | :----------: |
-| egg 基础应用 | nodejs 操作数据库 | nodejs 部分源码 | koa 源码分析 | koa 基础应用 ||
+| egg 基础应用 | nodejs 操作数据库 | nodejs 部分源码 | koa 源码分析 | koa 基础应用 |[buffer模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/buffer%E6%A8%A1%E5%9D%97.md)|
 
 - [canvas 学习](https://github.com/cs-learning-record/javascript/blob/master/canvas.md)
 
