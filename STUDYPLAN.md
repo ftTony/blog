@@ -60,7 +60,7 @@
 
 | 周一         | 周二      | 周三         | 周四      | 周五            | 周六        | 周日        |
 | ------------ | --------- | ------------ | --------- | --------------- | ----------- | ----------- |
-| [process 进程](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/process%20%E8%BF%9B%E7%A8%8B.md) | [buffer模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/buffer%E6%A8%A1%E5%9D%97.md) | cheerio 模块 | http 爬虫 | Express基础应用 | koa基础应用 | Egg基础应用 |
+| [process 进程](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/process%20%E8%BF%9B%E7%A8%8B.md) | [buffer模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/buffer%E6%A8%A1%E5%9D%97.md) | [cheerio 模块](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/cheerio%20%E6%A8%A1%E5%9D%97.md) | http 爬虫 | Express基础应用 | koa基础应用 | Egg基础应用 |
 
 
 ### 第十一周
