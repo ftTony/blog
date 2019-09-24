@@ -67,7 +67,7 @@
 
 | 周一              | 周二               | 周三        | 周四                 | 周五         | 周六        | 周日            |
 | ----------------- | ------------------ | ----------- | -------------------- | ------------ | ----------- | --------------- |
-| Node.js操作数据库 | nodejs部分源码分析 | koa源码分析 | vue 双向数据绑定分析 | diff算法分析 | vue生命周期 | vuex 使用及原理 |
+| [Node.js操作数据库](https://github.com/cs-learning-record/javascript-series/blob/master/nodejs/node.js%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93.md) | nodejs部分源码分析 | koa源码分析 | vue 双向数据绑定分析 | diff算法分析 | vue生命周期 | vuex 使用及原理 |
 
 
 ### 第十二周
