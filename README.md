@@ -104,7 +104,7 @@
 
 |          I           |  II   |  III  |     IV     |   V   |      VI      |      VII       |      VIII       |  IX   |    X     |
 | :------------------: | :---: | :---: | :--------: | :---: | :----------: | :------------: | :-------------: | :---: | :------: |
-| [vue 双向数据绑定原理](https://github.com/cs-learning-record/javascript-series/blob/master/vue/%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.md) | vuex  | 原理  | vue-router | 原理  | vue 源码分析 | undescore 分析 | Jquery 源码分析 | [mvvm](https://github.com/cs-learning-record/javascript-series/blob/master/vue/mvvm.md)  | diff算法 |  |
+| [vue 双向数据绑定原理](https://github.com/cs-learning-record/javascript-series/blob/master/vue/%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.md) | [vuex](https://github.com/cs-learning-record/javascript-series/blob/master/vue/vuex.md)  | 原理  | vue-router | 原理  | vue 源码分析 | undescore 分析 | Jquery 源码分析 | [mvvm](https://github.com/cs-learning-record/javascript-series/blob/master/vue/mvvm.md)  | diff算法 |  |
 
 - 设计模式
 
