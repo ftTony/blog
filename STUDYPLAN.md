@@ -74,7 +74,7 @@
 
 | 周一            | 周二     | 周三     | 周四     | 周五  | 周六  | 周日    |
 | --------------- | -------- | -------- | -------- | ----- | ----- | ------- |
-| vue-router 原理 | 组件注册 | 异步组件 | 派发更新 | parse | event | v-model |
+| [vue-router 原理](https://github.com/cs-learning-record/javascript-series/blob/master/vue/vue-router.md) | 组件注册 | 异步组件 | 派发更新 | parse | event | v-model |
 
 
 ### 第十三周
