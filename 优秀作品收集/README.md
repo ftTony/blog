@@ -39,3 +39,4 @@
 39. [一个基于 electron 的音乐软件](https://github.com/lyswhut/lx-music-desktop)
 40. [基于 vue2 + vue-router + vuex 构建的新闻类单页面应用](https://github.com/uncleLian/vue2-news)
 41. [vue 组件库](https://github.com/huxiaocheng/vue-gn-components)
+42. [Avue.js](https://github.com/nmxiaowei/avue)
