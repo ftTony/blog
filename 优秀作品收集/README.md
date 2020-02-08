@@ -42,3 +42,4 @@
 42. [DoraCMS 后台管理](https://github.com/doramart/DoraCMS)
 43. [vue 组件库](https://github.com/huxiaocheng/vue-gn-components)
 44. [Avue.js](https://github.com/nmxiaowei/avue)
+45. [轻量级移动端 Vue 组件库](https://github.com/jdf2e/nutui)
