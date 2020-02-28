@@ -49,3 +49,4 @@
 49. [基于 vue2 + koa2 的 H5 制作工具](https://github.com/huangwei9527/quark-h5)
 50. [vue-chat](https://github.com/aermin/vue-chat)
 51. [Vue 数据可视化组件库](https://github.com/DataV-Team/DataV)
+52. [基于 vue 和 websocket 的多人在线聊天室](https://github.com/secreter/websocket_chat)
