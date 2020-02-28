@@ -47,3 +47,4 @@
 47. [Taro 框架](https://github.com/NervJS/taro-ui)
 48. [Koa2 RESTful API 服务器脚手架](https://github.com/yi-ge/Koa2-API-Scaffold)
 49. [基于 vue2 + koa2 的 H5 制作工具](https://github.com/huangwei9527/quark-h5)
+50. [vue-chat](https://github.com/aermin/vue-chat)
