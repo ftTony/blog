@@ -53,3 +53,4 @@
 53. [Vue 数据可视化组件库](https://github.com/DataV-Team/DataV)
 54. [基于 vue 和 websocket 的多人在线聊天室](https://github.com/secreter/websocket_chat)
 55. [基于 vue 的可视化编辑器](https://www.cnblogs.com/plBlog/p/12409011.html)
+56. [think-vuele](https://github.com/chfree/think-vuele)
