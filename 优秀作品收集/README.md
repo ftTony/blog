@@ -58,3 +58,6 @@
 58. [「颜值即正义」那些管 UI 小姐姐要来的网站](https://juejin.im/post/5e7cdee26fb9a03c6e640cc7)
 59. [（4.2 万字 🔥🔥🔥 重启 2020）“从零到部署”Vue 全栈电商应用系列教程---正式完结](https://juejin.im/post/5e7577816fb9a07c83350011)
 60. [crawlab 爬虫](https://github.com/crawlab-team/crawlab)
+61. [灯塔前端监控系统](https://github.com/LianjiaTech/fee)
+62. [webfunny_monitor](https://github.com/a597873885/webfunny_monitor)
+63. [前端埋点监控](https://github.com/MriLiuJY/monitorFE)
