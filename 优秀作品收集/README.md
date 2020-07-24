@@ -69,3 +69,4 @@
 69. [vue-admin-beautiful](https://github.com/chuzhixin/vue-admin-beautiful)
 70. [DoraCMS 后台管理](https://github.com/doramart/DoraCMS)
 71. [掌门前端破茧成蝶之：低代码开发工具——魔方](https://mp.weixin.qq.com/s/lBQrHPzFFMPd7M56GBHhdQ)
+72. [股票：支持A股，港股，美股](https://github.com/huage2580/leeks)
