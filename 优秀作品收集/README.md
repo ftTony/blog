@@ -37,6 +37,7 @@
 37. [H5 微场景编辑器](https://github.com/lzuntalented/lz-h5-edit)
 38. [基于 React 的可视化编辑](https://github.com/anye931123/react-visual-editor)
 39. [H5 制作工具](https://github.com/h5ds/h5ds)
+40. [鲁班页面搭建](https://github.com/ly525/luban-h5)
 40. [基于 vue 的高扩展在线网页制作平台](https://github.com/ymm-tech/gods-pen)
 41. [Vue2.x 全家桶+Vant 搭建大型单页面电商项目](https://github.com/Geek-James/ddBuy)
 42. [一个基于 electron 的音乐软件](https://github.com/lyswhut/lx-music-desktop)
