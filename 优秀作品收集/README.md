@@ -34,6 +34,7 @@
 34. [9 个项目助你在 2020 年成为前端大神！](https://juejin.im/post/5dc0c744e51d456e7e41f5ac)
 35. [Vue + Koa 从零打造一个 H5 页面可视化编辑器——Quark-h5](https://juejin.im/post/5dc81428e51d4523632ee793)
 36. [React 的组件可视化拖拽](https://github.com/brick-design/react-visual-editor)
+37. [React+webpack+redux+ant design+axios+less全家桶后台管理框架](https://github.com/duxianwei520/react)
 37. [H5 微场景编辑器](https://github.com/lzuntalented/lz-h5-edit)
 38. [基于 React 的可视化编辑](https://github.com/anye931123/react-visual-editor)
 39. [H5 制作工具](https://github.com/h5ds/h5ds)
