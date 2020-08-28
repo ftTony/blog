@@ -36,6 +36,7 @@
 36. [【第 2026 期】「可视化搭建系统」——从设计到架构，探索前端领域技术和业务价值](https://mp.weixin.qq.com/s/xyFTRqhXMT1LCrnwo3rVNg)
 37. [React 的组件可视化拖拽](https://github.com/brick-design/react-visual-editor)
 37. [React+webpack+redux+ant design+axios+less全家桶后台管理框架](https://github.com/duxianwei520/react)
+38. [react-admin system solution](https://github.com/yezihaohao/react-admin)
 38. [H5 微场景编辑器](https://github.com/lzuntalented/lz-h5-edit)
 39. [基于 React 的可视化编辑](https://github.com/anye931123/react-visual-editor)
 40. [H5 制作工具](https://github.com/h5ds/h5ds)
