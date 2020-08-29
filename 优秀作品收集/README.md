@@ -74,4 +74,3 @@
 72. [DoraCMS 后台管理](https://github.com/doramart/DoraCMS)
 73. [掌门前端破茧成蝶之：低代码开发工具——魔方](https://mp.weixin.qq.com/s/lBQrHPzFFMPd7M56GBHhdQ)
 74. [股票：支持 A 股，港股，美股](https://github.com/huage2580/leeks)
-75. [【干货】Chrome 插件(扩展)开发全攻略](https://mp.weixin.qq.com/s/waUg3hx5HsRkyiitJdHudg)
