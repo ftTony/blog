@@ -18,6 +18,7 @@
 18. [【第2045期】从零开始实现VS Code基金插件](https://mp.weixin.qq.com/s/tbc_vcfChkrIH5GCDkYDpw)
 19. [微信助手：1.每日定时给好友发送定制消息。2.自动回复好友](https://github.com/sfyc23/EverydayWechat)
 20. [D2Admin](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md)
+21. [jeecg-boot](https://github.com/zhangdaiscott/jeecg-boot)
 21. [客户端环境识别模块](https://github.com/hotoo/detector)
 22. [网易云音乐桌面客户端](https://github.com/trazyn/ieaseMusic)
 23. [Electron + React 开发的音乐客户端](https://github.com/caijinyc/Here)
