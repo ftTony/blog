@@ -39,6 +39,7 @@
 38. [React 的组件可视化拖拽](https://github.com/brick-design/react-visual-editor)
 39. [React+webpack+redux+ant design+axios+less全家桶后台管理框架](https://github.com/duxianwei520/react)
 40. [react-admin system solution](https://github.com/yezihaohao/react-admin)
+41. [表单设计器](https://github.com/GavinZhuLei/vue-form-making)
 41. [H5 微场景编辑器](https://github.com/lzuntalented/lz-h5-edit)
 42. [基于 React 的可视化编辑](https://github.com/anye931123/react-visual-editor)
 43. [H5 制作工具](https://github.com/h5ds/h5ds)
