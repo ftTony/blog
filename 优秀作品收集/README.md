@@ -15,6 +15,7 @@
 15. [超多经典 canvas 实例，动态离子背景、移动炫彩小球、贪吃蛇、坦克大战、是男人就下 100 层、心形文字等等等](https://github.com/bxm0927/canvas-special)
 16. [datetime 时间转化](https://github.com/hustcc/timeago.js/blob/master/README_zh.md)
 17. [VSCode 插件开发全攻略](https://github.com/sxei/vscode-plugin-demo)
+18. [VSCode 开发文档](https://liiked.github.io/VS-Code-Extension-Doc-ZH/)
 18. [【第2045期】从零开始实现VS Code基金插件](https://mp.weixin.qq.com/s/tbc_vcfChkrIH5GCDkYDpw)
 19. [微信助手：1.每日定时给好友发送定制消息。2.自动回复好友](https://github.com/sfyc23/EverydayWechat)
 20. [D2Admin](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md)
