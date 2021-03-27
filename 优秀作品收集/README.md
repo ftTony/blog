@@ -51,6 +51,7 @@
 48. [基于 vue2 + vue-router + vuex 构建的新闻类单页面应用](https://github.com/uncleLian/vue2-news)
 49. [外卖 App（ES6 + Mock.js + vue2.0）](https://github.com/W-Qing/Vue-MintShop)
 50. [vue 组件库](https://github.com/huxiaocheng/vue-gn-components)
+51. [FormRender](https://x-render.gitee.io/form-render/)
 51. [Avue.js](https://github.com/nmxiaowei/avue)
 52. [轻量级移动端 Vue 组件库](https://github.com/jdf2e/nutui)
 53. [Nerv 框架](https://github.com/NervJS/nerv)
